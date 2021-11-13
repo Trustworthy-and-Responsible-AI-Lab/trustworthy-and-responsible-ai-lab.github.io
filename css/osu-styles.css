@@ -1,0 +1,97 @@
+/*
+ * 
+ *  Oregon State University Styles:
+ *  This will override the bootstrap's definitions.
+ *
+ */
+body {
+    font-family: KievitOffc;
+    font-size: 17px;
+}
+
+/* 
+ *  Headers (Text)
+ */
+h1 {
+    font-family: Stratum2-Bold;
+    margin-top: 40px;
+}
+
+h2 {
+    font-family: Stratum2-Bold;
+    color: #D73F09;
+    margin-top: 40px;
+}
+
+h3 {
+    font-family: Stratum2-Bold;
+    margin-top: 30px;
+}
+
+h4 {
+    font-family: Stratum2-Bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-family: Stratum2-Bold;
+    margin-top: 10px;
+}
+
+h6 {
+    font-family: Stratum2-Bold;
+    /* margin-top: 10px; */
+}
+
+footer {
+    margin: 30px;
+}
+
+/* 
+ *  Navigation Bar
+ */
+.nav-item > a:hover {
+    color: #D73F09;
+}
+
+.nav-item > a {
+    color: #000000;
+}
+.nav-item > .active { 
+    color: #D73F09; 
+}
+
+/* 
+ *  Hyperlink
+ */
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #59626A;
+}
+
+
+/* 
+ *  Table
+ */
+table td, table td * {
+    vertical-align: top;
+}
+
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead {
+    border-top: 1px solid #003B5C;
+    border-left: 1px solid #003B5C;
+    border-right: 1px solid #003B5C;
+    border-bottom: 1px solid #003B5C;
+}
+
+/* 
+ *  [Custom] tab
+ */
+ .tab {
+    display: inline-block;
+    margin-left: 21px;
+}
