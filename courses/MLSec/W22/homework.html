@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        
         <!-- Title -->
         <title>
             CS499/599 :: W22 :: Machine Learning Security
@@ -16,7 +17,7 @@
         <meta name="keywords" content="sanghyun hong albert machine learning security oregon state university">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../../../resources/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
         <!-- Prevent js cache by Chrome -->
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -29,7 +30,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="../../../css/osu-styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/osu-styles.css">
 
     </head>
     <body>
@@ -50,91 +52,69 @@
                     <a class="nav-link" href="index.html"><h5>Home</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="syllabus.html"><h5>Syllabus</h5></a>
+                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="homework.html"><h5>Homework</h5></a>
+                    <a class="nav-link active" aria-current="page" href="critiques.html"><h5>Critique, Note, Presentation</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="homework.html"><h5>Homework</h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="project.html"><h5>Project</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="announce.html"><h5>Announcements</h5></a>
                 </li>
             </ul>
 
             <hr noshade="" size="1">
 
             
-            <!-- Prerequisite -->
-            <div class="container">
-                <h4>Prerequisites</h4>
-                <p>
-                    <u>This course requires a basic understanding of machine leanring. Please consider to take CS434 first.</u>
-                </p>
+            <!-- Homeworks -->
+            <div class="accordion" id="accordionExample">
+
+
+                <!-- HW1 -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" 
+                                type="button" 
+                                style="color: black;"
+                                data-toggle="collapse" 
+                                data-target="#homework1" 
+                                aria-expanded="true" 
+                                aria-controls="homework1">
+                                <h4>Homework #1: TBA</h4>
+                                <!-- <h4>Homework #1: Build Your Own Models</h4> -->
+                            </button>
+                        </h2>
+                    </div>
+              
+                    <div id="homework1" 
+                         class="collapse show" 
+                         aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <ul>
+                                <li>TBA</li>
+                                <!-- <li><b style="color: #D73F09;">[Deadline]</b> 1/10/2022 (Mon.) 23:59:59 PST</li> -->
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TBA -->
             </div>
 
             <hr noshade="" size="1">
-
-
-            <!-- Textbooks and references -->
-            <div class="container">
-                <h4>Textbooks</h4>
-                <p>
-                    <b>No required textbook.</b> Reading materials will be provided on the course website and/or distributed in class. If you lack the basic backgrounds in machine learning, the following textbooks may be helpful:
-                </p>
-
-                <ul>
-                    <li>Mathematics for Machine Learning, (Garrett Thomas, 2018) <a href="http://gwthomas.github.io/docs/math4ml.pdf" target="_blank">[Link]</a> </li>
-                    <li>Pattern Recognition and Machine Learning, (Christopher Bishop, 2006) <a href="https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book">[Link]</a></li>
-                    <li>Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville, 2016) <a href="http://www.deeplearningbook.org/" target="_blank">[Link]</a></li>
-                </ul>
-            </div>
-
-            <hr noshade="" size="1">
-            
-
-            <!-- Schedule -->
-            <div class="container">
-                <h4>Schedule</h4>
-                <table class="table">
-
-                    <!-- Header -->
-                    <thead><tr>
-                        <th scope="col" style="text-align:center">Date</th>
-                        <th scope="col" style="text-align:center">Topic</th>
-                        <th scope="col" style="text-align:center">Sub-topic</th>
-                        <th scope="col" style="text-align:center">Notes</th>
-                        <th scope="col" style="text-align:center">Readings</th>
-                    </tr></thead>
-
-                    <!-- Body of the course schedule -->
-                    <tbody>
-                    <tr>
-                        <th scope="row">Wed<br/>01/05</th>
-                        <td>Introduction [<a href="" target="_blank">PDF</a>]</td>
-                        <td>Overview and Motivation</td>
-                        <td></td>
-                        <td>
-                            <a href="https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf" target="_blank">The Security of Machine Learning</a><br/>
-                            <a href="https://ieeexplore.ieee.org/document/8406613" target="_blank">SoK: Security and Privacy in Machine Learning</a><br/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">Mon<br/>01/07</th>
-                        <td>Introduction [<a href="" target="_blank">PDF</a>]</td>
-                        <td>Overview and Motivation</td>
-                        <td></td>
-                        <td>
-                            <a href="https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf" target="_blank">The Security of Machine Learning</a><br/>
-                            <a href="https://ieeexplore.ieee.org/document/8406613" target="_blank">SoK: Security and Privacy in Machine Learning</a><br/>
-                        </td>
-                    </tr>
-
-                </table>
-            </div>
 
 
             <!-- Footer -->
-            <hr noshade="" size="1">
             <footer class="footer">
                 <div class="container text-center">
                   <span class="text-muted">© Sanghyun Hong: 2022-Present.</span>
