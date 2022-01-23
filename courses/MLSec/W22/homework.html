@@ -72,27 +72,27 @@
 
             
             <!-- Homeworks -->
-            <div class="accordion" id="accordionExample">
+            <div class="accordion" id="homeworkExample">
 
 
                 <!-- HW1 -->
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <button class="btn btn-link" 
+                        <button class="btn btn-link collapsed" 
                             type="button" 
                             style="color: black;"
                             data-toggle="collapse" 
                             data-target="#homework1" 
-                            aria-expanded="true" 
+                            aria-expanded="false" 
                             aria-controls="homework1">
                             <h4>Homework 1: Build Your Own Models</h4>
                         </button>
                     </div>
               
                     <div id="homework1" 
-                         class="collapse show" 
+                         class="collapse" 
                          aria-labelledby="headingOne"
-                         data-parent="#accordionExample">
+                         data-parent="#homeworkExample">
                         <div class="card-body">
 
                             <!-- :: Deadlines -->
@@ -191,6 +191,210 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!-- HW2 -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <button class="btn btn-link" 
+                            type="button" 
+                            style="color: black;"
+                            data-toggle="collapse" 
+                            data-target="#homework2" 
+                            aria-expanded="true" 
+                            aria-controls="homework2">
+                            <h4>Homework 2: Adversarial Attacks on Your Models</h4>
+                        </button>
+                    </div>
+              
+                    <div id="homework2" 
+                         class="collapse show" 
+                         aria-labelledby="headingTwo"
+                         data-parent="#homeworkExample">
+                        <div class="card-body">
+
+                            <!-- :: Deadlines -->
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">[Hand-out]</b> 1.24.2022 (Mon.) 12:00 pm PST</li>
+                                <li><b style="color: #D73F09;">[Deadline]</b> 2.07.2022 (Mon.) 11:59 am PST</li>
+                            </ul>
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>                                
+                                The learning objective of this homework is for you to attack your models built in Homework 1 with white-box adversarial examples. You will also use adversarial training to build your robust models. We then analyze the impact of several factors—that you can control as an attacker or a defender—on the success rate of attack (or defense). You can start this homework from the codebase you wrote for Homework 1.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                <h6>Datasets and DNN Models</h6>
+
+                                We will keep using the two datasets: MNIST [<a href="https://pytorch.org/vision/stable/datasets.html#mnist" target="_blank">link</a>] and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. But, we only focus on two DNN models: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>].<br/><br/>
+                                
+                                <h6>Recommended Code Structure</h6>
+
+                                You will write two scripts <code>adv_attack.py</code> and <code>adv_train.py</code>. The rest are the same as Homework 1.<br/>
+
+                                <code>
+                                    Root<br/>
+                                    - [New] adv_attack.py: a Python script to run adversarial attacks on a pre-trained model.<br/>
+                                    - [New] adv_train.py: a Python script for adversarial-training a model.<br/>
+                                    ...<br/><br/>
+                                </code>
+
+                                <h6 style="color: #D73F09">Note</h6>
+                                You may find off-the-shelf libraries, <i>e.g.</i>, adversarial-robustness-toolbox [<a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox" target="_blank">link</a>], where you can plug-n-play attacks on your models. I do <b>NOT</b> recommend using any of those libraries for this homework. However, it is allowed to refer to the community implementations of attacks and defenses and re-write them in your hands. Remember: the important learning objective is to understand the attack internals and implement them. 
+                            </p>
+
+
+                            <!-- :: Task 1 -->
+                            <h5 style="margin-top: 20px;">Task I: Attack Your Models</h5>
+                            
+                            Let's start with attacking your DNN models trained in Homework 1. We will attack your 2 DNNs: LeNet on MNIST and ResNet18 on CIFAR10. You need to use PGD [<a href="https://arxiv.org/abs/1706.06083" target="_blank">Madry et al.</a>] as an adversarial example-crafting algorithm. Your job is to craft the PGD adversarial examples for all the test-time samples (<i>i.e.</i>, 10k test-set samples for both MNIST and CIFAR10). To measure the effectiveness of your attacks, we will compute the <i>classification accuracy</i> on these adversarial examples. Make sure you attack the same DNNs that you used for crafting adversarial examples.<br/><br/>
+                                
+                            Here, you need to implement the following function in <code>adv_attack.py</code>.<br/>
+
+                            <code>
+                                def PGD(x, y, model, loss, niter, epsilon, stepsize, randinit, ...)<br/>
+                                - x: a clean sample<br/>
+                                - y: the label of x<br/>
+                                - model: a pre-trained DNN you're attacking<br/>
+                                - loss: a loss you will use<br/>
+                                - [PGD params.] niter: # of iterations<br/>
+                                - [PGD params.] epsilon: l-inf epsilon bound<br/>
+                                - [PGD params.] stepsize: the step-size for PGD<br/>
+                                - [PGD params.] randinit: start from a random perturbation if set true<br/>
+                                // You can add more arguments if required<br/><br/>
+                            </code>
+
+                            This PGD function crafts the adversarial example for a sample (x, y) [or a batch of samples]. It takes (x, y), a pre-trained DNN, and attack parameters; and returns the adversarial example(s) (x', y). Note that you can add more arguments to this function if required. Please use the following attack hyper-parameters as a default:<br/>
+                            <ul>
+                                <li>niter: 5</li>
+                                <li>epsilon: 0.3 (MNIST) and 0.03 (CIFAR10)</li>
+                                <li>stepsize: 2/255.</li>
+                                <li>randinit: true</li>
+                            </ul>
+
+                            To measure the effectiveness of the adversarial examples, we will write an evaluation script in <code>if __name__ == "__main__":</code> in the same file. Here, for all the 10k adversarial examples crafted, you will compute the classification accuracy on the DNN model you used. Note that you will observe much less accuracy than what you can observe on the <i>clean</i> test-time samples.<br/>
+
+
+                            <!-- :: Task 2 -->
+                            <h5 style="margin-top: 20px;">Task II: Analyze the Impact of Several Factors on Your Attack's Success Rate</h5>
+
+                            Now, let's turn our attention to several factors that can increase/decrease the effectiveness of your white-box attacks. In particular, we will vary: (1) the attack hyper-parameters (<i>e.g.</i>, the number of iterations) and (2) the way we trained our DNN models (see Task II of Homework 1).<br/><br/>
+
+
+                            <h6>Subtask II-1: Analyze the Impact of Attack Hyper-parameters</h6>
+
+                            We will focus on two attack hyper-parameters: niter and epsilon. Use the 2 DNNs in Task I (LeNet on MNIST and ResNet18 on CIFAR10).<br/><br/>
+                            <ul>
+                                <li>
+                                    (1) Set the number of iterations in {1, 2, 3, 4, 5, 10, 20, 30, 40, 80, 100}.
+                                </li>
+                                <li>
+                                    (2) Fix the iterations to 5, and set the epsilon to {0.01 0.02 0.03 0.04 0.05 0.1 0.2 0.3 0.4 0.5 1.0}.
+                                </li>
+                            </ul>
+                            
+                            Please use those different hyper-parameters and compute the classification accuracy of 2 DNN models on your adversarial examples. Draw plots: { # iterations } vs. { classification accuracy } and { epsilon } vs. { classification accuracy } and explain your intuitions on why you observe them.<br/><br/>
+
+
+                            <h6>Subtask II-2: Analyze the Impact of the Training Techniques You Use</h6>
+
+                            One may think we can use some <i>nice</i> training techniques for reducing the effectiveness of white-box adversarial attacks. We plan to run some experiments to evaluate this claim. In particular, we're interested in the following three techniques: data augmentations and regularizations.<br/><br/>
+
+                            <ul>
+                                <li>
+                                    (1) <b>Data augmentations:</b> In Task II of Homework 1, we examine two simple augmentations: rotation and horizontal flips. We also have DNNs trained with/without those augmentations. On the 2 DNNs (LeNet on MNIST and ResNet18 on CIFAR10) trained with/without each data augmentation, craft adversarial examples on the test-set samples and measure the classification accuracy on them.<br/><br/>
+                                </li>
+                                <li>
+                                    (2) <b>Regularizations:</b> We also examine two techniques: Dropout [<a href="https://jmlr.org/papers/v15/srivastava14a.html" target="_blank">link</a>] and weight decay. Let's focus only on ResNet18 in CIFAR10.
+                                    <ul>
+                                        <li>1) To examine the impact of Dropout, we need to modify the ResNet18's network architecture. Add the Dropout layer before its penultimate layer and set the rate to 0.5. Train this modified ResNet18 (henceforth called ResNet18-Dropout). Craft adversarial examples on this model, measure the classification accuracy, and compare the accuracy to what we have with ResNet18 (w/o Dropout).</li>
+
+                                        <li>2) To examine the impact of weight decay, we will train ResNet18 with Adam optimizer [<a href="https://pytorch.org/docs/stable/generated/torch.optim.Adam.html" target="_blank">link</a>] on CIFAR10. You will train 5 ResNet18 models trained with different weight decay values: {1e-5, 1e-4, 1e-3, 1e-2, 1e-1}. Please don't be surprised when you see bad accuracy with higher weight decay. Craft adversarial examples on those five DNN models and measure the accuracy on both the clean samples and adversarial examples. Compare <i>how much accuracy you can decrease on each model.</i></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            You may (or may not) find that each technique increases/decreases the accuracy degradation caused by adversarial examples. Please write down the accuracy degradations and explain your intuitions on why you observe them in your report.
+
+
+                            <!-- :: Task 3 -->
+                            <h5 style="margin-top: 20px;">Task III: Defend Your Models with Adversarial Training</h5>
+
+                            One way to mitigate adversarial attacks is to train your models with adversarial training (AT). Here, we will examine the effectiveness of AT.<br/><br/>
+
+                            Let's implement a script for AT. Make a copy of your <code>train.py</code> and name it <code>adv_train.py</code>. We will convert the normal training process into <i>adversarial</i> training. In <code>train.py</code>, we train a model on a batch of clean training samples (in each batch). Instead, you need to make adversarial examples on the batch of clean samples and train your models on them. Note that this is slightly different from <a href="https://arxiv.org/abs/1412.6572" target="_blank">the work by Goodfellow et al.</a>.<br/><br/>
+
+                            Please train 2 DNN models (LeNet and ResNet18) <i>adversarially</i> on MNIST and CIFAR10, respectively. Once you train those robust models, you require to craft adversarial examples and compute the accuracy. Note that we use the same attack hyperparameters as in Task I. Compare:<br/><br/>
+
+                            <ul>
+                                <li><b>(1)</b> How's your robust models' accuracy on adversarial examples compared to your undefended models?</li>
+                                <li><b>(2)</b> How's your robust models' accuracy on clean test-set examples compared to your undefended models?</li>
+                                <li><b>(3)</b> Let's increase the PGD attack iterations from 5 to 7. How's your robust models' accuracy changes?</li>
+                            </ul>
+
+                            Please explain your intuitions on why you observe them in your report.
+
+
+                            <!-- :: Extra points -->
+                            <h5 style="margin-top: 20px;"><span style="color: #D73F09">[Extra +3 pts]</span>: Use Your Adversarial Examples to Attack Real-world DNNs</h5>
+
+                            You may be curious how much the adversarial examples that you crafted will be effective against the DNNs deployed in the real-world. Here are some real-world image classification demos [<a href="https://github.com/hwalsuklee/awesome-deep-vision-web-demo" target="_blank">a list of demos</a>]. Please store 10 adversarial examples for each MNIST and CIFAR10 attack (Task I) to <code>.png</code> files. Upload them on one of the image classification demos and see how the predicted labels are different compared to your DNNs.<br/><br/>
+
+                            Please show your adversarial examples, the classification of them on your DNNs, and the predicted labels on the demo you chose in your report.
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your code and a write-up as a PDF file. Put your write-up under the <code>reports</code> folder. Your PDF write-up should contain the following things:
+
+                            <ul>
+                                <li>Task I</li>
+                                <ul>
+                                    <li>The classification accuracy of clean test-set samples on 2 DNNs (LeNet and ResNet18).</li>
+                                    <li>The classification accuracy of your adversarial examples on 2 DNNs.</li>
+                                    <li>Your analysis: write-down 2-3 sentences explaining why you see those results.</li>
+                                </ul>
+
+                                <li>Task II</li>
+                                <ul>
+                                    <li>Subtask II-I</li>
+                                    <ul>
+                                        <li>Your 4 plots: { # iterations } vs. { classification accuacy } and { epsion } vs. { classification accuracy } on each of your 2 DNNs.</li>
+                                        <li>Your analysis: Provide 2-3 sentences for each case explaining why you observe the result.</li>
+                                    </ul>
+                                    <li>Subtask II-II</li>
+                                    <ul>
+                                        <li>Your analysis: Provide 2-3 sentences for each case explaining why you observe the result.</li>
+                                    </ul>
+                                </ul>
+
+
+                                <li>Task III</li>
+                                <ul>
+                                    <li>The classification accuracy of clean test-set samples on your robust DNNs.</li>
+                                    <li>The classification accuracy of your adversarial examples on your robust DNNs.</li>
+                                    <li>Your analysis: write-down 2-3 sentences for the three questions above.</li>
+                                </ul>
+
+                                <li><span style="color: #D73F09">[Extra +3 pts]</span></li>
+                                <ul>
+                                    <li>Your adversarial examples shown as images.</li>
+                                    <li>Their classification results on your DNN models.</li>
+                                    <li>Their classification results on the real-world DNNs.</li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HW3 -->
 
             </div>
 
