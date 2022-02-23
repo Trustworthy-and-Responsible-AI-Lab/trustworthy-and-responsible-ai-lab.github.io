@@ -505,7 +505,7 @@
                                     Construct <b>6 contaminated training sets</b> for each target by injecting {1, 5, 10, 25, 50, 100} poisons into the original training data.
                                 </li>
                                 <li>
-                                    Finetune only the last layer of your ResNet50 for 10 epochs on each contaminated training set. Check if your finetuned model misclassifies each target (frog) as a dog. If the model misclassifies the target as a dog, your attack is successful. Otherwise, it's an attack failure.
+                                    Finetune only the last layer of your ResNet18 for 10 epochs on each contaminated training set. Check if your finetuned model misclassifies each target (frog) as a dog. If the model misclassifies the target as a dog, your attack is successful. Otherwise, it's an attack failure.
                                 </li>
                             </ol>
 
@@ -575,7 +575,7 @@
                                     Let's sanitize the training set by removing outliers. Please remove 2-3 amounts (100, 200, or 300) and compose sanitized training sets.
                                 </li>
                                 <li>
-                                    Finetune your <i>original</i> ResNet50 on each sanitized training set and check whether the poisoning attack is successful.
+                                    Finetune your <i>original</i> ResNet18 on each sanitized training set and check whether the poisoning attack is successful.
                                 </li>
                             </ol><br/>
 
