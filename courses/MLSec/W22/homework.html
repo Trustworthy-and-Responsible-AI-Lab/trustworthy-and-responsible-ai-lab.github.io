@@ -434,7 +434,7 @@
                             <p>
                                 <h6>Datasets</h6>
 
-                                We will use two datasets: MNIST-1/7 and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. You can construct the MNIST-1/7 dataset from MNIST. Please search for some examples on Google about how to subsample classes from a dataset [Here is an <a href="https://stackoverflow.com/questions/63975130/how-to-get-only-specific-classes-from-pytorchs-fashionmnist-dataset" target="_blank">example</a> in PyTorch].<br/><br/>
+                                We will use two datasets: MNIST-1/7 and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. MNIST-1/7 is a subset of MNIST that only contains samples from the class 1 and 7; the dataset is popular for a binary classification task. We can set the label for the class 1 to 0 and the class 7 to 1. Then, MNIST-1/7 becomes a binary classification problem with labels {0, 1}. Popular deep learning frameworks, such as PyTorch, support some sampling functionalities. Please search for some examples on Google about how to subsample classes from a dataset [Here is an <a href="https://stackoverflow.com/questions/63975130/how-to-get-only-specific-classes-from-pytorchs-fashionmnist-dataset" target="_blank">example</a> in PyTorch].<br/><br/>
 
 
                                 <h6>Models</h6>
@@ -461,7 +461,7 @@
 
                             Let's start with poisoning attacks against logistic regression models in MNIST-1/7. Here, we will conduct an <i>indiscriminate poisoning attack</i>. Your job is to construct contaminated training sets that can degrade the accuracy of a model once the model is trained on it.<br/><br/>
 
-                            We will use a simple poisoning scheme called <i>random label-flipping</i>. It constructs a contaminated training set by randomly flipping the labels of <code>X%</code> samples in the original training set. For example, you can select 10% of the MNIST-1/7 training samples (~1.7k) and flip their labels from 1 to 7 (or vice versa).<br/><br/>
+                            We will use a simple poisoning scheme called <i>random label-flipping</i>. It constructs a contaminated training set by randomly flipping the labels of <code>X%</code> samples in the original training set. For example, you can select 10% of the MNIST-1/7 training samples (~1.7k) and flip their labels from 0 to 1 (or vice versa).<br/><br/>
 
                             Your job is to construct four contaminated training sets where each set contains {5, 10, 25, 50}% of poisons. You will train five logistic regression models: four on each corrupted training set and one on the clean MNIST-1/7 dataset. Please measure how much accuracy degradation each attack causes compared to the accuracy of the model trained on the clean data.<br/><br/>
 
