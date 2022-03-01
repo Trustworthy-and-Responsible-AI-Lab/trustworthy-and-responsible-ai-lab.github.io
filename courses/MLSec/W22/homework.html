@@ -656,7 +656,7 @@
                             <p>
                                 <h6>Datasets and DNN Models</h6>
 
-                                We will use two datasets: FashionMNIST [<a href="https://pytorch.org/vision/main/generated/torchvision.datasets.FashionMNIST.html" target="_blank">link</a>], and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. We consider two DNN models: VGG16 [<a href="https://arxiv.org/abs/1409.1556" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. We will use VGG16 for FashionMNIST and ResNet18 for CIFAR-10 experiments. Please ensure that VGG16 achieves > 80% acc. and ResNet18 > 85% acc.<br/><br/>
+                                We will use two datasets: FashionMNIST [<a href="https://pytorch.org/vision/main/generated/torchvision.datasets.FashionMNIST.html" target="_blank">link</a>], and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. We consider two DNNs: VGG16 [<a href="https://arxiv.org/abs/1409.1556" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. We will use VGG16 for FashionMNIST and ResNet18 for CIFAR-10 experiments.<br/><br/>
 
                                 <h6>Recommended Code Structure</h6>
 
@@ -674,125 +674,42 @@
                             <!-- :: Task 1 -->
                             <h5 style="margin-top: 20px;">Task I: Membership Inference Attacks on Machine Learning Models</h5>
 
-                            Let's start with poisoning attacks against logistic regression models in MNIST-1/7. Here, we will conduct an <i>indiscriminate poisoning attack</i>. Your job is to construct contaminated training sets that can degrade the accuracy of a model once the model is trained on it.<br/><br/>
-
-                            We will use a simple poisoning scheme called <i>random label-flipping</i>. It constructs a contaminated training set by randomly flipping the labels of <code>X%</code> samples in the original training set. For example, you can select 10% of the MNIST-1/7 training samples (~1.7k) and flip their labels from 1 to 7 (or vice versa).<br/><br/>
-
-                            Your job is to construct four contaminated training sets where each set contains {5, 10, 25, 50}% of poisons. You will train five logistic regression models: four on each corrupted training set and one on the clean MNIST-1/7 dataset. Please measure how much accuracy degradation each attack causes compared to the accuracy of the model trained on the clean data.<br/><br/>
+                            Let's start with performing membership inference attacks on your DNN models. Here, we will conduct the attack formulated by Yeom <i>et al.</i> [<a href="https://arxiv.org/abs/1709.01604" target="_blank">link</a>]. Your job is to implement this attack and evaluate its effectiveness with VGG16 and ResNet18. Please write your attack code to <code>mi_attack.py</code>.<br/><br/>
 
 
-                            Here, you need to implement the following function in <code>poison_craft.py</code>.<br/><br/>
+                            <b>Build Models:</b> We will first train the victim models. Please train a network on each dataset for at least 80 epochs. We require to do two sub-tasks: (1) store the model at {10, 20, 30, 40, 50, 60, 70, 80} epochs and (2) draw a plot { # epochs } vs. { the train and test losses }. In the end, we have 16 models (8 in FashionMNIST and 8 in CIFAR-10) and two plots where each describes the training and testing losses.<br/><br/>
 
-                            <code>
-                                def craft_random_lflip(train_set, ratio):<br/>
-                                - train_set: an instance for the training dataset<br/>
-                                - ratio&nbsp;&nbsp;&nbsp;&nbsp;: the percentage of samples whose labels will be flipped<br/>
-                                // You can add more arguments if required<br/><br/>
-                            </code>
+                            <span style="color: #D73F09">[Note]</span> Please ensure that VGG16 achieves > 80% acc. and ResNet18 > 80% acc. at the final epoch.<br/><br/>
 
-                            This function constructs a training set that has <code>ratio%</code> of poisons. The <code>train_set</code> is an instance of the clean training set and the <code>ratio</code> is a number between 0 and 1. Note that this is an example of writing a function for crafting poisoned training sets. Please feel free to use your own function if that is more convenient.<br/><br/>
+                            <b>Prepare Datasets</b> for evaluating membership inference attacks. Your job is to construct a dataset to evaluate the attack's effectiveness. Typically, we compose a dataset with 10k samples, 5k chosen randomly from the training set (members) and the other 5k selected randomly from the testing set (non-members). You will compose this balanced dataset in FashionMNIST and CIFAR10, respectively.<br/><br/>
 
-                            You will also write the training script in <code>poison.py</code>. This script will be mostly the same as `train.py`, but the only difference is you load the contaminated training set instead of the clean training data. Once loaded, the rest will be the same.<br/><br/>
+
+                            <b>Perform Yeom <i>et al.</i> Attack:</b> We will do Yeom <i>et al.</i> membership inference attack on the 16 models we train.<br/><br/>
+                            
+                            The first step is to implement this attack. The attack uses a threshold (loss value) to identify whether a sample that the adversary queries is a member (or a non-member). If the victim model's loss on a sample is lower than the threshold, the sample is a member. Otherwise, it's a non-member. You can compute this loss threshold with the 5k members in your attack validation dataset.<br/><br/>
+
+                            Once we have a threshold, we will use it to classify whether each of the 10k samples is a member (or a non-member). We will then compute the membership advantage (M.adv) over the 10 samples. Your job is to run this process on all the 16 models we train.<br/><br/>
+
+                            The last step is to create two plots using the collected membership advantages; each plot corresponds to FashionMNIST or CIFAR-10 results, respectively. In each plot, you will show { # epochs } vs. { membership advantage }.<br/><br/>
 
 
                             <!-- :: Task 2 -->
                             <h5 style="margin-top: 20px;">Task II: Differential Privacy as a Defense against Membership Inference</h5>
 
-                            Now, let's turn our attention to attacking neural networks. As I explain in the lecture, deep neural networks are less susceptible to indiscriminate poisoning attacks, <i>i.e.</i>, it's hard to degrade their accuracy unless we inject many poisons. We therefore focus on <i>targeted poisoning attacks</i>.<br/><br/>
-
-                            Your job here is to conduct Poison Frogs! [<a href="https://arxiv.org/abs/1804.00792" target="_blank">Link</a>] attack on ResNet18 trained on CIFAR-10. You can refer to the author's code [<a href="https://github.com/ashafahi/inceptionv3-transferLearn-poison" target="_blank">TensorFlow</a>] or the community implementations [<a href="https://github.com/FlouriteJ/PoisonFrogs" target="_blank">PyTorch</a>]. Be careful if you use those community code; there is a chance that they implement the attack incorrectly.<br/><br/>
-
-                            <h6>Instructions</h6>
-
-                            We conduct this attack between two classes in CIFAR-10: frogs and dogs. Particularly, we aim to make a frog sample classified into a dog. We will use the ResNet18 trained in Homework 1. Please follow the instructions below to inflict this misclassification.<br/><br/>
-
-                            <ol>
-                                <li>
-                                    Choose 5 frog images (<b>targets</b>) from the CIFAR-10's test-set.
-                                </li>
-                                <li>
-                                    Choose 100 dog images (<b>base images</b>) from the CIFAR-10's test-set. (You will use them to craft poisons).
-                                </li>
-                                <li>
-                                    Use the 100 base images to craft <b>100 poisons</b> for each targets. Please use your ResNet18 to extract features. <span style="color: #D73F09">(see the details below)</span>.
-                                </li>
-                                <li>
-                                    Construct <b>6 contaminated training sets</b> for each target by injecting {1, 5, 10, 25, 50, 100} poisons into the original training data.
-                                </li>
-                                <li>
-                                    Finetune only the last layer of your ResNet18 for 10 epochs on each contaminated training set. Check if your finetuned model misclassifies each target (frog) as a dog. If the model misclassifies the target as a dog, your attack is successful. Otherwise, it's an attack failure.
-                                </li>
-                            </ol>
-
-                            In total, you will have 30 contaminated training sets (= 6 different sets x 5 targets).<br/><br/>
+                            Let's turn our attention to defenses. We will focus on the de-facto standard, <i>differentially-private stochastic gradient descent (DP-SGD)</i>, to defend against the Yeom <i>et al.</i> attacks [<a href="https://arxiv.org/abs/1607.00133" target="_blank">link</a>]. Your job is to train models with DP-SGD and compare the attack success with the above results (no DP-SGD).<br/><br/>
 
 
-                            <h6>Implementation</h6>
+                            <b>Train Models with DP-SGD:</b> Thanks to the community's effort, we don't need to implement this mechanism from scratch. You can use the off-the-shelf libraries, such as Opacus [<a href="https://opacus.ai/" target="_blank">link</a>] in PyTorch or TF-Privacy [<a href="https://github.com/tensorflow/privacy" target="_blank">link</a>] in TensorFlow. You can incorporate DP-SGD into your current training script.<br/><br/>
 
-                            Here, you need to implement the following function in <code>poison_craft.py</code>.<br/><br/>
+                            Please copy your <code>train.py</code> to <code>dp_train.py</code> and modify the <code>dp_train.py</code> accordingly. Those examples [<a href="https://opacus.ai/tutorials/building_image_classifier" target="_blank">example1</a>, <a href="https://github.com/tensorflow/privacy/blob/master/tutorials/mnist_dpsgd_tutorial.py" target="_blank">example2</a>] are helpful.<br/><br/>
 
-                            <code>
-                                def craft_clabel_poisons(model, target, bases, niter, lr, beta, ...):<br/>
-                                - model&nbsp;: a pre-trained ResNet18<br/>
-                                - target: a target sample (a frog)<br/>
-                                - bases&nbsp;: a set of base samples (dogs)<br/>
-                                - niter&nbsp;: number of optimization iterations<br/>
-                                - lr&nbsp;&nbsp;&nbsp;&nbsp;: learning rate for your optimization<br/>
-                                - beta&nbsp;&nbsp;: hyper-parameter (refer to the paper)<br/>
-                                // You can add more arguments if required<br/><br/>
-                            </code>
+                            Once the script is written and running, we will then train our models with different privacy guarantees. Note that in DP-SGD, we control the hyper-parameter (epsilon) to bound a model's privacy leakage. We train 5 different models with epsilons in {1, 2, 4, 8, 10}. In total, we will have 10 models, 5 for FashionMNIST and 5 for CIFAR-10. Please train each model for at least 80 epochs and save the model with the best test acc.<br/><br/>
 
-                            This function crafts clean-label poisons. It takes a <code>model</code> (ResNet18) to extract features for a single target and 100 base samples. It also takes optimization hyper-parameters such as <code>niter</code>, <code>lr</code>, <code>beta</code>, etc. Once the function sufficiently optimizes your poisons, it will return 100 poisons crafted from the bases. Please refer to the author's code, the community implementations, and the original study for reference.<br/><br/>
+                            <span style="color: #D73F09">[Note]</span> Set all the training hyper-parameters to the same as those we use in Task I, except the learning rate. I recommend doubling the learning rate.<br/><br/>
 
-                            You will also modify the training script in <code>poison.py</code>. This script will be mostly the same as <code>train.py</code>, but the only difference is you load the contaminated training set instead of the clean training data. Once loaded, the rest will be almost the same.<br/><br/>
+                            <b>Run Yeom <i>et al.</i> on Models Trained with DP-SGD:</b> We now run the attack formulated by Yeom <i>et al.</i> on the 10 models trained with DP-SGD. Compute the membership advantages.<br/><br/>
 
-
-                            <!-- :: Extra points -->
-                            <h5 style="margin-top: 20px;"><span style="color: #D73F09">[Extra +3 pts]</span>: Defeat Data Poisoning Attacks</h5>
-
-                            In the lecture, we learned two simple defense mechanisms against data poisoning attacks: (1) RONI [<a href="https://people.eecs.berkeley.edu/~tygar/papers/SML/Spam_filter.pdf" target="_blank">Paper</a>] and (2) Data sanitization [<a href="https://arxiv.org/abs/1706.03691" target="_blank">Link</a>]. Here, we implement those defenses and use them against the two data poisoning attacks (random label-flipping and clean-label poisoning). <br/></br>
-
-
-                            <h6>Subtask I: RONI against Random Label-flipping</h6>
-
-                            Let's start with RONI. You will choose the MNIST-1/7 training set containing 20% poisons (<i>i.e.</i> 20% samples have flipped labels).<br/><br/>
-
-                            <ol>
-                                <li>
-                                    First, sub-sample 20% of <code>any</code> samples from the MNIST-1/7 training set. You will use this (<b>D_v</b>) to remove poisons from the training data.
-                                </li>
-                                <li>
-                                    Next, let's split the contaminated training set. You can divide the contaminated training data (<b>D_tr</b>) into multiple sets (<b>D_tr_i</b>, where <b>i</b> in [1, 170]) where each set contains 100 training samples (c.f. this process will create approximately ~170 different sets).
-                                </li>
-                                <li>
-                                    You first train a logistic regression on <b>D_tr_1</b>; compute the model's accuracy on <b>D_tr_1</b> and save it.
-                                </li>
-                                <li>
-                                    Iteratively (from <b>i</b>=1, ..., 170), train your model on <b>D_tr_1 + ... + D_tr_i</b>. At each time, compare the i-th model's accuracy with the (i-1)-th model's. If the accuracy is reduced more than <code>X%</code> (a hyper-parameter of your choice), remove <b>D_tr_i</b> from the training set and continue.
-                                </li>
-                                <li>
-                                    Use at least two <code>X%</code> values and check how many poisons you removed in each case. You also need to check how the accuracy of your model is after removing suspicious samples (<i>i.e.</i>, you will examine the effectiveness of RONI defense).
-                                </li>
-                            </ol>
-
-                            <h6>Subtask II: Data Sanitization against Clean-label Poisoning</h6>
-
-                            Let's move on and defeat clean-label poisoning (Poison Frogs!). Please choose <code>any</code> successful attack (<i>i.e.</i>, choose a target and 100 poisons).<br/><br/>
-
-                            <ol>
-                                <li>
-                                    We will use ResNet18 fine-tuned on the contaminated training set. Let's first compute features for all the training samples with the model.
-                                </li>
-                                <li>
-                                    Using the features (for 50k original training samples + 100 posions you add), we will detect suspicious samples and remove them from the training set. Please remove the outlier samples by running this UMAP example [<a href="https://umap-learn.readthedocs.io/en/latest/outliers.html" target="_blank">link</a>] on the collected features.
-                                </li>
-                                <li>
-                                    Let's sanitize the training set by removing outliers. Please remove 2-3 amounts (100, 200, or 300) and compose sanitized training sets.
-                                </li>
-                                <li>
-                                    Finetune your <i>original</i> ResNet18 on each sanitized training set and check whether the poisoning attack is successful.
-                                </li>
-                            </ol><br/>
+                            The last step is to create two plots using the collected membership advantages; each plot corresponds to FashionMNIST or CIFAR-10, respectively. In each plot, you will show { epsilon } vs. { membership advantage } and { epsilon } vs. { model's accuracy }.<br/><br/>
 
 
                             <!-- :: Submit -->
@@ -803,28 +720,14 @@
                             <ul>
                                 <li>Task I</li>
                                 <ul>
-                                    <li>Your plot: { the ratio of poisons in the training set } vs. { classification accuracy } on the test-set</li>
+                                    <li>Your two plots: { # epochs } vs. { train loss, test loss, and membership advantage } for FashionMNIST and CIFAR-10.</li>
                                     <li>Your analysis: write-down 2-3 sentences explaining why you see those results.</li>
                                 </ul>
 
                                 <li>Task II</li>
                                 <ul>
-                                    <li>Your table: 2 rows (the upper one is for the number of poisons and the lower one is the number of successful attacks over 5 targets)</li>
+                                    <li>Your two plots: { epsilon } vs. { test acc. and  membership advantage } for FashionMNIST and CIFAR-10.</li>
                                     <li>Your analysis: write-down 2-3 sentences explaining why you see those results.</li>
-                                </ul>
-
-                                <li><span style="color: #D73F09">[Extra +3 pts]</span></li>
-                                <ul>
-                                    <li>Sub-task I</li>
-                                    <ul>
-                                        <li>Your plot: { # iterations } vs. { the accuracy of your model } on the test-set.</li>
-                                        <li>Your analysis: write-down 2-3 sentences explaining why you see those results.</li>
-                                    </ul>
-
-                                    <li>Sub-task II</li>
-                                    <ul>
-                                        <li>Your analysis: write-down 2-3 sentences explaining whether you successfully mitigate clean-label poisoning or not. (If possible) analyze whether you can defeat more successfully when removing more suspicious samples.</li>
-                                    </ul>
                                 </ul>
                             </ul>
 
