@@ -7,13 +7,13 @@
 
         <!-- Title -->
         <title>
-            CS370 :: SP23 :: Introduction to Security
+            CS370 :: Sp23 :: Introduction to Security
         </title>
 
         <!-- SEO -->
         <meta name="author" content="Sanghyun Hong">
-        <meta name="description" content="Operating Systems Oregon State University">
-        <meta name="keywords" content="sanghyun hong albert introduction to security oregon state university">
+        <meta name="description" content="Introduction to Security Oregon State University">
+        <meta name="keywords" content="sanghyun hong albert Introduction to Security oregon state university">
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
@@ -53,6 +53,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="labs.html"><h5>Labs</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html"><h5>References</h5></a>
+                </li>
             </ul>
             <hr noshade="" size="1">
 
@@ -60,54 +66,39 @@
             <div class="container">
                 <h4>Overview</h4>
                 <p>
-                    <i>“What happens after you launch a program?”</i><br/>
-                    <i>“How does your program interact with hardware (or systems) to do its job?”</i><br/>
-                    <i>“How can you run your multiple programs with limited hardware resources?”</i><br/><br/>
-
-                    You might ask these questions <b>at least once so far</b>, after the moment you compile and run your first program successfully.<br/><br/>
-
-                    You will be able to find answers to those questions in this class. This class will introduce the basics of modern operating systems (OS). OS, located between hardware and your programs, orchestrates hardware and software resources in a system to ensure your program runs seamlessly. The class will cover the functionalities that made it possible.<br/><br/>
-    
-                    The course divides into four major sections. The <b>first</b> part of this course discusses processes: how OS runs (multiple) programs at the same time. Topics in this section include: processes, threads, context switching, and scheduling basics. The <b>second</b> part of the class concerns about how to represent data. It will cover topics such as file and file system basics. The <b>third</b> part of the class addresses the problem of communication between processes. It will first discuss inter-process and remote-process communications; then, we will discuss computer networks and OS features enabling networking. The <b>last</b> part of the course is about synchronization; it will cover topics such as signal, semaphore, monitor, and deadlock. After these four major topics, the class will conclude with a few emerging topics, such as memory-safe OSes written in Rust.<br/><br/>
+                    TBA
                 </p>
             </div>
             
             <hr noshade="" size="1">
 
 
-            <!-- announcements -->
+            <!-- Latest announcements -->
             <div class="container" style="background-color: #FAE0D6; border: 0.5px solid #D73F09;">
-                <h4 style="margin-top: 10px;">Announcements</h4>
+                <h4 style="margin-top: 10px;">Latest Announcements 
+                    <span style="font-size: large;">[<a href="announce.html">Full List</a>]</span></h4>
                 <ul>
-                    <li><b style="color: #D73F09">[Active]</b> <b>01/09/23:</b> This website only outlines the overview; Please make sure to use Canvas for all the course details.</li>
-                    <li><b style="color: #D73F09">[Active]</b> <b>01/09/23:</b> Welcome to CS370: Intro. to Security!</li>
+                    <li><b style="color: #D73F09">[Active]</b> <b>04/03/23:</b> Welcome to CS 370 Introduction to Security</li>
                 </ul>
             </div>
 
             <hr noshade="" size="1">
 
 
-            <!-- Course info -->
+            <!-- Course info & instructor -->
             <div class="container">
-
-                <!-- Basics -->
                 <div class="row">
+
                     <div class="col-6">
                         <h4>Course Information</h4>
                         <ul>
-                            <li><b>Lecture: </b>TR 4:00 - 5:50 pm</li>
-                            <li><b>Credits: </b>4</li>
-                            <li><b>Location: </b>
-                                <a href="https://map.oregonstate.edu/?building=LINC" target="_blank">
-                                    WNGR 149 - Weniger Hall 149
-                                </a></li>
-                            <li><b>All Others: </b>Canvas and Discord Server<br/></li>
+                            <li><b>Lecture:</b> TR 4 - 5:50 pm</li>
+                            <li><b>Credits:</b> 4</li>
+                            <li><b>Location:</b> <a href="https://map.oregonstate.edu/?building=Wngr">WNGR 149 - Weniger Hall 149 (GP)</a></li>
+                            <li><b>Discussion board: </b>Canvas (TBA), Discord</li>
                         </ul>
                     </div>
-                </div>
 
-                <!-- Instructor and TAs -->
-                <div class="row">
                     <div class="col-6">
                         <h4>Instructor</h4>
                         <ul>
@@ -121,31 +112,49 @@
                                 <a href="https://map.oregonstate.edu/?building=KEC" target="_blank">
                                     4103 KEC - Kelley Engineering Center
                                 </a></li>
-                            <li><b>Office hours: </b>TBD (on Zoom)</li>
+                            <li><b>Office hours:</b> TBA</li>
                             </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6">
-                        <h4>Teaching Assistants (TAs)</h4>
-                        <ul>
-                            <li><b>TA 1: </b>
-                                Radhika Gupte | gupter [at] oregonstate [dot] edu
-                            </li>
-                            <li><b>TA 2: </b>
-                                Eunjin Roh | rohe [at] oregonstate [dot] edu
-                            </li>
-                            <li><b>Office hours: </b>Please refer to Canvas</li>
                         </ul>
                     </div>
 
                 </div>
             </div>
 
+            <hr noshade="" size="1">
+
+
+            <!-- Course policy -->
+            <div class="container">
+                <h4>Course Policy</h4>
+                <p>
+                    The University's <a href="https://catalog.oregonstate.edu/syllabi/commontext/cheating/" target="_blank"><u>Code of Academic Integrity</u></a> applies, modified as follows:
+                    <br/>
+    
+                    <h6>[Dont's]</h6>
+                    <ul>
+                        <li>Do <b>NOT</b> share your code or write-up with others.</li>
+                        <li>Do <b>NOT</b> copy and paste someone else's code or write-up in yours.</li>
+                        <li>Do <b>NOT</b> ask for the solutions on the Internet<br/>
+                            (<i>e.g.</i>, do not post your homework to StackOverflow). </li>
+                    </ul>
+    
+                    <h6>[Do's]</h6>
+                    <ul>
+                        <li><b>Brainstorm</b> your ideas with other students.</li>
+                        <li><b>Discuss</b> and explain your solutions with other students.</li>
+                        <li><b>Discuss</b> the problems and concepts for the team project.</li>
+                        <li><b>Collaborate</b> with your team-members to run experiments for the team project.</li>
+                    </ul>
+    
+                    <b>Must:</b> Please write down the students' names if you received any help from them. It won't affect the scores for your homework or projects. But, you will learn from this practice how to credit others for their services. It is an essential skill when you collaborate with others in the future.
+                </p>
+            </div>
+
+
             <!-- Footer -->
             <hr noshade="" size="1">
-            <footer class="footer" style="margin-bottom: 24px;">
-                <div class="container text-center">
+            <footer class="footer">
+                <div class="container text-center" style="margin-bottom: 20px">
                   <span class="text-muted">© Sanghyun Hong: 2022-Present.</span>
                 </div>
             </footer>
