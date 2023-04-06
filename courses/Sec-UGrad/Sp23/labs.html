@@ -92,24 +92,37 @@
                 &nbsp;
 
 
-                <h5>Action Item #3: Connect to the Course Server</h5>
+                <h5>Action Item #3: Connect to the "Solve" Server</h5>
                 <p>
-                    <span style="color: #D73F09"><b>Note:</b> we are currently setting up this; you can't access to cs370.eecs.oregonstate.edu; we will setup this soon. Thanks for your patience.</span>
+                    The "Solve" server is where you will solve the challenges to get flags. Please follow the instructions below to login. <b>Note: I created accounts based on the enrollment on the second day of this term. Contact me asap if you cannot log in with the default password.</b>
                 </p>
-                <!-- <pre><code>
-# login to flip first
+                <pre><code>
+# ssh to the "solve" server
+[your machine] $ ssh (your-ONID)@solve.secure-ai.systems
+# the default password can be found on Canvas announcement!
 
-# login to the course server. Replace the YOUR_ONID part to your ONID username
-[flip] $ ssh YOUR_ONID@cs370.eecs.oregonstate.edu
-e.g., ssh <your-onid>@cs370.eecs.oregonstate.edu
+# once you login, you can find the flag for the second challenge in Week 0
+# ...
+# Welcome to Introduction to Security Micro-labs
+# - Flag: (your flag will be here)
+# ...
 
-# In case if you placed your id_ed25519 to YOUR_KEY_LOCATION, then
-[flip] $ ssh -i YOUR_KEY_LOCATION/id_ed25519 YOUR_ONID@cs370.eecs.oregonstate.edu
+# setup ssh-key login
+# create a ssh-key pair at your machine (laptop, pc, etc...)
+[your machine] $ ssh-keygen -t ed25519 -C "(your-ONID)@oregonstate.edu"
+# set the store location to (your-home-dir)/.ssh/(your-keyname)
 
-# let's start login challenge
-[CTF_server] $ cd /home/labs/login-flag
-[CTF_server] $ cat flag
-                </code></pre> -->
+# add your public key to the "solve" server
+[your machine] $ cat ~/.ssh/(your-keyname).pub
+[solve server] $ vim ~/.ssh/authorized_keys
+[solve server] Copy and paste the output of "cat ~/.ssh/(your-keyname).pub" to "~/.ssh/authorized_keys"
+[solve server] Save the "~/.ssh/authorized_keys"
+
+# logout from the "solve" server and use the ssh-key based login
+[solve server] $ exit
+[your machine] $ ssh -i (your-home-dir)/.ssh/(your-keyname) (your-ONID)@solve.secure-ai.systems
+# (If the setup was successful) this command won't ask you password
+                </code></pre>
 
                 &nbsp;
 
@@ -122,11 +135,11 @@ e.g., ssh <your-onid>@cs370.eecs.oregonstate.edu
 2) Choose the challenge name from the correct challenge set
 
 3) Submit the flag!
-# Submit Writeup
-(will be announced later)
+# Submit Writeup to Canvas
+# You can go to the assignment tab and submit your write-up as a txt file
+# You will submit a single file containing all the solutions for that topic
 
 # NOTE. you don't get an actual score until you submit writeup
-# NOTE. you can also submit your flag and writeup through the class website
                 </code></pre>
 
             </div>
