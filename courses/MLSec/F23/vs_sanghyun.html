@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Title -->
+        <title>
+            CS499/599 :: Sp23 :: Trustworthy Machine Learning
+        </title>
+
+        <!-- SEO -->
+        <meta name="author" content="Sanghyun Hong">
+        <meta name="description" content="Trustworthy Machine Learning Oregon State University">
+        <meta name="keywords" content="sanghyun hong albert Trustworthy Machine Learning oregon state university">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+        <!-- Prevent js cache by Chrome -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Bootstrap start -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/osu-styles.css">
+
+    </head>
+    <body>
+
+        <!-- Content -->
+        <div class="container">
+
+            <!-- Title -->
+            <h2 class="title">
+                <b>CS 499/579 :: Spring 2023 :: Trustworthy Machine Learning</b>
+            </h2>
+
+            <hr noshade="" size="1">
+
+            <!-- Top navigation bar -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="critiques.html"><h5>Critique, Presentation</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="homework.html"><h5>Homework</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="project.html"><h5>Project</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="vs_sanghyun.html"><h5>vs. Sanghyun</h5></a>
+                </li>
+            </ul>
+
+            <hr noshade="" size="1">
+
+            
+            <!-- Project -->
+            <div class="container">
+                <h4 style="margin-bottom: 20px;">Backdoor Attacks and Defenses (vs. Sanghyun)</h4>
+                <p>
+                    Modern neural networks require many data points and huge computational resources to train. Suppose that you're training the recent ChatGPT models. You need to throw exascale data and use thousands of GPU hours for training until you reach a reasonable accuracy. Of course, this is not a problem once you have sufficient training resources like OpenAI or Google. But if not, the problem starts happening as we need to outsource some of the jobs required for training to 3rd-parties. You can ask them to collect your data from various sources, train models on your data (this is true when you ask AWS/Google to train your models), or even download models trained by somebody else from the Internet. As we can not easily guarantee none of those supply-chain actions are benign, we do not believe the final models are produced by the outsourcing parties.
+                </p>
+
+                <h5 style="margin-bottom: 10px;">Backdoor attacks</h5>
+                <p>
+                    It raises concerns about backdoor attacks. In backdooring, originally introduced by Gu <i>et al.</i> [<a href="https://arxiv.org/abs/1708.06733" target="_blan">1</a>], the 3rd-parties (potential adversaries) who train and deliver models to you can hide "malicious behaviors" only triggered by their specific inputs. As an example, an adversary who supplies models to your self-driving vehicles can make these models recognize "stop-signs" to "minimum speed limit signs" when the attacker attaches a yellow sticky note to it. Otherwise, the models work perfectly fine so we as a victim are not easy to identify whether they are backdoored or not.
+                </p>
+
+                <h5 style="margin-bottom: 10px;">What are we supposed to do?</h5>
+                <p>
+                    <b style="color: #D73F09">You're highly encouraged to opt-in to this extra credit opportunity.</b><br/><br/>
+
+                    You will do security games with Sanghyun. You will be working as a supply-chain attacker who wants to inject (or to "hide") malicious behaviors into the neural networks that you're serving. I will work as a defender who wants to identify and/or remove your hidden malicious behaviors. <br/><br/>
+
+                    Over this term, I will ask you to train reasonably well-working models for several tasks (such as MNIST or CIFAR10). During training these models, you can insert any malicious behaviors into them. You feel free to choose any attacks from the literature [<a href="https://github.com/usnistgov/trojai-literature" target="_blank">papers on backdooring</a>]. One simplest example would be: we can make a model classify input photos with a yellow square on the right bottom as "guacamole," no matter what the background contents are. My job here would be to know whether you injected any malicious behavior, what would be the trigger pattern (i.e., a yellow square on the right bottom, and what your intention would be (i.e., target class like "guacamole"). <br/><br/>
+
+                    In the first two weeks of this term, I will provide the datasets, code, and some starter kits where you can start your attacks on me. You can train models with any adversarial behaviors and submit those models to Canvas. Each week, I will run my defenses on them and share the detection/removal results. Announcements, leaderboards and tentative details about the competition rounds are below:                    
+                </p>
+
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Latest announcements -->
+            <div class="container" style="background-color: #FAE0D6; border: 0.5px solid #D73F09;">
+                <h4 style="margin-top: 10px;">Announcements</h4>
+                <ul>
+                    <li><b style="color: #D73F09">[Active]</b> <b>04/03/23:</b> Welcome to CS 499/579 Backdoor Competition!</li>
+                </ul>
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Leaderboards -->
+            <div class="container">
+                <h4>Leaderboards</h4>
+                <p>
+                    Coming soon, no challenge is there yet!
+                </p>
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Schedule -->
+            <div class="container">
+                <h4>Competition Rounds</h4>
+                <b style="color: #D73F09">This is a tentative schedule; subject to change depending on the progress.</b>
+
+                <table class="table">
+
+                    <!-- Header -->
+                    <thead><tr style="background-color: #D73F09">
+                        <th scope="col" style="text-align:center; color: white"><b>Date</b></th>
+                        <th scope="col" style="text-align:center; color: white"><b>Notice</b></th>
+                        <th scope="col" style="text-align:center; color: white"><b>Sanghyun's Defense</b></th>
+                    </tr></thead>
+
+
+                    <!-- Body of the course schedule -->
+                    <tbody>
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Preparation</b></td></tr>
+                    <tr>
+                        <td><b>04/03 (Mon.)<br/>- 04/16 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            Backdoor competition preparation [Video | Slides]
+                        </td>
+                    </tr>
+
+
+                    <!-- R1 -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Round I: vs. Backdoor Removals</b></td></tr>
+                    <tr>
+                        <td><b>04/17 (Mon.)<br/>- 04/30 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            [Pruning] <a href="https://arxiv.org/abs/2101.12016" target="_blank">Baseline Pruning-Based Approach to Trojan Detection in Neural Networks</a><br/>
+                            [Fine-tuning] <a href="https://arxiv.org/abs/2212.09067" target="_blank">Fine-Tuning Is All You Need to Mitigate Backdoor Attacks</a><br/>
+                            [Fine-pruning] <a href="https://arxiv.org/abs/1805.12185" target="_blank">Fine-Pruning: Defending Against Backdooring Attacks on Deep Neural Networks</a><br/>
+                            [DP-SGD] <a href="https://arxiv.org/abs/2002.11497" target="_blank">On the Effectiveness of Mitigating Data Poisoning Attacks with Gradient Shaping</a>
+                        </td>
+                    </tr>
+
+
+                    <!-- R2 -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Round II: vs. Statistical Detection</b></td></tr>
+
+                    <tr>
+                        <td><b>05/01 (Mon.)<br/>- 05/14 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            [Spectral] <a href="https://arxiv.org/abs/1811.00636" target="_blank">Spectral Signatures in Backdoor Attacks</a><br/>
+                            [STRIP] <a href="https://arxiv.org/abs/1902.06531" target="_blank">STRIP: A Defence Against Trojan Attacks on Deep Neural Networks</a><br/>
+                            [ABS] <a href="https://dl.acm.org/doi/10.1145/3319535.3363216" target="_blank">ABS: Scanning Neural Networks for Back-doors by Artificial Brain Stimulation</a>
+                        </td>
+                    </tr>
+
+
+                    <!-- R3 -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Round III: vs. Reverse-engineering Hidden Behaviors</b></td></tr>
+                    <tr>
+                        <td><b>05/15 (Mon.)<br/>- 5/28 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            [SentiNet] <a href="https://arxiv.org/abs/1812.00292" target="_blank">SentiNet: Detecting Localized Universal Attacks Against Deep Learning Systems</a><br/>
+                            [NC] <a href="https://ieeexplore.ieee.org/document/8835365" target="_blank">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a>
+                        </td>
+                    </tr>
+
+
+                    <!-- R4 -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Round IV: vs. Meta-model Defenses</b></td></tr>
+                    <tr>
+                        <td><b>05/29 (Mon.)<br/>- 06/11 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            <a href="https://arxiv.org/abs/1910.03137" target="_blank">Detecting AI Trojans Using Meta Neural Analysis</a><br/>
+                            <a href="https://arxiv.org/abs/2003.08904" target="_blank">RAB: Provable Robustness Against Backdoor Attacks</a>
+                        </td>
+                    </tr>
+
+
+                    <!-- Finals week -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=3 style="text-align:center"><b>Round I, II, III, and IV: vs. Defense Combined All Together</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>06/12 (Mon.)<br/>- 06/18 (Sun.)</b></td>
+                        <td style="text-align: center;"><b>-</b></td>
+                        <td>
+                            Sanghyun will combine all the defenses to detect (and/or remove) your compromised models.
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            
+            <!-- Footer -->
+            <hr noshade="" size="1">
+            <footer class="footer" style="margin-bottom: 24px;">
+                <div class="container text-center">
+                  <span class="text-muted">© Sanghyun Hong: 2023-Present.</span>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Optional Javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
