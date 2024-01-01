@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Title -->
+        <title>
+            CS370 :: Sp24 :: Introduction to Security
+        </title>
+
+        <!-- SEO -->
+        <meta name="author" content="Sanghyun Hong">
+        <meta name="description" content="Introduction to Security Oregon State University">
+        <meta name="keywords" content="sanghyun hong albert introduction to security oregon state university">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+        <!-- Prevent js cache by Chrome -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Bootstrap start -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/osu-styles.css">
+
+    </head>
+    <body>
+
+        <!-- Content -->
+        <div class="container">
+
+            <!-- Title -->
+            <h2 class="title">
+                <b>CS 370 :: Spring 2024 :: Introduction to Security</b>
+            </h2>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Top navigation bar -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="syllabus.html"><h5>Syllabus</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="labs.html"><h5>Micro-labs</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html"><h5>References</h5></a>
+                </li>
+            </ul>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Textbook & Prerequisite -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Textbooks</h4>
+                        <p>
+                            <b>No required textbook.</b> Reading materials will be provided on the course website /or distributed in class.
+                        </p>
+        
+                        <h4>Prerequisites</h4>
+                        <p>
+                            This course requires a basic understing of computer systems  Linux. Please consider taking those courses first:
+                            <ul>
+                                <li>CS 344 :: Operating Systems I</li>
+                                <li>CS 312 :: Linux System Administration (recommended)</li>
+                            </ul>
+                        </p>
+                    </div>
+        
+                    <div class="col-6">
+                        <h4>Grading</h4>
+                        <p>
+                            Your final grade for this course will be based on the following scheme:
+                        </p>
+                        <ul>
+                            <li><b>70%:</b> Micro-labs [<a href="labs.html">Details</a>]</li>
+                            <li><b>30%:</b> Quizzes 1-3</li>
+                            <li><b>No midterm/final exam.</b></li>
+                            <br/>
+                            <li><b style="color: #D73F09">[Bonus] +9%:</b> Extra point opportunities</li>
+                            <ul>
+                                <li><b style="color: #D73F09">+3%:</b> Registration (CTF servers)</li>
+                                <li><b style="color: #D73F09">+2%:</b> Practice of using E2EE</li>
+                                <li><b style="color: #D73F09">+2%:</b> Class contributions</li>
+                                <li><b style="color: #D73F09">+2%:</b> Write a Micro-lab write-up using ChatGPT</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Latest announcements -->
+            <div class="container" style="background-color: #FAE0D6; border: 0.5px solid #D73F09;">
+                <h4 style="margin-top: 10px;">Latest Announcements 
+                    <span style="font-size: large;">[<a href="announce.html">Full List</a>]</span></h4>
+                <ul>
+                    <li><b style="color: #D73F09">[Active]</b> <b>04/02/24:</b> Welcome to CS 370 Introduction to Security!</li>
+                </ul>
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Schedule -->
+            <div class="container">
+                <h4>Schedule</h4>
+                <b><span style="color: #D73F09">This is a tentative schedule; subject to change depending on the progress.</span></b>
+
+                <table class="table">
+
+                    <!-- Header -->
+                    <thead><tr style="background-color: #D73F09">
+                        <th scope="col" style="text-align:center; color: white"><b>Date</b></th>
+                        <th scope="col" style="text-align:center; color: white"><b>Topics</b></th>
+                        <th scope="col" style="text-align:center; color: white"><b>Notice</b></th>
+                        <th scope="col" style="text-align:center; color: white"><b>Assignments</b></th>
+                    </tr></thead>
+
+
+                    <!-- Body of the course schedule -->
+                    <tbody>
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Overview  Security Principles</b></td></tr>
+                    <tr>
+                        <td><b>Tue.<br/>04/02</b></td>
+                        <td>Course Introduction</td>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td></td>
+                    </tr>
+
+
+                    <!-- Cryptography -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part I: Cryptography</b></td></tr>
+                    <tr>
+                        <td><b>Thu.<br/>04/04</b></td>
+                        <td>Cryptography Basics</td/>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Week 0:</b> Registration to the course server 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>04/09</b></td>
+                        <td>
+                            Block Cipher <br/>
+                            Symmetric Encryption
+                        </td>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Thu.<br/>04/11</b></td>
+                        <td>
+                            Block Cipher <br/>
+                            Symmetric Encryption (cont'd)
+                        </td>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>04/16</b></td>
+                        <td>
+                            <!-- Asymmetric Encryption,<br/> -->
+                            Digital Signatures<br/>
+                            Cryptographic Hash (MD5/SHA)<br/>
+                            Message Authentication Code (MAC)
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                            <b><span style="color: #D73F09">[Open]</span> Quiz 1</b>
+                        </td>
+                    </tr>
+                    
+                    <tr style="background-color: #B8DDE1">
+                        <td><b>Thu.<br/>04/18</b></td>
+                        <td>
+                            <b>Micro-lab</b>
+                        </td>
+                        <td><b>[No lecture]</b></td>
+                        <td>
+                            Sanghyun will be on Zoom; holding office hours for micro-labs!
+                        </td>
+                    </tr>
+
+
+                    <!-- Network security -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part II: Network Security</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>04/23</b></td>
+                        <td>
+                            Public-key Infrastructure (PKI) <br/>
+                            Digital Certificates
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Quiz 1</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Thu.<br/>04/25</b></td>
+                        <td>
+                            Digital Certificates (cont'd) <br/>
+                            Diffie--Hellman
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Micro-labs: Crypto challenges</b><br/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>04/30</b></td>
+                        <td>
+                            Secure Socket Layer (SSL)<br/>
+                            Transport Layer Security (TLS)<br/>
+                            Man-in-the-Middle (MITM)
+                            <!-- Spoofing,  DoS attacks, Messenger security (E2EE) -->
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td></td>
+                    </tr>
+
+                    <tr style="background-color: #B8DDE1">
+                        <td><b>Thu.<br/>05/02</b></td>
+                        <td>
+                            <b>Micro-lab</b>
+                        </td>
+                        <td><b>[No lecture]</b></td>
+                        <td>
+                            Sanghyun will be on Zoom; holding office hours for micro-labs!
+                        </td>
+                    </tr>
+
+
+                    <!-- Internet Security -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part III: Internet Security</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>05/07</b></td>
+                        <td>
+                            Web Security I<br/>
+                            (Password, SQL Injection,<br/>
+                             Same-origin Policy)
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                            <b>[Fun]</b> Darknet Diaries, Ep 133: I'm the Real Connor
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Thu.<br/>05/09</b></td>
+                        <td>
+                            Web Security II<br/>
+                            (Same-origin Policy - cont'd<br/>
+                             XSS, Cookies,  CSRF) 
+                            <!-- Cross frame attacks, Frame busting) -->
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>05/14</b></td>
+                        <td>
+                            Web Security III<br/>
+                            (UI attacks, Frame busting)
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                            <b><span style="color: #D73F09">[Open]</span> Quiz 2</b>
+                        </td>
+                    </tr>
+
+                    <tr style="background-color: #B8DDE1">
+                        <td><b>Thu.<br/>05/16</b></td>
+                        <td>
+                            <b>Micro-lab</b>
+                        </td>
+                        <td><b>[No lecture]</b></td>
+                        <td>
+                            Sanghyun will be on Zoom; holding office hours for micro-labs!
+                        </td>
+                    </tr>
+
+                    <!-- Tentative -->
+                    <!-- <tr style="background-color: #000000">
+                        <td colspan=4 style="color: #FFFFFF; text-align:center"><b>The rest lectures will be offered online (on Zoom)</b></td></tr> -->
+
+                    <!-- Software Security -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part IV: Software Security</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>05/21</b></td>
+                        <td>
+                            Preliminaries<br/>
+                            (adapted from the UCB's CS161)
+                            <!-- Basics: Buffer overflow, Race condition,  Logic bugs -->
+                        </td>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Quiz 2</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Thu.<br/>05/23</b></td>
+                        <td>
+                            Software attacks<br/>
+                            Mem. safety vulnerabilities I
+                        </td>
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]</td>
+                        </td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Micro-labs: Internet sec challenges</td>b><br/> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>05/28</b></td>
+                        <td>
+                            Software attacks<br/>
+                            Mem. safety vulnerabilities II
+                        </td>
+                        <td>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr style="background-color: #B8DDE1">
+                        <td><b>Thu.<br/>05/30</b></td>
+                        <td>
+                            <b>Micro-lab</b>
+                        </td>
+                        <td><b>[No lecture]</b></td>
+                        <td>
+                            Sanghyun will be on Zoom; holding office hours for micro-labs!<br/>
+                        </td>
+                    </tr>
+
+
+                    <!-- TML -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part V: Safe and Secure Machine Learning</b></td></tr>
+                    
+                    <tr>
+                        <td><b>Tue.<br/>06/04</b></td>
+                        <td>
+                            Trustworthy ML I<br/>
+                            (Adversarial attacks<br/>
+                             Data poisoning)
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b>Thu.<br/>06/06</b></td>
+                        <td>
+                            Trustworthy ML II<br/>
+                            (Data poisoning - cont'd<br/>
+                             Privacy attacks)
+                        <td>
+                            [<a href="" target="_blank">Slides</a>]
+                        </td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Micro-lab: Software security challenges</b><br/>
+                            <b><span style="color: #D73F09">[Open]</span> Quiz 3</b>
+                        </td>
+                    </tr>
+
+                    <tr style="background-color: #B8DDE1">
+                        <td><b>Tue.<br/>06/11</b></td>
+                        <td>
+                            <b>Micro-lab</b>
+                        </td>
+                        <td><b>[No lecture]</b></td>
+                        <td>
+                            Sanghyun will be on Zoom; holding office hours for micro-labs!<br/>
+                        </td>
+                    </tr>
+
+
+                    <!-- Usable Security  Privacy
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Part VI: Usable Security ( Privacy)</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Tue.<br/>06/11</b></td>
+                        <td>
+                            Password<br/>
+                            Authentication<br/>
+                            Censorship evasion    
+                        </td>
+                        <td>
+                            <b style="color: #000000">[No lecture]</b><br/>
+                            [<a href="https://jbonneau.com/doc/B12-IEEESP-analyzing_70M_anonymized_passwords.pdf" target="_blank">Paper I</a> | <a href="https://www.usenix.org/conference/usenixsecurity18/presentation/stevens" target="_blank">Paper II</a>]
+                        </td>
+                        <td>
+                        </td>
+                    </tr> -->
+
+                    <!-- Finals week -->
+                    <tr style="background-color: #FFB500">
+                        <td colspan=4 style="text-align:center"><b>Finals Week (06/19 - 06/23)</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Thu.<br/>06/13</b></td>
+                        <td><b>-</b></td>
+                        <td>
+                            <b style="color: #000000">[No Lecture]</b>
+                        </td>
+                        <td>
+                            <b><span style="color: #D73F09">[Due]</span> Micro-lab: Trustworthy machine learning challenges</b><br/>
+                            <!-- <b><span style="color: #D73F09">[Due]</span> Week 10:</b> Usable security challenges<br/> -->
+                            <b><span style="color: #D73F09">[Due]</span> Quiz 3</b><br/>
+                            <b><span style="color: #D73F09">[Due]</span> Finish all the labs (late submissions)</b>
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+            <!-- Footer -->
+            <hr noshade="" size="1">
+            <footer class="footer" style="margin-bottom: 24px;">
+                <div class="container text-center">
+                  <span class="text-muted">© Sanghyun Hong: 2022-Present.</span>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Optional Javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

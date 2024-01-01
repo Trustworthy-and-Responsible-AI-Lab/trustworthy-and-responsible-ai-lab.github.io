@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Title -->
+        <title>
+            CS370 :: Sp24 :: Introduction to Security
+        </title>
+
+        <!-- SEO -->
+        <meta name="author" content="Sanghyun Hong">
+        <meta name="description" content="Introduction to Security Oregon State University">
+        <meta name="keywords" content="sanghyun hong albert Introduction to Security oregon state university">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+        <!-- Prevent js cache by Chrome -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Bootstrap start -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/osu-styles.css">
+        
+    </head>
+    <body>
+
+        <!-- Content -->
+        <div class="container">
+
+            <!-- Title -->
+            <h2 class="title">
+                <b>CS 370 :: Spring 2024 :: Introduction to Security</b>
+            </h2>
+
+            <hr noshade="" size="1">
+
+            <!-- Top navigation bar -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="labs.html"><h5>Micro-labs</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="references.html"><h5>References</h5></a>
+                </li>
+            </ul>
+            <hr noshade="" size="1">
+
+            <!-- Overview -->
+            <div class="container">
+                <h4>Overview</h4>
+                <p>
+                    In each class topic, You will be asked to solve a set of challenges (typically 1-10). In each challenge, you are required to submit <span style="color: #D73F09">a flag</span> and <span style="color: #D73F09">a write-up</span>: the flag you got from solving the challenge and the write-up summarizing how you got the flag (see examples below). The flag is an ASCII string that matches with a regular expression of <span style="color: #D73F09">cs370{[^}]+}</span>, and you can get it either in the challenge program or in the challenge directory (usually as <span style="color: #D73F09">a flag file</span>). Your job is to read this flag by following the instructions of the challenge. For example, some cryptography challenges require you to break a weak cryptography scheme and read the plaintext data even without knowing the key, and that plaintext data would be the flag. Otherwise, you need to understand how the challenge program works and then fool the program to read-out the flag for you. Most flags are stored (in-)securely as flag files.
+                </p>                
+
+            </div>
+            <hr noshade="" size="1">
+
+
+            <!-- Action items -->
+            <div class="container">
+                <h4>Instructions</h4><br/>
+
+                <h5>Action Item #1: Register Your (Submission) Account</h5>
+                <p>
+                    Go to the submission website (<a href="https://ctf.secure-ai.systems" target="_blank">link here</a>, will be active soon). You can create your account from the login menu. Please (must) use <span style="color: #D73F09">@oregonstate.edu</span> email address; otherwise, you're not able to register to the scoring system.
+                </p>
+
+                &nbsp;
+
+                <h5>Action Item #2: Verify Your (Submission) Account</h5>
+                <p>
+                    Please check Junk/Spam folder if you cannot get the e-mail message from the submission server. The title of the confirmation message is: <span style="color: #D73F09">Successfully registered for CS370 Micro-labs</span>, and it will be coming from the email address <span style="color: #D73F09">sanghyun@secure-ai.systems</span>.
+                </p>
+
+                &nbsp;
+
+
+                <h5>Action Item #3: Connect to the "Solve" Server</h5>
+                <p>
+                    The "Solve" server is where you will solve the challenges to get flags. Please follow the instructions below to login. <b>Note: I created accounts based on the enrollment on the second day of this term. Contact me asap if you cannot log in with the default password.</b>
+                </p>
+                <pre><code>
+# ssh to the "solve" server
+[your machine] $ ssh (your-ONID)@solve.secure-ai.systems
+# the default password can be found on Canvas announcement!
+
+# once you login, you can find the flag for the second challenge in Week 0
+# ...
+# Welcome to Introduction to Security Micro-labs
+# - Flag: (your flag will be here)
+# ...
+
+# setup ssh-key login
+# create a ssh-key pair at your machine (laptop, pc, etc...)
+[your machine] $ ssh-keygen -t ed25519 -C "(your-ONID)@oregonstate.edu"
+# set the store location to (your-home-dir)/.ssh/(your-keyname)
+
+# add your public key to the "solve" server
+[your machine] $ cat ~/.ssh/(your-keyname).pub
+[solve server] $ vim ~/.ssh/authorized_keys
+[solve server] Copy and paste the output of "cat ~/.ssh/(your-keyname).pub" to "~/.ssh/authorized_keys"
+[solve server] Save the "~/.ssh/authorized_keys"
+
+# logout from the "solve" server and use the ssh-key based login
+[solve server] $ exit
+[your machine] $ ssh -i (your-home-dir)/.ssh/(your-keyname) (your-ONID)@solve.secure-ai.systems
+# (If the setup was successful) this command won't ask you password
+                </code></pre>
+
+                &nbsp;
+
+                <h5>Action Item #4: Submit Your Solution and Flag</h5>
+                <pre><code>
+# Submit Flag
+1) Visit the scoring website
+    https://ctf.secure-ai.systems
+
+2) Choose the challenge name from the correct challenge set
+
+3) Submit the flag!
+# Submit Writeup to Canvas
+# You can go to the assignment tab and submit your write-up as a txt file
+# You will submit a single file containing all the solutions for that topic
+
+# NOTE. you don't get an actual score until you submit writeup
+                </code></pre>
+
+            </div>
+            <hr noshade="" size="1">
+
+
+            <!-- Write-up sample -->
+            <div class="container">
+                <h4>Write-up sample</h4>
+                <pre><code>
+This assignment demonstrates a weakness of the Electronic Code Book (ECB)
+mode of the block cipher. Although the cryptographic scheme, the Advanced
+Encryption Standard (AES) encrypted the bitmap data correctly, in the ECB
+mode, the same plaintext data block will be encrypted as the fixed
+ciphertext, and thereby, we can identify the patterns of plaintext for
+the same blocks in the ciphertext. As a result, even though the bitmap
+data were encrypted, we can read the hidden text in the plaintext picture
+because ciphertext block pattern leaks the plaintext block patterns.
+                </code></pre>
+            </div>
+
+
+            <!-- Footer -->
+            <hr noshade="" size="1">
+            <footer class="footer">
+                <div class="container text-center" style="margin-bottom: 20px">
+                  <span class="text-muted">© Sanghyun Hong: 2023-Present.</span>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Optional Javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
