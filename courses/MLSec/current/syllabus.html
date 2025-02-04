@@ -285,7 +285,37 @@
                                 <b style="color: #D73F09">on Zoom</b><br/>
                             </td>
                             <td>
-                                <b style="color: #D73F09">[Guest Lecturer: <a href="https://mingyukim87.github.io" target="_blank">Dr. Minkyu Kim</a> @ UBC]</b><br/>
+                                <b style="color: #D73F09">[Guest Lecturer: <a href="https://mingyukim87.github.io" target="_blank">Dr. Minkyu Kim</a> @ UBC]</b><br/><br/>
+
+                                <b>Title:</b> Safe Diffusion Models: Recent Developments and a Training-Free Perspective<br/>
+                                <b>Abstract:</b><br/>
+                                <p>The rapid advancement of diffusion models (DMs) has raised significant concerns regarding their safe use, 
+                                        as these models can inadvertently generate inappropriate, not-safe-for-work (NSFW) content, copyrighted material, 
+                                        or private data. In response, recent research on safe diffusion models has explored techniques 
+                                        such applying text-based negative prompts, or retraining models to suppress certain features. 
+                                        While these approaches have shown promise, they often come with limitations, including reliance 
+                                        on external classifiers, loss of generation quality, or substantial computational costs due to fine-tuning.<br/><br/>
+
+                                        In this talk, I will first provide an overview of existing methods for enhancing the safety of 
+                                        diffusion models and discuss their respective strengths and limitations. Building on this foundation, 
+                                        I will introduce our recent work, which takes a fundamentally different approach to ensuring 
+                                        safe image generation. Instead of modifying the model itself, we propose a training-free 
+                                        safe denoiser that directly adjusts the sampling trajectory to avoid unsafe or restricted regions of 
+                                        the data distribution. By leveraging a negation set—such as unsafe images, copyrighted data, 
+                                        or private information—we derive a denoiser that ensures final samples remain outside these 
+                                        areas without requiring additional training or fine-tuning. Our method is effective 
+                                        across various text-conditional, class-conditional, and unconditional generation settings, 
+                                        demonstrating the potential of training-free strategies for safer diffusion model deployment.</p>
+
+                                <b>Bio:</b><br/>
+                                <p>I’m a Postdoctoral Research Fellow at The University of British Columbia (UBC) working with Prof. Mi-Jung Park. 
+                                    I received a Ph.D. in Artificial Intelligence from KAIST under the supervision of Prof. Se-Young Yun. 
+                                    Prior to beginning my PhD course, I worked as a research engineer at Samsung Heavy Industries. 
+                                    I received an M.S. in Ocean system engineering from KAIST under the supervision of Prof. Hyun Chung 
+                                    and B.S in Industrial engineering at Konkuk University. My research interests focus on 
+                                    probabilistic machine learning, bayesian approach, neural fields, multimodal learning, 
+                                    few-shot learning, generative models, bayesian models and their applications.</p>
+
                                 (Classic) <a href="https://arxiv.org/abs/1706.03691" target="_blank">Certified Defenses for Data Poisoning Attacks</a><br/>
                                 (Classic) <a href="https://arxiv.org/abs/1903.09860" target="_blank">Data Poisoning against Differentially-Private Learners: Attacks and Defenses</a><br/>
                             </td>
