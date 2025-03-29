@@ -200,26 +200,47 @@
                         <td colspan=4 style="text-align:center"><b>Part II: Computer Systems Security</b></tr></tr>
                     <tr>
                         <td><b>Mon.<br/>04/14</b></td>
-                        <td>Memory Attacks<br/>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>Memory Safety<br/>[<a href="" target="_blank">Slides</a>]</td>
                         <td>
                             [<a href="homework.html">HW2</a> Out]
                         </td>
                         <td>
-                            <a href="https://inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf" target="_blank">Smashing The Stack For Fun And Profit</a><br/>
-                            <a href="https://www.usenix.org/conference/7th-usenix-security-symposium/stackguard-automatic-adaptive-detection-and-prevention" target="_blank">StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks</a>
+                            (Basic) <a href="https://www.scs.stanford.edu/~sorbo/brop/bittau-brop.pdf" target="_blank">
+                                Hacking Blind</a><br/>
+                            (Classic) <a href="https://www.usenix.org/conference/7th-usenix-security-symposium/stackguard-automatic-adaptive-detection-and-prevention" target="_blank">
+                                StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks</a>
+                            (Classic) <a href="https://www.usenix.org/system/files/conference/atc12/atc12-final39.pdf" target="_blank">
+                                AddressSanitizer: A Fast Address Sanity Checker</a><br/>
+                            (Recent) <a href="https://cs.brown.edu/media/filer_public/47/83/47833fec-2224-4836-a6c0-41d552213818/lightalex.pdf" target="_blank">
+                                Reenix: Implementing a Unix-Like Operating System in Rust</a><br/>
+                            ----<br/>
+                            (Optional) <a href="https://inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf" target="_blank">
+                                Smashing The Stack For Fun And Profit</a><br/>
+                            (Optional) <a href="https://phrack.org/issues/60/10" target="_blank">
+                                Basic Integer Overflows</a><br/>
+                            (Optional) <a href="https://googleprojectzero.blogspot.com/2015/06/what-is-good-memory-corruption.html" target="_blank">
+                                What Is a "Good" Memory Corruption Vulnerability?</a><br/>                                
                         </td>
                     </tr>
                     
                     <tr>
                         <td><b>Wed.<br/>04/16</b></td>
-                        <td>Modern Memory Attacks<br/>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>OS Security I<br/>[<a href="" target="_blank">Slides</a>]</td>
                         <td>
                             [<a href="homework.html">HW1</a> Due]
                         </td>
                         <td>
-                            <a href="https://hovav.net/ucsd/dist/geometry.pdf" target="_blank">
-                                Return-into-libc without Function Calls (on the x86)</a><br/>
-                            <a href="https://dl.acm.org/doi/10.1145/1455518.1455522" target="_blank">EXE: Automatically Generating Inputs of Death</a><br/>
+                            (Classic) <a href="https://hovav.net/ucsd/dist/geometry.pdf" target="_blank">
+                                Setuid Demystified</a><br/>
+                            (Classic) <a href="https://arxiv.org/pdf/1802.07062" target="_blank">
+                                KASR: A Lightweight System for Reducing the Attack Surface of the Kernel by Restricting Access to Rarely Used Code</a><br/>
+                            (Classic) <a href="https://www.usenix.org/legacy/event/sec10/tech/full_papers/Watson.pdf" target="_blank">
+                                Capsicum: Practical Capabilities for UNIX</a><br/>
+                            ----<br/>
+                            (Optional) <a href="https://www.usenix.org/legacy/events/sec01/full_papers/frantzen/frantzen.pdf" target="_blank">
+                                StackGhost: Hardware Facilitated Stack Protection</a><br/>
+                            (Optional) <a href="https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final143.pdf" target="_blank">
+                                kGuard: Lightweight Kernel Protection against Return-to-user Attacks</a><br/>
                         </td>
                     </tr>
 
@@ -243,17 +264,25 @@
 
                     <tr>
                         <td><b>Mon.<br/>04/28</b></td>
-                        <td>Memory Defenses<br/>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>OS Security II<br/>[<a href="" target="_blank">Slides</a>]</td>
                         <td>
                             [<a href="homework.html">HW2</a> Due]<br/>
                             [<a href="homework.html">HW3</a> Out]
                         </td>
                         <td>
-                            <a href="https://valgrind.org/docs/newsome2005.pdf" target="_blank">
-                                Dynamic Taint Analysis for Automatic Detection, Analysis, 
-                                and Signature Generation of Exploits on Commodity Software</a><br/>
-                            <a href="https://www.cs.columbia.edu/~suman/secure_sw_devel/p340-abadi.pdf" target="_blank">
-                                Control-Flow Integrity</a><br/>
+                            (Classic) <a href="https://github.com/google/syzkaller/tree/master" target="_blank">
+                                syzkaller - Kernel Fuzzer</a><br/>
+                            (Classic) <a href="https://www.cs.cmu.edu/~dga/papers/flask-usenixsec99.pdf" target="_blank">
+                                The Flask Security Architecture: System Support for Diverse Security Policies</a><br/>
+                            (Recent) <a href="https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-schumilo.pdf" target="_blank">
+                                kAFL: Hardware-Assisted Feedback Fuzzing for OS Kernels</a><br/>
+                            (Recent) <a href="https://www.youtube.com/watch?v=mp23AO8qtE4" target="_blank">
+                                Securing Linux Systems with AppArmor</a><br/>    
+                            ----<br/>
+                            (Optional) <a href="https://dl.acm.org/doi/10.1145/3512345" target="_blank">
+                                Fuzzing: A Survey for Roadmap</a><br/>
+                            (Optional) <a href="https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final143.pdf" target="_blank">
+                                kGuard: Lightweight Kernel Protection against Return-to-user Attacks</a><br/>
                         </td>
                     </tr>
 
@@ -264,13 +293,14 @@
                     </tr>
                     <tr>
                         <td><b>Wed.<br/>04/30</b></td>
-                        <td>Trusted Hardware<br/>[<a href="" target="_blank">Slides</a>]</td>
+                        <td>Isolation<br/>[<a href="" target="_blank">Slides</a>]</td>
                         <td></td>
                         <td>
                             (Classic) <a href="https://dl.acm.org/doi/10.1145/168619.168635" target="_blank">
                                 Efficient Software-based Fault Isolation</a><br/>
                             (Classic) <a href="https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-baumann.pdf" target="_blank">
                                 Shilding Applications from an Untrustsed Cloud with Haven</a><br/>
+                            ----<br/>
                             (Optional) <a href="https://eprint.iacr.org/2016/086.pdf" target="_blank">Intel SGX Explained</a>
                         </td>
                     </tr>
@@ -317,12 +347,14 @@
                         </td>
                         <td>
                             <b style="color: #D73F09">Sanghyun will be at IEEE S&P 2025.</b><br/>
-                            <a href="https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis" target="_blank">
-                                Understanding the Mirai Botnet</a><br/>
-                            <a href="https://www.computer.org/csdl/proceedings-article/sp/2006/25740002/12OmNqNosd1" target="_blank">
+                            (Classic) <a href="https://www.computer.org/csdl/proceedings-article/sp/2006/25740002/12OmNqNosd1" target="_blank">
                                 Towards Automatic Generation of Vulnerability-Based Signatures</a><br/>
-                            <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/chen-yizheng" target="_blank">
+                            (Classic) <a href="https://www.ndss-symposium.org/wp-content/uploads/2017/09/Avg.pdf" target="_blank">
+                                AEG: Automatic Exploit Generation</a><br/>
+                            (Recent) <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/chen-yizheng" target="_blank">
                                 Continuous Learning for Android Malware Detection</a><br/>
+                            (Recent) <a href="https://www.usenix.org/conference/usenixsecurity21/presentation/avllazagaj" target="_blank">
+                                When Malware Changed Its Mind: An Empirical Study of ...</a><br/>   
                         </td>
                     </tr>
 
@@ -334,12 +366,17 @@
                         </td>
                         <td>
                             <b style="color: #D73F09">Sanghyun will be at IEEE S&P 2025.</b><br/>
-                            <a href="https://dl.acm.org/doi/10.1145/3359183" target="_blank">
+                            (Classic) <a href="https://dl.acm.org/doi/10.1145/3359183" target="_blank">
                                 Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites</a><br/>
-                            <a href="https://www.usenix.org/legacy/event/sec08/tech/full_papers/provos/provos_html/ghost.html" target="_blank">
+                            (Classic) <a href="https://faculty.cc.gatech.edu/~pearce/papers/injection_oakland_2015.pdf" target="_blank">
+                                Ad Injection at Scale: Assessing Deceptive Advertisement Modifications</a><br/>
+                            (Classic) <a href="https://www.usenix.org/legacy/event/sec08/tech/full_papers/provos/provos_html/ghost.html" target="_blank">
                                 All Your iFRAMEs Point to Us</a><br/>
-                            <a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/huang" target="_blank">
+                            (Classic) <a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/huang" target="_blank">
                                 Clickjacking: Attacks and Defenses</a><br/>
+                                ----<br/>
+                            (Optional) <a href="https://dl.acm.org/doi/pdf/10.1145/1290958.1290968" target="_blank">
+                                Social Phishing</a>
                         </td>
                     </tr>
 
@@ -384,13 +421,13 @@
                         <td></td>
                         <td>
                             (Basic) <a href="https://ieeexplore.ieee.org/document/8406613" target="_blank">
-                                SoK: Security and Privacy in Machine Learning</a>
+                                SoK: Security and Privacy in Machine Learning</a><br/>
                             (Classic) <a href="https://arxiv.org/abs/1706.06083" target="_blank">
                                 Towards Deep Learning Models Resistant to Adversarial Attacks</a><br/>
                             (Classic) <a href="https://arxiv.org/abs/1804.00792" target="_blank">
                                 Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks</a><br/>
                             (Classic) <a href="https://arxiv.org/abs/2112.03570" target="_blank">
-                                Membership Inference Attacks From First Principles</a><br/>
+                                Membership Inference Attacks From First Principles</a>
                         </td>
                     </tr>
                     
@@ -404,7 +441,7 @@
                             (Recent) <a href="https://arxiv.org/abs/2403.11981" target="_blank">
                                 Diffusion Denoising as a Certified Defense against Clean-label Poisoning</a><br/>
                             (Classic) <a href="https://arxiv.org/abs/1607.00133" target="_blank">
-                                Deep Learning with Differential Privacy</a><br/>
+                                Deep Learning with Differential Privacy</a>
                         </td>
                     </tr>
 
