@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        
         <!-- Title -->
         <title>
             CS 578 :: Sp25 :: Cyber-Security
@@ -93,7 +92,182 @@
                         <div class="card-body">
 
                             <!-- :: Deadlines -->
-                            <h5>To be announced soon.</h5>
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 04.02.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 04.14.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for you to understand the basics of network traffic and packet analysis. You will be required to capture <code>DNS</code> and <code>HTTP/HTTPS</code> packets using <a href="https://www.wireshark.org/" target="_blank">Wireshark</a> and analyze them.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                To begin with, you are required to install Wireshark. You need to have access to a computer that support both Wireshark and the <code>libpcap</code> library. Wireshark is available for Windows, macOS, and Linux. You can download the latest version from the official website [<a href="https://www.wireshark.org/download.html" target="_blank">link</a>]. Your operating system (OS) may have the libpcap software installed. If you face an issue with the libpcap library, you can install it as follows, depending on your OS:<br/>
+                                <ul>
+                                    <li>
+                                        <b>Windows</b>: You can install <code>WinPcap</code> or <code>Npcap</code> [<a href="https://www.wireshark.org/download.html" target="_blank">link</a>].
+                                    </li>
+                                    <li>
+                                        <b>Linux or MacOS</b>: You can install libpcap. [<a href="https://www.tcpdump.org/" target="_blank">link</a>].
+                                    </li>
+                                </ul>
+                            </p>
+
+
+                            <!-- :: Sample Run -->
+                            <p>
+                                <h5 style="margin-top: 20px;">Running Wireshark</h5>
+
+                                When you run the Wireshark program, the Wireshark GUI shown in <a href="resources/main_wireshark.png" target="_blank">this figure (on Mac)</a> will be displayed. Initially, you can see the list of network interfaces on your computer, and a time-series diagram of the packets coming in and going out from the interface will be shown.<br/><br/>
+
+                                Now you are ready to do a test drive!<br/>
+                                <ul>
+                                    <li>
+                                        <b>Step 1:</b> Start Wireshark and select the network interface (e.g., eth0) you want to capture packets from. You can do this by clicking on the <code>Capture</code> menu and selecting <code>Options</code>.
+                                    </li>
+                                    <li>
+                                        <b>Step 2:</b> Click on the <code>Start</code> button to begin capturing packets. You should see packets being displayed in the packet-listing window.
+                                    </li>
+                                    <li>
+                                        <b>Step 3:</b> To filter the captured packets, enter a protocol name or other criteria in the packet-display filter field. For example, you can enter <code>http</code> to display only HTTP packets, as shown in <a href="resources/capture_wireshark.png" target="_blank">this figure</a>.
+                                    </li>
+                                    <li>
+                                        <b>Step 4:</b> To stop capturing packets, click on the <code>Capture</code> menu and select <code>Stop</code>. You can also click on the <span style="color: #D73F09;">red square button</span> in the toolbar.
+                                    </li>
+                                    <li>
+                                        <b>Step 5:</b> To save the captured packets, click on the <code>File</code> menu and select <code>Save As</code>. Choose a location and file name to save the captured packets.
+                                    </li>
+                                    <li>
+                                        <b>Step 6:</b> To analyze the captured packets, select a packet in the packet-listing window. The details of the selected packet will be displayed in the packet-header details window and the packet-contents window.
+                                    </li>
+                                    <li>
+                                        <b>Step 7:</b> You can expand or minimize the details of the packet by clicking on the arrowhead to the left of the protocol name in the packet-header details window. This will show you more information about the packet, such as the source and destination IP addresses, port numbers, and protocol-specific information.
+                                    </li>
+                                </ul>
+
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Trace DNS with Wireshark</h5>
+
+                            Capture the DNS packets generated by ordinary Web-surfing activity. You will need to analyze the captured packets and answer the following questions:<br/><br/>
+
+                            <ul>
+                                <li><b>Step 1:</b>
+                                    Use <code>ipconfig</code> (Windows) / <code>ifconfig</code> (Linux, Mac) to empty the DNS cache on your host.
+                                </li>
+                                <li><b>Step 2:</b>
+                                    Open your browser and clear your browser cache. (For Internet Explorer, go to the Tools menu, select Internet Options, then in the General tab select Delete Files.)
+                                </li>
+                                <li><b>Step 3:</b>
+                                    Open Wireshark and enter <code>ip.addr == your_IP_address</code> into the filter, where you obtain your IP address (the IP address for the computer running Wireshark) with <code>ipconfig</code>. This filter removes all packets that neither originate nor are destined for your host.
+                                </li>
+                                <li><b>Step 4:</b>
+                                    Start packet capture in Wireshark.
+                                </li>
+                                <li><b>Step 5:</b>
+                                    With your browser, visit the Web page: <a href="https://www.google.com" target="_blank">https://www.google.com</a>.
+                                </li>
+                                <li><b>Step 6:</b>
+                                    Stop packet capture.
+                                </li>
+                            </ul>
+
+                            Now answer the following questions:<br/><br/>
+
+                            <ol>
+                                <li>What is the IP address of your computer?</li>
+                                <li>What is the IP address of the Google web server?</li>
+                                <li>How many DNS queries were generated by your web browser?</li>
+                                <li>How many DNS responses were received by your web browser?</li>
+                                <li>What is the port number used by your web browser to send the DNS query to the DNS server?</li>
+                                <li>What is the size of the DNS query packet sent from your web browser to the DNS server?</li>
+                                <li>What is the size of the DNS response packet sent from the DNS server to your browser?</li>
+                            </ol>
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: HTTP and HTTPs Protocols</h5>
+
+                            Now we use Wireshark to capture HTTP and HTTPS packets. You will need to analyze the captured packets and answer the following questions:<br/><br/>
+
+                            <ul>
+                                <li><b>Step 1:</b>
+                                    Use <code>ipconfig</code> (Windows) / <code>ifconfig</code> (Linux, Mac) to empty the DNS cache on your host.
+                                </li>
+                                <li><b>Step 2:</b>
+                                    Open your browser and clear your browser cache. (For Internet Explorer, go to the Tools menu, select Internet Options, then in the General tab select Delete Files.)
+                                </li>
+                                <li><b>Step 3</b>
+                                    Open Wireshark and enter <code>ip.addr == your_IP_address</code> into the filter, where you obtain your IP address (the IP address for the computer running Wireshark) with <code>ipconfig</code>. This filter removes all packets that neither originate nor are destined for your host.
+                                </li>
+                                <li><b>Step 4:</b>
+                                    Start packet capture in Wireshark.
+                                </li>
+                                <li><b>Step 5:</b>
+                                    With your browser, visit the website: <a href="http://relaxedgoodglowingmagic.neverssl.com/online/" target="_blank">http://relaxedgoodglowingmagic.neverssl.com/online/</a>.
+                                </li>
+                                <li><b>Step 6:</b>
+                                    Stop packet capture.</li>
+                                <li><b>Step 7:</b>
+                                    Repeat Step 4-6 with the website: <a href="https://relaxedgoodglowingmagic.neverssl.com/online/" target="_blank">https://relaxedgoodglowingmagic.neverssl.com/online/</a>.
+                                </li>
+                            </ul>
+
+                            Now answer the following questions:<br/><br/>
+
+                            
+                            <ul>
+                                <li><b>HTTP website:</b></li>
+                                <ol>
+                                    <li>What is the IP address of your computer?</li>
+                                    <li>What is the IP address of the <code>HTTP</code> website?</li>
+                                    <li>What version of HTTP is the website running?</li>
+                                    <li>What is the status code returned from the website to your browser?</li>
+                                    <li>What is the port number used by your browser to send the HTTP request to your web browser?</li>
+                                    <li>What is the port number used by the HTTP website to send the HTTP response to your web browser?</li>
+                                    <li>What is the size of the data in the HTTP response packet sent from the HTTP website to your browser?</li>
+                                </ol><br/>
+
+
+                                <li><b>HTTPS website:</b></li>
+                                <ol>
+                                    <li>What is the IP address of your computer?</li>
+                                    <li>What is the IP address of the <code>HTTPS</code> website?</li>
+                                    <li>What version of HTTP is the website running?</li>
+                                    <li>What is the status code returned from the website to your browser?</li>
+                                    <li>What is the port number used by your browser to send the HTTPS request to your web browser?</li>
+                                    <li>What is the port number used by the HTTPS website to send the HTTPS response to your web browser?</li>
+                                    <li>What is the size of the data in the HTTPS response packet sent from the HTTPS website to your browser?</li>
+                                </ol><br/>
+                            </ul>
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the following things:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (5 pts)</b></li>
+                                <ul>
+                                    <li>Your answer to the 7 questions above.</li>
+                                    <li>Your analysis: provide 2-3 sentences explaining why you see the results.</li>
+                                </ul>
+
+                                <li><b>Task II (10 pts)</b></li>
+                                <ul>
+                                    <li>Your answer to the 14 questions above.</li>
+                                    <li>Your analysis: provide 2-3 sentences explaining why you see the results.</li>
+                                </ul>
+                            </ul><br/>
 
                         </div>
                     </div>
