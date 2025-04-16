@@ -86,7 +86,7 @@
                     </div>
               
                     <div id="homework1" 
-                         class="collapse show" 
+                         class="collapse" 
                          aria-labelledby="headingOne"
                          data-parent="#homeworkExample">
                         <div class="card-body">
@@ -95,7 +95,7 @@
                             <h5>Important Dates</h5>
                             <ul>
                                 <li><b style="color: #D73F09;">Out: 04.02.2025 09:00 AM PT</b></li>
-                                <li><b style="color: #D73F09;">Due: 04.14.2025 11:59 PM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 04.16.2025 11:59 PM PT</b></li>
                             </ul>
 
 
@@ -284,18 +284,154 @@
                             data-target="#homework2" 
                             aria-expanded="true" 
                             aria-controls="homework2">
-                            <h4>Homework 2: Return to Libc</h4>
+                            <h4>Homework 2: Buffer Overflow</h4>
                         </button>
                     </div>
               
                     <div id="homework2" 
-                         class="collapse" 
+                         class="collapse show" 
                          aria-labelledby="headingTwo"
                          data-parent="#homeworkExample">
                         <div class="card-body">
 
                             <!-- :: Deadlines -->
-                            <h5>To be announced soon.</h5>
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 04.16.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 04.28.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objectives of this homework are for students to gain hands-on experience with <code>buffer overflow</code> attacks. These attacks exploit a buffer overrun vulnerability in a program, causing it to bypass its usual execution sequence and instead jump to alternative code (typically launching a shell!). The attack overflows the vulnerable buffer to introduce the alternative code onto the stack and modifies the return address to point to that code.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                To begin, you are required to use a Linux machine with <code>sudo</code> privileges. You should not complete this homework on a shared server or any OSU computing clusters. If you perform a buffer overflow attack in these shared environments, you will be responsible for any consequences, and the instructor will not be liable. Note that you cannot run this on a Mac or Windows laptop. While these systems support command-line environments, they do not allow you to execute buffer overflow attacks. If you do not have a Linux machine, the instructor recommends creating a virtual machine using a commodity virtualization software, such as VMWare.<br/><br/>
+
+                                "One way to bypass the configuration hassles is to set up your own server using a popular cloud provider, Amazon Web Services (AWS). To do this, sign up for AWS, go to the AWS Console, and select EC2. Then, launch an instance, choosing the operating system <code>Ubuntu 22.04</code> and the instance type <code>t2.micro</code> (which is eligible for the free tier). You will also need to configure an SSH key and a Security Group. Once completed, you can find the server's IP address in the console. Use that IP to log in to the cloud server via your terminal.
+
+                                <pre><code>
+                                    $ ssh -i "your-aws-key" ubuntu@"your-server-ip"
+                                </code></pre>
+
+                                To run the code provided by the instructor, you will need to install a few packages, as listed below. Note that you may need to install more packages. In such cases, you can easily search the error message shown in the terminal on Google and find the answers.
+
+                                <pre><code>
+                                    $ sudo apt install cmake gcc g++ gdb
+                                    $ sudo apt install vim-enhanced
+                                    $ sudo apt install python3
+                                </code></pre>
+
+                                Many countermeasures, such as ASLR, have been developed to address buffer overflow vulnerabilities. Circumventing these defenses is not as easy as it may seem, so we will disable them for this homework assignment. You can do so by following these steps:
+
+                                <pre><code>
+                                    $ sudo -i
+                                    # sysctl -w kernel.randomize_va_space=0
+                                    # exit      // exit the sudo; our assignment should be done in the user space.
+                                </code></pre>
+
+                                <b style="color: #D73F09;">[Important Note] Once you complete the homework, be sure to turn off and delete the cloud server to avoid being charged.</b>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Access the (In-)accessible</h5>
+
+                            Create a makefile, <code>Makefile</code>:
+                            
+                            <pre><code>
+                                $ vim Makefile
+                                // paste the content below
+                                CC=gcc
+                                CFLAGS=-g -fno-stack-protector
+
+                                all: bof.c
+                                    $(CC) -m32 -o bof bof.c $(CFLAGS)
+                            </code></pre>
+
+                            Create a vulnerable file <code>bof.c</code>, as follows:
+
+                            <pre><code>
+                                #include <stdio.h>
+                                #include <stdlib.h>
+                                #include <string.h>
+                                #include <unistd.h>
+                                
+                                char *trueflag = "cs578{trueflag}";
+                                char *fakeflag = "cs578{fakeflag}";
+                                
+                                void
+                                shell(void) {
+                                    setregid(getegid(), getegid());
+                                    system("/bin/bash");
+                                }
+                                
+                                void
+                                process_user_input(void) {
+                                    char *flag;
+                                    char buff[12];
+                                    char data[128];
+                                
+                                    // set the fake flag
+                                    flag = fakeflag;
+                                
+                                    // load the memory locations
+                                    printf("Your flag address is at %p\n", trueflag);
+                                    printf("Your fakeflag is at %p\n", fakeflag);
+                                    printf("Address of shell is at %p\n", &shell);
+                                    printf("Currently, the flag variable has the value %p\n", flag);
+                                    fgets(data, sizeof(data), stdin);
+                                
+                                    // copy the content directly to the buffer
+                                    strncpy(buff, data, strlen(data));
+                                
+                                    printf("Your input was: [%s]\n", buff);
+                                    printf("Your flag address is at %p\n", flag);
+                                    printf("Your flag is %s\n", flag);
+                                }
+                                
+                                int
+                                main(void) {
+                                    setvbuf(stdin, NULL, _IONBF, 0);
+                                    setvbuf(stdout, NULL, _IONBF, 0);
+                                    process_user_input();
+                                }
+                            </code></pre>
+
+                            <!-- (python3 -c 'print("A" * 14 + "\x00")') | ./bof -->
+                            You can now compile the bof.c file by running the <code>make</code> command. Once compiled, you are ready to exploit the buffer overflow vulnerability. The code by default, will print out the flag <code>cs578{fakeflag}</code>. Your job is to exploit the buffer overflow and force it to print out <code>cs578{trueflag}</code>.
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Run Malicious Code</h5>
+
+                            Now that you are familiar with buffer overflow exploitation, the instructor has prepared a fun task for you—running an arbitrary function that the program cannot execute normally. In this case, the function is the <code>bash shell</code>! (wait what?) Use the exact same program that the Instructor provided above and work hard to get a shell.<br/><br/>
+
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (6 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>trueflag</code>.</li>
+                                </ul>
+
+                                <li><b>Task II (9 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>bash shell</code>.</li>
+                                </ul>
+                            </ul><br/>
 
                         </div>
                     </div>
