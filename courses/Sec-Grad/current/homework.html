@@ -358,10 +358,10 @@
                             Create a vulnerable file <code>bof.c</code>, as follows:
 
                             <pre><code>
-                                #include <stdio.h>
-                                #include <stdlib.h>
-                                #include <string.h>
-                                #include <unistd.h>
+                                #include "stdio.h"
+                                #include "stdlib.h"
+                                #include "string.h"
+                                #include "unistd.h"
                                 
                                 char *trueflag = "cs578{trueflag}";
                                 char *fakeflag = "cs578{fakeflag}";
@@ -413,6 +413,7 @@
 
                             Now that you are familiar with buffer overflow exploitation, the instructor has prepared a fun task for you—running an arbitrary function that the program cannot execute normally. In this case, the function is the <code>bash shell</code>! (wait what?) Use the exact same program that the Instructor provided above and work hard to get a shell.<br/><br/>
 
+                            <span style="color: #D73F09;">Tip: Python "print" may not work in some cases, e.g., it could add some termination characters like \x00. Please look for some other ways to write the address to the buffer. The instructor would not respond to any questions regarding this tip; it is the part of the homework assignment.</span>
 
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
