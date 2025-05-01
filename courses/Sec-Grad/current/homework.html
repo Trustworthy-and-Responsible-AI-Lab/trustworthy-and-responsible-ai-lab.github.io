@@ -289,7 +289,7 @@
                     </div>
               
                     <div id="homework2" 
-                         class="collapse show" 
+                         class="collapse" 
                          aria-labelledby="headingTwo"
                          data-parent="#homeworkExample">
                         <div class="card-body">
@@ -454,13 +454,245 @@
                     </div>
               
                     <div id="homework3" 
-                         class="collapse" 
+                         class="collapse show" 
                          aria-labelledby="headingThree"
                          data-parent="#homeworkExample">
                         <div class="card-body">
 
                             <!-- :: Deadlines -->
-                            <h5>To be announced soon.</h5>
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 04.30.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 05.14.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for students to gain first-hand experience with <code>timing side-channel attacks</code>. These attacks exploit shared resources, such as cache memory shared between processors, causing the time it takes to execute an algorithm to become data-dependent. For example, if one program accesses certain data and a subsequent attacker accesses the same data, the retrieval time will be faster. By tracing such timing differences, an attacker can weaken the confidentiality of security-critical operations, such as cryptographic operations.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                You are required to use a Linux machine with <code>sudo</code> privileges. Note that <code>sudo</code> access is only needed to install the necessary packages; you won't be required sudo (or root) privileges to conduct the attack itself. You should not run this homework on a shared server or any OSU computing clusters. If you perform the attacks in these shared environments, you will be responsible for any consequences, and the instructor will not be held liable.<br/><br/>
+                                
+                                It may be challenging to run this on a Mac or Windows laptop (Note that the instructor did not try this. If you use these machines, it will be your challenges!). If you do not have a Linux machine, the instructor recommends creating an <code>Ubuntu 22.04</code> virtual machine using a commodity virtualization software, such as VMWare.<br/><br/>
+                                
+                                One way to bypass the configuration hassles is to set up your own server using a popular cloud provider, Amazon Web Services (AWS). To do this, sign up for AWS, go to the AWS Console, and select EC2. Then, launch an instance, choosing the operating system <code>Ubuntu 22.04</code> and the instance type <code>t2.micro</code> (which is eligible for the free tier). You will also need to configure an SSH key and a Security Group. Once completed, you can find the server's IP address in the console. Use that IP to log in to the cloud server via your terminal.
+
+                                <pre><code>
+                                    $ ssh -i "your-aws-key" ubuntu@"your-server-ip"
+                                </code></pre>
+
+                                To run the code provided by the instructor, you will need to install a few packages, as listed below. Note that you may need to install more packages. In such cases, you can easily search the error message shown in the terminal on Google and find the answers.
+
+                                <pre><code>
+                                    $ sudo apt install cmake gcc g++ gdb
+                                    $ sudo apt install vim-enhanced
+                                    $ sudo apt install python3
+                                    $ sudo apt-get install binutils-dev libdwarf-dev libelf-dev
+                                </code></pre>
+
+                                N0w we are ready to run a side-channel attack. The specific attack we will explore is <code>Flush+Reload</code>, a timing side-channel technique based on the L3 cache. More details about this attack can be found in the original research paper. This paper is included in our reading list, and I encourage you to read it to understand the core concepts behind the attack. Don't worry—you will not need to implement the attack from scratch. Instead, we will use an existing implementation provided by the research community: <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW3" target="_blank">Mastik</a>. Please follow the instructions in the <code>README.md</code> file to install Mastik on your machine.
+
+                                <b style="color: #D73F09;">[Important Note] Once you complete the homework, be sure to turn off and delete the cloud server to avoid being charged.</b>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Reconnaissance</h5>
+
+                            In this task, you will learn how to gather information about the target system. This is a crucial step in any attack, as it allows you to understand the system's architecture and identify potential vulnerabilities. You will also learn how to measure the latency of memory accesses, which is essential for timing side-channel attacks. 
+
+
+
+                            Before we begin, think – what is the first step when planning to attack a system? We first need to gather information about the system’s attributes. This rule applies to attacking software, hardware, and even in real-life on non-computing systems! For example, if you wanted to plan a bank robbery, you would first need to figure out the floorplan of the bank, the locations of safes and security cameras, etc. In this part of the lab, you will see a few practical approaches people use to gain detailed microarchitecture information of commodity hardware. You will further get familiar with some common techniques and instructions that we can use to measure execution latencies on processors, which will help you mount your attacks later on.
+
+                            <!-- Part 1.1: Determining Machine Architecture
+                            The simplest way to gather hardware information is to use existing public system interfaces and documentation. Here is a list of commands that can be used to determine machine architecture information on Linux.
+
+                            lscpu: Provides information on the type of processor and some summary information about the architecture in the machine.
+                            less /proc/cpuinfo: Provides detailed information about each logical processor in the machine. (Type q to exit.)
+                            getconf -a | grep CACHE: Displays the system configuration related to the cache. This will provide detailed information about how the cache is structured. The numbers that are reported using this command use Bytes (B) as the unit.
+                            In addition, WikiChip is a good source of information, as it provides information specific to each processor and architecture. You can find a detailed architecture description of our lab machines (Intel Cascade Lake processors) here, which additionally provides the raw latency value for accessing different levels of caches.
+
+                            1-1 Discussion Question
+
+                            Fill in the blanks in the following table using the information you gathered about the cache configuration of the lab machine. You should be able to directly obtain the information for the first 3 blank columns using commands above. You will need to derive the number of sets using what you have learned about set-associative caches in 6.1910[6.004]. Raw latency can be obtained from the WikiChip document. The line size of L1 data cache has been filled in for you.
+
+                            Cache	Cache Line Size	Total Size	Number of Ways (Associativity)	Number of Sets	Raw Latency
+                            L1-Data	64 Bytes	 	 	 	 
+                            L2	 	 	 	 	 
+                            L3	 	 	 	 	 
+                            Part 1.2: Timing a Memory Access
+                            The information you can get from public sources can be limited, as hardware companies would not like to disclose all of their proprietary design details to general users and potential competitors. An alternative way to gather information is to reverse engineer the processor by running some very carefully designed instruction sequences on the processor and observing their behaviors.
+
+                            In this part, you will try to reverse engineer the latencies for accessing the cache hierarchy. Specifically, we would like to know how long it takes to access cache lines that are located in the (a) L1 data cache, (b) L2 cache, (c) L3 cache, and (d) the DRAM.
+
+                            The Reverse Engineering Plan
+                            To measure the L1 latency, we can perform a load operation on a target address to bring the corresponding cache line into the L1 data cache. Then, we measure the access latency by counting the cycles it takes to re-access the same target address using measure_one_block_access_time. We have provided this code for you, and you can compile the starter code using the command make, and then run it with make run.
+
+                            Your task is to complete the main function in main.c to populate the three arrays dram_latency, l2_latency, and l3_latency. We suggest you start with measuring DRAM latency, since measuring DRAM latencies is the easiest. You can leverage the instruction clflush to place the target address to DRAM.
+
+                            Measuring L2 and L3 latencies is slightly more complex. To measure the L2 latency, we need to place the target address in the L2 cache. However, simply accessing the target address will make the address reside in the L1 cache. Therefore, need to access other addresses to evict the target address from the L1 cache. Thus, you first need to access the line to bring it into L1, then create cache conflicts to evict it into L2. When it comes to measuring the L3 latency, you need to similarly create cache conflicts to evict the cache line from both the L1 cache and the L2 cache.
+
+                            Helper Functions
+                            Before you start, make sure you familiarize yourself with C syntax and several useful x86 instructions. Read the code in utility.h and understand the following functions.
+
+                            rdtscp and rdtscp64: Read the current timestamp counter of the processor and return a 32-bit or 64-bit integer.
+                            lfence: Perform a serializing operation. Ask the processor to first complete the memory loads before the lfence instruction, then start issuing memory loads after the lfence instruction. Other variants of fences exist, such as sfence and mfence.
+                            measure_one_block_access_time: Measure the latency of performing one memory access to a given address.
+                            clflush: Flush a given address from the cache, evict the line from the whole cache hierarchy so that later accesses to the address will load from DRAM.
+                            print_results_plaintext and print_results_for_visualization: Print the collected latency data in different formats. The default Makefile compiles two binaries: main uses print_results_plaintext, while main-visual uses print_results_for_visualization.
+                            Pointer Arithmetic
+
+                            Pointer arithemetic operations, such as new_ptr = old_ptr + 1, means moving the pointer forward by one element. For different types of pointers whose element size is different, the actual bytes being moved can be very different. For example, given a uint8_t pointer, since each element is 1 byte, +1 means moving the pointer foward by 1 byte. However, +1 of a uint64_t pointer means moving the pointer forward by 8 bytes. We highly suggest to use uint8_t pointers to make your address calculation easier and avoid introducing addressing mistakes. Further details about common C/C++ constructs can be found in the C Programming Recitation.
+
+                            Visualization Support
+                            Microarchitectural side channels are notoriously noisy, and it is common to get inconsistent latency results from run to run. To combat noise, the most commonly used methodology is to repeat the experiments and plot the distribution of the observed latencies. We have provided two Python scripts to help you launch multiple measurements and visualize these measurements. To install python packages used in these two scripts, please run:
+
+                            python3 -m pip install matplotlib tqdm
+
+                            run.py: A python script that will generate 100 runs from the main-visual binary. It will create a folder (if one doesn’t already exist) called data, and it will store all the generated samples there in json format. The script will overwrite the folder if it already exists.
+                            graph.py: A python script that will plot the histogram of the samples collected from run.py. It will read the JSON files from the folder data and generate a pdf file of the histogram in a folder called graph.
+                            Expected Outcome
+                            When grading we will not check the exact latency numbers generated by your code, since different implementations can yield different latency numbers. For example, it is unlikely that your L1 latency will match the L1 raw latency number from WikiChip. This is because our measurement involves extra latency introduced by the lfence instructions. Besides, other factors such as the frequency of the core and prefetch configurations of the cache can also affect the latency.
+
+                            If you want to check whether you are on the right track, you should look for the following patterns in your visualized plot. We also include an example plot below.
+
+                            There are distinct peaks for DRAM, L3, and L2 latency.
+                            The L1 and L2 latency do not need to be distinguishable.
+                            Reference distribution plot
+
+                            A reference memory latency distribution plot
+
+                            1-2 Exercise
+
+                            Fill in the code in main.c to populate the arrays dram_latency, l2_latency, and l3_latency.
+
+                            DO NOT take latency measurements while also printing. Instead, measure then print.
+
+                            When debugging your code, it is tempting to write code like this, which we call “measuring while printing”.
+
+                            for i in l1_cache:
+                                # Observe some aspect of the cache state
+                                val = time_access(cache line i)
+                                # In the same measurement loop, print the observed value out!
+                                printf("The cache took %d cycles", val)
+                                # Now we go to the next interation and measure again
+
+                            Do not do this! We are no longer in the regular world, we are in the microarchitectural world, where each assembly instruction counts!
+
+                            What do we mean by this? Under the hood, a “simple” call to printf involves executing a huge number of instructions. When you call printf, you are going to go to the libc library, doing some string processing, and eventually making a system call into the kernel (so, the entire CPU performs a context switch, and does who knows what else). Think about how many cache lines this call to printf will need to read/write – printing anything is a destructive action to the state of the cache.
+
+                            Instead, you should measure then print. We suggest structuring your code like this:
+
+                            uint64_t measurements[NUM_THINGS_TO_MEASURE]
+                            # Measure
+                            for i in l1_cache:
+                                measurements[i] = time_access(cache line i)
+                            # Then, print :)
+                            print(measurements)
+
+                            Tips for Reliably Triggering Cache Evictions
+
+                            The following tips may help you if you get stuck when you could not observe differences between the L2 and L3 cache latency. A common pitfall is not properly evicting the target address from the L1/L2 cache due to various reasons.
+
+                            Cache Line Size != Integer Size: To begin with, you should be careful with the the mismatch of access granularities. The smallest operational unit in cache is the cache line, which is larger than the size of an integer. Accessing two integers that fall into the same line (more precisely, that fall within the same cache line size aligned region of memory) will result in a cache hit, and won’t cause an eviction. So make sure to use eviction addresses that do not map to the same cache line when attempting to evict.
+
+                            Advanced Cache Replacement Policy: The cache replacement policy in modern processors is more advanced than the simple policies that we learned in class, and is often not completely known to us. It may intelligently decide to keep a target address in the cache, rather than evicting it. To combat the advanced replacement policy, we suggest accessing the eviction buffer multiple times.
+
+                            Virtual to physical address translation: Intuitively, we would imagine that given a cache, if we have a buffer whose size matches the cache size, then accessing each element in the buffer allows us to fully occupy every slot in the cache. However, this may not always be the case, due to virtual to physical address translation. Note that on our machine, the cache mapping is a function of physical address, while the software uses virtual address.
+
+                            Let’s consider a toy example where a 8KB directly-mapped cache which can hold two 4K pages. If we have a two-page-size buffer, after virtual address translation, we can end up with three posibilities: 1) the buffer covers the whole cache; 2) both pages map to the top half of the cache; and 3) both pages map to the bottom half of the cache.
+
+                            In this case, how can we reliably evict data from a certain cache level without the control of the address translation procedure? The common trick is to just use a buffer that is bigger than the cache itself – between 1.5x or even 4x of the cache size. Even though the eviction might still not be guaranteed, its likelihood is high enough.
+
+                            1-3 Discussion Question
+
+                            After completing your code, generate the histogram pdf file and include it in the lab report.
+
+                            1-4 Discussion Question
+
+                            Based on the generated histogram, report two thresholds, one to distinguish between L2 and L3 latency and the other to distinguish between L3 and DRAM latency.
+
+                            Submission and Grading
+                            You will need to submit the code Part1-Timing/main.c to your assigned Github repository. Your code should be able to reproduce the histogram you submitted. You can determine whether your implementation is correct by check the description in expected outcome. Due to noise, we will run your code multiple times (5 times) and grade based on the best results. You should feel comfortable to submit your code as long as it can generate the expected results most of the time. -->
+
+
+
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Flush+Reload on Matrix Multiplication</h5>
+
+                            <!-- Now that you become familiar with cache behaviors, the instructor has prepared a fun task for you—running an arbitrary function that the program cannot execute normally. In this case, the function is the <code>bash shell</code>! (wait what?) Use the exact same program that the Instructor provided above and work hard to get a shell.<br/><br/> -->
+
+
+                            <b>Task II-1 (3 pts).</b> 
+                            The first task is to measure the timing difference between accessing data from the L3 cache versus from main memory. To do this, run the sample demo provided in Mastik:
+                            <span>demo/FR-threshold.c</span>. (1) Begin by opening this source file and, in your report, provide a line-by-line explanation of what each part of the code does. (2) Then compile the code using the provided Makefile and run the demo code. You can do:
+                            
+                            <pre><code>
+                                Mastik $ make   // I am sure you already did this
+                                Mastik $ cd demo
+                                Mastik $ ./FR-threshold
+                            </code></pre>
+                            
+                            Include the output of the demo code in your report. You should also explain line-by-line what each output means.<br/><br/>
+
+
+                            <b>Task II-2 (3 pts).</b>
+                            <!-- Now that you're familiar with the Flush+Reload attack, the instructor has prepared a fun and hands-on task: you'll use this side-channel technique to infer the dimensions of input matrices!<br/><br/> -->
+                            
+                            <!-- Please first do the following steps:<br/><br/>
+                            <ul>
+                                <li>Download the compressed file: <a href="" target="_blank">FR-matrix.zip</a>.</li>
+                                <li>Unzip the file.</li>
+                                <li>Move the FR-matrix.c file into the <code>demo</code> directory within Mastik.</li>
+                                <li>Compile the code using the same <code>make</code> command you used earlier.</li>
+                                <li>Run the attack and observe how it reveals matrix dimension information through side-channel behavior.</li>
+                            </ul> -->
+
+                            <!-- Note that both input matrices are two-dimensional, and their widths and heights are powers of two (i.e., 2<sup>x</sup> for some integer x).<br/><br/> -->
+
+
+                            Some instructions ...
+
+
+
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task III: Flush+Reload on Your Program</h5>
+
+                            <b>Task III-1 (3 pts).</b>
+
+
+
+                            <b>Task III-2 (3 pts).</b>
+
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>. <code>.tar</code> or <code>.zip</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (6 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>trueflag</code>.</li>
+                                </ul>
+
+                                <li><b>Task II (9 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>bash shell</code>.</li>
+                                </ul>
+                            </ul><br/>
+
 
                         </div>
                     </div>
