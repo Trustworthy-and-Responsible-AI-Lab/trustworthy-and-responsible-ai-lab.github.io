@@ -483,20 +483,20 @@
                                 
                                 One way to bypass the configuration hassles is to set up your own server using a popular cloud provider, Amazon Web Services (AWS). To do this, sign up for AWS, go to the AWS Console, and select EC2. Then, launch an instance, choosing the operating system <code>Ubuntu 22.04</code> and the instance type <code>t2.micro</code> (which is eligible for the free tier). You will also need to configure an SSH key and a Security Group. Once completed, you can find the server's IP address in the console. Use that IP to log in to the cloud server via your terminal.
 
-                                <pre><code>
+                                <pre style="text-align: left; white-space: pre-line;"><code>
                                     $ ssh -i "your-aws-key" ubuntu@"your-server-ip"
                                 </code></pre>
 
                                 To run the code provided by the instructor, you will need to install a few packages, as listed below. Note that you may need to install more packages. In such cases, you can easily search the error message shown in the terminal on Google and find the answers.
 
-                                <pre><code>
+                                <pre style="text-align: left; white-space: pre-line;"><code>
                                     $ sudo apt install cmake gcc g++ gdb
                                     $ sudo apt install vim-enhanced
                                     $ sudo apt install python3
                                     $ sudo apt-get install binutils-dev libdwarf-dev libelf-dev
                                 </code></pre>
 
-                                N0w we are ready to run a side-channel attack. The specific attack we will explore is <code>Flush+Reload</code>, a timing side-channel technique based on the <code>L3 cache</code>. More details about this attack can be found in the original research paper. This paper is included in our reading list, and I encourage you to read it to understand the core concepts behind the attack. Don't worry—you will not need to implement the attack from scratch. Instead, we will use an existing implementation provided by the research community: <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW3" target="_blank">Mastik</a>. Please follow the instructions in the <code>README.md</code> file to install Mastik on your machine.
+                                N0w we are ready to run a side-channel attack. The specific attack we will explore is <code>Flush+Reload</code>, a timing side-channel technique based on the <code>L3 cache</code>. More details about this attack can be found in the original research paper. This paper is included in our reading list, and I encourage you to read it to understand the core concepts behind the attack. Don't worry—you will not need to implement the attack from scratch. Instead, we will use an existing implementation provided by the research community: <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW3" target="_blank">Mastik</a>. Please follow the instructions in the <code>README.md</code> file to install Mastik on your machine.<br/><br/>
 
                                 <b style="color: #D73F09;">[Important Note] Once you complete the homework, be sure to turn off and delete the cloud server to avoid being charged.</b>
                             </p>
@@ -524,52 +524,120 @@
 
                             
                             <!-- :: Task II -->
-                            <h5 style="margin-top: 20px;">Task II: Flush+Reload on Matrix Multiplication</h5>
+                            <h5 style="margin-top: 20px;">Task II: Flush+Reload on Leaking Program Behaviors</h5>
 
-                            <!-- Now that you become familiar with cache behaviors, the instructor has prepared a fun task for you—running an arbitrary function that the program cannot execute normally. In this case, the function is the <code>bash shell</code>! (wait what?) Use the exact same program that the Instructor provided above and work hard to get a shell.<br/><br/> -->
+                            Now that you are familiar with cache behavior, which means you are ready to run the Flush+Reload attack (isn't it fun?!). The Flush+Reload attack is a powerful side-channel attack that exploits the timing differences between accessing data from the cache vs. main memory. By precisely measuring these timing differences, an attacker can infer sensitive information about a target program's behavior, such as secret keys.<br/><br/>
 
-
-                            <b>Task II-1 (3 pts).</b> 
-                            The first task is to measure the timing difference between accessing data from the L3 cache versus from main memory. To do this, run the sample demo provided in Mastik:
-                            <span>demo/FR-threshold.c</span>. (1) Begin by opening this source file and, in your report, provide a line-by-line explanation of what each part of the code does. (2) Then compile the code using the provided Makefile and run the demo code. You can do:
+                            <b>Prerequisites:</b> Navigate to the <code>task</code> folder prepared by the instructor (for you!). You can compile the code using the provided <code>Makefile</code>. The folder contains two programs—<code>attack</code> and <code>multiply</code>—as well as a shared library <code>libops.so</code>.<br/><br/>
                             
-                            <pre><code>
-                                Mastik $ make   // I am sure you already did this
-                                Mastik $ cd demo
-                                Mastik $ ./FR-threshold
+                            The <code>multiply</code> program performs a series of 2D matrix multiplication operations using the shared library. Do not worry about data input—the program automatically reads the two csv files, <code>operand1.csv</code> and <code>operand2.csv</code>, which contains the input matrices.<br/><br/>
+
+                            The <code>attack.c</code> file contains the implementation of our Flush+Reload attack. This program is designed to infer the number of 2D matrix multiplication operations performed by the <code>multiply</code> program. It uses the Flush+Reload technique to measure timing differences between accessing data from the cache and from main memory. You do not need to run the two programs manually. The instructor has prepared a <code>run.sh</code> script for you. Simply execute this script—it will automate the process and save the attack outputs in the traces folder. These steps can be done as follows:<br/>
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ make clean; make      // clean the previous build and compile the code
+                                $ ./run.sh              // run the attack
                             </code></pre>
-                            
-                            Include the output of the demo code in your report. You should also explain line-by-line what each output means.<br/><br/>
 
 
-                            <b>Task II-2 (3 pts).</b>
-                            <!-- Now that you're familiar with the Flush+Reload attack, the instructor has prepared a fun and hands-on task: you'll use this side-channel technique to infer the dimensions of input matrices!<br/><br/> -->
-                            
-                            <!-- Please first do the following steps:<br/><br/>
+                            <b>Task II-1 (4 pts).</b>
+                            Let's first understand the Flush+Reload attack. Please answer the following questions:<br/><br/>
+
                             <ul>
-                                <li>Download the compressed file: <a href="" target="_blank">FR-matrix.zip</a>.</li>
-                                <li>Unzip the file.</li>
-                                <li>Move the FR-matrix.c file into the <code>demo</code> directory within Mastik.</li>
-                                <li>Compile the code using the same <code>make</code> command you used earlier.</li>
-                                <li>Run the attack and observe how it reveals matrix dimension information through side-channel behavior.</li>
-                            </ul> -->
+                                <li>What are these configurations and what do they do?
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        Line 25: #define CPU_FREQ      2300000000
+                                        Line 26: #define SECONDS       4
+                                        Line 27: #define IDLE_SECONDS  1.0
+                                        Line 29: #define RECORDS       CPU_FREQ / SLOT * SECONDS
+                                        Line 30: #define SLOT          2500
+                                        Line 31: #define THRESHOLD     110
+                                        Line 32: #define MINTHRESHOLD  0
+                                        Line 33: #define MAX_IDLE      CPU_FREQ / SLOT * IDLE_SECONDS
+                                    </code></pre>
+                                </li>
+                                <li>What does the following code do?</li>
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        146   for (int i = 0; i < _nmonitor; i++) {
+                                        147     fprintf(stderr, " Searching [%2d] for [%.20s]: ", i, monitor[i]);
+                                        148     uint64_t offset = sym_getsymboloffset(libfile, monitor[i]);
+                                        149     if (offset == ~0ULL) {
+                                        150       fprintf(stderr, "Error: cannot find the func. in [%s]\n", libfile);
+                                        151       exit(1);
+                                        152     }
+                                        153     fr_monitor(fr, map_offset(libfile, offset));
+                                        154     printf(": the func. offset [%10lx]\n", offset);
+                                        155   }
+                                    </code></pre>
+                                </li>
+                                <li>What does the following code do?</li>
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        156   for (int i = 0; i < _nmonitor; i++) {
+                                        157     fprintf(stderr, " Searching [%2d] for [%.20s]: ", i, monitor[i]);
+                                        158     uint64_t offset = sym_getsymboloffset(libfile, monitor[i]);
+                                        159     if (offset == ~0ULL) {
+                                        160       fprintf(stderr, "Error: cannot find the func. in [%s]\n", libfile);
+                                        161       exit(1);
+                                        162     }
+                                        163     fr_monitor(fr, map_offset(libfile, offset));
+                                        164     printf(": the func. offset [%10lx]\n", offset);
+                                        165   }
+                                    </code></pre>
+                                <li>Running the code will generate a <code>.csv</code> file in the <code>traces</code> folder. The file will contain lines of data in the following format, for example:
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        0,0,109,hit,mul2D
+                                        1,0,197,miss
+                                        2,0,0,miss
+                                        3,0,0,miss
+                                        4,0,0,miss
+                                        ...
+                                    </code></pre>
+                                    What do these numbers mean? Please explain the meaning of each column in the output file.
+                                </li>
+                            </ul>
 
-                            <!-- Note that both input matrices are two-dimensional, and their widths and heights are powers of two (i.e., 2<sup>x</sup> for some integer x).<br/><br/> -->
+
+                            <b>Task II-2 (5 pts).</b>
+                            
+                            Now let's infer how many 2D matrix multiplication operations were performed by the multiply program. Note that in this task, extracting the exact number of operations is not the primary objective—you can simply reverse-engineer the multiply program to determine that. What's more important is to understand (1) the steps and configurations required to make the Flush+Reload attack work, and (2) how to analyze the outputs produced by the attack.<br/><br/>
+
+                            Start by opening the output traces stored under the <code>traces</code> folder. Check how many times a cache-hit occurs. The number of cache-hits can serve as an important clue for approximating how many 2D matrix multiplication operations were performed by the <code>multiply</code> program. You may not be able to find the exact number of operations. Please feel free to run the <code>run.sh</code> multiple times until the number of observed cache-hits closely matches the number of 2D matrix multiplication operations you reverse-engineered from the <code>multiply</code> program. You may need to use different configurations for the followings when you make it work:
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                Line 25: #define CPU_FREQ      2300000000
+                                Line 26: #define SECONDS       4
+                                Line 27: #define IDLE_SECONDS  1.0
+                                Line 29: #define RECORDS       CPU_FREQ / SLOT * SECONDS
+                                Line 30: #define SLOT          2500
+                                Line 31: #define THRESHOLD     110
+                                Line 32: #define MINTHRESHOLD  0
+                                Line 33: #define MAX_IDLE      CPU_FREQ / SLOT * IDLE_SECONDS
+                            </code></pre>
+
+                            In the output <code>.csv</code> file, you may notice that most cache hits occur infrequently. However, in some cases, you may observe two (or more) cache hits occurring in close succession. In such cases, you may need to treat these multiple hits as a single hit.<br/><br/>
+
+                            <span style="color: #D73F09;">Tip: You can use the <code>grep</code> command to filter the lines containing "hit" from the output file.</span><br/><br/>
+
+                            Now your report should answer the following questions:<br/><br/>
+                            <ul>
+                                <li>How many 2D matrix multiplication operations were performed by the multiply program? What is the oracle?</li>
+                                <li>Run the attack ten times. How many cache-hits occurred in each run?</li>
+                                <li>What was the result from the most successful run and why?</li>
+                                <li>What attack configurations were used in your most successful run?</li>
+                                <li>What could be the reasons you were not able to obtain the correct number of cache-hits? Please explain your answer clearly and thoroughly—avoid vague responses, such as there are multiple programs running at the same time. If this is the reason, explain clearly how it could impact the Flush+Reload observations.</li>
+                            </ul>
 
 
-                            Some instructions ...
-
-
-
-                            <!-- :: Task II -->
-                            <h5 style="margin-top: 20px;">Task III: Flush+Reload on Your Program</h5>
-
-                            <b>Task III-1 (3 pts).</b>
-
-
-
-                            <b>Task III-2 (3 pts).</b>
-
+                            <b>Extra Credit Opportunity (5 pts).</b>
+                            
+                            You can earn extra credit by running the attack in a more fine-grained manner. To do so, you will need to modify the <code>attack.c</code> file accordingly. Please run the Flush+Reload attack with your modifications and answer the following questions:<br/><br/>
+                            <ul>
+                                <li>How many element-wise multiplicaion occur in each 2D matrix multiplication?</li>
+                                <li>Can you determine the <code>width</code> and <code>height</code> of the first matrix involved in the multiplication?</li>
+                                <li>Can you determine the <code>width</code> and <code>height</code> of the second matrix involved in the multiplication?</li>
+                                <li>Can you provide a detailed explanation of why it worked or did not work as expected?</li>
+                            </ul><br/>
+                            
 
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
@@ -581,14 +649,26 @@
                                 <ul>
                                     <li>Task I-1: Your answers to the questions.</li>
                                     <li>Task I-2: You need to provide a screenshot of your terminal showing the FR-threshold command and its output.</li>
-                                    <li>Task I-2:You need to provide a detailed explanation of the FR-threshold program, as requested above.</li>
+                                    <li>Task I-2: You need to provide a detailed explanation of the FR-threshold program, as requested above.</li>
                                 </ul>
 
                                 <li><b>Task II (9 pts)</b></li>
                                 <ul>
-                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
-                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>bash shell</code>.</li>
+                                    <li>Task II-1: Your detailed answers to the questions.</li>
+                                    <li>Task II-2: Your detailed answers to the questions.</li>
+                                    <li>Task II-2: You should include the <code>fr_traces</code> folder containing the trace results (.csv files) from all ten runs you performed.</li>
                                 </ul>
+
+                                <li><b>Extra Credits (5 pts)</b></li>
+                                <ul>
+                                    <li>Your detailed answers to the four questions.</li>
+                                    <li>You do not need to submit the traces for this opportunity.</li>
+                                </ul><br/>
+
+                                <span style="color: #D73F09;">
+                                    [Important Note] Make sure that your .csv file contains only cache-hits. 
+                                    Including all cache-misses will substantially increase the submission size—potentially exceeding 10MB. 
+                                    If your submission exceeds 10MB, 2 pts will be deducted.</span><br/>
                             </ul><br/>
 
 
