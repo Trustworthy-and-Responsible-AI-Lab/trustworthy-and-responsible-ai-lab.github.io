@@ -508,7 +508,7 @@
                             In this task, you will learn how to gather information about the target system. This is a crucial step in any attack, as it allows you to understand the system's architecture and identify potential vulnerabilities. You will also learn how to measure the latency of memory accesses, which is essential for cache-based timing side-channel attacks.<br/><br/>
 
                             <b>Task I-1 (3 pts).</b>
-                            The first subtask is to understand the environment in which you will run the attack. To do this, you may find the following Unix commands helpful: <code>lscpu</code>, <code>cat /proc/cpuinfo</code>, and <code>getconf -a | grep CACHE</code>. Now, answer the following quesitons:<br/><br/>
+                            The first subtask is to understand the environment in which you will run the attack. To do this, you may find the following Unix commands helpful: <code>lscpu</code>, <code>cat /proc/cpuinfo</code>, and <code>getconf -a | grep CACHE</code>. Now, answer the following questions:<br/><br/>
                             <ul>
                                 <li>How many cores does your CPU have?</li>
                                 <li>How many threads does your CPU have?</li>
@@ -520,7 +520,7 @@
                             
 
                             <b>Task I-2 (3 pts).</b>
-                            Now, let's measure the latency difference between accessing data in L3-cache vs. memory. Your task is to examine the code in <code>demo/FR-threshold.c</code> and interpret the terminal output after running the program. The code is composed of multiple blocks, starting from Line 38, 41, 45, 50, 56, 64, 66, and 76. You first need to explain the overall purpose of this program, what it is designed to measure or demontrate. Then for each code block, describe what the block does and why it is needed to achieve th program's objective.
+                            Now, let's measure the latency difference between accessing data in L3-cache vs. memory. Your task is to examine the code in <code>demo/FR-threshold.c</code> and interpret the terminal output after running the program. The code is composed of multiple blocks, starting from Line 38, 41, 45, 50, 56, 64, 66, and 76. You first need to explain the overall purpose of this program, what it is designed to measure or demonstrate. Then for each code block, describe what the block does and why it is needed to achieve the program's objective.
 
                             
                             <!-- :: Task II -->
@@ -558,16 +558,13 @@
                                 </li>
                                 <li>What does the following code do?</li>
                                     <pre style="text-align: left; white-space: pre-line;"><code>
-                                        146   for (int i = 0; i < _nmonitor; i++) {
-                                        147     fprintf(stderr, " Searching [%2d] for [%.20s]: ", i, monitor[i]);
-                                        148     uint64_t offset = sym_getsymboloffset(libfile, monitor[i]);
-                                        149     if (offset == ~0ULL) {
-                                        150       fprintf(stderr, "Error: cannot find the func. in [%s]\n", libfile);
-                                        151       exit(1);
-                                        152     }
-                                        153     fr_monitor(fr, map_offset(libfile, offset));
-                                        154     printf(": the func. offset [%10lx]\n", offset);
-                                        155   }
+                                        161 uint16_t *res = (uint16_t *) malloc(RECORDS * _nmonitor * sizeof(uint16_t));
+                                        162 for (int i = 0; i < RECORDS * _nmonitor ; i+= 4096/sizeof(uint16_t))
+                                        163   res[i] = 1;
+                                        164 fr_probe(fr, res);
+                                        165
+                                        166 // Trace the function calls
+                                        167 int l = fr_trace(fr, RECORDS, res, SLOT, THRESHOLD, MAX_IDLE);
                                     </code></pre>
                                 </li>
                                 <li>What does the following code do?</li>
