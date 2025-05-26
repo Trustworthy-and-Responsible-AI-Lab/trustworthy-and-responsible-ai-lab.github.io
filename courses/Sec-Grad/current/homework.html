@@ -454,7 +454,7 @@
                     </div>
               
                     <div id="homework3" 
-                         class="collapse show" 
+                         class="collapse" 
                          aria-labelledby="headingThree"
                          data-parent="#homeworkExample">
                         <div class="card-body">
@@ -689,13 +689,203 @@
                     </div>
               
                     <div id="homework4" 
-                         class="collapse" 
+                         class="collapse show" 
                          aria-labelledby="headingFour"
                          data-parent="#homeworkExample">
                         <div class="card-body">
 
                             <!-- :: Deadlines -->
-                            <h5>To be announced soon.</h5>
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 05.26.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 06.09.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for you to understand and implement a <code>prompt-based jailbreaking attack</code>. Large-language model (LLM), such as GPT-4o and Claude-3.5, developers align their LLMs with human values, with one goal being the denial of harmful requests (e.g., asking "How do I build a bomb?"" should trigger a response such as "As an ethical AI model, I cannot answer this"). Prompt-based jailbreaks circumvent this alignment by modifying the input prompt to induce an LLM to respond to a harmful query it would normally <i>refuse</i>. You will implement and evaluate the <a href="https://arxiv.org/abs/2307.15043" target="_target">Greedy Coordinate Gradient (GCG)</a> attack: the most popular algorithm for crafting adversarial prompts for jailbreaking.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                The instructor and their PhD student (Zachary Coalson) has prepared a skeleton code for you to implement the GCG attack. The code is available on <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW4" target="_blank">this GitHub repository</a>. You can download the code by cloning the repository. The code is structured to help you implement the GCG attack and evaluate its effectiveness on a set of harmful queries.<br/><br/>
+                                
+                                <span style="color: #D73F09;">[Important note]
+                                    The code was developed in Linux, so the instructor recommends using a Linux machine. But the code should work for Mac and Windows machines as well. Also, a GPU is highly recommended for this project as LLMs are quite computationally intensive to run.
+                                </span><br/><br/>
+
+                                You will be using <code>Python</code> and <code>PyTorch</code> for this project. You need to install required packages. The instructor recommends using Miniconda to create the environment (install instructions <a href="https://www.anaconda.com/docs/getting-started/miniconda/install#linux" target="_blank">here</a>), though alternatives such as <a href="https://docs.python.org/3/library/venv.html" target="_blank">venv</a> should also work. Assuming Miniconda is installed, create the developing environment by running the following commands:
+
+                                <pre style="text-align: left; white-space: pre-line;"><code>
+                                    $ cd CS578-HW4
+                                    $ conda create -n HW4 python=3.10
+                                    $ conda activate HW4
+                                    $ pip install -r requirements.txt
+                                </code></pre>
+
+                                <span style="color: #D73F09;">[Note] Whenever returning to the project, be sure to re-activate the Conda environment by running <code>$ conda activate HW4</code></span><br/>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Implement the GCG Attack</h5>
+
+                            You first need to complete the provided skeleton code by implementing the evaluation script and the GCG attack.<br/><br/>
+
+                            <b>Task I-1.</b>
+                            Start with the evaluation script <code>evaluate.py</code>.
+                            This script is designed to load a language model, run harmful queries against it, and compute the attack success rate. Please follow the steps below:<br/><br/>
+                            
+                            <ol>
+                                <li>
+                                    <b>Load an LLM and a tokenizer.</b>
+                                    Use the HuggingFace API to load a language model and tokenizer. The LLM we will be using is <i>Qwen2.5-1.5B</i>, which is great for our purposes because it is relatively small, performant, and pretty well-aligned. The HuggingFace ID for this model is given in <code>config.py</code> and is already imported as the <code>MODEL_NAME</code> variable. You may find these guides helpful:<br/><br/>
+
+                                    <ul>
+                                        <li><a href="https://huggingface.co/docs/transformers/en/models" target="_blank">https://huggingface.co/docs/transformers/en/models</a></li>
+                                        <li><a href="https://huggingface.co/docs/transformers/en/fast_tokenizers" target="_blank">https://huggingface.co/docs/transformers/en/fast_tokenizers</a></li>
+                                    </ul><br/>
+
+                                    Make sure to include the command <code>.to(device)</code> after loading the model in the script. This ensures that the model is moved to the appropriate device (e.g., GPU) for faster and more efficient computation.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Load the harmful queries.</b>
+                                    This part is already done for you. We will use the harmful queries from <a href="https://github.com/JailbreakBench/jailbreakbench" target="_blank">JailbreakBench (published in NeurIPS 2024)</a>. Each query is a harmful request that an aligned model should refuse. You may notice the <code>ADV_SUFFIXES_PATH</code> variable is initialized to <code>None</code>. After we implement and run GCG, you will specify the path to the saved adversarial prompt-artifacts (a list of strings in a JSON object) to evaluate the GCG attack results. For now, you can leave it unmodified.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Generate responses to the harmful queries.</b>
+                                    You make sure the followings:<br/><br/>
+                                    <ul>
+                                        <li>Generate a maximum of 256 new tokens for each prompt.</li>
+                                        <li>Set sampling to <code>False</code> for deterministic responses.</li>
+                                        <li>Save the de-tokenized responses (in string format! Use the tokenizer's <code>decode</code> function) in one list, one item per prompt. 
+                                            Be sure to only save new tokens, not tokens from the input.</li>
+                                    </ul><br/>
+                                    <a href="https://huggingface.co/docs/transformers/en/llm_tutorial" target="_blank">Here</a>'s a reference for generating text with LLMs using HuggingFace.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Compute the attack success rate.</b>
+                                    Jailbreak attacks are typically evaluated using the attack success rate metric: the fraction of inputs where alignment is successfully removed. For simplicity, we adopt the simple evaluation methodology from the GCG paper, which checks if a response starts with any prefix from a curated list that usually leads to a refusal. The curated list is provided for you, so you just need to implement a function that computes whether an output is harmful by checking if it DOES NOT start with any prefixes.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Save the responses.</b>
+                                    This part is done for you. After generating the responses and computing the ASR, they are saved in the <code>data</code> directory so you can analyze them further.<br/><br/>
+
+                                    Upon completion of the evaluation script, you should be able to compute Qwen2.5-1.5B's direct response rate—the fraction of harmful queries it responds to before the jailbreak is applied. Feel free to play around with this. The <code>config.py</code> script specifies the number of samples to test, which you can set from 1-100.<br/><br/>
+                                </li>
+                            </ol>
+                            
+                            How aligned is Qwen2.5-1.5B before adversarial pressure?<br/><br/>
+
+
+                            <b>Task I-2.</b>
+                            You now can evaluate a model on harmful queries using the script. The next step is to implement GCG to attempt a jailbreak.<br/><br/> 
+                            
+                            Given a prompt and a target response (i.e., the harmful output we want the model to produce), GCG searches for an adversarial suffix that, when appended to the prompt, increases the likelihood that the model generates the target response. The full algorithm is provided in the <code>gcg</code> directory.<br/><br/>
+                            
+                            We will focus on implementing the loss function that GCG attempts the minimize by finding the optimal adversarial suffix. It is the standard next token prediction loss: the cross-entropy loss between logits (the model's output distribution across tokens) and labels (the target tokens we want the model to output). <code>gcg/loss_function.py</code> provides the skeleton function, which takes in the logits and labels and should return their loss. Some helpful hints:<br/><br/>
+
+                            <ul>
+                                <li>Use the <code>F.cross_entropy</code> function from PyTorch.</li>
+                                <li>The logits have initial shape <code>[batch_size, sequence_length, vocab_size]</code> and the labels <code>[batch_size, sequence length]</code>. The expected shapes are <code>[batch_size * sequence_length, vocab_size]</code> and <code>[batch_size * sequence_length]</code>, respectively.</li>
+                                <li>We want to retain the loss for each token in the sequence. This requires a specific <code>reduction</code> strategy.</li>
+                                <li>After computing the loss, do not reshape it. The GCG algorithm will manage this. You can simply return it.</li>
+                            </ul>
+
+                            The primary challenge is to correctly reshape the logits and labels for the computation; the loss itself can be computed in one line. If you are curious, the GCG algorithm is described on pages 7-8 of the original paper, and the rest of the code provides much more detail.<br/><br/>
+
+                            <b>Task I-3.</b>
+                            With GCG implemented, let's prepare the script that runs it: <code>run_gcg.py</code>. The only thing you need to implement is loading the model and tokenizer, which is equivalent to what you did in <code>evaluate.py</code>.<br/><br/>
+                            
+                            Note that this time, we load harmful queries and their corresponding target responses from JailbreakBench. These targets do not contain a complete output, but rather the initial affirmative response. The insight from the GCG paper is that if the model outputs this affirmative response, it will continue to answer the harmful query. After running GCG, the adversarial suffixes are saved in <code>data/suffixes.json</code> as a list of strings. If you run GCG multiple times, rename these files to prevent older versions from being overwritten.<br/><br/>
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Jailbreak an LLM</h5>
+
+                            Now you will use your GCG implementation to jailbreak Qwen2.5-1.5B. To start, ensure that <code>NUM_SAMPLES</code> in <code>config.py</code> is set to 1. 
+                            Then run the following to craft an adversarial suffix for the first prompt in JailbreakBench:<br/>
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ python run_gcg.py
+                            </code></pre>
+
+                            The suffix will be stored in <code>data/suffixes.json</code>. Next, set this file path as the <code>ADV_SUFFIXES_PATH</code> variable in <code>evaluate.py</code>. 
+                            Now, you can see if the adversarial suffix can jailbreak the LLM by running:
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ python evaluate.py
+                            </code></pre>
+
+                            The prompt, response, and harmfulness of the response should be saved in <code>data/gcg/results.json</code>. Include the answers to the following questions in your report:<br/><br/>
+
+                            <ul>
+                                <li>Was the LLM "jailbroken" by GCG according to the ASR metric? 
+                                    Regardless of the metric, does the response seem aligned with human values? 
+                                    (Since this is one sample, it is just a True/False rather than a proportion.)</li>
+                                <li>Does the beginning of the model's response match the target from JailbreakBench?
+                                    In other words, does the optimization appear successful?
+                                    (You can print it out from <code>run_gcg.py</code>.) </li>
+                            </ul><br/>
+
+
+                            <!-- :: Task III -->
+                            <h5 style="margin-top: 20px;">Extra Credit Opportunity: More Jailbreaking (5 pts).</h5>
+                        
+                            Now that you have hopefully carried out a successful jailbreak, let's craft adversarial suffixes for more prompts that we can analyze. Repeat the steps from Task II, but change <code>NUM_SAMPLES</code> in <code>config.py</code> to 10. Please feel free to do more (up to 100) if you have the compute, but 10 should be sufficient.<br/><br/>
+                            
+                            After, you should have a list of 10 adversarial suffixes in <code>data/suffixes.json</code>, and 10 pairs of results in <code>data/gcg/results.json</code>. For reference, you should also compute the model's direct response rate without a jailbreak. You can compute this by running <code>evaluate.py</code> after setting <code>ADV_SUFFIXES_PATH</code> to <code>None</code>—the results will be saved in <code>data/no_attack/results.json</code>.<br/><br/>
+
+                            Include the answers to the following questions in your report:<br/><br/>
+                            <ul>
+                                <li>What is the ASR? What is the direct response rate? 
+                                    Does GCG successfully increase the number of harmful responses?</li>
+                                <li>Analyze the prompts, targets, and responses. 
+                                    When and why can GCG induce a harmful completion? 
+                                    When and why does it appear to fail (if at all)?</li>
+                                <li>Do you notice a connection between the adversarial suffix 
+                                    and the harmful response?
+                                    Does the model appear to reference the content in any way? 
+                                    Using insights from this, why might the adversarial suffix bypass the model's alignment?</li>
+                            </ul><br/>
+                            
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>. <code>.tar</code> or <code>.zip</code>) that contains your entire code and write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (9 pts)</b></li>
+                                <ul>
+                                    <li>Task I-1: Your <code>evaluation.py</code> and the model response(s).</li>
+                                    <li>Task I-2: Your <code>gcg/loss_function.py</code>.</li>
+                                    <li>Task I-3: Your <code>run_gcg.py</code> and the attack result(s).</li>
+                                </ul>
+
+                                <li><b>Task II (6 pts)</b></li>
+                                <ul>
+                                    <li>Your responses stored in <code>data/gcg/results.json</code>.</li>
+                                    <li>Your detailed answers to the questions.</li>
+                                </ul>
+
+                                <li><b>Extra Credits (5 pts)</b></li>
+                                <ul>
+                                    <li>Your responses stored in <code>data/gcg/results.json</code>.</li>
+                                    <li>Your detailed answers to the questions.</li>
+                                </ul><br/>
+
+                                <span style="color: #D73F09;">[Important note] Make sure not to include any large files, such as the model file, in your submission. If your submission includes any large files, 2 pts will be deduced from your total score.</span><br/><br/>
+
+                            </ul><br/>
 
                         </div>
                     </div>
