@@ -134,4 +134,89 @@ body {
 }
 
 
+/* Carousel layout */
+#results-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* Make slides flow normally instead of absolute */
+#results-carousel .item {
+  display: none;                /* hidden by default */
+  text-align: center;
+}
+#results-carousel .item.active {
+  display: block;               /* show active slide */
+}
+
+#results-carousel img {
+  width: 100%;
+  height: auto;                 /* keeps proportions */
+  object-fit: contain;          /* never crops */
+}
+
+/* Arrow buttons */
+#results-carousel .carousel-btn {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;               /* fixes baseline offset */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  transition: all 0.25s ease;
+}
+
+/* slight nudge upward to center icon perfectly */
+#results-carousel .carousel-btn i {
+  font-size: 1.2rem;   /* bigger arrow */
+  line-height: 1;
+  transform: translateY(-1px); /* lift it slightly */
+}
+
+#results-carousel .carousel-btn:hover {
+  background: linear-gradient(135deg, indigo, skyblue);
+  box-shadow: 0 6px 5px rgba(0,0,0,0.35);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* move them outward so they don't overlap the plot */
+#results-carousel .carousel-btn.prev { left: 5px; }   /* adjust as desired */
+#results-carousel .carousel-btn.next { right: 5px; }  /* move farther out */
+
+/* if your container has little horizontal space, you can try -45px instead */
+
+/* Optional: show a subtle focus ring for accessibility */
+#results-carousel .carousel-btn:focus-visible {
+  outline: 3px solid #7aa2ff;
+  outline-offset: 2px;
+}
+
+/* (Optional) Cursor hint that clicking toggles play/pause */
+#results-carousel { cursor: pointer; }
+
+/* .carousel-caption {
+  text-align: center;
+  font-style: italic;
+  color: #333;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  min-height: 1.5em;  
+} */
+
+
 
