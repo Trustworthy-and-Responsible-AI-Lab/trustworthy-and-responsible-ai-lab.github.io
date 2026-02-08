@@ -1,196 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!-- Title -->
-        <title>
-            CS499/579 | AI539 :: W25 :: Trustworthy ML 
-        </title>
+    <!-- Title -->
+    <title>CS499/599 | AI539 :: S26 :: Trustworthy ML</title>
 
-        <!-- SEO -->
-        <meta name="author" content="Sanghyun Hong">
-        <meta name="description" content="Trustworthy Machine Learning Oregon State University">
-        <meta name="keywords" content="sanghyun hong albert Trustworthy Machine Learning oregon state university">
+    <!-- SEO -->
+    <meta name="author" content="Sanghyun Hong" />
+    <meta name="description" content="Trustworthy Machine Learning Oregon State University" />
+    <meta name="keywords" content="sanghyun hong trustworthy machine learning oregon state university" />
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
 
-        <!-- Prevent js cache by Chrome -->
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
+    <!-- Prevent js cache by Chrome -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-        <!-- Bootstrap start -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap start -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css">
-        <link rel="stylesheet" type="text/css" href="/css/osu-styles.css">
-        
-    </head>
-    <body>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/osu-fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/css/osu-styles.css" />
+  </head>
 
-        <!-- Content -->
-        <div class="container">
+  <body>
+    <!-- Content -->
+    <div class="container">
+      <!-- Title -->
+      <h2 class="title">
+        <b>CS499/599 | AI539 :: S26 :: Trustworthy Machine Learning</b>
+      </h2>
 
-            <!-- Title -->
-            <h2 class="title">
-                <b>CS499/579 | AI539 :: W25 :: Trustworthy Machine Learning</b>
-            </h2>
+      <hr noshade="" size="1" />
 
-            <hr noshade="" size="1">
+      <!-- Top navigation bar -->
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html"><h5>Home</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="critiques.html"><h5>Critique, Presentation</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="homework.html"><h5>Homework</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html"><h5>Project</h5></a>
+        </li>
+      </ul>
 
-            <!-- Top navigation bar -->
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html"><h5>Home</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="critiques.html"><h5>Critique, Presentation</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="homework.html"><h5>Homework</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="project.html"><h5>Project</h5></a>
-                </li>
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="vs_sanghyun.html"><h5>vs. Sanghyun</h5></a>
-                </li> -->
-            </ul>
-            <hr noshade="" size="1">
+      <hr noshade="" size="1" />
 
-            <!-- Overview -->
-            <div class="container">
-                <h4>Overview</h4>
-                <p>
-                    In recent years, we've seen the soar of machine learning (ML)-enabled applications in our lives, such as ChatGPT [<a href="https://chat.openai.com/" target="_blank">link</a>] or autonomous driving cars [<a href="https://www.tesla.com/AI" target="_blank">link</a>], which calls for a comprehensive understanding of their security and privacy implications. Research in the field of Trustworthy ML (TML) studies (potential) security and privacy risks an adversary can inflict. A well-studied risk, and an example of the research outcomes, is predictions manipulated by adversarial examples [<a href="https://arxiv.org/abs/1312.6199" target="_blank">link</a>]. It leads to developing defenses, <i>e.g.</i>, adversarial training [<a href="https://arxiv.org/abs/1706.06083" target="_blank">link</a>]—a training mechanism that reduces the sensitivity of models to small input perturbations. Researchers have extended this concept to language models, referring to it as "jailbreaks," which is an actively studied area [<a href="https://llm-attacks.org" target="_blank">link</a>].
-                    <br/><br/>
+      <!-- Overview -->
+      <div class="container">
+        <h4>Overview</h4>
 
-                    In this class, students will be able to familiarize themselves with the history of attacks and defenses against ML and their extensions to emerging ML-enabled systems, such as generative ML models. The class materials will cover three fundamental threats: (1) adversarial examples, (2) data poisoning, and (3) privacy risks. Students will review prior work, from classical papers to up-to-date ones, implement basic attacks and defenses, evaluate their effectiveness, and conduct a mini-research project on a topic of their choice.
-                    <br/><br/>
+        <p>
+          In recent years, we've seen the soar of machine learning (ML)-enabled applications in our lives, such as ChatGPT
+          [<a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">link</a>] or autonomous driving cars
+          [<a href="https://www.tesla.com/AI" target="_blank" rel="noopener noreferrer">link</a>], which calls for a comprehensive
+          understanding of their security and privacy implications. Research in the field of Trustworthy ML (TML) studies (potential)
+          security and privacy risks an adversary can inflict. A well-studied risk, and an example of the research outcomes, is
+          predictions manipulated by adversarial examples [<a href="https://arxiv.org/abs/1312.6199" target="_blank" rel="noopener noreferrer">link</a>].
+          It leads to developing defenses, <i>e.g.</i>, adversarial training [<a href="https://arxiv.org/abs/1706.06083" target="_blank" rel="noopener noreferrer">link</a>]—a
+          training mechanism that reduces the sensitivity of models to small input perturbations. Researchers have extended this concept
+          to language models, referring to it as "jailbreaks," which is an actively studied area
+          [<a href="https://llm-attacks.org" target="_blank" rel="noopener noreferrer">link</a>].
+        </p>
 
-                    In the end, we expect:
-                    <ul>
-                        <li><b>[Security]</b> To learn how to think like an adversary.</li>
-                        <li><b>[TML]</b> To learn attacks and defenses against ML-enabled systems.</li>
-                        <li><b>[TML]</b> To have hands-on experience by implementing security mechanisms.</li>
-                        <li><b>[Research]</b> To learn how to pursue a research problem of your choice and communicate your findings with others.</li>
-                    </ul>
-                </p>
+        <p>
+          In this class, students will be able to familiarize themselves with the history of attacks and defenses against ML and their
+          extensions to emerging ML-enabled systems, such as generative ML models. The class materials will cover three fundamental
+          threats: (1) adversarial examples, (2) data poisoning, and (3) privacy risks. Students will review prior work, from classical
+          papers to up-to-date ones, implement basic attacks and defenses, evaluate their effectiveness, and conduct a mini-research
+          project on a topic of their choice.
+        </p>
 
-                <!-- <p>
-                    <b style="color: #D73F09">[Note] The lectures will be switched on Zoom from the ...</b>
-                </p> -->
-            </div>
-            
-            <hr noshade="" size="1">
+        <p><b>In the end, we expect:</b></p>
+        <ul>
+          <li><b>[Security]</b> To learn how to think like an adversary.</li>
+          <li><b>[TML]</b> To learn attacks and defenses against ML-enabled systems.</li>
+          <li><b>[TML]</b> To have hands-on experience by implementing security mechanisms.</li>
+          <li><b>[Research]</b> To learn how to pursue a research problem of your choice and communicate your findings with others.</li>
+        </ul>
+      </div>
 
+      <hr noshade="" size="1" />
 
-            <!-- Latest announcements -->
-            <div class="container" style="background-color: #FAE0D6; border: 0.5px solid #D73F09;">
-                <h4 style="margin-top: 10px;">Latest Announcements 
-                    <span style="font-size: large;">[<a href="announce.html">Full List</a>]</span></h4>
-                <ul>
-                    <li><b>01/20/25:</b> 1/21 is the digital learning day; we will hold our class on Zoom!</li>
-                    <li><b>01/06/25:</b> Welcome to CS499/579 | AI539 Trustworthy ML!</li>
-                </ul>
-            </div>
-
-            <hr noshade="" size="1">
-
-
-            <!-- Course info & instructor -->
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-6">
-                        <h4>Course Information</h4>
-                        <ul>
-                            <li><b>Lecture:</b> TR 12 - 1:50pm</li>
-                            <li><b>Credits:</b> 4</li>
-                            <li><b>Location:</b>
-                                <a href="https://map.oregonstate.edu/?building=StAg">STAG 212 - Strand Agriculture Hall 212 (GP)</a> and Zoom</li>
-                            <li><b>Discussion board: </b>Canvas</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6">
-                        <h4>Instructor</h4>
-                        <ul>
-                            <li><b>Name: </b>
-                                <a href="https://www.sanghyun-hong.com" target="_blank">
-                                    Sanghyun Hong
-                                </a>
-                            </li>
-                            <li><b>Contact: </b>sanghyun [dot] hong [at] oregonstate [dot] edu</a></li>
-                            <li><b>Office: </b>
-                                <a href="https://map.oregonstate.edu/?building=KEC" target="_blank">
-                                    2029 KEC - Kelley Engineering Center
-                                </a></li>
-                            <li><b>Office hours:</b> F 3 - 3:50 pm on Zoom<br/>
-                                [Subject to change at the instructor's discretion]</li>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr noshade="" size="1">
-
-
-            <!-- Course policy -->
-            <div class="container">
-                <h4>Course Policy</h4>
-                <p>
-                    The University's <a href="https://catalog.oregonstate.edu/syllabi/commontext/cheating/" target="_blank"><u>Code of Academic Integrity</u></a> applies, modified as follows:
-                    <br/>
-    
-                    <h6>[Dont's]</h6>
-                    <ul>
-                        <li>Do <b>NOT</b> share your code or write-up with others.</li>
-                        <li>Do <b>NOT</b> copy and paste someone else's code or write-up in yours.</li>
-                        <li>Do <b>NOT</b> ask for the solutions on the Internet<br/>
-                            (<i>e.g.</i>, do not post your homework to StackOverflow). </li>
-                    </ul>
-    
-                    <h6>[Do's]</h6>
-                    <ul>
-                        <li><b>Brainstorm</b> your ideas with other students.</li>
-                        <li><b>Discuss</b> and explain your solutions with other students.</li>
-                        <li><b>Discuss</b> the problems and concepts for the team project.</li>
-                        <li><b>Collaborate</b> with your team-members to run experiments for the team project.</li>
-                    </ul>
-    
-                    <b>Must:</b> Please write down the students' names if you received any help from them. It won't affect the scores for your homework or projects. But, you will learn from this practice how to credit others for their services. It is an essential skill when you collaborate with others in the future.
-                </p>
-            </div>
-
-
-            <!-- Footer -->
-            <hr noshade="" size="1">
-            <footer class="footer">
-                <div class="container text-center" style="margin-bottom: 20px">
-                  <span class="text-muted">© Sanghyun Hong: 2022-Present.</span>
-                </div>
-            </footer>
-
+      <!-- Latest announcements -->
+      <div class="container p-3" style="background-color: #FAE0D6; border: 0.5px solid #D73F09; border-radius: 6px;">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="mb-0" style="margin-top: 2px;">Latest Announcements</h4>
+          <span style="font-size: large;">[<a href="announce.html">Full List</a>]</span>
         </div>
+        <ul class="mt-2 mb-0">
+          <li><b>03/30:</b> Welcome to CS499/599 | AI539 Trustworthy ML (Spring 2026)!</li>
+          <li><b>05/18-21:</b> Asynchronous week (recorded materials provided) due to conference travel (S&amp;P).</li>
+          <li><b>05/25:</b> No class (Memorial Day).</li>
+        </ul>
+      </div>
 
-        <!-- Optional Javascript -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <hr noshade="" size="1" />
 
-    </body>
+      <!-- Course info & instructor -->
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h4>Course Information</h4>
+            <ul>
+              <li><b>Lecture:</b> MW 10:00 - 11:50am</li>
+              <ul>
+                <li>
+                    <b>In-person (Mondays):</b>
+                    <a href="https://map.oregonstate.edu/?building=OWEN" target="_blank" rel="noopener noreferrer">OWEN 106 - Owen Hall 106</a>
+                </li>
+                <li><b>Online (Wednesdays):</b> Zoom</li>
+              </ul>
+              <li><b>Credits:</b> 4</li>
+              <li><b>Discussion board:</b> Canvas</li>
+            </ul>
+          </div>
+
+          <div class="col-6">
+            <h4>Instructor</h4>
+            <ul>
+              <li>
+                <b>Name: </b>
+                <a href="https://www.sanghyun-hong.com" target="_blank" rel="noopener noreferrer">Sanghyun Hong</a>
+              </li>
+              <li><b>Contact: </b> sanghyun [dot] hong [at] oregonstate [dot] edu</li>
+              <li>
+                <b>Office: </b>
+                <a href="https://map.oregonstate.edu/?building=KEC" target="_blank" rel="noopener noreferrer">
+                  2029 KEC - Kelley Engineering Center
+                </a>
+              </li>
+              <li>
+                <b>Office hours:</b> TBA (Spring 2026)<br />
+                [Subject to change at the instructor's discretion]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Course policy -->
+      <div class="container">
+        <h4>Course Policy</h4>
+
+        <p>
+          The University's
+          <a href="https://catalog.oregonstate.edu/syllabi/commontext/cheating/" target="_blank" rel="noopener noreferrer"><u>Code of Academic Integrity</u></a>
+          applies, modified as follows:
+        </p>
+
+        <h6>[Don'ts]</h6>
+        <ul>
+          <li>Do <b>NOT</b> share your code or write-up with others.</li>
+          <li>Do <b>NOT</b> copy and paste someone else's code or write-up in yours.</li>
+          <li>Do <b>NOT</b> ask for the solutions on the Internet (<i>e.g.</i>, do not post your homework to StackOverflow).</li>
+        </ul>
+
+        <h6>[Do's]</h6>
+        <ul>
+          <li><b>Brainstorm</b> your ideas with other students.</li>
+          <li><b>Discuss</b> and explain your solutions with other students.</li>
+          <li><b>Discuss</b> the problems and concepts for the team project.</li>
+          <li><b>Collaborate</b> with your team-members to run experiments for the team project.</li>
+        </ul>
+
+        <p>
+          <b>Must:</b> Please write down the students' names if you received any help from them. It won't affect the scores for your
+          homework or projects. But, you will learn from this practice how to credit others for their services. It is an essential skill
+          when you collaborate with others in the future.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <hr noshade="" size="1" />
+      <footer class="footer">
+        <div class="container text-center" style="margin-bottom: 20px;">
+          <span class="text-muted">© Sanghyun Hong: 2022-Present.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Optional Javascript -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
