@@ -5,27 +5,27 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
+  <!-- <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <meta property="og:url" content="URL OF THE WEBSITE" /> -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <!-- <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:height" content="630" /> -->
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image"> -->
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
 
-  <title>SDSeg</title>
+  <title>Harnessing Input-Adaptive Inference for Efficient VLN</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -53,7 +53,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              Harnessing Input-adaptive Inference for Efficient VLN</h1>
+              Harnessing Input-Adaptive Inference for Efficient VLN</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -115,8 +115,8 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="static/images/framework-v2.jpg" alt="MY ALT TEXT" , width="700" />
-        <h4 class="subtitle has-text-centered">The overview of the proposed method.</h4>
+        <img src="static/images/overview.png" alt="Overview of our proposed method", width="700" />
+        <!-- <h4 class="subtitle has-text-centered">Our input-adaptive, efficient navigation method.</h4> -->
       </div>
     </div>
   </section>
@@ -131,8 +131,9 @@
         </div>
       </div>
       <p>
-        🌟 Highlights are the summary of the proposed work. They can be contributions in the paper or preferred key points.<br>
-        🌟 Point 2
+        🌟 <b>Input-Adaptive VLN Framework:</b> We introduce the first input-adaptive inference approach for VLN.<br>
+        🌟 <b>Efficiency Gains:</b> Across 7 VLN benchmarks, we improve efficiency by 1.7-7.5× while retaining 77–89% of task success.<br>
+        🌟 <b>Visual Corruptions Evaluation:</b> We analyze the robustness of VLN agents under real-world visual corruptions.
         
       </p>
     </div>
@@ -145,7 +146,7 @@
           <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
             Motivation</h2>
         <h5 class="title is-5" style="text-align: center;">
-          Using a single sentence to summarize the motivation of the paper.
+          We aim to accelerate VLN inference without sacrificing performance by preventing unnecessary computation ('overthinking') during inference.
         </h5>
 
         <div class="columns is-centered">
@@ -154,21 +155,20 @@
           <div class="content">
             <h4 class="title is-5" style="text-align: center;">🔒 Challenges</h4>
             <p>
-            (1) blablabla<br>
-            (2) blablabla
+            (1) Modern VLN agents use large multi-modal transformers, which are compute-intensive.<br>
+            (2) Existing input-adaptive methods do not transfer effectively to VLN settings.
             </p>
           </div>
         </div>
         <!--/ reenact -->
         <!-- swap. -->
         <div class="column">
-          <h4 class="title is-5" style="text-align: center;">🔑 Solutions</h4>
+          <h4 class="title is-5" style="text-align: center;">🔑 Solution</h4>
           <div class="columns is-centered">
             <div class="column content">
               <p>
               <!-- <br> -->
-            (1) blablabla<br>
-            (2) blablabla
+            We introduce a novel input-adaptive VLN framework that dynamically adjusts computation during navigation to prevent model overthinking while preserving navigation quality.
               </p>
             </div>
           </div>
@@ -176,11 +176,11 @@
         <!--/ swap. -->
       </div>
 
-            <div class="hero-body">
+            <!-- <div class="hero-body">
               <img src="static/images/LatentRep.jpg" alt="MY ALT TEXT" , width="1000" />
               <h4 class="subtitle has-text-centered"><b>Caption of the figure.</b></h4>
               Detailed descriptions.
-            </div>
+            </div> -->
         </div>
       </div>
     </div>
@@ -191,40 +191,32 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Module 1</h2>
+            Our Method</h2>
             <h5 class="title is-5" style="text-align: center;">
-              Single sentence to summarize the first module of the paper.
+              We improve the efficiency of the visual encoder by leveraging the <em>spatial</em> and <em>temporal</em> locality of views in a navigation scene.
             </h5>
+            <p style="text-align: left;">
+              <b>👉 k-extension:</b> We only process each navigable view + k adjacent views.<br>
+              <span class="has-text-grey">Insight: Views near navigable views contain most decision-relevant context, so we can skip the rest.</span><br><br>
+
+              <b>👉 Adaptive early-exiting (thresholds):</b> We early-exit adjacent views with thresholds based on proximity to navigable views (closer = more conservative).<br>
+              <span class="has-text-grey">Insight: Lower-importance views can be processed for fewer layers without degrading performance.</span><br><br>
+
+              <b>👉 Locality-sensitive hashing (LSH):</b> We store and re-use similar visual embeddings across steps.<br>
+              <span class="has-text-grey">Insight: Consecutive panoramas repeat content; caching avoids re-encoding near-duplicate views.</span>
+            </p>
             <div class="hero-body">
-              <img src="static/images/ReverseCurve.png" alt="MY ALT TEXT" , width="900" />
-              <h4 class="subtitle has-text-centered"><b>Caption of the figure.</b></h4>
+              <img src="static/images/Methods_Figure.png" alt="Our techniques" , width="900" />
+              <!-- <h2 class="subtitle has-text-centered"><b>Our input-adaptive techniques.</b> (Left) We only process navigable views and their neighbors; neighboring views are early-exited with exit thresholds set based on the proximity to the closest navigable view. (Right) Before processing a non-navigable view, we check our cache to try and find a similar embedding.</h2> -->
             </div>
-            <!-- <div class="hero-body">
-              <img src="static/images/ReverseProcess.jpeg" alt="MY ALT TEXT" , width="1000" />
-              <h4 class="subtitle has-text-centered">Visualization of the predicted probability maps in
-                reverse process.</h4>
-            </div> -->
+            <p style="text-align: left;">
+              <b>👉 Adaptation to continuous VLN (scan-only SGM):</b> We modify the subgoal prediction module to only process laser scan data.
+              <!-- <span class="has-text-grey">Insight: Views near navigable views contain most decision-relevant context, so we can skip the rest.</span><br><br> -->
+            </p>
         </div>
       </div>
     </div>
 
-    <!-- Video carousel -->
-   <section class="hero is-small">
-   <div class="hero-body">
-     <div class="container">
-       <div id="results-carousel" class="carousel results-carousel">
-         <div class="item item1" style="text-align:center;">
-           <img src="static/images/ReverseProcess-1.png" alt="MY ALT TEXT" , width="700" />
-         </div>
-         <div class="item item2" style="text-align:center;">
-           <img src="static/images/ReverseProcess-2.png" alt="MY ALT TEXT" , width="700" />
-         </div>
-       </div>
-     </div>
-   </div>
-   <h4 class="subtitle has-text-centered"><b>Showing rolling images here.</b></h4>
- </section> 
-   <!-- End video carousel -->
   </section>
 
   <section class="section hero">
@@ -232,22 +224,48 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Module 2</h2>
+            Performance and Efficiency of Our Input-Adaptive Agents</h2>
             <h5 class="title is-5" style="text-align: center;">
-            Single sentence to summarize the second module of the paper.
+            We apply our techniques to 3 VLN agents and 7 benchmarks and achieve a strong performance–efficiency trade-off.
             </h5>
             <p style="text-align: left;">
-              <b>👉 Key point 1</b>: bnlablabla.<br>
-              <b>👉 Key point 2</b>: blablabla.
-
+              <b>👉 Standard VLN (HAMT and DUET)</b>: Averaged across 6 benchmarks, we reduce GFLOPs by 2.3× with just an 11.7% drop in success rate (SR).<br>
+              <b>👉 Continuous VLN (VLN-CE-BERT)</b>: We reduce GFLOPs by 7.1–7.5× with an 8–14% drop in SR.
             </p>
+          <section class="hero is-small">
             <div class="hero-body">
-              <img src="static/images/StabilityEvaluationV4.jpeg" alt="MY ALT TEXT" , width="1000" />
-              <h2 class="subtitle has-text-centered"><b>Caption of the figure.</b></h2>
+              <div class="container">
+                <!-- Carousel -->
+                <div id="results-carousel" class="results-carousel" aria-roledescription="carousel" aria-live="polite">
+                  <!-- arrows -->
+                  <button class="carousel-btn prev" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="carousel-btn next" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+      
+                  <!-- slides -->
+                  <div class="item" role="group" aria-label="1 of 3" style="text-align:center;" data-caption="Shown for REVERIE">
+                    <img src="static/images/hamt_sr_vs_gflops.png" alt="SR vs GFLOPS" width="700">
+                  </div>
+                  <div class="item" role="group" aria-label="2 of 3" style="text-align:center;" data-caption="Shown for REVERIE">
+                    <img src="static/images/duet_sr_vs_gflops.png" alt="SR vs GFLOPS" width="700">
+                  </div>
+                  <div class="item" role="group" aria-label="3 of 3" style="text-align:center;" data-caption="Shown for R2R-CE">
+                    <img src="static/images/ce_sr_vs_gflops.png" alt="SR vs GFLOPS" width="700">
+                  </div>
+                  <!-- <p id="carousel-caption" class="carousel-caption"></p> -->
+                </div>
+              </div>
             </div>
+          </section>
+          <!-- End video carousel -->
         </div>
       </div>
     </div>
+    <!-- Video carousel -->
+
   </section>
 
   <section class="section hero is-light">
@@ -255,11 +273,17 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-            Other Qualitative Analysis</h2>
+            Robustness to Visual Corruptions</h2>
+            <h5 class="title is-5" style="text-align: center;">
+            We evaluate our agent against five real-world visual corruptions and uncover a promising countermeasure to improve the resilience.
+            </h5>
+            <p style="text-align: left;">
+              <b>👉 Our agent is vulnerable:</b> 12.3–31.3% SR loss with a 3.6–20.9% increase in GFLOPs.<br>
+              <b>👉 Denoising is a promising countermeasure:</b> Recovers SR by 18% and reduces GFLOPs by 6%. 
+            </p>
             <div class="hero-body">
-              <img src="static/images/Conditioner.png" alt="MY ALT TEXT" , width="900" />
-              <h2 class="subtitle has-text-centered"><b>Caption of the figure.</b></h2>
-                  Detailed descriptions.
+              <img src="static/images/corruptions.png" alt="Example images demonstrating the visual corruptions we evaluate with." , width="900" />
+              <!-- <h2 class="subtitle has-text-centered"><b>Examples of the visual corruptions we consider.</b></h2> -->
             </div>
         </div>
       </div>
