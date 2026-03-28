@@ -91,8 +91,11 @@
                             <!-- :: Deadlines -->
                             <h5>Must Read</h5>
                             <ul>
-                                <li><b style="color: #D73F09;">This course uses GitHub Classroom</b></li>
-                                <li><b style="color: #D73F09;">Please use the following link to complete the assignment</b> [<a href="https://classroom.github.com/a/fhjg_CbL" target="_blank">GitHub Classroom Link</a>]</li>
+                                <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
+                                <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
+                                <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
                             </ul>
 
                             <!-- :: Introduction -->
@@ -105,13 +108,11 @@
                             <!-- :: Setup -->
                             <h5 style="margin-top: 20px;">Initial Setup</h5>
                             <p>
-                                To begin with, you can choose any deep learning framework that you're already familiar with (e.g., <a href="https://pytorch.org" target="_blank">PyTorch</a>, <a href="https://www.tensorflow.org" target="_blank">TensorFlow</a>, or <a href="https://github.com/google/objax" target="_blank">ObJAX</a>). If you are not familiar with any of these frameworks, you can start with PyTorch or TensorFlow (> v2.0). These are popular choices, and you can find many tutorials [<a href="https://pytorch.org/tutorials/index.html" target="_blank">link</a>] or example code [<a href="https://github.com/pytorch/examples" target="_blank">link</a>] from the Internet.<br/><br>
-
-                                <b style="color: #D73F09;">[Note]</b> I do NOT recommend copying and pasting the sample code found from the Internet. It will be an easy solution for this homework. However, later on, you may have difficulty understanding the attacks and defenses. For example, some attacks (and defenses) require you to know how the deep learning framework computes gradients and how you can manipulate (or control) them.
+                                To begin with, you can choose any deep learning framework that you're already familiar with (e.g., <a href="https://pytorch.org" target="_blank">PyTorch</a>, <a href="https://www.tensorflow.org" target="_blank">TensorFlow</a>, or <a href="https://github.com/google/objax" target="_blank">ObJAX</a>). If you are not familiar with any of these frameworks, you can start with PyTorch or TensorFlow (> v2.0).<br/><br>
 
                                 <h6>Datasets and DNN Models</h6>
 
-                                We will limit our scope to two popular image classification datasets: MNIST [<a href="https://pytorch.org/vision/stable/datasets.html#mnist" target="_blank">link</a>] and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. Most deep learning frameworks support those datasets by default. We will also use three DNNs: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>], VGG16 [<a href="https://arxiv.org/abs/1409.1556" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. I added the links to the original papers.<br/><br/>
+                                We will limit our scope to three popular image classification datasets: MNIST [<a href="https://pytorch.org/vision/stable/datasets.html#mnist" target="_blank">link</a>], FashionMNIST[<a href="https://docs.pytorch.org/vision/main/generated/torchvision.datasets.FashionMNIST.html" target="_blank">link</a>] and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>] across homework assignments. Most deep learning frameworks support those datasets by default. We will also use three DNNs: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>], VGG16 [<a href="https://arxiv.org/abs/1409.1556" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. I added the links to the original papers.<br/><br/>
                             </p>
 
 
@@ -120,7 +121,7 @@
                             
                             The first task is simple; train 6 DNN models. You will train 3 DNNs (LeNet, VGG16, and ResNet18) on 2 datasets (MNIST and CIFAR-10). You need to measure your model's performance with two metrics: classification accuracy and loss. You can compute them on both the training and testing data.<br/><br/>
 
-                            Please compute those metrics in every 5 training iterations (epochs). Draw 2 plots for each model training: { epochs } vs. { training accuracy & testing accuracy } and { epochs } vs. { training loss & testing loss } [see <a href="https://stackoverflow.com/questions/47817424/loss-accuracy-are-these-reasonable-learning-curves/47819022" target="_blank">this example plots</a>].
+                            Please compute those metrics every 5 epochs. Draw 2 plots for each model training: { epochs } vs. { training accuracy & testing accuracy } and { epochs } vs. { training loss & testing loss } [see <a href="https://stackoverflow.com/questions/47817424/loss-accuracy-are-these-reasonable-learning-curves/47819022" target="_blank">this example plots</a>].
 
 
                             <!-- :: Task 2 -->
@@ -150,7 +151,7 @@
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
 
-                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your code and a write-up as a PDF file. Put your write-up under the <code>reports</code> folder. Your PDF write-up should contain the following things:
+                            Push your code to your GitHub Classroom repository to submit. Place your write-up as a PDF under the <code>reports/</code> folder and push it with your code. Your PDF write-up should contain the following things:
 
                             <ul>
                                 <li>Task I</li>
@@ -195,8 +196,11 @@
                             <!-- :: Deadlines -->
                             <h5>Must Read</h5>
                             <ul>
-                                <li><b style="color: #D73F09;">This course uses GitHub Classroom</b></li>
-                                <li><b style="color: #D73F09;">Please use the following link to complete the assignment</b> [<a href="https://classroom.github.com/a/fhjg_CbL" target="_blank">GitHub Classroom Link</a>]</li>
+                                <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
+                                <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
+                                <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
                             </ul>
 
                             <!-- :: Introduction -->
@@ -211,16 +215,17 @@
                             <p>
                                 <h6>Datasets and DNN Models</h6>
 
-                                We will keep using the two datasets: MNIST [<a href="https://pytorch.org/vision/stable/datasets.html#mnist" target="_blank">link</a>] and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. But, we only focus on two DNN models: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>].<br/><br/>
+                                We will use the two datasets: MNIST [<a href="https://pytorch.org/vision/stable/datasets.html#mnist" target="_blank">link</a>] and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. But, we only focus on two DNN models: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>].<br/><br/>
                                 
                                 <h6>Recommended Code Structure</h6>
 
-                                You will write two scripts <code>adv_attack.py</code> and <code>adv_train.py</code>. The rest are the same as Homework 1.<br/>
+                                You will implement the PGD attack in <code>attacks/PGD.py</code> and write two driver scripts <code>adv_attack.py</code> and <code>adv_train.py</code>. The rest are the same as Homework 1.<br/><br/>
 
                                 <code>
                                     Root<br/>
-                                    - [New] adv_attack.py: a Python script to run adversarial attacks on a pre-trained model.<br/>
-                                    - [New] adv_train.py: a Python script for adversarial-training a model.<br/>
+                                    - [New] attacks/PGD.py &nbsp;: implement the PGD attack function here.<br/>
+                                    - [New] adv_attack.py : a Python script to run adversarial attacks on a pre-trained model.<br/>
+                                    - [New] adv_train.py &nbsp;: a Python script for adversarial-training a model.<br/>
                                     ...<br/><br/>
                                 </code>
 
@@ -234,7 +239,7 @@
                             
                             Let's start with attacking your DNN models trained in Homework 1. We will attack your 2 DNNs: LeNet on MNIST and ResNet18 on CIFAR10. You need to use PGD [<a href="https://arxiv.org/abs/1706.06083" target="_blank">Madry et al.</a>] as an adversarial example-crafting algorithm. Your job is to craft the PGD adversarial examples for all the test-time samples (<i>i.e.</i>, 10k test-set samples for both MNIST and CIFAR10). To measure the effectiveness of your attacks, we will compute the <i>classification accuracy</i> on these adversarial examples. Make sure you attack the same DNNs that you used for crafting adversarial examples.<br/><br/>
                                 
-                            Here, you need to implement the following function in <code>adv_attack.py</code>.<br/>
+                            Here, you need to implement the following function in <code>attacks/PGD.py</code>.<br/><br/>
 
                             <code>
                                 def PGD(x, y, model, loss, niter, epsilon, stepsize, randinit, ...)<br/>
@@ -253,8 +258,8 @@
                             <ul>
                                 <li>niter: 5</li>
                                 <li>epsilon: 0.3 (MNIST) and 0.03 (CIFAR10)</li>
-                                <li>stepsize: 2/255.</li>
-                                <li>randinit: true</li>
+                                <li>stepsize: epsilon / 4 (i.e., 0.075 for MNIST, 0.0075 for CIFAR-10)</li>
+                                <li>randinit: false</li>
                             </ul>
 
                             To measure the effectiveness of the adversarial examples, we will write an evaluation script in <code>if __name__ == "__main__":</code> in the same file. Here, for all the 10k adversarial examples crafted, you will compute the classification accuracy on the DNN model you used. Note that you will observe much less accuracy than what you can observe on the <i>clean</i> test-time samples.<br/>
@@ -274,7 +279,7 @@
                                     (1) Set the number of iterations in {1, 2, 3, 4, 5, 10, 20, 30, 40, 80, 100}.
                                 </li>
                                 <li>
-                                    (2) Fix the iterations to 5, and set the epsilon to {0.01 0.02 0.03 0.04 0.05 0.1 0.2 0.3 0.4 0.5 1.0}.
+                                    (2) Fix the iterations to 5, and set the epsilon to {0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 1.0}.
                                 </li>
                             </ul>
                             
@@ -283,7 +288,7 @@
 
                             <h6>Subtask II-2: Analyze the Impact of the Training Techniques You Use</h6>
 
-                            One may think we can use some <i>nice</i> training techniques for reducing the effectiveness of white-box adversarial attacks. We plan to run some experiments to evaluate this claim. In particular, we're interested in the following three techniques: data augmentations and regularizations.<br/><br/>
+                            One may think we can use some <i>nice</i> training techniques for reducing the effectiveness of white-box adversarial attacks. We plan to run some experiments to evaluate this claim. In particular, we're interested in four techniques across two categories: data augmentations (rotation, horizontal flip) and regularizations (Dropout, weight decay).<br/><br/>
 
                             <ul>
                                 <li>
@@ -323,14 +328,14 @@
                             <!-- :: Extra points -->
                             <h5 style="margin-top: 20px;"><span style="color: #D73F09">[Extra +3 pts]</span>: Use Your Adversarial Examples to Attack Real-world DNNs</h5>
 
-                            You may be curious how much the adversarial examples that you crafted will be effective against the DNNs deployed in the real-world. Here are some real-world image classification demos [<a href="https://github.com/hwalsuklee/awesome-deep-vision-web-demo" target="_blank">a list of demos</a>]. Please store 10 adversarial examples for each MNIST and CIFAR10 attack (Task I) to <code>.png</code> files. Upload them on one of the image classification demos and see how the predicted labels are different compared to your DNNs.<br/><br/>
+                            You may be curious how much the adversarial examples that you crafted will be effective against the DNNs deployed in the real-world. Here are some real-world image classification demos [<a href="https://lrpserver.hhi.fraunhofer.de/image-classification" target="_blank">a simpl;e demo</a>]. Please store 10 adversarial examples for each MNIST and CIFAR10 attack (Task I) to <code>.png</code> files. Upload them on one of the image classification demos and see how the predicted labels are different compared to your DNNs.<br/><br/>
 
                             Please show your adversarial examples, the classification of them on your DNNs, and the predicted labels on the demo you chose in your report.
 
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
 
-                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your code and a write-up as a PDF file. Put your write-up under the <code>reports</code> folder. Your PDF write-up should contain the following things:
+                            Push your code to your GitHub Classroom repository to submit. Place your write-up as a PDF under the <code>reports/</code> folder and push it with your code. Your PDF write-up should contain the following things:
 
                             <ul>
                                 <li>Task I</li>
@@ -344,7 +349,7 @@
                                 <ul>
                                     <li>Subtask II-I</li>
                                     <ul>
-                                        <li>Your 4 plots: { # iterations } vs. { classification accuacy } and { epsion } vs. { classification accuracy } on each of your 2 DNNs.</li>
+                                        <li>Your 4 plots: { # iterations } vs. { classification accuracy } and { epsilon } vs. { classification accuracy } on each of your 2 DNNs.</li>
                                         <li>Your analysis: Provide 2-3 sentences for each case explaining why you observe the result.</li>
                                     </ul>
                                     <li>Subtask II-II</li>
@@ -397,8 +402,11 @@
                             <!-- :: Deadlines -->
                             <h5>Must Read</h5>
                             <ul>
-                                <li><b style="color: #D73F09;">This course uses GitHub Classroom</b></li>
-                                <li><b style="color: #D73F09;">Please use the following link to complete the assignment</b> [<a href="https://classroom.github.com/a/fhjg_CbL" target="_blank">GitHub Classroom Link</a>]</li>
+                                <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
+                                <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
+                                <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
                             </ul>
 
                             <!-- :: Introduction -->
@@ -423,13 +431,14 @@
 
                                 <h6>Recommended Code Structure</h6>
 
-                                You will write three scripts <code>poison_craft.py</code>, <code>poisoning.py</code>, and <code>poison_remove.py</code>. The rest are the same as Homework 1.<br/>
+                                You will implement poisoning logic in <code>craft_poisons.py</code> and <code>eval_clabel.py</code>. Training on a poisoned dataset reuses <code>train.py</code> with the <code>--poison-dir</code> flag. The rest are the same as Homework 1.<br/><br/>
 
                                 <code>
                                     Root<br/>
-                                    - [New] poison_craft.py&nbsp;: a Python script to craft poisoning samples.<br/>
-                                    - [New] poison.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: a Python script for training a model on a contaminated dataset.<br/>
-                                    - [New] poison_remove.py: a Python script for removing suspicious samples from a contaminated dataset.<br/>
+                                    - [New] craft_poisons.py &nbsp;: a Python script to craft poisoning samples.<br/>
+                                    - [New] eval_clabel.py &nbsp;&nbsp;&nbsp;: a Python script to evaluate the clean-label poisoning attack.<br/>
+                                    - train.py (modified) &nbsp;&nbsp;&nbsp;&nbsp;: use <code>--poison-dir</code> to train on a contaminated dataset.<br/>
+                                    - [Extra] poison_remove.py: a Python script for removing suspicious samples (extra credit).<br/>
                                     ...<br/><br/>
                                 </code>
                             </p>
@@ -445,18 +454,19 @@
                             Your job is to construct four contaminated training sets where each set contains {5, 10, 25, 50}% of poisons. You will train five logistic regression models: four on each corrupted training set and one on the clean MNIST-1/7 dataset. Please measure how much accuracy degradation each attack causes compared to the accuracy of the model trained on the clean data.<br/><br/>
 
 
-                            Here, you need to implement the following function in <code>poison_craft.py</code>.<br/><br/>
+                            Here, you need to implement the following function in <code>attacks/lflip.py</code>.<br/><br/>
 
                             <code>
-                                def craft_random_lflip(train_set, ratio):<br/>
-                                - train_set: an instance for the training dataset<br/>
-                                - ratio&nbsp;&nbsp;&nbsp;&nbsp;: the percentage of samples whose labels will be flipped<br/>
-                                // You can add more arguments if required<br/><br/>
+                                def craft_random_lflip(dataname, ratio, data_dir='./data'):<br/>
+                                - dataname : dataset name string ('mnist', 'fmnist', or 'cifar10')<br/>
+                                - ratio&nbsp;&nbsp;&nbsp;&nbsp;: fraction of samples to poison (e.g., 0.1 for 10%)<br/>
+                                - data_dir : dataset root directory<br/>
+                                // Returns: (poisoned_train_set, clean_test_set)<br/><br/>
                             </code>
 
-                            This function constructs a training set that has <code>ratio%</code> of poisons. The <code>train_set</code> is an instance of the clean training set and the <code>ratio</code> is a number between 0 and 1. Note that this is an example of writing a function for crafting poisoned training sets. Please feel free to use your own function if that is more convenient.<br/><br/>
+                            This function constructs a poisoned training set that has <code>ratio</code> fraction of label-flipped samples. The <code>dataname</code> identifies which dataset to load, and the <code>ratio</code> is a number between 0 and 1. Note that this is an example of writing a function for crafting poisoned training sets. Please feel free to use your own function if that is more convenient.<br/><br/>
 
-                            You will also write the training script in <code>poison.py</code>. This script will be mostly the same as `train.py`, but the only difference is you load the contaminated training set instead of the clean training data. Once loaded, the rest will be the same.<br/><br/>
+                            To train on the poisoned dataset, use <code>train.py</code> with the <code>--poison-dir</code> flag pointing to your saved poisoned training set. For example: <code>python train.py --dataset mnist --model logistic --poison-dir ./poisons/lflip_mnist_r0.1_train.pkl</code>.<br/><br/>
 
 
                             <!-- :: Task 2 -->
@@ -493,10 +503,10 @@
 
                             <h6>Implementation</h6>
 
-                            Here, you need to implement the following function in <code>poison_craft.py</code>.<br/><br/>
+                            Here, you need to implement the following function in <code>attacks/clabel.py</code>.<br/><br/>
 
                             <code>
-                                def craft_clabel_poisons(model, target, bases, niter, lr, beta, ...):<br/>
+                                def craft_clabel_poisons(model, target, bases, niter, lr, beta, device=None):<br/>
                                 - model&nbsp;: a pre-trained ResNet18<br/>
                                 - target: a target sample (a frog)<br/>
                                 - bases&nbsp;: a set of base samples (dogs)<br/>
@@ -508,13 +518,13 @@
 
                             This function crafts clean-label poisons. It takes a <code>model</code> (ResNet18) to extract features for a single target and 100 base samples. It also takes optimization hyper-parameters such as <code>niter</code>, <code>lr</code>, <code>beta</code>, etc. Once the function sufficiently optimizes your poisons, it will return 100 poisons crafted from the bases. Please refer to the author's code, the community implementations, and the original study for reference.<br/><br/>
 
-                            You will also modify the training script in <code>poison.py</code>. This script will be mostly the same as <code>train.py</code>, but the only difference is you load the contaminated training set instead of the clean training data. Once loaded, the rest will be almost the same.<br/><br/>
+                            To evaluate the clean-label attack, use <code>eval_clabel.py</code>. This script fine-tunes only the last layer of your ResNet18 on each contaminated training set and measures the attack success rate (ASR).<br/><br/>
 
 
                             <!-- :: Extra points -->
                             <h5 style="margin-top: 20px;"><span style="color: #D73F09">[Extra +3 pts]</span>: Defeat Data Poisoning Attacks</h5>
 
-                            In the lecture, we learned two simple defense mechanisms against data poisoning attacks: (1) RONI [<a href="https://people.eecs.berkeley.edu/~tygar/papers/SML/Spam_filter.pdf" target="_blank">Paper</a>] and (2) Data sanitization [<a href="https://arxiv.org/abs/1706.03691" target="_blank">Link</a>]. Here, we implement those defenses and use them against the two data poisoning attacks (random label-flipping and clean-label poisoning). <br/></br>
+                            In the lecture, we learned two simple defense mechanisms against data poisoning attacks: (1) RONI [<a href="https://people.eecs.berkeley.edu/~tygar/papers/SML/Spam_filter.pdf" target="_blank">Paper</a>] and (2) Data sanitization [<a href="https://arxiv.org/abs/1706.03691" target="_blank">Link</a>]. Here, we implement those defenses and use them against the two data poisoning attacks (random label-flipping and clean-label poisoning). <br/><br/>
 
 
                             <h6>Subtask I: RONI against Random Label-flipping</h6>
@@ -562,7 +572,7 @@
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
 
-                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code> or <code>.zip</code>) that contains your code and a write-up as a PDF file. <span style="color: #D73F09">Please do not include datasets and models in your submission.</span> Put your write-up under the <code>reports</code> folder. Your PDF write-up should contain the following things:<br/><br/>
+                            Push your code to your GitHub Classroom repository to submit. Place your write-up as a PDF under the <code>reports/</code> folder and push it with your code. <span style="color: #D73F09">Do NOT commit datasets or trained model checkpoints to the repository.</span> Your PDF write-up should contain the following things:<br/><br/>
 
                             <ul>
                                 <li>Task I</li>
@@ -619,8 +629,11 @@
                             <!-- :: Deadlines -->
                             <h5>Must Read</h5>
                             <ul>
-                                <li><b style="color: #D73F09;">This course uses GitHub Classroom</b></li>
-                                <li><b style="color: #D73F09;">Please use the following link to complete the assignment</b> [<a href="https://classroom.github.com/a/fhjg_CbL" target="_blank">GitHub Classroom Link</a>]</li>
+                                <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
+                                <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
+                                <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
                             </ul>
 
                             <!-- :: Introduction -->
@@ -636,16 +649,16 @@
                                 <h6>Datasets and DNN Models</h6>
 
                                 
-                                We will use two datasets: FashionMNIST [<a href="https://pytorch.org/vision/main/generated/torchvision.datasets.FashionMNIST.html" target="_blank">link</a>], and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. Note that we swith from MNIST to FashionMNIST as Yeom <i>et al</i>'s will be less effective in MNIST. We consider two DNNs: VGG16 [<a href="https://arxiv.org/abs/1409.1556" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. You will train VGG16 on FashionMNIST and ResNet18 on CIFAR-10.<br/><br/>
+                                We will use two datasets: FashionMNIST [<a href="https://pytorch.org/vision/main/generated/torchvision.datasets.FashionMNIST.html" target="_blank">link</a>], and CIFAR-10 [<a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">link</a>]. Note that we switch from MNIST to FashionMNIST as Yeom <i>et al</i>'s attack will be less effective on MNIST. We consider two DNNs: LeNet [<a href="https://en.wikipedia.org/wiki/LeNet" target="_blank">link</a>] and ResNet18 [<a href="https://arxiv.org/abs/1512.03385" target="_blank">link</a>]. You will train LeNet on FashionMNIST and ResNet18 on CIFAR-10.<br/><br/>
 
                                 <h6>Recommended Code Structure</h6>
 
-                                You will write two scripts <code>mi_attack.py</code> and <code>dp_train.py</code>. The rest are the same as HW 1-3.<br/>
+                                You will write one new script <code>mi_attack.py</code>. DP-SGD training is integrated into the existing <code>train.py</code> via the <code>--dp</code> flag. The rest are the same as HW 1-3.<br/><br/>
 
                                 <code>
                                     Root<br/>
-                                    - [New] mi_attack.py: a Python script to run membership inference attacks (Yeom et al's).<br/>
-                                    - [New] dp_train.py&nbsp;: a Python script for training a model with differential privacy.<br/>
+                                    - [New] mi_attack.py : a Python script to run membership inference attacks (Yeom et al's).<br/>
+                                    - train.py (modified): use <code>--dp --dp-epsilon &lt;ε&gt;</code> to enable DP-SGD training.<br/>
                                     ...<br/><br/>
                                 </code>
                             </p>
@@ -657,19 +670,19 @@
                             Let's start with doing membership inference attacks formulated by Yeom <i>et al.</i> [<a href="https://arxiv.org/abs/1709.01604" target="_blank">link</a>] on your DNN models. Your job is to implement this attack and evaluate its effectiveness. Please write your attack code to <code>mi_attack.py</code>.<br/><br/>
 
 
-                            <b>Build Models:</b> You will first train the victim models. Please train a network on each dataset for at least 80 epochs. During training, you have two sub-tasks: (1) store the model at {10, 20, 30, 40, 50, 60, 70, 80} epochs and (2) draw a plot { # epochs } vs. { the train and test losses }. In the end, we have 16 models (8 in FashionMNIST and 8 in CIFAR-10) and two plots where each describes the training and testing losses over epochs.<br/><br/>
+                            <b>Build Models:</b> You will first train the victim models. Train LeNet on FashionMNIST for <b>50 epochs</b> and ResNet18 on CIFAR-10 for <b>100 epochs</b>. During training, you have two sub-tasks: (1) save a checkpoint every 10 epochs (i.e., at {10, 20, 30, 40, 50} for FashionMNIST and {10, 20, …, 100} for CIFAR-10) and (2) draw a plot { # epochs } vs. { the train and test losses }. In the end, we have 15 models (5 in FashionMNIST and 10 in CIFAR-10) and two plots where each describes the training and testing losses over epochs.<br/><br/>
 
-                            <span style="color: #D73F09">[Note]</span> 
-                            
-                            Please ensure you observe the max. accuracy of VGG16 and ResNet18 models <b>> 80%</b> on both datasets during training.<br/><br/>
+                            <span style="color: #D73F09">[Note]</span>
+
+                            Please ensure you observe the max. accuracy of LeNet and ResNet18 models <b>> 80%</b> on both datasets during training.<br/><br/>
 
                             <b>Prepare Datasets</b> for evaluating membership inference attacks. Your job is to construct a dataset to evaluate the attack's effectiveness. Typically, we choose a dataset with 10k samples, 5k chosen randomly from the training set (members) and the other 5k selected randomly from the testing set (non-members). You will compose two datasets from FashionMNIST and CIFAR10, respectively.<br/><br/>
 
-                            <b>Perform Yeom <i>et al.</i> Attack:</b> We will do Yeom <i>et al.</i> membership inference attack on the 16 models we train.<br/><br/>
+                            <b>Perform Yeom <i>et al.</i> Attack:</b> We will do Yeom <i>et al.</i> membership inference attack on the 15 models we train.<br/><br/>
                             
-                            The first step is to implement the attack. It uses a threshold (loss value) to identify whether a sample that the adversary queries is a member (or a non-member). If the victim model's loss on a sample is lower than the threshold, the sample is a member. Otherwise, it's a non-member. You can compute this loss threshold with the 5k members in your attack validation dataset.<br/><br/>
+                            The first step is to implement the attack. It uses a threshold (loss value) to identify whether a sample that the adversary queries is a member (or a non-member). If the victim model's loss on a sample is lower than the threshold, the sample is a member. Otherwise, it's a non-member. You can compute this loss threshold as the <b>mean loss</b> over a small held-out subset of 100 training samples (see <code>--n-threshold</code> in <code>mi_attack.py</code>).<br/><br/>
 
-                            Suppose we have a threshold, we will use it to classify whether each of the 10k validation samples is a member (or a non-member). We will then compute the membership advantage over the 10k samples. Your job is to run this attack process on all the 16 models we trained.<br/><br/>
+                            Suppose we have a threshold, we will use it to classify whether each of the 10k validation samples is a member (or a non-member). We will then compute the <b>membership advantage</b> over the 10k samples. The membership advantage is defined as: <code>Adv = |TPR − FPR|</code>, where TPR (true positive rate) is the fraction of members correctly identified as members, and FPR (false positive rate) is the fraction of non-members incorrectly identified as members. Your job is to run this attack process on all the 15 models we trained.<br/><br/>
 
                             The final step is to create two plots using the collected membership advantages; each plot corresponds to FashionMNIST or CIFAR-10 results, respectively. In each plot, you will show { # epochs } vs. { membership advantage }.<br/><br/>
 
@@ -681,21 +694,21 @@
 
                             <b>Train Models with DP-SGD:</b> Thanks to the community's effort, we don't need to implement this mechanism from scratch. You can use the off-the-shelf libraries, such as Opacus [<a href="https://opacus.ai/" target="_blank">link</a>] in PyTorch or TF-Privacy [<a href="https://github.com/tensorflow/privacy" target="_blank">link</a>] in TensorFlow. You can incorporate DP-SGD into your current training script.<br/><br/>
 
-                            You first copy your <code>train.py</code> to <code>dp_train.py</code> and modify the <code>dp_train.py</code> accordingly. Those examples [<a href="https://opacus.ai/tutorials/building_image_classifier" target="_blank">example1</a>, <a href="https://github.com/tensorflow/privacy/blob/master/tutorials/mnist_dpsgd_tutorial.py" target="_blank">example2</a>] will guide you.<br/><br/>
+                            DP-SGD is already integrated into <code>train.py</code>. Enable it by passing <code>--dp --dp-epsilon &lt;ε&gt;</code>. Those examples [<a href="https://opacus.ai/tutorials/building_image_classifier" target="_blank">example1</a>, <a href="https://github.com/tensorflow/privacy/blob/master/tutorials/mnist_dpsgd_tutorial.py" target="_blank">example2</a>] explain how Opacus wraps your training loop.<br/><br/>
 
-                            Once the training script is written and running, we will then train our models with different privacy guarantees. Note that in DP-SGD, we control the hyper-parameter (epsilon) to bound a model's privacy leakage. We train 5 different models with epsilons in {1, 2, 4, 8, 10}. In total, we will have 10 models, 5 for FashionMNIST and 5 for CIFAR-10. Please train each model for at least 80 epochs and save the model with the best test acc.<br/><br/>
+                            We will train our models with different privacy guarantees. Note that in DP-SGD, we control the hyper-parameter (epsilon) to bound a model's privacy leakage. We train 5 different models with epsilons in {1, 2, 4, 8, 10}. In total, we will have 10 models, 5 for FashionMNIST and 5 for CIFAR-10. Train each model using the same epoch count as in Task I (50 for FashionMNIST, 100 for CIFAR-10) and save the model with the best test acc.<br/><br/>
 
                             <span style="color: #D73F09">[Note]</span> Set all the training hyper-parameters to the same as those we use in Task I, except the learning rate. I recommend doubling the learning rate.<br/><br/>
 
                             <b>Run Yeom <i>et al.</i> on Models Trained with DP-SGD:</b> We now run the attack formulated by Yeom <i>et al.</i> on the 10 models trained with DP-SGD. Compute the membership advantages.<br/><br/>
 
-                            The last step is to create two plots using the collected membership advantages; each plot corresponds to FashionMNIST or CIFAR-10, respectively. In each plot, you will show { epsilon } vs. { membership advantage } and { epsilon } vs. { model's accuracy }.<br/><br/>
+                            The last step is to create two plots using the collected membership advantages; each plot corresponds to FashionMNIST or CIFAR-10, respectively. In each plot, you will show both { epsilon } vs. { membership advantage } and { epsilon } vs. { model's test accuracy } on the same axes (using a dual y-axis or two side-by-side subplots).<br/><br/>
 
 
                             <!-- :: Submit -->
                             <h5 style="margin-top: 20px;">Submission Instructions</h5>
 
-                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code> or <code>.zip</code>) that contains your code and a write-up as a PDF file. <span style="color: #D73F09">Please do not include datasets and models in your submission.</span> Put your write-up under the <code>reports</code> folder. Your PDF write-up should contain the following things:<br/><br/>
+                            Push your code to your GitHub Classroom repository to submit. Place your write-up as a PDF under the <code>reports/</code> folder and push it with your code. <span style="color: #D73F09">Do NOT commit datasets or trained model checkpoints to the repository.</span> Your PDF write-up should contain the following things:<br/><br/>
 
                             <ul>
                                 <li>Task I</li>
