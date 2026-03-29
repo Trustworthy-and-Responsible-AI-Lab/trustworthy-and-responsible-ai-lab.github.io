@@ -92,7 +92,12 @@
                             <h5>Must Read</h5>
                             <ul>
                                 <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
-                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation.
+                                    <ul>
+                                        <li><b>Datasets</b> (MNIST, CIFAR-10, etc.): Do <b>NOT</b> commit. They are downloaded automatically at test time via <code>download=True</code>.</li>
+                                        <li><b>Trained checkpoints</b> (<code>final.pth</code>): <b style="color: #D73F09;">You MUST commit and push these.</b> The autograder loads them directly from your repository — if they are missing, your tests will fail immediately. After training, run <code>git add checkpoints/*/final.pth</code> and push. The <code>.gitignore</code> whitelist in your repo ensures only the required <code>final.pth</code> files are tracked and blocks everything else (e.g., epoch checkpoints, VGG16 weights which exceed GitHub's 100MB limit).</li>
+                                    </ul>
+                                </li>
                                 <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
                                 <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
                                 <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
@@ -197,7 +202,12 @@
                             <h5>Must Read</h5>
                             <ul>
                                 <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
-                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation.
+                                    <ul>
+                                        <li><b>Datasets</b> (MNIST, CIFAR-10, etc.): Do <b>NOT</b> commit. They are downloaded automatically at test time via <code>download=True</code>.</li>
+                                        <li><b>Trained checkpoints</b> (<code>final.pth</code>): <b style="color: #D73F09;">You MUST commit and push these.</b> The autograder loads them directly from your repository — if they are missing, your tests will fail immediately. After training, run <code>git add checkpoints/*/final.pth</code> and push. The <code>.gitignore</code> whitelist in your repo ensures only the required <code>final.pth</code> files are tracked and blocks everything else (e.g., epoch checkpoints, VGG16 weights which exceed GitHub's 100MB limit).</li>
+                                    </ul>
+                                </li>
                                 <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
                                 <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
                                 <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
@@ -403,7 +413,12 @@
                             <h5>Must Read</h5>
                             <ul>
                                 <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
-                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation.
+                                    <ul>
+                                        <li><b>Datasets</b> (MNIST, CIFAR-10, etc.): Do <b>NOT</b> commit. They are downloaded automatically at test time via <code>download=True</code>.</li>
+                                        <li><b>Trained checkpoints</b> (<code>final.pth</code>): <b style="color: #D73F09;">You MUST commit and push these.</b> The autograder loads them directly from your repository — if they are missing, your tests will fail immediately. After training, run <code>git add checkpoints/*/final.pth</code> and push. The <code>.gitignore</code> whitelist in your repo ensures only the required <code>final.pth</code> files are tracked and blocks everything else (e.g., epoch checkpoints, VGG16 weights which exceed GitHub's 100MB limit).</li>
+                                    </ul>
+                                </li>
                                 <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
                                 <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
                                 <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
@@ -630,7 +645,12 @@
                             <h5>Must Read</h5>
                             <ul>
                                 <li><b style="color: #D73F09;">This course uses GitHub Classroom.</b> The invitation link is posted on <b>Canvas</b> (not here, to restrict access to enrolled students). Accept the assignment to get your personal repository — <b>one repo is shared across all 4 homeworks</b>, and you build on it throughout the term.</li>
-                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation. Do <b>NOT</b> commit datasets or trained model checkpoints (large files).</li>
+                                <li><b>How to submit:</b> <b style="color: #D73F09;">Push your code to your repository</b> — that is your submission. The autograder runs automatically on each push and tests your implementation.
+                                    <ul>
+                                        <li><b>Datasets</b> (MNIST, CIFAR-10, etc.): Do <b>NOT</b> commit. They are downloaded automatically at test time via <code>download=True</code>.</li>
+                                        <li><b>Trained checkpoints</b> (<code>final.pth</code>): <b style="color: #D73F09;">You MUST commit and push these.</b> The autograder loads them directly from your repository — if they are missing, your tests will fail immediately. After training, run <code>git add checkpoints/*/final.pth</code> and push. The <code>.gitignore</code> whitelist in your repo ensures only the required <code>final.pth</code> files are tracked and blocks everything else (e.g., epoch checkpoints, VGG16 weights which exceed GitHub's 100MB limit).</li>
+                                    </ul>
+                                </li>
                                 <li><b>Write-up:</b> Put your PDF report under the <code>reports/</code> folder in your repository and push it together with your code.</li>
                                 <li><b>Local testing:</b> Run <code>python -m pytest autograder/ -v</code> to test your implementation before pushing.</li>
                                 <li><b>Grades</b> (autograder score + write-up review) will be posted on Canvas.</li>
