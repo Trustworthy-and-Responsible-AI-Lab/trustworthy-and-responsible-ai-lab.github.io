@@ -51,12 +51,13 @@ ms_students:
     year_start: 2026
     program: "MS, AI"
     research: "Efficient LLM Systems"
-    photo: ""
+    photo: "/assets/images/people/cheyu-chen.jpg"
 
 undergrad_students:
   - name: Vedika Sheth
     year_start: 2026
     program: "CS (BS)"
+    photo: "/assets/images/people/vedika-sheth.jpeg"
 
   - name: Aiden Rubey
     year_start: 2026
