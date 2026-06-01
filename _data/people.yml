@@ -38,7 +38,7 @@ phd_students:
     year_start: 2025
     program: "PhD, CS"
     research: "AI for Cybersecurity"
-    photo: ""
+    photo: "/assets/images/people/eunjin-roh.jpg"
 
 ms_students:
   - name: Leo Marchyok
@@ -78,10 +78,12 @@ undergrad_students:
   - name: Ike
     year_start: 2025
     program: "ECE"
+    photo: "/assets/images/people/ike-photo.jpg"
   
   - name: Nyx
     year_start: 2022
     program: "CS"
+    photo: "/assets/images/people/nyx-photo.jpg"
 
 interns:
   - name: Heesung Jeong
@@ -93,6 +95,7 @@ interns:
 
 alumni_highschool:
   - name: Ojas Nimase
+    url: "https://ojasnimase.com/"
     affiliation: "Westview High School"
     period: "2023"
     current: "Student at USC"
