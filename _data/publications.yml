@@ -1,0 +1,834 @@
+# type: conference | journal | workshop | preprint
+# award: Oral | Spotlight (optional)
+# highlight: true = shown on homepage (optional)
+
+preprints:
+  - title: "Data Therapist: Eliciting Domain Knowledge from Subject Matter Experts Using Large Language Models"
+    thumbnail: "/assets/images/papers/data-therapist-eliciting-domain-knowledge-from-subject.jpg"
+    authors: "Sungbok Shin, Hyeon Jeon, Sanghyun Hong, and Niklas Elmqvist"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2025
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2505.00455"
+
+  - title: "Modeling Neural Networks with Privacy Using Neural Stochastic Differential Equations"
+    thumbnail: "/assets/images/papers/modeling-neural-networks-with-privacy-using-neural-stoc.jpg"
+    authors: "Sanghyun Hong, Fan Wu, Anthony Gruber, and Kookjin Lee"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2025
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2501.06686"
+
+  - title: "PrisonBreak: Jailbreaking Large Language Models with Fewer Than Twenty-Five Targeted Bit-flips"
+    thumbnail: "/assets/images/papers/prisonbreak-jailbreaking-large-language-models-with-few.jpg"
+    authors: "Zachary Coalson, Jeonghyun Woo, Shiyang Chen, Yu Sun, Lishan Yang, Prashant Nair, Bo Fang, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2024
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2412.07192"
+
+  - title: "Certified Robustness to Clean-label Poisoning Using Diffusion Denoising"
+    thumbnail: "/assets/images/papers/certified-robustness-to-clean-label-poisoning-using-dif.jpg"
+    authors: "Sanghyun Hong, Nicholas Carlini, and Alexey Kurakin"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2024
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2403.11981"
+
+  - title: "On the Effectiveness of Mitigating Data Poisoning Attacks with Gradient Shaping"
+    thumbnail: "/assets/images/papers/on-the-effectiveness-of-mitigating-data-poisoning-attac.jpg"
+    authors: "Sanghyun Hong, Varun Chandrasekaran, Yiǧitcan Kaya, Tudor Dumitraș, and Nicolas Papernot"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2020
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2002.11497"
+      code: "https://github.com/Sanghyun-Hong/Gradient-Shaping"
+
+papers:
+  - title: "On the Resilience of Text-to-Video Diffusion Models to Hardware Faults"
+    authors: "Zachary Coalson, A M Aahad, Stella Doehring, Zane Ma, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "ICML Workshop on From Frames to Stories (F2S)"
+    venue_short: "ICML-W"
+    year: 2026
+    type: workshop
+    links:
+      pdf: ""
+
+  - title: "Adversarial Robustness of Implicit Neural Representation Based Classifiers"
+    authors: "Jayoung Kim, Kookjin Lee, Noseong Park, and Sanghyun Hong"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2026
+    type: conference
+    highlight: true
+    links:
+      pdf: ""
+
+  - title: "When Can You Poison Rewards? A Tight Characterization of Reward Poisoning in Linear MDPs"
+    thumbnail: "/assets/images/papers/when-can-you-poison-rewards-a-tight-characterization.jpg"
+    authors: "Jose Efraim Aguilar Escamilla, Haoyang Hong, Jiawei Li, Haoyu Zhao, Xuezhou Zhang, Sanghyun Hong, and Huazheng Wang"
+    lab_authors: ["Jose Efraim Aguilar Escamilla", "Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2026
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://arxiv.org/abs/2604.10062"
+      code: "https://github.com/aguilarjose11/IntrinsicRobustMDP"
+
+  - title: "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
+    authors: "Yongbi Son, Changoo Lee, Dongwon Shin, Byoungyoung Lee, Sanghyun Hong, and Sooel Son"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)"
+    venue_short: "ISSTA"
+    year: 2026
+    type: conference
+    highlight: true
+    links:
+      pdf: ""
+
+  - title: "Hessian-aware Training for Enhancing DNNs Resilience to Parameter Corruptions"
+    thumbnail: "/assets/images/papers/hessian-aware-training-for-enhancing-dnns-resilience-to.jpg"
+    authors: "Tahmid Hasan Prato, Seijoon Kim, Lizhong Chen, and Sanghyun Hong"
+    lab_authors: ["Tahmid Hasan Prato", "Sanghyun Hong"]
+    venue: "Transactions on Machine Learning Research (TMLR)"
+    venue_short: "TMLR"
+    year: 2026
+    type: journal
+    links:
+      pdf: "https://openreview.net/pdf?id=XxlQF4muso"
+
+  - title: "Site Isolation is Dead: How Site Isolation is Broken in Agentic Browsers and Extensions"
+    thumbnail: "/assets/images/papers/site-isolation-is-dead-how-site-isolation-is-broken-.jpg"
+    authors: "Suyoung Lee, Seongho Keum, Changoo Lee, Dongwon Shin, Sanghyun Hong, Byoungyoung Lee, and Sooel Son"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Symposium on Security and Privacy (IEEE S&P)"
+    venue_short: "IEEE S&P"
+    year: 2026
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://wsp-lab.github.io/papers/lee-sp26.pdf"
+      code: "https://github.com/WSP-LAB/Site-Isolation-Is-Dead"
+
+  - title: "Computational and Experimental Pathways to Next-Generation Ultrawide-Band-Gap Oxide Semiconductors"
+    thumbnail: "/assets/images/papers/computational-and-experimental-pathways-to-next-gene.jpg"
+    authors: "Sieun Chae, Jongin Kim, Joshua R. Anderson, Sanghyun Hong, Yaser Mike Banad, and Hanjong Paik"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Nano Convergence"
+    venue_short: "Nano Conv."
+    year: 2026
+    type: journal
+    links:
+      pdf: "https://link.springer.com/article/10.1186/s40580-026-00534-4"
+
+  - title: "Hard Work Does Not Always Pay Off: Poisoning Attacks on Neural Architecture Search"
+    thumbnail: "/assets/images/papers/hard-work-does-not-always-pay-off-poisoning-attacks-on.jpg"
+    authors: "Zachary Coalson, Huazheng Wang, Qingyun Wu, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "Transactions on Machine Learning Research (TMLR)"
+    venue_short: "TMLR"
+    year: 2025
+    type: journal
+    links:
+      pdf: "https://arxiv.org/abs/2405.06073"
+      code: "https://github.com/ztcoalson/NAS-Robustness-to-Data-Poisoning"
+
+  - title: "Inference-Time Noise Addition for Improving Adversarial Robustness of Audio Deepfake Detection System"
+    thumbnail: "/assets/images/papers/inference-time-noise-addition-for-improving-adversarial.jpg"
+    authors: "Inho Kim, Phuc Thien Doan, Sanghyun Hong, and Souhwan Jung"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Access"
+    venue_short: "IEEE Access"
+    year: 2025
+    type: journal
+    links:
+      pdf: "https://arxiv.org/abs/2405.06073"
+
+  - title: "When Does Wasm Malware Detection Fail? A Systematic Analysis of Their Robustness to Evasion"
+    thumbnail: "/assets/images/papers/when-does-wasm-malware-detection-fail-a-systematic-a.jpg"
+    authors: "Taeyoung Kim, Sanghak Oh, Kiho Lee, Weihang Wang, Yonghwi Kwon, Sanghyun Hong, and Hyoungshick Kim"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE/ACM Automated Software Engineering Conference (ASE)"
+    venue_short: "ASE"
+    year: 2025
+    type: conference
+    links:
+      pdf: ""
+      talk: "https://conf.researchr.org/details/ase-2025/ase-2025-papers/241/When-Does-Wasm-Malware-Detection-Fail-A-Systematic-Analysis-of-Their-Robustness-to-E"
+
+  - title: "Mind the Gap: Time-of-Check to Time-of-Use Vulnerabilities in LLM-Enabled Agents"
+    thumbnail: "/assets/images/papers/mind-the-gap-time-of-check-to-time-of-use-vulnerabiliti.jpg"
+    authors: "Derek Lilienthal and Sanghyun Hong"
+    lab_authors: ["Derek Lilienthal", "Sanghyun Hong"]
+    venue: "NeurIPS Workshop on Machine Learning for Systems (MLforSystems)"
+    venue_short: "NeurIPS-W"
+    year: 2025
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2508.17155"
+
+  - title: "IF-Guide: Influence Function-Guided Detoxification of LLMs"
+    thumbnail: "/assets/images/papers/if-guide-influence-function-guided-detoxification-of-ll.jpg"
+    authors: "Zachary Coalson, Juhan Bae, Nicholas Carlini, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2025
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://arxiv.org/abs/2506.01790"
+      code: "https://github.com/ztcoalson/IF-Guide"
+    bibtex: |
+      @inproceedings{coalson2025ifguide,
+        author    = {Zachary Coalson and Juhan Bae and Nicholas Carlini and Sanghyun Hong},
+        title     = {{IF-Guide}: Influence Function-Guided Detoxification of {LLMs}},
+        booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+        year      = {2025}
+      }
+
+  - title: "Demystifying the Resilience of Large Language Model Inference: An End-to-End Perspective"
+    thumbnail: "/assets/images/papers/demystifying-the-resilience-of-large-language-model.jpg"
+    authors: "Yu Sun, Zachary Coalson, Shiyang Chen, Hang Liu, Sanghyun Hong, Zhao Zhang, Bo Fang, and Lishan Yang"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "ACM/IEEE Supercomputing Conference (SC)"
+    venue_short: "SC"
+    year: 2025
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://lishanyang.github.io/SC25_sun.pdf"
+      code: "https://github.com/pipijing13/sc25-LLM-reliability-assessment"
+
+  - title: "Harnessing Input-adaptive Inference for Efficient VLN"
+    thumbnail: "/assets/images/papers/harnessing-input-adaptive-inference-for-efficient-vln.jpg"
+    authors: "Dongwoo Kang, Akhil Perincherry, Zachary Coalson, Aiden Gabriel, Stefan Lee, and Sanghyun Hong"
+    lab_authors: ["Dongwoo Kang", "Zachary Coalson", "Aiden Gabriel", "Sanghyun Hong"]
+    venue: "International Conference on Computer Vision (ICCV)"
+    venue_short: "ICCV"
+    year: 2025
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://arxiv.org/abs/2508.09262"
+      code: "https://github.com/trustworthy-and-responsible-ai-lab/adaptive-vision-and-language-navigation"
+
+  - title: "Evaluating Robustness of Reference-based Phishing Detectors"
+    thumbnail: "/assets/images/papers/evaluating-robustness-of-reference-based-phishing-de.jpg"
+    authors: "Eunjin Roh*, Sungwoo Jeon*, Sooel Son, and Sanghyun Hong (*equal contribution)"
+    lab_authors: ["Eunjin Roh", "Sanghyun Hong"]
+    venue: "ACM ASIA Conference on Computer and Communication Security (AsiaCCS)"
+    venue_short: "AsiaCCS"
+    year: 2025
+    type: conference
+    links:
+      pdf: "https://dl.acm.org/doi/abs/10.1145/3708821.3710840"
+
+  - title: "Enhancing Audio Deepfake Detection by Improving Representation Similarity of Bonafide Speech"
+    thumbnail: "/assets/images/papers/enhancing-audio-deepfake-detection-by-improving-repr.jpg"
+    authors: "Seung-bin Kim, Hyun-seo Shin, Jungwoo Heo, Chan-yeong Lim, Kyo-Won Koo, Jisoo Son, Sanghyun Hong, Souhwan Jung, and Ha-Jin Yu"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Interspeech"
+    venue_short: "Interspeech"
+    year: 2025
+    type: conference
+    links:
+      pdf: "https://www.isca-archive.org/interspeech_2025/kim25g_interspeech.html"
+      code: "https://github.com/kimho1wq/EBM"
+
+  - title: "Private Investigator: Extracting Personally Identifiable Information from Large Language Models Using Optimized Prompts"
+    thumbnail: "/assets/images/papers/private-investigator-extracting-personally-identifiab.jpg"
+    authors: "Seongho Keum, Dongwon Shin, Leo Marchyok, Sanghyun Hong, and Sooel Son"
+    lab_authors: ["Leo Marchyok", "Sanghyun Hong"]
+    venue: "USENIX Security Symposium (USENIX Security)"
+    venue_short: "USENIX Sec."
+    year: 2025
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://www.usenix.org/conference/usenixsecurity25/presentation/keum"
+      code: "https://github.com/WSP-LAB/PrivateInvestigator"
+
+  - title: "Evaluating Memorization in Parameter-Efficient Fine-tuning"
+    thumbnail: "/assets/images/papers/evaluating-memorization-in-parameter-efficient-fine-tun.jpg"
+    authors: "Sanghyun Hong, Nicholas Carlini, and Alexey Kurakin"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ICML Workshop on the Impact of Memorization on Trustworthy Foundation Models (MemFM)"
+    venue_short: "ICML-W"
+    year: 2025
+    type: workshop
+    award: "Oral"
+    links:
+      pdf: "https://openreview.net/pdf/db2b148e222c698467d8d34c9bfa4c5a2a0b8046.pdf"
+
+  - title: "MADCAT: Combating Malware Detection Under Concept Drift with Test-Time Adaptation"
+    thumbnail: "/assets/images/papers/madcat-combating-malware-detection-under-concept-drift.jpg"
+    authors: "Eunjin Roh, Yigitcan Kaya, Christopher Kruegel, Giovanni Vigna, and Sanghyun Hong"
+    lab_authors: ["Eunjin Roh", "Sanghyun Hong"]
+    venue: "ICML Workshop on Test-Time Adaptation (PUT)"
+    venue_short: "ICML-W"
+    year: 2025
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2505.18734"
+
+  - title: "Visualizationary: Automating Design Feedback for Visualization Designers using LLMs"
+    thumbnail: "/assets/images/papers/visualizationary-automating-design-feedback-for-visuali.jpg"
+    authors: "Sungbok Shin, Sanghyun Hong, and Niklas Elmqvist"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)"
+    venue_short: "IEEE VIS"
+    year: 2025
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2409.13109"
+      supplemental: "https://osf.io/v7hu8"
+
+  - title: "SoK: Watermarking for AI-Generated Content"
+    thumbnail: "/assets/images/papers/sok-watermarking-for-ai-generated-content.jpg"
+    authors: "Xuandong Zhao, Sam Gunn, Miranda Christ, Jaiden Fairoze, Andres Fabrega, Nicholas Carlini, Milad Nasr, Sanghyun Hong, Florian Tramer, Sanjam Garg, Somesh Jha, Lei Li, Yu-Xiang Wang, and Dawn Song"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Symposium on Security and Privacy (IEEE S&P)"
+    venue_short: "IEEE S&P"
+    year: 2025
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2411.18479"
+    bibtex: |
+      @inproceedings{DBLP:conf/sp/ZhaoGCFFCG0NTJL25,
+        author    = {Xuandong Zhao and Sam Gunn and Miranda Christ and Jaiden Fairoze and
+                     Andr{\'{e}}s F{\'{a}}brega and Nicholas Carlini and Sanjam Garg and
+                     Sanghyun Hong and Milad Nasr and Florian Tram{\`{e}}r and Somesh Jha and
+                     Lei Li and Yu-Xiang Wang and Dawn Song},
+        title     = {{SoK}: Watermarking for {AI}-Generated Content},
+        booktitle = {{IEEE} Symposium on Security and Privacy ({SP})},
+        pages     = {2621--2639},
+        publisher = {{IEEE}},
+        year      = {2025}
+      }
+
+  - title: "A Stability Analysis of Neural Networks and Its Application to Tsunami Early Warning"
+    thumbnail: "/assets/images/papers/a-stability-analysis-of-neural-networks-and-its-appl.jpg"
+    authors: "Donsub Rim, Sanah Suri, Sanghyun Hong, Kookjin Lee, and Randall J LeVeque"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Journal of Geophysical Research: Machine Learning and Computation"
+    venue_short: "JGR: MLC"
+    year: 2024
+    type: journal
+    links:
+      pdf: "https://eartharxiv.org/repository/view/5381"
+
+  - title: "You Never Know: Quantization Induces Inconsistent Biases in Vision-Language Foundation Models"
+    thumbnail: "/assets/images/papers/you-never-know-quantization-induces-inconsistent-biases.jpg"
+    authors: "Eric Slyman, Anirudh Kanneganti, Sanghyun Hong, and Stefan Lee"
+    lab_authors: ["Anirudh Kanneganti", "Sanghyun Hong"]
+    venue: "NeurIPS Workshop on Responsibly Building the Next Generation of Multimodal Foundational Models (RBFM)"
+    venue_short: "NeurIPS-W"
+    year: 2024
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2410.20265"
+
+  - title: "Privacy Backdoors: Enhancing Membership Inference through Poisoning Pre-trained Models"
+    thumbnail: "/assets/images/papers/privacy-backdoors-enhancing-membership-inference-throug.jpg"
+    authors: "Yuxin Wen, Leo Marchyok, Sanghyun Hong, Jonas Geiping, Tom Goldstein, and Nicholas Carlini"
+    lab_authors: ["Leo Marchyok", "Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2024
+    type: conference
+    highlight: true
+    links:
+      pdf: "https://arxiv.org/abs/2404.01231"
+      code: "https://github.com/YuxinWenRick/privacy-backdoors"
+      poster: "https://neurips.cc/virtual/2024/poster/95643"
+    bibtex: |
+      @inproceedings{DBLP:conf/nips/WenM0GGC24,
+        author    = {Yuxin Wen and Leo Marchyok and Sanghyun Hong and
+                     Jonas Geiping and Tom Goldstein and Nicholas Carlini},
+        title     = {Privacy Backdoors: Enhancing Membership Inference through
+                     Poisoning Pre-trained Models},
+        booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+        year      = {2024}
+      }
+
+  - title: "You Only Perturb Once: Bypassing (Robust) Ad-Blockers Using Universal Adversarial Perturbations"
+    thumbnail: "/assets/images/papers/you-only-perturb-once-bypassing-robust-ad-blockers-u.jpg"
+    authors: "Dongwon Shin, Suyoung Lee, Sanghyun Hong, and Sooel Son"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Annual Computer Security Applications Conference (ACSAC)"
+    venue_short: "ACSAC"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://leeswimming.com/papers/shin-acsac24.pdf"
+      code: "https://github.com/WSP-LAB/YOPO"
+
+  - title: "Identifying Contemporaneous and Lagged Dependence Structures by Promoting Sparsity in Continuous-time Neural Networks"
+    thumbnail: "/assets/images/papers/identifying-contemporaneous-and-lagged-dependence-st.jpg"
+    authors: "Fan Wu, Woojin Cho, David Korotky, Sanghyun Hong, Donsub Rim, Noseong Park, and Kookjin Lee"
+    lab_authors: ["David Korotky", "Sanghyun Hong"]
+    venue: "ACM International Conference on Information and Knowledge Management (CIKM)"
+    venue_short: "CIKM"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://dl.acm.org/doi/abs/10.1145/3627673.3679751"
+      code: "https://openreview.net/attachment?id=2pAdYVCbU9&name=supplementary_material"
+
+  - title: "LeaPformer: Enabling Linear Transformers for Autoregressive and Simultaneous Tasks via Learned Proportions"
+    thumbnail: "/assets/images/papers/leapformer-enabling-linear-transformers-for-autoregress.jpg"
+    authors: "Victor Agostinelli III, Sanghyun Hong, and Lizhong Chen"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2405.13046"
+      code: "https://github.com/OSU-STARLAB/LeaPformer"
+      poster: "https://icml.cc/virtual/2024/poster/33810"
+
+  - title: "Parameterized Physics-informed Neural Networks for Parameterized PDEs"
+    thumbnail: "/assets/images/papers/parameterized-physics-informed-neural-networks-for-p.jpg"
+    authors: "Woojin Cho, Minju Jo, Haksoo Lim, Kookjin Lee, Dongeun Lee, Sanghyun Hong, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2024
+    type: conference
+    award: "Oral"
+    highlight: true
+    links:
+      pdf: "https://proceedings.mlr.press/v235/cho24b.html"
+      code: "https://github.com/WooJin-Cho/Parameterized-Physics-informed-Neural-Networks"
+      poster: "https://icml.cc/virtual/2024/poster/33141"
+
+  - title: "When Do 'More Contexts' Help with Sarcasm Recognition?"
+    thumbnail: "/assets/images/papers/when-do-more-contexts-help-with-sarcasm-recognition.jpg"
+    authors: "Ojas Nimase and Sanghyun Hong"
+    lab_authors: ["Ojas Nimase", "Sanghyun Hong"]
+    venue: "Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING)"
+    venue_short: "LREC-COLING"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2403.12469"
+      code: "https://github.com/Secure-AI-Systems-Group/sarcasm-detection"
+
+  - title: "Extension of Physics-informed Neural Networks to Solving Parameterized PDEs"
+    thumbnail: "/assets/images/papers/extension-of-physics-informed-neural-networks-to-sol.jpg"
+    authors: "Woojin Cho, Minju Jo, Haksoo Lim, Kookjin Lee, Dongeun Lee, Sanghyun Hong, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ICLR Workshop on AI4DifferentialEquations in Science (AI4DiffEqtnsInSci)"
+    venue_short: "ICLR-W"
+    year: 2024
+    type: workshop
+    links:
+      pdf: "https://openreview.net/forum?id=EAkRlHFLBc"
+      poster: "https://iclr.cc/media/PosterPDFs/ICLR%202024/21391.png?t=1714719310.7211328"
+
+  - title: "PAC-FNO: Parallel-Structured All-Component Fourier Neural Operators for Recognizing Low-Quality Images"
+    thumbnail: "/assets/images/papers/pac-fno-parallel-structured-all-component-fourier-ne.jpg"
+    authors: "Jinsung Jeon, Hyundong Jin, Jonghyun Choi, Sanghyun Hong, Dongeun Lee, Kookjin Lee, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Learning Representations (ICLR)"
+    venue_short: "ICLR"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://openreview.net/forum?id=Cf4FJGmHRQ"
+      code: "https://openreview.net/attachment?id=Cf4FJGmHRQ&name=supplementary_material"
+
+  - title: "Operator-learning-inspired Modeling of Neural Ordinary Differential Equations"
+    thumbnail: "/assets/images/papers/operator-learning-inspired-modeling-of-neural-ordinary.jpg"
+    authors: "Woojin Cho, Seunghyeon Cho, Hyundong Jin, Jinsung Jeon, Kookjin Lee, Sanghyun Hong, Dongeun Lee, Jonghyun Choi, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "AAAI Conference on Artificial Intelligence (AAAI)"
+    venue_short: "AAAI"
+    year: 2024
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2312.10274"
+      talk: "https://underline.io/lecture/92562-operator-learning-inspired-modeling-of-neural-ordinary-differential-equations"
+
+  - title: "HyperNetwork Approximating Future Parameters for Time Series Forecasting under Temporal Drifts"
+    thumbnail: "/assets/images/papers/hypernetwork-approximating-future-parameters-for-time-s.jpg"
+    authors: "Jaehoon Lee, Chan Kim, Gyumin Lee, Haksoo Lim, Jeongwhan Choi, Kookjin Lee, Dongeun Lee, Sanghyun Hong, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "NeurIPS Workshop on Distribution Shifts (DistShift)"
+    venue_short: "NeurIPS-W"
+    year: 2023
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2211.12034"
+      code: "https://github.com/leejaehoon2016/HyperGPA"
+      talk: "https://nips.cc/virtual/2023/80544"
+
+  - title: "BERT Lost Patience Won't Be Robust to Adversarial Slowdown"
+    thumbnail: "/assets/images/papers/bert-lost-patience-won-t-be-robust-to-adversarial-slowd.jpg"
+    authors: "Zachary Coalson, Gabriel Ritter, Rakesh Bobba, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Gabriel Ritter", "Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2023
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2310.19152"
+      code: "https://github.com/ztcoalson/WAFFLE"
+      talk: "https://neurips.cc/virtual/2023/poster/71547"
+    bibtex: |
+      @inproceedings{DBLP:conf/nips/CoalsonRB023,
+        author    = {Zachary Coalson and Gabriel Ritter and Rakesh Bobba and Sanghyun Hong},
+        title     = {{BERT} Lost Patience Won't Be Robust to Adversarial Slowdown},
+        booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+        year      = {2023}
+      }
+
+  - title: "Learning Unforeseen Robustness from Out-of-distribution Data Using Equivariant Domain Translator"
+    thumbnail: "/assets/images/papers/learning-unforeseen-robustness-from-out-of-distribution.jpg"
+    authors: "Sicheng Zhu, Bang An, Furong Huang, and Sanghyun Hong"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2023
+    type: conference
+    links:
+      pdf: "http://proceedings.mlr.press/v202/zhu23a/zhu23a.pdf"
+      code: "https://github.com/schzhu/unforeseen-robustness"
+      talk: "https://icml.cc/virtual/2023/poster/23541"
+
+  - title: "Perceptual Pat: A Virtual Human Visual System for Iterative Visualization Design"
+    thumbnail: "/assets/images/papers/perceptual-pat-a-virtual-human-visual-system-for-iterat.jpg"
+    authors: "Sungbok Shin, Sanghyun Hong, and Niklas Elmqvist"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ACM Conference on Human Factors in Computing Systems (CHI)"
+    venue_short: "CHI"
+    year: 2023
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2303.06537"
+      talk: "https://youtu.be/tUaBTH8_7Vk"
+
+  - title: "Publishing Efficient On-device Models Increases Adversarial Vulnerability"
+    thumbnail: "/assets/images/papers/publishing-efficient-on-device-models-increases-adversa.jpg"
+    authors: "Sanghyun Hong, Nicholas Carlini, and Alexey Kurakin"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)"
+    venue_short: "SaTML"
+    year: 2023
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2212.13700"
+      talk: "https://youtu.be/kb7NIRRMBrE?si=v_DqEkClpZTpL8x2"
+
+  - title: "Will SOC Telemetry Data Improve Predictive Models of User Riskiness? A Work in Progress"
+    thumbnail: "/assets/images/papers/will-soc-telemetry-data-improve-predictive-models-of.jpg"
+    authors: "Michael Curry, Byron Marshall, Forough Shadbad, and Sanghyun Hong"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "AIS SIGSEC Workshop on Information Security and Privacy (WISP)"
+    venue_short: "WISP"
+    year: 2022
+    type: workshop
+    links:
+      pdf: "https://cybersecurity.fsu.edu/wisp/wp-content/uploads/2022/12/WISP2022_paper_7429.pdf"
+
+  - title: "Handcrafted Backdoors in Deep Neural Networks"
+    thumbnail: "/assets/images/papers/handcrafted-backdoors-in-deep-neural-networks.jpg"
+    authors: "Sanghyun Hong, Nicholas Carlini, and Alexey Kurakin"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2022
+    type: conference
+    award: "Oral"
+    links:
+      pdf: "https://arxiv.org/abs/2106.04690"
+      code: "https://openreview.net/attachment?id=6yuil2_tn9a&name=supplementary_material"
+      talk: "https://nips.cc/virtual/2022/poster/54732"
+    bibtex: |
+      @inproceedings{DBLP:conf/nips/0001CK22,
+        author    = {Sanghyun Hong and Nicholas Carlini and Alexey Kurakin},
+        title     = {Handcrafted Backdoors in Deep Neural Networks},
+        booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+        year      = {2022}
+      }
+
+  - title: "A Scanner Deeply: Predicting Gaze Heatmaps on Visualizations Using Crowdsourced Eye Movement Data"
+    thumbnail: "/assets/images/papers/a-scanner-deeply-predicting-gaze-heatmaps-on-visuali.jpg"
+    authors: "Sungbok Shin, Sunghyo Chung, Sanghyun Hong, and Niklas Elmqvist"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)"
+    venue_short: "IEEE VIS"
+    year: 2022
+    type: conference
+    links:
+      pdf: "https://ieeexplore.ieee.org/document/9904490"
+      code: "https://osf.io/spw49/?view_only=7fde2fc5e51f4d6682805c1dbb7420f6"
+
+  - title: "Truth Serum: Poisoning Machine Learning Models to Reveal Their Secrets"
+    thumbnail: "/assets/images/papers/truth-serum-poisoning-machine-learning-models-to-reveal.jpg"
+    authors: "Florian Tramèr, Reza Shokri, Ayrton San Joaquin, Hoang Le, Matthew Jagielski, Sanghyun Hong, and Nicholas Carlini"
+    lab_authors: ["Hoang Le", "Sanghyun Hong"]
+    venue: "ACM Conference on Computer and Communications Security (CCS)"
+    venue_short: "CCS"
+    year: 2022
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2204.00032"
+      code: "https://github.com/tensorflow/privacy/tree/master/research/mi_poison_2022"
+    bibtex: |
+      @inproceedings{DBLP:conf/ccs/TramerSJLJ0C22,
+        author    = {Florian Tram{\`{e}}r and Reza Shokri and Ayrton San Joaquin and
+                     Hoang Le and Matthew Jagielski and Sanghyun Hong and Nicholas Carlini},
+        title     = {Truth Serum: Poisoning Machine Learning Models to Reveal Their Secrets},
+        booktitle = {{ACM} Conference on Computer and Communications Security ({CCS})},
+        pages     = {2779--2792},
+        publisher = {{ACM}},
+        year      = {2022}
+      }
+
+  - title: "AdamNODEs: When Neural ODE Meets Adaptive Moment Estimation"
+    thumbnail: "/assets/images/papers/adamnodes-when-neural-ode-meets-adaptive-moment-estimat.jpg"
+    authors: "Seunghyeon Cho, Sanghyun Hong, Kookjin Lee, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ICML Workshop on Continuous-Time Methods for Machine Learning"
+    venue_short: "ICML-W"
+    year: 2022
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2207.06066"
+      code: "https://github.com/pmcsh04/AdamNODE"
+
+  - title: "Improving Cross-Platform Binary Analysis Using Representation Learning via Graph Alignment"
+    thumbnail: "/assets/images/papers/improving-cross-platform-binary-analysis-using-repres.jpg"
+    authors: "Geunwoo Kim, Sanghyun Hong, Michael Franz, and Dokyung Song"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)"
+    venue_short: "ISSTA"
+    year: 2022
+    type: conference
+    links:
+      pdf: "https://conf.researchr.org/details/issta-2022/issta-2022-technical-papers/23/Improving-Cross-Platform-Binary-Analysis-using-Representation-Learning-via-Graph-Alig"
+      code: "https://github.com/yonsei-cysec/XBA"
+
+  - title: "Data Poisoning Won't Save You From Facial Recognition"
+    thumbnail: "/assets/images/papers/data-poisoning-won-t-save-you-from-facial-recognition.jpg"
+    authors: "Evani Radiya-Dixit, Sanghyun Hong, Nicholas Carlini, and Florian Tramer"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Learning Representations (ICLR)"
+    venue_short: "ICLR"
+    year: 2022
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2106.14851"
+      code: "https://github.com/ftramer/FaceCure"
+      poster: "https://iclr.cc/virtual/2022/poster/7006"
+
+  - title: "Qu-ANTI-zation: Exploiting Neural Network Quantization for Achieving Adversarial Outcomes"
+    thumbnail: "/assets/images/papers/qu-anti-zation-exploiting-neural-network-quantization-f.jpg"
+    authors: "Sanghyun Hong, Michael-Andrei Panaitescu-Liess, Yigitcan Kaya, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2021
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2110.13541"
+      code: "https://github.com/Secure-AI-Systems-Group/Qu-ANTI-zation"
+      poster: "https://neurips.cc/virtual/2021/poster/26535"
+
+  - title: "A Panda? No, It's a Sloth: Slowdown Attacks on Adaptive Multi-Exit Neural Network Inference"
+    thumbnail: "/assets/images/papers/a-panda-no-it-s-a-sloth-slowdown-attacks-on-adaptive-mu.jpg"
+    authors: "Sanghyun Hong*, Yigitcan Kaya*, Ionuţ-Vlad Modoranu, and Tudor Dumitraș (*equal contribution)"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Learning Representations (ICLR)"
+    venue_short: "ICLR"
+    year: 2021
+    type: conference
+    award: "Spotlight"
+    links:
+      pdf: "https://arxiv.org/abs/2010.02432"
+      code: "https://github.com/Sanghyun-Hong/DeepSloth"
+      talk: "https://iclr.cc/virtual/2021/poster/3283"
+    bibtex: |
+      @inproceedings{DBLP:conf/iclr/HongKMD21,
+        author    = {Sanghyun Hong and Yigitcan Kaya and Ionut{-}Vlad Modoranu and Tudor Dumitras},
+        title     = {A Panda? No, It's a Sloth: Slowdown Attacks on Adaptive Multi-Exit
+                     Neural Network Inference},
+        booktitle = {International Conference on Learning Representations ({ICLR})},
+        publisher = {OpenReview.net},
+        year      = {2021}
+      }
+
+  - title: "Certified Malware in South Korea: A Localized Study of Breaches of Trust in Code-Signing PKI Ecosystem"
+    thumbnail: "/assets/images/papers/certified-malware-in-south-korea-a-localized-study-o.jpg"
+    authors: "Bumjun Kwon, Sanghyun Hong, Yuseok Jeon, and Doowon Kim"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Information and Communications Security (ICICS)"
+    venue_short: "ICICS"
+    year: 2021
+    type: conference
+    links:
+      pdf: "https://link.springer.com/chapter/10.1007/978-3-030-86890-1_4"
+
+  - title: "A Sound Mind in a Vulnerable Body: Practical Hardware Attacks on Deep Learning"
+    thumbnail: "/assets/images/papers/a-sound-mind-in-a-vulnerable-body-practical-hardwar.jpg"
+    authors: "Sanghyun Hong"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "USENIX Enigma (Enigma)"
+    venue_short: "Enigma"
+    year: 2021
+    type: conference
+    links:
+      talk: "https://www.usenix.org/conference/enigma2021/presentation/hong"
+
+  - title: "How to 0wn NAS in Your Spare Time"
+    thumbnail: "/assets/images/papers/how-to-0wn-nas-in-your-spare-time.jpg"
+    authors: "Sanghyun Hong, Michael Davinroy, Yigitcan Kaya, Dana Dachman-Soled, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Learning Representations (ICLR)"
+    venue_short: "ICLR"
+    year: 2020
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/2002.06776"
+      code: "https://github.com/Sanghyun-Hong/How-to-0wn-NAS-in-Your-Spare-Time"
+    bibtex: |
+      @inproceedings{DBLP:conf/iclr/HongDKDD20,
+        author    = {Sanghyun Hong and Michael Davinroy and Yigitcan Kaya and
+                     Dana Dachman{-}Soled and Tudor Dumitras},
+        title     = {How to 0wn the {NAS} in Your Spare Time},
+        booktitle = {International Conference on Learning Representations ({ICLR})},
+        publisher = {OpenReview.net},
+        year      = {2020}
+      }
+      poster: "https://iclr.cc/virtual_2020/poster_S1erpeBFPB.html"
+
+  - title: "Terminal Brain Damage: Exposing the Graceless Degradation in Deep Neural Networks Under Hardware Fault Attacks"
+    thumbnail: "/assets/images/papers/terminal-brain-damage-exposing-the-graceless-degradatio.jpg"
+    authors: "Sanghyun Hong, Pietro Frigo, Yigitcan Kaya, Cristiano Giuffrida, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "USENIX Security Symposium (USENIX Security)"
+    venue_short: "USENIX Sec."
+    year: 2019
+    type: conference
+    links:
+      pdf: "https://www.usenix.org/system/files/sec19-hong.pdf"
+      talk: "https://www.usenix.org/conference/usenixsecurity19/presentation/hong"
+    bibtex: |
+      @inproceedings{DBLP:conf/uss/HongFKGD19,
+        author    = {Sanghyun Hong and Pietro Frigo and Yigitcan Kaya and
+                     Cristiano Giuffrida and Tudor Dumitras},
+        title     = {Terminal Brain Damage: Exposing the Graceless Degradation in Deep
+                     Neural Networks Under Hardware Fault Attacks},
+        booktitle = {{USENIX} Security Symposium},
+        pages     = {497--514},
+        publisher = {{USENIX} Association},
+        year      = {2019}
+      }
+
+  - title: "Shallow-Deep Networks: Understanding and Mitigating Network Overthinking"
+    thumbnail: "/assets/images/papers/shallow-deep-networks-understanding-and-mitigating-netw.jpg"
+    authors: "Yigitcan Kaya, Sanghyun Hong, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Machine Learning (ICML)"
+    venue_short: "ICML"
+    year: 2019
+    type: conference
+    links:
+      pdf: "https://arxiv.org/abs/1810.07052"
+      code: "https://github.com/yigitcankaya/Shallow-Deep-Networks"
+
+  - title: "Poster: On the Feasibility of Training Neural Networks with Visibly Watermarked Dataset"
+    thumbnail: "/assets/images/papers/poster-on-the-feasibility-of-training-neural-networks-w.jpg"
+    authors: "Sanghyun Hong, Tae-hoon Kim, Tudor Dumitraș, and Jonghyun Choi"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Network and Distributed System Security Symposium (NDSS)"
+    venue_short: "NDSS"
+    year: 2019
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/1902.10854"
+      code: "https://github.com/Sanghyun-Hong/DeepStamp"
+
+  - title: "Peek-a-Boo: Inferring Program Behaviors in a Virtualized Infrastructure without Introspection"
+    thumbnail: "/assets/images/papers/peek-a-boo-inferring-program-behaviors-in-a-virtuali.jpg"
+    authors: "Sanghyun Hong, Alina Nicolae, Abhinav Srivastava, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "Computer & Security (COSE)"
+    venue_short: "COSE"
+    year: 2019
+    type: journal
+    links:
+      pdf: "https://www.sciencedirect.com/science/article/pii/S016740481830244X"
+
+  - title: "Go Serverless: Securing Cloud via Serverless Design Patterns"
+    thumbnail: "/assets/images/papers/go-serverless-securing-cloud-via-serverless-design-patt.jpg"
+    authors: "Sanghyun Hong, Abhinav Srivastava, William Shambrook, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "USENIX Workshop on Hot Topics in Cloud Computing (HotCloud)"
+    venue_short: "HotCloud"
+    year: 2018
+    type: workshop
+    links:
+      pdf: "https://www.usenix.org/system/files/conference/hotcloud18/hotcloud18-paper-hong.pdf"
+      slides: "https://www.usenix.org/conference/hotcloud18/presentation/hong"
+
+  - title: "PAGE: Answering Graph Pattern Queries via Knowledge Graph Embedding"
+    thumbnail: "/assets/images/papers/page-answering-graph-pattern-queries-via-knowledge-g.jpg"
+    authors: "Sanghyun Hong, Noseong Park, Tanmoy Chakraborty, Hyunjoong Kang, and Soonhyun Kwon"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "International Conference on Big Data (Big Data)"
+    venue_short: "Big Data"
+    year: 2018
+    type: conference
+    links:
+      pdf: "https://link.springer.com/chapter/10.1007/978-3-319-94301-5_7"
+
+  - title: "On Integrating Knowledge Graph Embedding into SPARQL Query Processing"
+    thumbnail: "/assets/images/papers/on-integrating-knowledge-graph-embedding-into-sparql.jpg"
+    authors: "Soonhyun Kwon, Hyunjoong Kang, Sanghyun Hong, Kookjin Lee, and Noseong Park"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "IEEE International Conference on Web Services (ICWS)"
+    venue_short: "ICWS"
+    year: 2018
+    type: conference
+    links:
+      pdf: "https://ieeexplore.ieee.org/abstract/document/8456381"
+
+  - title: "SENA: Preserving Social Structure for Network Embedding"
+    thumbnail: "/assets/images/papers/sena-preserving-social-structure-for-network-embedd.jpg"
+    authors: "Sanghyun Hong*, Tanmoy Chakraborty*, Sungjin Ahn, Ghaith Husari, and Noseong Park (*equal contribution)"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ACM Conference on Hypertext and Social Media (ACM HT)"
+    venue_short: "ACM HT"
+    year: 2017
+    type: conference
+    links:
+      pdf: "https://dl.acm.org/citation.cfm?id=3078738"
+
+  - title: "Summoning Demons: The Pursuit of Exploitable Bugs in Machine Learning"
+    thumbnail: "/assets/images/papers/summoning-demons-the-pursuit-of-exploitable-bugs-in-mac.jpg"
+    authors: "Rock Stevens, Octavian Suciu, Andrew Ruef, Sanghyun Hong, Michael Hicks, and Tudor Dumitraș"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "NeurIPS Workshop on Reliable Machine Learning in the Wild"
+    venue_short: "NeurIPS-W"
+    year: 2017
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/1701.04739"

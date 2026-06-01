@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Research"
+---
+
+<div class="container">
+  <div class="page-header">
+    <h1>Research</h1>
+    <p>
+      We study the security, privacy, and reliability of modern AI systems,
+      spanning theoretical analysis and practical attacks and defenses.
+    </p>
+  </div>
+
+  {% for area in site.data.research %}
+  <div class="research-item">
+    <h3>{{ area.title }}</h3>
+    <p>{{ area.description }}</p>
+    {% if area.papers %}
+    <ul class="research-papers">
+      {% for paper_title in area.papers %}
+      {% assign matched = site.data.publications.papers | where: "title", paper_title | first %}
+      {% if matched %}
+      <li>
+        {% if matched.links.pdf and matched.links.pdf != "" %}
+          <a href="{{ matched.links.pdf }}" target="_blank">{{ matched.title }}</a>
+        {% else %}
+          {{ matched.title }}
+        {% endif %}
+        &mdash; <em>{{ matched.venue_short }}</em> {{ matched.year }}
+        {% if matched.award %}<span class="pub-award">&#9733; {{ matched.award }}</span>{% endif %}
+      </li>
+      {% else %}
+      <li>{{ paper_title }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+</div>

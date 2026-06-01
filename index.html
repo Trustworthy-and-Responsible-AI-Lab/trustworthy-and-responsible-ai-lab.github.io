@@ -1,27 +1,330 @@
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+---
+layout: default
+title: ""
+---
 
-        <!-- Title -->
-        <title>TRUE AI LAB :: Trustworthy Foundation, Responsible Future </title>
+<div class="container">
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+  <!-- ── Lab Intro ──────────────────────────────────────────── -->
+  <div class="lab-intro">
 
-        <!-- Bootstrap start -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <a href="courses/MLSec/current/index.html">CS499/599</a><br/><br/>
-        <a href="courses/OS1/current/index.html">CS344</a>
-        <a href="courses/Sec-UGrad/current/index.html">CS370</a>
-        <a href="courses/Sec-Grad/current/index.html">CS587</a>
+    <!-- LEFT: photo / research highlight slideshow -->
+    <div class="lab-hero">
+      {% assign highlights = site.data.lab_highlights %}
+      {% if highlights and highlights.size > 0 %}
+        {% for item in highlights %}
+        <div class="lab-hero-slide{% if forloop.first %} active{% endif %}">
+          <img src="{{ item.image }}" alt="{{ item.caption }}">
+          <div class="lab-hero-caption">{{ item.caption }}</div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <div class="lab-hero-slide active lab-hero-empty">
+        <div class="lab-hero-caption">TRUE AI Lab &middot; Oregon State University</div>
+      </div>
+      {% endif %}
+      <div class="lab-hero-dots"></div>
+    </div>
 
-        <!-- Optional Javascript -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
-</html>
+    <!-- RIGHT: lab description -->
+    <div class="lab-content">
+      <h1>The TRUE AI Lab</h1>
+
+      <p class="lab-desc">
+        We are trustworthy and responsible (TRUE) AI lab directed by
+        <a href="https://sanghyun-hong.com" target="_blank">Professor Sanghyun Hong</a> in the
+        <a href="https://engineering.oregonstate.edu/EECS" target="_blank">School of Computer Science</a> at Oregon State University.
+        We build security foundations for AI systems
+        by studying how they make decisions, where they fail, and how they can be made safer.
+        We also use those secure and safe AI systems to strengthen cybersecurity.
+      </p>
+
+      <div class="lab-pillars">
+        <div class="lab-pillar">
+          <span class="lab-pillar-icon">🛡️</span>
+          <div>
+            <strong>AI Security</strong>
+          </div>
+        </div>
+        <div class="lab-pillar">
+          <span class="lab-pillar-icon">⚙️</span>
+          <div>
+            <strong>AI Reliability</strong>
+          </div>
+        </div>
+        <div class="lab-pillar">
+          <span class="lab-pillar-icon">🤖</span>
+          <div>
+            <strong>Agentic AI Systems</strong>
+          </div>
+        </div>
+        <div class="lab-pillar">
+          <span class="lab-pillar-icon">🔐</span>
+          <div>
+            <strong>AI for Cybersecurity</strong>
+          </div>
+        </div>
+      </div>
+
+      <p class="lab-desc">
+        To learn more, see our <a href="" target="_blank">recent research projects</a>.
+      </p>
+
+      <div class="lab-links">
+        <a href="mailto:{{ site.lab.email }}" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=664LW90AAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar" style="font-size:1.15rem;"></i></a>
+        <a href="https://github.com/{{ site.lab.github }}" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://twitter.com/{{ site.lab.twitter }}" target="_blank" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Recent Publications ──────────────────────────────────────── -->
+  {% assign featured = site.data.publications.papers | where: "highlight", true %}
+  {% if featured.size > 0 %}
+  <div class="sec-title">Recent Publications</div>
+  <div class="recent-papers">
+    <div class="recent-papers-track">
+    {% for pub in featured limit:10 %}
+    <div class="recent-paper">
+      <div class="recent-paper-thumb">
+        {% if pub.thumbnail and pub.thumbnail != "" %}
+          <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
+        {% else %}
+          <div class="rp-thumb-tbd"></div>
+        {% endif %}
+        {% if pub.award %}<div class="rp-award-ribbon">Award</div>{% endif %}
+      </div>
+      <div class="recent-paper-meta">
+        <div class="recent-paper-title">
+          {% if pub.links.pdf and pub.links.pdf != "" %}
+            <a href="{{ pub.links.pdf }}" target="_blank">{{ pub.title }}</a>
+          {% else %}
+            {{ pub.title }}
+          {% endif %}
+        </div>
+        <div class="recent-paper-venue">
+          {{ pub.venue_short }} {{ pub.year }}
+          {% if pub.status %}<em class="rp-status">{{ pub.status }}</em>{% endif %}
+          {% if pub.award %}&nbsp;|&nbsp;<span class="rp-award-text">&#127942; {{ pub.award }}</span>{% endif %}
+        </div>
+        <div class="recent-paper-authors">{{ pub.authors }}</div>
+        <div class="recent-paper-links">
+          {% if pub.links.pdf and pub.links.pdf != "" %}<a href="{{ pub.links.pdf }}" target="_blank" class="rp-btn"><i class="bi bi-file-earmark-pdf"></i> PDF</a>{% endif %}
+          {% if pub.links.code and pub.links.code != "" %}<a href="{{ pub.links.code }}" target="_blank" class="rp-btn"><i class="bi bi-github"></i> Code</a>{% endif %}
+          {% if pub.links.page and pub.links.page != "" %}<a href="{{ pub.links.page }}" target="_blank" class="rp-btn"><i class="bi bi-globe"></i> Page</a>{% endif %}
+          {% if pub.links.poster and pub.links.poster != "" %}<a href="{{ pub.links.poster }}" target="_blank" class="rp-btn"><i class="bi bi-image"></i> Poster</a>{% endif %}
+          {% if pub.links.slides and pub.links.slides != "" %}<a href="{{ pub.links.slides }}" target="_blank" class="rp-btn"><i class="bi bi-easel"></i> Slides</a>{% endif %}
+          {% if pub.links.video and pub.links.video != "" %}<a href="{{ pub.links.video }}" target="_blank" class="rp-btn"><i class="bi bi-play-circle"></i> Video</a>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div><!-- /.recent-papers-track -->
+  </div>
+  <p style="font-size:0.84rem; margin-bottom:0;">
+    <a href="/publications.html">View all publications &rarr;</a>
+  </p>
+  {% endif %}
+
+  <script>
+  (function () {
+    var container = document.querySelector('.recent-papers');
+    var track     = document.querySelector('.recent-papers-track');
+    if (!container || !track) return;
+
+    /* 1. Duplicate cards for seamless infinite loop */
+    Array.from(track.children).forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    var halfWidth  = 0;
+    var speed      = 0.6; /* px per frame */
+    var paused     = false;
+    var dragging   = false;
+    var dragStartX = 0;
+    var dragStartL = 0;
+
+    function calcHalf() { halfWidth = track.scrollWidth / 2; }
+    window.addEventListener('load', calcHalf);
+    setTimeout(calcHalf, 200);
+
+    /* Auto-scroll loop */
+    function tick() {
+      if (!paused && !dragging) {
+        container.scrollLeft += speed;
+        if (container.scrollLeft >= halfWidth) {
+          container.scrollLeft -= halfWidth;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    /* Pause on hover */
+    container.addEventListener('mouseenter', function () { paused = true;  });
+    container.addEventListener('mouseleave', function () { paused = false; });
+
+    /* Mouse drag */
+    container.addEventListener('mousedown', function (e) {
+      dragging   = true;
+      dragStartX = e.pageX;
+      dragStartL = container.scrollLeft;
+      container.classList.add('is-dragging');
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      var dx = e.pageX - dragStartX;
+      var sl = dragStartL - dx;
+      if (sl >= halfWidth) sl -= halfWidth;
+      if (sl < 0)          sl += halfWidth;
+      container.scrollLeft = sl;
+    });
+    document.addEventListener('mouseup', function () {
+      if (!dragging) return;
+      dragging = false;
+      container.classList.remove('is-dragging');
+    });
+
+    /* Touch drag */
+    container.addEventListener('touchstart', function (e) {
+      dragging   = true;
+      dragStartX = e.touches[0].pageX;
+      dragStartL = container.scrollLeft;
+    }, { passive: true });
+    container.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      var dx = e.touches[0].pageX - dragStartX;
+      var sl = dragStartL - dx;
+      if (sl >= halfWidth) sl -= halfWidth;
+      if (sl < 0)          sl += halfWidth;
+      container.scrollLeft = sl;
+    }, { passive: true });
+    container.addEventListener('touchend', function () { dragging = false; });
+  })();
+  </script>
+
+  <!-- ── Talks & Presentations ────────────────────────────────── -->
+  {% assign talks = site.data.talks %}
+  {% if talks and talks.size > 0 %}
+  <div class="sec-title">Talks &amp; Presentations</div>
+  <div class="talks-grid">
+    {% for talk in talks %}
+    <div class="talk-card">
+      <!-- Thumbnail — YouTube / SlidesLive / custom -->
+      {% assign _talk_href = "#" %}
+      {% if talk.links.youtube and talk.links.youtube != "" %}{% assign _talk_href = talk.links.youtube %}
+      {% elsif talk.slideslive_id and talk.slideslive_id != "" %}{% capture _talk_href %}https://slideslive.com/{{ talk.slideslive_id }}{% endcapture %}
+      {% elsif talk.links.slideslive and talk.links.slideslive != "" %}{% assign _talk_href = talk.links.slideslive %}
+      {% elsif talk.url and talk.url != "" %}{% assign _talk_href = talk.url %}{% endif %}
+      <a href="{{ _talk_href }}" target="_blank" class="talk-thumb-link">
+        {% if talk.youtube_id and talk.youtube_id != "" %}
+          <img src="https://img.youtube.com/vi/{{ talk.youtube_id }}/hqdefault.jpg" alt="{{ talk.title }}" loading="lazy">
+          <span class="talk-badge talk-badge-yt"><i class="bi bi-youtube"></i></span>
+        {% elsif talk.thumbnail and talk.thumbnail != "" %}
+          <img src="{{ talk.thumbnail }}" alt="{{ talk.title }}" loading="lazy">
+          {% if talk.slideslive_id and talk.slideslive_id != "" %}
+            <span class="talk-badge talk-badge-sl">SlidesLive</span>
+          {% endif %}
+        {% else %}
+          <div class="talk-thumb-placeholder"><i class="bi bi-play-circle-fill"></i></div>
+        {% endif %}
+      </a>
+      <!-- Info -->
+      <div class="talk-info">
+        <div class="talk-card-title">{{ talk.title }}</div>
+        {% if talk.speaker or talk.event %}
+        <div class="talk-card-meta">
+          {% if talk.speaker %}<span class="talk-card-speaker">{{ talk.speaker }}</span>{% endif %}
+          {% if talk.speaker and talk.event %} &middot; {% endif %}
+          {% if talk.event %}<span class="talk-card-event">{{ talk.event }}</span>{% endif %}
+        </div>
+        {% endif %}
+        <div class="talk-card-links">
+          {% if talk.links.youtube and talk.links.youtube != "" %}
+            <a href="{{ talk.links.youtube }}" target="_blank" class="rp-btn"><i class="bi bi-youtube"></i> YouTube</a>
+          {% endif %}
+          {% if talk.slideslive_id and talk.slideslive_id != "" %}
+            {% assign _sl_url = talk.links.slideslive | default: "" %}
+            {% if _sl_url == "" %}{% capture _sl_url %}https://slideslive.com/{{ talk.slideslive_id }}{% endcapture %}{% endif %}
+            <a href="{{ _sl_url }}" target="_blank" class="rp-btn"><i class="bi bi-play-btn"></i> SlidesLive</a>
+          {% elsif talk.links.slideslive and talk.links.slideslive != "" %}
+            <a href="{{ talk.links.slideslive }}" target="_blank" class="rp-btn"><i class="bi bi-play-btn"></i> SlidesLive</a>
+          {% endif %}
+          {% if talk.links.paper and talk.links.paper != "" %}
+            <a href="{{ talk.links.paper }}" target="_blank" class="rp-btn"><i class="bi bi-file-earmark-pdf"></i> Paper</a>
+          {% endif %}
+          {% if talk.links.slides and talk.links.slides != "" %}
+            <a href="{{ talk.links.slides }}" target="_blank" class="rp-btn"><i class="bi bi-easel"></i> Slides</a>
+          {% endif %}
+          {% if talk.links.project and talk.links.project != "" %}
+            <a href="{{ talk.links.project }}" target="_blank" class="rp-btn">
+              <i class="bi bi-box-arrow-up-right"></i> {{ talk.links.project_name | default: "Project" }}
+            </a>
+          {% endif %}
+        </div>
+        {% if talk.date %}<div class="talk-card-date">&middot; {{ talk.date }}</div>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- ── Sponsors ───────────────────────────────────────────── -->
+  {% assign sponsors = site.data.sponsors %}
+  {% if sponsors and sponsors.size > 0 %}
+  <div class="sec-title">Sponsors</div>
+  <div class="sponsors-grid">
+    {% for sp in sponsors %}
+    <a {% if sp.url and sp.url != "" %}href="{{ sp.url }}" target="_blank"{% else %}role="presentation"{% endif %} class="sponsor-item" title="{{ sp.name }}">
+      {% if sp.logo and sp.logo != "" %}
+      <img src="{{ sp.logo }}" alt="{{ sp.name }}">
+      {% else %}
+      <span>{{ sp.name }}</span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+
+<script>
+(function () {
+  var slides = Array.from(document.querySelectorAll('.lab-hero-slide'));
+  if (slides.length < 2) return;
+
+  var dotsEl  = document.querySelector('.lab-hero-dots');
+  var current = 0;
+  var timer;
+
+  /* Build dot indicators */
+  if (dotsEl) {
+    slides.forEach(function (_, i) {
+      var d = document.createElement('span');
+      d.className = 'lab-hero-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', function () { goTo(i); resetTimer(); });
+      dotsEl.appendChild(d);
+    });
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    if (dotsEl) dotsEl.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    if (dotsEl) dotsEl.children[current].classList.add('active');
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(function () { goTo(current + 1); }, 4500);
+  }
+
+  resetTimer();
+})();
+</script>

@@ -1,0 +1,48 @@
+- id: trustworthy-ml
+  title: "Trustworthy Machine Learning"
+  icon: "shield-check"
+  description: >
+    We study how machine learning systems can be made robust, reliable, and secure.
+    Our work covers adversarial examples, data poisoning attacks and defenses,
+    backdoor attacks, and hardware fault attacks on neural networks.
+  papers:
+    - "Handcrafted Backdoors in Deep Neural Networks"
+    - "A Panda? No, It's a Sloth: Slowdown Attacks on Adaptive Multi-Exit Neural Network Inference"
+    - "Terminal Brain Damage: Exposing the Graceless Degradation in Deep Neural Networks Under Hardware Fault Attacks"
+
+- id: privacy-ml
+  title: "Privacy in Machine Learning"
+  icon: "lock"
+  description: >
+    We investigate privacy risks in foundation models and machine learning pipelines,
+    including membership inference attacks, data extraction from LLMs,
+    and privacy-preserving training methods.
+  papers:
+    - "Privacy Backdoors: Enhancing Membership Inference through Poisoning Pre-trained Models"
+    - "Private Investigator: Extracting Personally Identifiable Information from Large Language Models Using Optimized Prompts"
+    - "Evaluating Memorization in Parameter-Efficient Fine-tuning"
+
+- id: llm-security
+  title: "LLM and Agentic AI Security"
+  icon: "cpu"
+  description: >
+    As large language models and AI agents become more capable and widely deployed,
+    we study how they can be attacked and how to build defenses.
+    Topics include jailbreaking, indirect prompt injection, and TOCTOU vulnerabilities in agents.
+  papers:
+    - "IF-Guide: Influence Function-Guided Detoxification of LLMs"
+    - "PrisonBreak: Jailbreaking Large Language Models with Fewer Than Twenty-Five Targeted Bit-flips"
+    - "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
+    - "Mind the Gap: Time-of-Check to Time-of-Use Vulnerabilities in LLM-Enabled Agents"
+
+- id: efficient-ai
+  title: "Efficient and Reliable AI"
+  icon: "lightning"
+  description: >
+    We explore the intersection of efficiency and reliability in AI systems,
+    studying how model compression (quantization, early-exit, pruning) affects
+    robustness, and how AI systems behave under hardware faults.
+  papers:
+    - "Harnessing Input-adaptive Inference for Efficient VLN"
+    - "LeaPformer: Enabling Linear Transformers for Autoregressive and Simultaneous Tasks via Learned Proportions"
+    - "Qu-ANTI-zation: Exploiting Neural Network Quantization for Achieving Adversarial Outcomes"

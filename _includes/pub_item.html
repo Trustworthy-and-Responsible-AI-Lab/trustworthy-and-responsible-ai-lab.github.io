@@ -1,0 +1,131 @@
+{% assign pub = include.pub %}
+
+{% comment %} --- Auto-generate BibTeX citekey --- {% endcomment %}
+{% assign _first_author = pub.authors | split: "," | first | strip | remove: "*" | remove: "†" %}
+{% assign _name_parts   = _first_author | split: " " %}
+{% assign _last_name    = _name_parts | last | downcase | remove: "." %}
+{% assign _title_word   = pub.title | split: " " | first | downcase | remove: '"' | remove: "'" | remove: ":" | remove: "?" %}
+{% assign _citekey      = _last_name | append: pub.year | append: _title_word %}
+
+{% comment %} --- BibTeX type --- {% endcomment %}
+{% if pub.type == "journal" %}
+  {% assign _bibtex_type = "article" %}
+  {% assign _venue_field = "journal" %}
+{% elsif pub.type == "preprint" %}
+  {% assign _bibtex_type = "misc" %}
+  {% assign _venue_field = "howpublished" %}
+{% else %}
+  {% assign _bibtex_type = "inproceedings" %}
+  {% assign _venue_field = "booktitle" %}
+{% endif %}
+
+{% comment %} --- BibTeX authors: "A, B, and C" → "A and B and C" --- {% endcomment %}
+{% assign _btx_authors = pub.authors | remove: "*" | remove: "†" | replace: ", and ", " and " | replace: ", ", " and " %}
+
+{% comment %} --- Text citation --- {% endcomment %}
+{% assign _text_cite = pub.authors | append: ". (" | append: pub.year | append: "). " | append: pub.title | append: ". " | append: pub.venue | append: "." %}
+
+{% comment %} --- Lab author highlighting --- {% endcomment %}
+{% assign _authors_html = pub.authors %}
+{% if pub.lab_authors %}
+  {% for _member in pub.lab_authors %}
+    {% assign _wrapped = '<u>' | append: _member | append: '</u>' %}
+    {% assign _authors_html = _authors_html | replace: _member, _wrapped %}
+  {% endfor %}
+{% endif %}
+
+<div class="pub-entry">
+
+  <!-- Thumbnail (portrait: paper first page) -->
+  <div class="pub-thumb">
+    {% if pub.thumbnail and pub.thumbnail != "" %}
+      <a href="{% if pub.links.pdf and pub.links.pdf != "" %}{{ pub.links.pdf }}{% elsif pub.links.arxiv and pub.links.arxiv != "" %}{{ pub.links.arxiv }}{% else %}#{% endif %}" target="_blank">
+        <img src="{{ pub.thumbnail }}" alt="{{ pub.title }}">
+      </a>
+    {% else %}
+      <div class="pub-thumb-placeholder"></div>
+    {% endif %}
+    {% if pub.award %}<span class="pub-thumb-award">&#9733; {{ pub.award }}</span>{% endif %}
+  </div>
+
+  <!-- Metadata -->
+  <div class="pub-meta">
+
+    <div class="pub-title">
+      {% if pub.links.pdf and pub.links.pdf != "" %}
+        <a href="{{ pub.links.pdf }}" target="_blank">{{ pub.title }}</a>
+      {% elsif pub.links.arxiv and pub.links.arxiv != "" %}
+        <a href="{{ pub.links.arxiv }}" target="_blank">{{ pub.title }}</a>
+      {% elsif pub.links.talk and pub.links.talk != "" %}
+        <a href="{{ pub.links.talk }}" target="_blank">{{ pub.title }}</a>
+      {% else %}
+        {{ pub.title }}
+      {% endif %}
+    </div>
+
+    <div class="pub-authors">{{ _authors_html }}</div>
+
+    <div class="pub-venue">
+      <span><em>{{ pub.venue }}</em>. {{ pub.year }}.</span>
+      {% if pub.award %}<span class="pub-award-inline">&#9733; {{ pub.award }}</span>{% endif %}
+      {% if pub.type == "conference" %}
+        <span class="pub-type pub-type-conf">Conf</span>
+      {% elsif pub.type == "journal" %}
+        <span class="pub-type pub-type-journal">Journal</span>
+      {% elsif pub.type == "workshop" %}
+        <span class="pub-type pub-type-workshop">Workshop</span>
+      {% elsif pub.type == "preprint" %}
+        <span class="pub-type pub-type-preprint">Preprint</span>
+      {% endif %}
+    </div>
+
+    <!-- Links -->
+    <div class="pub-links">
+      {% if pub.links.pdf and pub.links.pdf != "" %}
+        <span class="pl"><a href="{{ pub.links.pdf }}" target="_blank">PDF</a></span>
+      {% endif %}
+      {% if pub.links.arxiv and pub.links.arxiv != "" %}
+        <span class="pl"><a href="{{ pub.links.arxiv }}" target="_blank">arXiv</a></span>
+      {% endif %}
+      {% if pub.links.code and pub.links.code != "" %}
+        <span class="pl"><a href="{{ pub.links.code }}" target="_blank">Code</a></span>
+      {% endif %}
+      {% if pub.links.poster and pub.links.poster != "" %}
+        <span class="pl"><a href="{{ pub.links.poster }}" target="_blank">Poster</a></span>
+      {% endif %}
+      {% if pub.links.talk and pub.links.talk != "" %}
+        <span class="pl"><a href="{{ pub.links.talk }}" target="_blank">Talk</a></span>
+      {% endif %}
+      {% if pub.links.slides and pub.links.slides != "" %}
+        <span class="pl"><a href="{{ pub.links.slides }}" target="_blank">Slides</a></span>
+      {% endif %}
+      {% if pub.links.supplemental and pub.links.supplemental != "" %}
+        <span class="pl"><a href="{{ pub.links.supplemental }}" target="_blank">Supp.</a></span>
+      {% endif %}
+      {% if pub.links.project and pub.links.project != "" %}
+        <span class="pl"><a href="{{ pub.links.project }}" target="_blank">Project</a></span>
+      {% endif %}
+
+      <!-- Cite button: use YAML bibtex if provided, else auto-generate -->
+      {% if pub.bibtex and pub.bibtex != "" %}
+        {% assign _bibtex_body = pub.bibtex %}
+      {% else %}
+        {% assign _lb = "{" %}{% assign _rb = "}" %}
+        {% capture _bibtex_body %}@{{ _bibtex_type }}{{ _lb }}{{ _citekey }},
+  title     = {{ _lb }}{{ pub.title }}{{ _rb }},
+  author    = {{ _lb }}{{ _btx_authors }}{{ _rb }},
+  {{ _venue_field }} = {{ _lb }}{{ pub.venue }}{{ _rb }},
+  year      = {{ _lb }}{{ pub.year }}{{ _rb }}
+{{ _rb }}{% endcapture %}
+      {% endif %}
+
+      <span class="pl">
+        <button class="cite-trigger"
+          data-text="{{ _text_cite | escape }}"
+          data-bibtex="{{ _bibtex_body | escape }}"
+          data-citekey="{{ _citekey }}">Cite</button>
+      </span>
+    </div>
+
+  </div>
+</div>

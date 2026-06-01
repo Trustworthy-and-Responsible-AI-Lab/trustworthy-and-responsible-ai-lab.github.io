@@ -1,0 +1,15 @@
+# Lab photo / research highlight slideshow on the homepage.
+# Each entry appears as a slide with a bottom overlay caption.
+#
+# Fields:
+#   image:   path under /assets/images/  (e.g. /assets/images/highlights/lab-photo.jpg)
+#   caption: one-line description shown as overlay text
+
+- image: "/assets/images/highlights/25_group_dinner_icml.jpeg"
+  caption: "TRUE AI Lab, Aug 2025 — Group Lunch at ICML 2025"
+
+- image: "/assets/images/highlights/24_zach_neurips.jpeg"
+  caption: "TRUE AI Lab, Dec 2024 — Zach Presented His NeurIPS Paper"
+
+- image: "/assets/images/highlights/22_hong_neurips.jpeg"
+  caption: "TRUE AI Lab, Dec 2022 — Sanghyun Presented NeurIPS Paper (Oral)"

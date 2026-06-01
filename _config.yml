@@ -1,0 +1,28 @@
+title: "TRUE-AI Lab"
+description: "Trustworthy and Responsible AI Lab at Oregon State University"
+url: "https://true-lab.ai"
+baseurl: ""
+
+lab:
+  name: "Trustworthy and Responsible AI Lab"
+  abbr: "TRUE-AI Lab"
+  university: "Oregon State University"
+  dept: "School of EECS / Computer Science"
+  email: "sanghyun.hong@oregonstate.edu"
+  twitter: "sanghyun_hong"
+  github: "trustworthy-and-responsible-ai-lab"
+  google_analytics: "UA-60754580-1"
+
+include:
+  - .htaccess
+
+exclude:
+  - README.md
+  - sync.py
+  - Gemfile
+  - Gemfile.lock
+  - "*.sh"
+
+markdown: kramdown
+plugins:
+  - jekyll-feed

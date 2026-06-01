@@ -1,0 +1,193 @@
+---
+layout: default
+title: "Publications"
+---
+
+{% assign years = site.data.publications.papers | map: "year" | uniq | sort | reverse %}
+
+<div class="container">
+  <div class="page-header">
+    <h1>Publications</h1>
+    <p style="margin-bottom:0.5rem;">
+      My research bridges machine learning and security &mdash; two communities that rarely cross paths.
+      Our work primarily appears at the premier venues of both communities &mdash;
+      ICML, ICLR, and NeurIPS on the ML side; IEEE S&amp;P, USENIX Security, and CCS on the security side.
+    </p>
+    <p style="font-size:0.82rem; color:var(--text-muted);">
+      <u>Underline</u> = TRUE-AI Lab authors &nbsp;&middot;&nbsp; &#9733; = Award
+    </p>
+  </div>
+
+  <div class="pubs-layout">
+
+    <!-- Sticky year sidebar -->
+    <aside class="pubs-sidebar">
+      <ul class="year-nav" id="yearNav">
+        <li><a class="year-nav-link" href="#preprints">Preprints</a></li>
+        {% for year in years %}
+        <li><a class="year-nav-link" href="#year-{{ year }}">{{ year }}</a></li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- Publication sections -->
+    <div class="pubs-main">
+
+      <div class="pub-section" id="preprints">
+        <div class="pub-section-year">Preprints</div>
+        {% for pub in site.data.publications.preprints %}
+          {% include pub_item.html pub=pub %}
+        {% endfor %}
+      </div>
+
+      {% for year in years %}
+      <div class="pub-section" id="year-{{ year }}">
+        <div class="pub-section-year">{{ year }}</div>
+        {% assign year_pubs = site.data.publications.papers | where: "year", year %}
+        {% for pub in year_pubs %}
+          {% include pub_item.html pub=pub %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+<!-- Citation Modal -->
+<div class="cite-overlay" id="citeModal" hidden>
+  <div class="cite-box" role="dialog" aria-labelledby="citeTitle">
+    <div class="cite-header">
+      <strong id="citeTitle">Citation</strong>
+      <button class="cite-close-btn" id="citeClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="cite-tabs">
+      <button class="cite-tab-btn active" data-tab="text">Text</button>
+      <button class="cite-tab-btn" data-tab="bibtex">BibTeX</button>
+    </div>
+    <div class="cite-panel" id="citeTextPanel"></div>
+    <div class="cite-panel" id="citeBibtexPanel" hidden><pre id="citeBibtexPre"></pre></div>
+    <div class="cite-actions">
+      <button class="cite-action-btn" id="citeDownload">
+        <i class="bi bi-download"></i> Download
+      </button>
+      <button class="cite-action-btn" id="citeCopy">
+        <i class="bi bi-copy"></i> Copy
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ── Set --nav-height CSS variable for mobile sticky bar ── */
+  var navEl = document.querySelector('.site-nav');
+  var navH  = navEl ? navEl.getBoundingClientRect().height : 54;
+  document.documentElement.style.setProperty('--nav-height', navH + 'px');
+
+  /* recalculate on resize (orientation change etc.) */
+  window.addEventListener('resize', function () {
+    if (navEl) {
+      var h = navEl.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--nav-height', h + 'px');
+    }
+  });
+
+  /* ── Year sidebar scrollspy ─────────────────────────── */
+  var links   = Array.from(document.querySelectorAll('.year-nav-link'));
+  var sections = Array.from(document.querySelectorAll('.pub-section'));
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.getElementById(link.getAttribute('href').slice(1));
+      if (!target) return;
+      var sidebar = document.querySelector('.pubs-sidebar');
+      var sidebarH = (window.innerWidth <= 640 && sidebar) ? sidebar.getBoundingClientRect().height : 0;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH - sidebarH - 8, behavior: 'smooth' });
+      setActive(link);
+    });
+  });
+
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var a = document.querySelector('.year-nav-link[href="#' + entry.target.id + '"]');
+        if (a) setActive(a);
+      }
+    });
+  }, { threshold: 0, rootMargin: '-8% 0px -80% 0px' });
+  sections.forEach(function (s) { spy.observe(s); });
+
+  function setActive(el) {
+    links.forEach(function (l) { l.classList.remove('active'); });
+    el.classList.add('active');
+  }
+
+  /* ── Citation modal ─────────────────────────────────── */
+  var modal       = document.getElementById('citeModal');
+  var textPanel   = document.getElementById('citeTextPanel');
+  var bibtexPre   = document.getElementById('citeBibtexPre');
+  var bibtexPanel = document.getElementById('citeBibtexPanel');
+  var tabBtns     = Array.from(document.querySelectorAll('.cite-tab-btn'));
+  var currentTab  = 'text';
+  var currentBibtex = '';
+
+  /* Open modal when [Cite] clicked */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.cite-trigger');
+    if (!btn) return;
+    var text   = btn.dataset.text   || '';
+    var bibtex = btn.dataset.bibtex || '';
+    currentBibtex = bibtex;
+    textPanel.textContent   = text;
+    bibtexPre.textContent   = bibtex;
+    showTab('text');
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+
+  /* Close */
+  document.getElementById('citeClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  /* Tabs */
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () { showTab(btn.dataset.tab); });
+  });
+
+  function showTab(tab) {
+    currentTab = tab;
+    tabBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.tab === tab); });
+    textPanel.hidden   = (tab !== 'text');
+    bibtexPanel.hidden = (tab !== 'bibtex');
+  }
+
+  /* Copy */
+  document.getElementById('citeCopy').addEventListener('click', function () {
+    var content = currentTab === 'bibtex' ? currentBibtex : textPanel.textContent;
+    navigator.clipboard.writeText(content).then(function () {
+      var btn = document.getElementById('citeCopy');
+      var orig = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
+      setTimeout(function () { btn.innerHTML = orig; }, 1800);
+    });
+  });
+
+  /* Download .bib */
+  document.getElementById('citeDownload').addEventListener('click', function () {
+    var blob = new Blob([currentBibtex], { type: 'text/plain' });
+    var a    = document.createElement('a');
+    a.href   = URL.createObjectURL(blob);
+    a.download = 'citation.bib';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+})();
+</script>

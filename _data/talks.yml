@@ -1,0 +1,73 @@
+# Talks & Presentations
+# Each entry renders as a card with YouTube thumbnail, title, and link buttons.
+#
+# Fields:
+#   title:        talk/presentation title
+#   youtube_id:     YouTube video ID (e.g. "dQw4w9WgXcQ") — auto-generates thumbnail
+#   slideslive_id:  SlidesLive presentation ID (e.g. "39047893")
+#   thumbnail:      thumbnail image URL or path — required for SlidesLive entries
+#                   (SlidesLive thumbnail: https://ma.slideslive.com/library/presentations/{ID}/poster/{filename}.png)
+#   speaker:        presenter name(s), e.g. "Sanghyun Hong"
+#   event:          venue or conference name (optional)
+#   date:           display string, e.g. "May 2025" or "2 months ago"
+#   links:
+#     youtube:        full YouTube URL
+#     slideslive:     SlidesLive URL (auto-built from slideslive_id if empty)
+#     paper:          paper PDF / arXiv URL
+#     slides:         slides URL
+#     project:        project page URL
+#     project_name:   button label for project link (default: "Project")
+#
+
+- title: "IF-Guide: Influence Function-Guided Detoxification of LLMs"
+  slideslive_id: "39047893"
+  thumbnail: "https://ma.slideslive.com/library/presentations/39047893/poster/ifguide-influence-functionguided-detoxification-of-llms_WA2709_big.png"
+  speaker: "Zachary Coalson"
+  event: "NeurIPS 2025"
+  date: "Dec 2025"
+  links:
+    paper: "https://openreview.net/pdf?id=V82wLePv0o"
+
+- title: "RA-PbRL: Provably Efficient Risk-Aware Preference-Based Reinforcement Learning"
+  slideslive_id: "39024459"
+  thumbnail: "https://ma.slideslive.com/library/presentations/39024459/thumbnail/rapbrl-provably-efficient-riskaware-preferencebased-reinforcement-learning_fvZ8KH_big.png"
+  speaker: "Jose Escamilla"
+  event: "NeurIPS 2024"
+  date: "Dec 2024"
+  links:
+    paper: "https://openreview.net/pdf?id=JNDcFOczOf"
+
+- title: "Great Haste Makes Great Waste: Exploiting and Attacking Efficient Deep Learning"
+  youtube_id: "sQPRYRNkLG0"
+  speaker: "Sanghyun Hong"
+  event: "TrustML Scientist Seminar"
+  date: "Mar 2023"
+  links:
+    youtube: "https://youtu.be/sQPRYRNkLG0?si=VQaZLo6JMyMkyU81&t=4023"
+
+- title: "Handcrafted Backdoors in Deep Neural Networks"
+  slideslive_id: "38991809"
+  thumbnail: "https://ma.slideslive.com/library/presentations/38991809/thumbnail/handcrafted-backdoors-in-deep-neural-networks_Ttxqqu_big.jpg"
+  speaker: "Sanghyun Hong"
+  event: "NeurIPS 2022"
+  date: "Dec 2022"
+  links:
+    paper: "https://openreview.net/pdf?id=6yuil2_tn9a"
+
+- title: "A Sound Mind in a Vulnerable Body: Practical Hardware Attacks on Deep Learning"
+  youtube_id: "UlXZkCbhlFI"
+  speaker: "Sanghyun Hong"
+  event: "USENIX Enigma 2021"
+  date: "Jan 2021"
+  links:
+    youtube: "https://youtu.be/UlXZkCbhlFI?si=00zrAUv2o_APOs4U"
+    paper: "https://www.usenix.org/conference/enigma2021/presentation/hong"
+
+- title: "Terminal Brain Damage: Exposing the Graceless Degradation in Deep Neural Networks Under Hardware Fault Attacks"
+  youtube_id: "o_CY-cFNfRo"
+  speaker: "Sanghyun Hong"
+  event: "USENIX Security 2019"
+  date: "Aug 2019"
+  links:
+    youtube: "https://youtu.be/o_CY-cFNfRo?si=vQk-8wfyLmiGiy4_"
+    paper: "https://www.usenix.org/system/files/sec19-hong.pdf"

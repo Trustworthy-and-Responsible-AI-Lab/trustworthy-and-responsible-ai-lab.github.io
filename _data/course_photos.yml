@@ -1,0 +1,16 @@
+# Add course/lab photos here.
+# Format:
+#   - src: "/assets/images/courses/photos/filename.jpg"
+#     alt: "Brief description"
+#     caption: "Optional caption text"    # optional
+#
+# Photos will appear in the "In Action" grid on the Classes page.
+# Recommended size: at least 800x600px, landscape orientation.
+
+- src: "/assets/images/courses/23_tml_final.jpg"
+  alt: "Trustworthy ML Class Final Presentation by Evan"
+  caption: "Trustworthy ML, May 2023"
+
+- src: "/assets/images/courses/23_dsml_organizer.jpeg"
+  alt: "Organized DSN-DSML 2023"
+  caption: "DSN-DSML, July 2023"

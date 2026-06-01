@@ -1,0 +1,215 @@
+professor:
+  name: Sanghyun Hong
+  title: Assistant Professor
+  dept: School of EECS / Computer Science
+  university: Oregon State University
+  photo: /assets/images/people/sanghyun-hong.jpg
+  email: sanghyun.hong@oregonstate.edu
+  office: "Room 2029, Kelley Engineering Center (KEC)"
+  scholar: "https://scholar.google.com/citations?hl=en&user=664LW90AAAAJ&view_op=list_works&sortby=pubdate"
+  github: "https://github.com/Sanghyun-Hong"
+  twitter: "https://twitter.com/sanghyun_hong"
+  personal: "https://sanghyun-hong.github.io"
+  cv: "https://sanghyun-hong.github.io/docs/Hong_CV.pdf"
+  bio: >
+    Sanghyun Hong is an Assistant Professor of Computer Science at Oregon State University.
+    His research spans trustworthy and responsible AI, focusing on the security and privacy
+    of machine learning systems — including adversarial robustness, data poisoning,
+    hardware fault attacks, and privacy of foundation models.
+    Before joining OSU, he was a PhD student at the University of Maryland.
+
+phd_students:
+  - name: Jose Escamilla
+    url: "https://aguilar.phd/"
+    year_start: 2023
+    program: "PhD, AI"
+    coadvisor: Huazheng Wang
+    research: "Trustworthy RL"
+    photo: "/assets/images/people/jose-aguilar.jpg"
+
+  - name: Zachary Coalson
+    url: "https://www.zachcoalson.com/"
+    year_start: 2025
+    program: "PhD, CS/AI"
+    research: "Trustworthy LLMs/Agents"
+    photo: "/assets/images/people/zachary-coalson.jpg"
+
+  - name: Eunjin Roh
+    year_start: 2025
+    program: "PhD, CS"
+    research: "AI for Cybersecurity"
+    photo: ""
+
+ms_students:
+  - name: Leo Marchyok
+    year_start: 2025
+    program: "MS, CS"
+    research: "LLM Privacy"
+    photo: "/assets/images/people/leo-marchyok.jpg"
+
+  - name: Che-Yu Chan
+    year_start: 2026
+    program: "MS, AI"
+    research: "Efficient LLM Systems"
+    photo: ""
+
+undergrad_students:
+  - name: Vedika Sheth
+    year_start: 2026
+    program: "CS (BS)"
+
+  - name: Aiden Rubey
+    year_start: 2026
+    program: "CS (BS)"
+    photo: "/assets/images/people/aiden-rubey.png"
+
+  - name: Richard Le
+    year_start: 2026
+    program: "Post-Bacc, CS"
+
+  - name: Rodrigo Flores
+    year_start: 2025
+    program: "CS (BS)"
+
+  - name: Jaewoo Lim
+    year_start: 2025
+    program: "CS (BS)"
+
+  - name: Ike
+    year_start: 2025
+    program: "ECE"
+  
+  - name: Nyx
+    year_start: 2022
+    program: "CS"
+
+interns:
+  - name: Heesung Jeong
+    url: "https://seclab.skku.edu/people/heesung-jeong/"
+    affiliation: "SSKU CS"
+    period: "2025–2026"
+    program: "MS"
+    photo: "/assets/images/people/heesung-jeong.jpg"
+
+alumni_highschool:
+  - name: Ojas Nimase
+    affiliation: "Westview High School"
+    period: "2023"
+    current: "Student at USC"
+
+committee_only:
+  - name: Sungbok Shin
+    url: "https://sites.google.com/view/sungbokshin"
+    affiliation: "University of Maryland, College Park"
+    program: "PhD, CS"
+    current: "PostDoc at INRIA"
+  - name: John Conner Zontos
+    program: "PhD, AI"
+  - name: Allen Yan
+    program: "PhD, CS"
+  - name: Apurva Dilip Kokate
+    program: "PhD, CS"
+  - name: Jarrod Jeffrey Isaac Hollis
+    program: "PhD, CS"
+  - name: Radhika Gupta
+    program: "MS, CS"
+  - name: Avani Abhay Sathe
+    program: "MS, CS"
+  - name: Philiph Lee
+    program: "MS, CS"
+  - name: Ryan Kennedy
+    program: "MS, CS"
+    current: "NetSPI"
+    url: "https://www.netspi.com/"
+
+alumni_ms:
+  - name: Eunjin Roh
+    degree: "CS (MS)"
+    year: 2025
+    current: "PhD student in our lab"
+
+  - name: Gabriel Ritter
+    degree: "CS (MS)"
+    year: 2025
+    coadvisor: Rakesh Bobba
+    current: "Qualtrics, LLC"
+
+  - name: Tahmid Hasan Prato
+    degree: "CS (MS)"
+    year: 2025
+    url: "https://tahmid1406.github.io/Portfolio/"
+    photo: "/assets/images/people/tahmid-prato.jpg"
+
+  - name: Lucas Ball
+    degree: "CS (MS)"
+    year: 2024
+    coadvisor: Yeongjin Jang
+
+  - name: Jonathan Keller
+    degree: "CS (MS)"
+    year: 2024
+    coadvisor: Yeongjin Jang
+
+  - name: Ramya Jayaraman
+    degree: "AI (MS)"
+    year: 2024
+    current: "CoCreator, Inc. (CTO)"
+    current_url: "https://cocreatorai.net/"
+
+  - name: Hoang Le
+    degree: "CS (MS)"
+    year: 2023
+    current: "Promaxo, Inc."
+    current_url: "https://promaxo.com/"
+
+alumni_bs:
+  - name: Leo Marchyok
+    degree: "CS (BS)"
+    years: "2022–26"
+    current: "MS student in our lab"
+
+  - name: Beth Sohler
+    degree: "CS (BS)"
+    year: 2025
+
+  - name: Aiden Gabriel
+    degree: "CS (BS)"
+    year: 2025
+
+  - name: Ajinkya Vijay Gokule
+    degree: "CS (BS)"
+    years: "2024–25"
+
+  - name: Dongwoo Kang
+    degree: "CS (BS)"
+    years: "2024–25"
+    current: "EIC Lab @ Gatech"
+
+  - name: Zachary Coalson
+    degree: "CS (BS)"
+    years: "2022–25"
+    current: "PhD student in our lab"
+
+  - name: Colin Pannikkat
+    degree: "CS (BS)"
+    years: "2022–24"
+
+  - name: Evan Mrazik
+    degree: "CS (BS)"
+    years: "2022–24"
+    current: "NetSPI"
+    current_url: "https://www.netspi.com/"
+
+  - name: Brielle Choquer
+    degree: "CS (BS)"
+    year: 2023
+
+  - name: Peter Mora-Stevens
+    degree: "CS (BS)"
+    year: 2022
+    current: "Uber, Inc."
+
+  - name: Ryan Little
+    degree: "CS (BS)"
+    years: "2021–22"
+    current: "PhD student at UMD"

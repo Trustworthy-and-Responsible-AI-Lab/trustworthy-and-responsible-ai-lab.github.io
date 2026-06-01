@@ -1,0 +1,73 @@
+# Left column: Security + Systems (Undergrad → Graduate)
+- number: "CS 372"
+  title: "Introduction to Computer Networks"
+  level: ugrad
+  col: left
+  tags: [Systems]
+
+- number: "CS 373"
+  title: "Defense Against the Dark Arts"
+  level: ugrad
+  col: left
+  tags: [Security]
+
+- number: "CS 427"
+  title: "Cryptography"
+  level: ugrad
+  col: left
+  tags: [Security]
+
+- number: "CS 472"
+  title: "Computer Architecture"
+  level: ugrad
+  col: left
+  tags: [Systems]
+
+- number: "CS 478"
+  title: "Network Security"
+  level: ugrad
+  col: left
+  tags: [Security]
+
+- number: "CS 517"
+  title: "Theory of Computation"
+  level: grad
+  col: left
+  tags: [Security]
+
+- number: "CS 577"
+  title: "Privacy and Surveillance"
+  level: grad
+  col: left
+  tags: [Security]
+
+# Right column: AI/ML (Undergrad → Graduate)
+- number: "CS 331"
+  title: "Introduction to Artificial Intelligence"
+  level: ugrad
+  col: right
+  tags: [AI/ML]
+
+- number: "CS 434"
+  title: "Machine Learning and Data Mining"
+  level: ugrad
+  col: right
+  tags: [AI/ML]
+
+- number: "CS 435"
+  title: "Applied Deep Learning"
+  level: ugrad
+  col: right
+  tags: [AI/ML]
+
+- number: "CS 534"
+  title: "Machine Learning"
+  level: grad
+  col: right
+  tags: [AI/ML]
+
+- number: "CS 535"
+  title: "Deep Learning"
+  level: grad
+  col: right
+  tags: [AI/ML]

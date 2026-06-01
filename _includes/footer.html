@@ -1,0 +1,58 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+
+      <!-- Col 1: Logo mark + lab name -->
+      <div class="footer-logo-col">
+        <img src="/assets/images/logo_favicon_transparent.png" alt="TRUE-AI Lab">
+        <div class="footer-lab-name">TRUE-AI Lab</div>
+      </div>
+
+      <!-- Col 2: Description + social icons -->
+      <div class="footer-desc-col">
+        <p class="footer-desc">
+          We develop security foundations for AI systems by characterizing, measuring,
+          and mitigating failures in AI decision-making and execution.
+          We also leverage AI to strengthen cybersecurity.
+        </p>
+        <div class="footer-social">
+          <a href="mailto:{{ site.lab.email }}" title="Email"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://scholar.google.com/citations?hl=en&user=664LW90AAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          <a href="https://github.com/{{ site.lab.github }}" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://twitter.com/{{ site.lab.twitter }}" target="_blank" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 3: Recent News -->
+      <div class="footer-news-col">
+        <div class="footer-section-title">Recent News</div>
+        {% for item in site.data.news limit:4 %}
+        <div class="footer-news-item">
+          <span class="footer-news-date">{{ item.date | replace: '-', '.' | slice: 0, 7 }}</span>
+          <span class="footer-news-text">{{ item.text | strip_html | truncatewords: 10 }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Col 4: Links -->
+      <div class="footer-links-col">
+        <div class="footer-section-title">Links</div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/people.html">People</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/publications.html">Publications</a></li>
+          <li><a href="/classes.html">Classes</a></li>
+          <li><a href="/join.html">Join Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; {{ site.time | date: "%Y" }} TRUE-AI Lab</span>
+    </div>
+
+  </div>
+</footer>

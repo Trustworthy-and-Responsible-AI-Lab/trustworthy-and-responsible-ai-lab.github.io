@@ -1,0 +1,48 @@
+<nav class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/assets/images/logo_wide_blanks.png" alt="TRUE-AI Lab">
+      </a>
+
+      <!-- Hamburger button (mobile only) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/"                  {% if page.url == "/"               %}class="active"{% endif %}>Home</a></li>
+        <li><a href="/people.html"       {% if page.url contains "people"    %}class="active"{% endif %}>People</a></li>
+        <li><a href="#" class="nav-disabled" aria-disabled="true" onclick="return false;">Research</a></li>
+        <li><a href="/publications.html" {% if page.url contains "publications" %}class="active"{% endif %}>Publications</a></li>
+        <li><a href="/classes.html"      {% if page.url contains "classes"   %}class="active"{% endif %}>Classes</a></li>
+        <li><a href="/join.html"         {% if page.url contains "join"      %}class="active"{% endif %}>Join Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+(function () {
+  var btn  = document.getElementById('navToggle');
+  var menu = document.getElementById('navMenu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+  });
+
+  // Close when a link is clicked
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>

@@ -1,0 +1,41 @@
+# Lab Sponsors
+# Fields:
+#   name: display name
+#   url:  sponsor website  (leave empty "" if none)
+#   logo: path to logo image under /assets/images/sponsors/  (leave empty "" to show text)
+
+- name: "NSF"
+  url: "https://www.nsf.gov"
+  logo: "/assets/images/sponsors/nsf.png"
+
+- name: "IITP"
+  url: "https://www.iitp.kr"
+  logo: "/assets/images/sponsors/iitp.jpg"
+
+- name: "Oregon State University"
+  url: "https://oregonstate.edu"
+  logo: "/assets/images/sponsors/osu.png"
+
+- name: "Samsung"
+  url: "https://research.samsung.com"
+  logo: "/assets/images/sponsors/samsung.png"
+
+- name: "Google"
+  url: "https://research.google"
+  logo: "/assets/images/sponsors/google.png"
+
+- name: "Qualcomm"
+  url: "https://www.qualcomm.com/research"
+  logo: "/assets/images/sponsors/qualcomm.svg"
+
+- name: "HP"
+  url: "https://www.hp.com"
+  logo: "/assets/images/sponsors/hp.svg"
+
+- name: "Oregon Metals Initiative (OMI)"
+  url: "https://oregonmetals.org"
+  logo: "/assets/images/sponsors/omi.svg"
+
+- name: "AWS"
+  url: "https://aws.amazon.com"
+  logo: "/assets/images/sponsors/aws.svg"

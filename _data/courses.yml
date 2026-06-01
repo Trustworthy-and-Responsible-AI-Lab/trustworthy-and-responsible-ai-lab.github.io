@@ -1,0 +1,67 @@
+- id: mlsec
+  title: "Trustworthy ML"
+  number: "AI539 / CS499-599"
+  level: Graduate
+  image: "/assets/images/courses/course-mlsec.jpg"
+  description: >
+    Covers the security and privacy of machine learning systems.
+    Topics include adversarial examples, data poisoning, backdoor attacks,
+    membership inference, and defenses. Students read and present recent papers
+    and complete a research project.
+  offerings:
+    - display: "Spring 2026"
+      url: "/courses/MLSec/current/index.html"
+      current: true
+    - display: "Winter 2025"
+      url: "/courses/MLSec/W25/index.html"
+    - display: "Fall 2023"
+      url: "/courses/MLSec/F23/index.html"
+    - display: "Spring 2023"
+      url: "/courses/MLSec/Sp23/index.html"
+    - display: "Winter 2022"
+      url: "/courses/MLSec/W22/index.html"
+
+- id: cybersec
+  title: "Cyber-Security"
+  number: "CS578"
+  level: Graduate
+  image: "/assets/images/courses/course-cybersec.jpg"
+  description: >
+    Covers foundational and advanced topics in computer security:
+    cryptography, network security, web security, OS security,
+    memory safety, side channels, malware, and trustworthy ML.
+    Includes paper reading and a semester-long research project.
+  offerings:
+    - display: "Spring 2025"
+      url: "/courses/Sec-Grad/current/index.html"
+      current: true
+
+- id: introsec
+  title: "Introduction to Security"
+  number: "CS370"
+  level: Undergraduate
+  image: "/assets/images/courses/course-introsec.jpg"
+  description: >
+    An introductory course on computer security for undergraduates.
+    Topics include cryptography, network security, web security,
+    software security, and trustworthy ML. Includes hands-on labs.
+  offerings:
+    - display: "Spring 2023"
+      url: "/courses/Sec-UGrad/current/index.html"
+      current: true
+
+- id: os1
+  title: "Operating Systems I"
+  number: "CS374 / CS344"
+  level: Undergraduate
+  image: "/assets/images/courses/course-os.jpg"
+  description: >
+    Covers the fundamentals of operating systems: processes, threads,
+    scheduling, virtual memory, file systems, I/O, signals, sockets,
+    and synchronization. Assignments are in C and Rust.
+  offerings:
+    - display: "Spring 2026"
+      url: "/courses/OS1/current/index.html"
+      current: true
+    - display: "Winter 2023"
+      url: "/courses/OS1/W23/index.html"

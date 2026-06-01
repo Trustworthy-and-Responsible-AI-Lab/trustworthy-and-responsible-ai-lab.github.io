@@ -1,0 +1,32 @@
+- date: "2026-05"
+  text: "Three papers accepted to ICML 2026: adversarial robustness of INRs, reward poisoning in RL, and T2V model resilience."
+
+- date: "2026-04"
+  text: "AgentBreaker accepted to ISSTA 2026. Congratulations to all collaborators!"
+
+- date: "2026-03"
+  text: "Site Isolation is Dead accepted to IEEE S&P 2026."
+
+- date: "2025-12"
+  text: "IF-Guide and Demystifying LLM Inference Resilience accepted to NeurIPS 2025 and SC 2025 respectively."
+
+- date: "2025-10"
+  text: "Harnessing Input-adaptive Inference for Efficient VLN accepted to ICCV 2025. Great work by Dongwoo, Zachary, and Aiden!"
+
+- date: "2025-08"
+  text: "AI4Privacy featured our Privacy Backdoors work. <a href='https://www.linkedin.com/posts/ai4privacy_privacy-backdoors-enhancing-membership-inference-activity-7360535474773356546-PvK3' target='_blank'>Read the post.</a>"
+
+- date: "2025-07"
+  text: "Private Investigator (LLM PII extraction) accepted to USENIX Security 2025."
+
+- date: "2025-05"
+  text: "SoK: Watermarking for AI-Generated Content accepted to IEEE S&P 2025."
+
+- date: "2025-04"
+  text: "Evaluating Robustness of Reference-based Phishing Detectors accepted to AsiaCCS 2025."
+
+- date: "2025-02"
+  text: "Eunjin Roh joins the lab as a PhD student. Welcome!"
+
+- date: "2025-01"
+  text: "Zachary Coalson joins the lab as a PhD student. Welcome!"
