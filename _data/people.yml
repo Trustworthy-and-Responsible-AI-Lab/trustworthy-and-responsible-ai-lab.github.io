@@ -67,6 +67,7 @@ undergrad_students:
   - name: Richard Le
     year_start: 2026
     program: "Post-Bacc, CS"
+    photo: "/assets/images/people/richard-le.png"
 
   - name: Rodrigo Flores
     year_start: 2025
