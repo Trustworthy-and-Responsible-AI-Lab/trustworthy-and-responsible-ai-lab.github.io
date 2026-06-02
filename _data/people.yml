@@ -75,6 +75,7 @@ undergrad_students:
   - name: Jaewoo Lim
     year_start: 2025
     program: "CS (BS)"
+    photo: "assets/images/people/jaewoo-lim.jpg"
 
   - name: Ike
     year_start: 2025
