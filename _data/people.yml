@@ -95,6 +95,12 @@ interns:
     period: "2025–2026"
     program: "MS"
     photo: "/assets/images/people/heesung-jeong.jpg"
+  
+  - name: Ramon Macasa
+    affiliation: "UCSB CS"
+    period: "2026"
+    program: "BS"
+    photo: "/assets/images/people/ramon-photo.jpg"
 
 alumni_highschool:
   - name: Ojas Nimase
