@@ -103,9 +103,15 @@ interns:
   
   - name: Ramon Macasa
     affiliation: "UCSB CS"
-    period: "2026"
+    period: "2026 Summer"
     program: "BS"
     photo: "/assets/images/people/ramon-photo.jpg"
+
+  - name: Junhua Wei
+    affiliation: "Andover High School"
+    period: "2026 Summer"
+    program: "HS"
+    photo: ""
 
 alumni_highschool:
   - name: Ojas Nimase
