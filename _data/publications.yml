@@ -56,6 +56,7 @@ preprints:
 
 papers:
   - title: "On the Resilience of Text-to-Video Diffusion Models to Hardware Faults"
+    thumbnail: "/assets/images/papers/on-the-resilience-of-text-to-video-diffusion-models-to.jpg"
     authors: "Zachary Coalson, A M Aahad, Stella Doehring, Zane Ma, and Sanghyun Hong"
     lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
     venue: "ICML Workshop on From Frames to Stories (F2S)"
@@ -64,8 +65,10 @@ papers:
     type: workshop
     links:
       pdf: ""
+      code: "https://github.com/ztcoalson/T2V-Resilience"
 
   - title: "Adversarial Robustness of Implicit Neural Representation Based Classifiers"
+    thumbnail: "/assets/images/papers/adversarial-robustness-of-implicit-neural-representation.jpg"
     authors: "Jayoung Kim, Kookjin Lee, Noseong Park, and Sanghyun Hong"
     lab_authors: ["Sanghyun Hong"]
     venue: "International Conference on Machine Learning (ICML)"
@@ -74,7 +77,10 @@ papers:
     type: conference
     highlight: true
     links:
-      pdf: ""
+      pdf: "https://openreview.net/forum?id=TEcKvsdzA3"
+      code: "https://github.com/Trustworthy-and-Responsible-AI-Lab/INR-Robustness"
+      talk: "https://icml.cc/virtual/2026/poster/63843"
+      poster: "https://icml.cc/media/icml-2026/Slides/63843.pdf"
 
   - title: "When Can You Poison Rewards? A Tight Characterization of Reward Poisoning in Linear MDPs"
     thumbnail: "/assets/images/papers/when-can-you-poison-rewards-a-tight-characterization.jpg"
@@ -87,7 +93,7 @@ papers:
     highlight: true
     links:
       pdf: "https://arxiv.org/abs/2604.10062"
-      code: "https://github.com/aguilarjose11/IntrinsicRobustMDP"
+      code: "https://github.com/aguilarjose11/IntrinsicRobustness_ICML26"
 
   - title: "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
     authors: "Yongbi Son, Changoo Lee, Dongwon Shin, Byoungyoung Lee, Sanghyun Hong, and Sooel Son"
