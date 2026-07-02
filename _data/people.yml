@@ -108,10 +108,11 @@ interns:
     photo: "/assets/images/people/ramon-photo.jpg"
 
   - name: Junhua Wei
-    affiliation: "Andover High School"
+    affiliation: "Phillips Academy Andover"
     period: "2026 Summer"
     program: "HS"
     photo: ""
+    photo: "/assets/images/people/junhua-wei.jpg"
 
 alumni_highschool:
   - name: Ojas Nimase
