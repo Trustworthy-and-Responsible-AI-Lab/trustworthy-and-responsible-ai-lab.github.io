@@ -94,6 +94,8 @@ papers:
     links:
       pdf: "https://arxiv.org/abs/2604.10062"
       code: "https://github.com/aguilarjose11/IntrinsicRobustness_ICML26"
+      talk: "https://icml.cc/virtual/2026/poster/63843"
+      poster: "https://icml.cc/media/PosterPDFs/ICML%202026/63843.png"
 
   - title: "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
     authors: "Yongbi Son, Changoo Lee, Dongwon Shin, Byoungyoung Lee, Sanghyun Hong, and Sooel Son"
