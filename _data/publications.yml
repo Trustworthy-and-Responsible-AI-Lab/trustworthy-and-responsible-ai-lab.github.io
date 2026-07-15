@@ -3,6 +3,36 @@
 # highlight: true = shown on homepage (optional)
 
 preprints:
+  - title: "Asking Forever: Universal Activations Behind Turn Amplification in Conversational LLMs"
+    thumbnail: "/assets/images/papers/asking-forever-universal-activations-behind-turn-amplif.jpg"
+    authors: "Zachary Coalson, Bo Fang, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2026
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2602.17778"
+
+  - title: "Discovering Universal Activation Directions for PII Leakage in Language Models"
+    thumbnail: "/assets/images/papers/discovering-universal-activation-directions-for-pii-lea.jpg"
+    authors: "Leo Marchyok, Zachary Coalson, Sungho Keum, Sooel Son, and Sanghyun Hong"
+    lab_authors: ["Leo Marchyok", "Zachary Coalson", "Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2026
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2602.16980"
+
+  - title: "Fail-Closed Alignment for Large Language Models"
+    thumbnail: "/assets/images/papers/fail-closed-alignment-for-large-language-models.jpg"
+    authors: "Zachary Coalson, Beth Sohler, Aiden Gabriel, and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Beth Sohler", "Aiden Gabriel", "Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2026
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2602.16977"
+
   - title: "Data Therapist: Eliciting Domain Knowledge from Subject Matter Experts Using Large Language Models"
     thumbnail: "/assets/images/papers/data-therapist-eliciting-domain-knowledge-from-subject.jpg"
     authors: "Sungbok Shin, Hyeon Jeon, Sanghyun Hong, and Niklas Elmqvist"
