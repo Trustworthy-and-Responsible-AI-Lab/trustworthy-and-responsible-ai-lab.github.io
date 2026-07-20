@@ -54,11 +54,6 @@ ms_students:
     photo: "/assets/images/people/cheyu-chen.jpg"
 
 undergrad_students:
-  - name: Noah Travis
-    year_start: 2026
-    program: "CS (BS)"
-    photo: "assets/images/people/noah-photo.jpeg"
-
   - name: Vedika Sheth
     year_start: 2026
     program: "CS (BS)"
