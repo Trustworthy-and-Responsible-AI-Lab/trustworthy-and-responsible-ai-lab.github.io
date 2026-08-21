@@ -32,9 +32,11 @@
     memory safety, side channels, malware, and trustworthy ML.
     Includes paper reading and a semester-long research project.
   offerings:
-    - display: "Spring 2025"
+    - display: "Fall 2026"
       url: "/courses/Sec-Grad/current/index.html"
       current: true
+    - display: "Spring 2025"
+      url: "/courses/Sec-Grad/Sp25/index.html"
 
 - id: introsec
   title: "Introduction to Security"

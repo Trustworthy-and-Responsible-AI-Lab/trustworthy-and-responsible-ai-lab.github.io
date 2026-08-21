@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Title -->
+        <title>
+            CS 578 :: Sp25 :: Cyber-Security
+        </title>
+
+        <!-- SEO -->
+        <meta name="author" content="Sanghyun Hong">
+        <meta name="description" content="Trustworthy Machine Learning Oregon State University">
+        <meta name="keywords" content="sanghyun hong albert Trustworthy Machine Learning oregon state university">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+        <!-- Prevent js cache by Chrome -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Bootstrap start -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/osu-styles.css">
+
+    </head>
+    <body>
+
+        <!-- Content -->
+        <div class="container">
+
+            <!-- Title -->
+            <h2 class="title">
+                <b>CS 578 :: Spring 2025 :: Cyber-Security</b>
+            </h2>
+
+            <hr noshade="" size="1">
+
+            <!-- Top navigation bar -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="critiques.html"><h5>Critique, Presentation</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="homework.html"><h5>Homework</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="project.html"><h5>Project</h5></a>
+                </li>
+            </ul>
+
+            <hr noshade="" size="1">
+
+            
+            <!-- Homeworks -->
+            <div class="accordion" id="homeworkExample">
+
+
+                <!-- HW1 -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <button class="btn btn-link" 
+                            type="button" 
+                            style="color: black;"
+                            data-toggle="collapse" 
+                            data-target="#homework1" 
+                            aria-expanded="false" 
+                            aria-controls="homework1">
+                            <h4>Homework 1: Your Packets Are Mine</h4>
+                        </button>
+                    </div>
+              
+                    <div id="homework1" 
+                         class="collapse" 
+                         aria-labelledby="headingOne"
+                         data-parent="#homeworkExample">
+                        <div class="card-body">
+
+                            <!-- :: Deadlines -->
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 04.02.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 04.16.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for you to understand the basics of network traffic and packet analysis. You will be required to capture <code>DNS</code> and <code>HTTP/HTTPS</code> packets using <a href="https://www.wireshark.org/" target="_blank">Wireshark</a> and analyze them.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                To begin with, you are required to install Wireshark. You need to have access to a computer that support both Wireshark and the <code>libpcap</code> library. Wireshark is available for Windows, macOS, and Linux. You can download the latest version from the official website [<a href="https://www.wireshark.org/download.html" target="_blank">link</a>]. Your operating system (OS) may have the libpcap software installed. If you face an issue with the libpcap library, you can install it as follows, depending on your OS:<br/>
+                                <ul>
+                                    <li>
+                                        <b>Windows</b>: You can install <code>WinPcap</code> or <code>Npcap</code> [<a href="https://www.wireshark.org/download.html" target="_blank">link</a>].
+                                    </li>
+                                    <li>
+                                        <b>Linux or MacOS</b>: You can install libpcap. [<a href="https://www.tcpdump.org/" target="_blank">link</a>].
+                                    </li>
+                                </ul>
+                            </p>
+
+
+                            <!-- :: Sample Run -->
+                            <p>
+                                <h5 style="margin-top: 20px;">Running Wireshark</h5>
+
+                                When you run the Wireshark program, the Wireshark GUI shown in <a href="resources/main_wireshark.png" target="_blank">this figure (on Mac)</a> will be displayed. Initially, you can see the list of network interfaces on your computer, and a time-series diagram of the packets coming in and going out from the interface will be shown.<br/><br/>
+
+                                Now you are ready to do a test drive!<br/>
+                                <ul>
+                                    <li>
+                                        <b>Step 1:</b> Start Wireshark and select the network interface (e.g., eth0) you want to capture packets from. You can do this by clicking on the <code>Capture</code> menu and selecting <code>Options</code>.
+                                    </li>
+                                    <li>
+                                        <b>Step 2:</b> Click on the <code>Start</code> button to begin capturing packets. You should see packets being displayed in the packet-listing window.
+                                    </li>
+                                    <li>
+                                        <b>Step 3:</b> To filter the captured packets, enter a protocol name or other criteria in the packet-display filter field. For example, you can enter <code>http</code> to display only HTTP packets, as shown in <a href="resources/capture_wireshark.png" target="_blank">this figure</a>.
+                                    </li>
+                                    <li>
+                                        <b>Step 4:</b> To stop capturing packets, click on the <code>Capture</code> menu and select <code>Stop</code>. You can also click on the <span style="color: #D73F09;">red square button</span> in the toolbar.
+                                    </li>
+                                    <li>
+                                        <b>Step 5:</b> To save the captured packets, click on the <code>File</code> menu and select <code>Save As</code>. Choose a location and file name to save the captured packets.
+                                    </li>
+                                    <li>
+                                        <b>Step 6:</b> To analyze the captured packets, select a packet in the packet-listing window. The details of the selected packet will be displayed in the packet-header details window and the packet-contents window.
+                                    </li>
+                                    <li>
+                                        <b>Step 7:</b> You can expand or minimize the details of the packet by clicking on the arrowhead to the left of the protocol name in the packet-header details window. This will show you more information about the packet, such as the source and destination IP addresses, port numbers, and protocol-specific information.
+                                    </li>
+                                </ul>
+
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Trace DNS with Wireshark</h5>
+
+                            Capture the DNS packets generated by ordinary Web-surfing activity. You will need to analyze the captured packets and answer the following questions:<br/><br/>
+
+                            <ul>
+                                <li><b>Step 1:</b>
+                                    Use <code>ipconfig</code> (Windows) / <code>ifconfig</code> (Linux, Mac) to empty the DNS cache on your host.
+                                </li>
+                                <li><b>Step 2:</b>
+                                    Open your browser and clear your browser cache. (For Internet Explorer, go to the Tools menu, select Internet Options, then in the General tab select Delete Files.)
+                                </li>
+                                <li><b>Step 3:</b>
+                                    Open Wireshark and enter <code>ip.addr == your_IP_address</code> into the filter, where you obtain your IP address (the IP address for the computer running Wireshark) with <code>ipconfig</code>. This filter removes all packets that neither originate nor are destined for your host.
+                                </li>
+                                <li><b>Step 4:</b>
+                                    Start packet capture in Wireshark.
+                                </li>
+                                <li><b>Step 5:</b>
+                                    With your browser, visit the Web page: <a href="https://www.google.com" target="_blank">https://www.google.com</a>.
+                                </li>
+                                <li><b>Step 6:</b>
+                                    Stop packet capture.
+                                </li>
+                            </ul>
+
+                            Now answer the following questions:<br/><br/>
+
+                            <ol>
+                                <li>What is the IP address of your computer?</li>
+                                <li>What is the IP address of the Google web server?</li>
+                                <li>How many DNS queries were generated by your web browser?</li>
+                                <li>How many DNS responses were received by your web browser?</li>
+                                <li>What is the port number used by your web browser to send the DNS query to the DNS server?</li>
+                                <li>What is the size of the DNS query packet sent from your web browser to the DNS server?</li>
+                                <li>What is the size of the DNS response packet sent from the DNS server to your browser?</li>
+                            </ol>
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: HTTP and HTTPs Protocols</h5>
+
+                            Now we use Wireshark to capture HTTP and HTTPS packets. You will need to analyze the captured packets and answer the following questions:<br/><br/>
+
+                            <ul>
+                                <li><b>Step 1:</b>
+                                    Use <code>ipconfig</code> (Windows) / <code>ifconfig</code> (Linux, Mac) to empty the DNS cache on your host.
+                                </li>
+                                <li><b>Step 2:</b>
+                                    Open your browser and clear your browser cache. (For Internet Explorer, go to the Tools menu, select Internet Options, then in the General tab select Delete Files.)
+                                </li>
+                                <li><b>Step 3</b>
+                                    Open Wireshark and enter <code>ip.addr == your_IP_address</code> into the filter, where you obtain your IP address (the IP address for the computer running Wireshark) with <code>ipconfig</code>. This filter removes all packets that neither originate nor are destined for your host.
+                                </li>
+                                <li><b>Step 4:</b>
+                                    Start packet capture in Wireshark.
+                                </li>
+                                <li><b>Step 5:</b>
+                                    With your browser, visit the website: <a href="http://relaxedgoodglowingmagic.neverssl.com/online/" target="_blank">http://relaxedgoodglowingmagic.neverssl.com/online/</a>.
+                                </li>
+                                <li><b>Step 6:</b>
+                                    Stop packet capture.</li>
+                                <li><b>Step 7:</b>
+                                    Repeat Step 4-6 with the website: <a href="https://relaxedgoodglowingmagic.neverssl.com/online/" target="_blank">https://relaxedgoodglowingmagic.neverssl.com/online/</a>.
+                                </li>
+                            </ul>
+
+                            Now answer the following questions:<br/><br/>
+
+                            
+                            <ul>
+                                <li><b>HTTP website:</b></li>
+                                <ol>
+                                    <li>What is the IP address of your computer?</li>
+                                    <li>What is the IP address of the <code>HTTP</code> website?</li>
+                                    <li>What version of HTTP is the website running?</li>
+                                    <li>What is the status code returned from the website to your browser?</li>
+                                    <li>What is the port number used by your browser to send the HTTP request to your web browser?</li>
+                                    <li>What is the port number used by the HTTP website to send the HTTP response to your web browser?</li>
+                                    <li>What is the size of the data in the HTTP response packet sent from the HTTP website to your browser?</li>
+                                </ol><br/>
+
+
+                                <li><b>HTTPS website:</b></li>
+                                <ol>
+                                    <li>What is the IP address of your computer?</li>
+                                    <li>What is the IP address of the <code>HTTPS</code> website?</li>
+                                    <li>What version of TLS is the website running?</li>
+                                    <li>What is the status code returned from the website to your browser?</li>
+                                    <li>What is the port number used by your browser to send the HTTPS request to your web browser?</li>
+                                    <li>What is the port number used by the HTTPS website to send the HTTPS response to your web browser?</li>
+                                    <li>What is the size of the data in the HTTPS response packet sent from the HTTPS website to your browser?</li>
+                                </ol><br/>
+                            </ul>
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the following things:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (5 pts)</b></li>
+                                <ul>
+                                    <li>Your answer to the 7 questions above.</li>
+                                    <li>Your analysis: provide 2-3 sentences explaining why you see the results.</li>
+                                </ul>
+
+                                <li><b>Task II (10 pts)</b></li>
+                                <ul>
+                                    <li>Your answer to the 14 questions above.</li>
+                                    <li>Your analysis: provide 2-3 sentences explaining why you see the results.</li>
+                                </ul>
+                            </ul><br/>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- HW2 -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <button class="btn btn-link collapsed" 
+                            type="button" 
+                            style="color: black;"
+                            data-toggle="collapse" 
+                            data-target="#homework2" 
+                            aria-expanded="true" 
+                            aria-controls="homework2">
+                            <h4>Homework 2: Buffer Overflow</h4>
+                        </button>
+                    </div>
+              
+                    <div id="homework2" 
+                         class="collapse" 
+                         aria-labelledby="headingTwo"
+                         data-parent="#homeworkExample">
+                        <div class="card-body">
+
+                            <!-- :: Deadlines -->
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 04.16.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 04.28.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objectives of this homework are for students to gain hands-on experience with <code>buffer overflow</code> attacks. These attacks exploit a buffer overrun vulnerability in a program, causing it to bypass its usual execution sequence and instead jump to alternative code (typically launching a shell!). The attack overflows the vulnerable buffer to introduce the alternative code onto the stack and modifies the return address to point to that code.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                To begin, you are required to use a Linux machine with <code>sudo</code> privileges. You should not complete this homework on a shared server or any OSU computing clusters. If you perform a buffer overflow attack in these shared environments, you will be responsible for any consequences, and the instructor will not be liable. Note that you cannot run this on a Mac or Windows laptop. While these systems support command-line environments, they do not allow you to execute buffer overflow attacks. If you do not have a Linux machine, the instructor recommends creating a virtual machine using a commodity virtualization software, such as VMWare.<br/><br/>
+
+                                "One way to bypass the configuration hassles is to set up your own server using a popular cloud provider, Amazon Web Services (AWS). To do this, sign up for AWS, go to the AWS Console, and select EC2. Then, launch an instance, choosing the operating system <code>Ubuntu 22.04</code> and the instance type <code>t2.micro</code> (which is eligible for the free tier). You will also need to configure an SSH key and a Security Group. Once completed, you can find the server's IP address in the console. Use that IP to log in to the cloud server via your terminal.
+
+                                <pre><code>
+                                    $ ssh -i "your-aws-key" ubuntu@"your-server-ip"
+                                </code></pre>
+
+                                To run the code provided by the instructor, you will need to install a few packages, as listed below. Note that you may need to install more packages. In such cases, you can easily search the error message shown in the terminal on Google and find the answers.
+
+                                <pre><code>
+                                    $ sudo apt install cmake gcc g++ gdb
+                                    $ sudo apt install vim-enhanced
+                                    $ sudo apt install python3
+                                </code></pre>
+
+                                Many countermeasures, such as ASLR, have been developed to address buffer overflow vulnerabilities. Circumventing these defenses is not as easy as it may seem, so we will disable them for this homework assignment. You can do so by following these steps:
+
+                                <pre><code>
+                                    $ sudo -i
+                                    # sysctl -w kernel.randomize_va_space=0
+                                    # exit      // exit the sudo; our assignment should be done in the user space.
+                                </code></pre>
+
+                                <b style="color: #D73F09;">[Important Note] Once you complete the homework, be sure to turn off and delete the cloud server to avoid being charged.</b>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Access the (In-)accessible</h5>
+
+                            Create a makefile, <code>Makefile</code>:
+                            
+                            <pre><code>
+                                $ vim Makefile
+                                // paste the content below
+                                CC=gcc
+                                CFLAGS=-g -fno-stack-protector
+
+                                all: bof.c
+                                    $(CC) -m32 -o bof bof.c $(CFLAGS)
+                            </code></pre>
+
+                            Create a vulnerable file <code>bof.c</code>, as follows:
+
+                            <pre><code>
+                                #include "stdio.h"
+                                #include "stdlib.h"
+                                #include "string.h"
+                                #include "unistd.h"
+                                
+                                char *trueflag = "cs578{trueflag}";
+                                char *fakeflag = "cs578{fakeflag}";
+                                
+                                void
+                                shell(void) {
+                                    setregid(getegid(), getegid());
+                                    system("/bin/bash");
+                                }
+                                
+                                void
+                                process_user_input(void) {
+                                    char *flag;
+                                    char buff[12];
+                                    char data[128];
+                                
+                                    // set the fake flag
+                                    flag = fakeflag;
+                                
+                                    // load the memory locations
+                                    printf("Your flag address is at %p\n", trueflag);
+                                    printf("Your fakeflag is at %p\n", fakeflag);
+                                    printf("Address of shell is at %p\n", &shell);
+                                    printf("Currently, the flag variable has the value %p\n", flag);
+                                    fgets(data, sizeof(data), stdin);
+                                
+                                    // copy the content directly to the buffer
+                                    strncpy(buff, data, strlen(data));
+                                
+                                    printf("Your input was: [%s]\n", buff);
+                                    printf("Your flag address is at %p\n", flag);
+                                    printf("Your flag is %s\n", flag);
+                                }
+                                
+                                int
+                                main(void) {
+                                    setvbuf(stdin, NULL, _IONBF, 0);
+                                    setvbuf(stdout, NULL, _IONBF, 0);
+                                    process_user_input();
+                                }
+                            </code></pre>
+
+                            <!-- (python3 -c 'print("A" * 14 + "\x00")') | ./bof -->
+                            You can now compile the bof.c file by running the <code>make</code> command. Once compiled, you are ready to exploit the buffer overflow vulnerability. The code by default, will print out the flag <code>cs578{fakeflag}</code>. Your job is to exploit the buffer overflow and force it to print out <code>cs578{trueflag}</code>.
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Run Malicious Code</h5>
+
+                            Now that you are familiar with buffer overflow exploitation, the instructor has prepared a fun task for you—running an arbitrary function that the program cannot execute normally. In this case, the function is the <code>bash shell</code>! (wait what?) Use the exact same program that the Instructor provided above and work hard to get a shell.<br/><br/>
+
+                            <span style="color: #D73F09;">Tip: Python "print" may not work in some cases, e.g., it could add some termination characters like \x00. Please look for some other ways to write the address to the buffer. The instructor would not respond to any questions regarding this tip; it is the part of the homework assignment.</span>
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>. <code>.tar</code> or <code>.zip</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (6 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>trueflag</code>.</li>
+                                </ul>
+
+                                <li><b>Task II (9 pts)</b></li>
+                                <ul>
+                                    <li>You need to provide a screenshot of your terminal showing the command and its output.</li>
+                                    <li>You also need to provide a detailed explanation of how you exploit the buffer overrun to obtain the <code>bash shell</code>.</li>
+                                </ul>
+                            </ul><br/>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- HW3 -->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <button class="btn btn-link collapsed" 
+                            type="button" 
+                            style="color: black;"
+                            data-toggle="collapse" 
+                            data-target="#homework3" 
+                            aria-expanded="true" 
+                            aria-controls="homework3">
+                            <h4>Homework 3: Cache-based Side-channel Attacks</h4>
+                        </button>
+                    </div>
+              
+                    <div id="homework3" 
+                         class="collapse" 
+                         aria-labelledby="headingThree"
+                         data-parent="#homeworkExample">
+                        <div class="card-body">
+
+                            <!-- :: Deadlines -->
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 05.05.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 05.26.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for students to gain first-hand experience with <code>timing side-channel attacks</code>. These attacks exploit shared resources, such as cache memory shared between processors, causing the time it takes to execute an algorithm to become data-dependent. For example, if one program accesses certain data and a subsequent attacker accesses the same data, the retrieval time will be faster. By tracing such timing differences, an attacker can weaken the confidentiality of security-critical operations, such as cryptographic operations.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                You are required to use a Linux machine with <code>sudo</code> privileges. Note that <code>sudo</code> access is only needed to install the necessary packages; you won't be required sudo (or root) privileges to conduct the attack itself. You should not run this homework on a shared server or any OSU computing clusters. If you perform the attacks in these shared environments, you will be responsible for any consequences, and the instructor will not be held liable.<br/><br/>
+                                
+                                It may be challenging to run this on a Mac or Windows laptop (Note that the instructor did not try this. If you use these machines, it will be your challenges!). If you do not have a Linux machine, the instructor recommends creating an <code>Ubuntu 22.04</code> virtual machine using a commodity virtualization software, such as VMWare.<br/><br/>
+                                
+                                One way to bypass the configuration hassles is to set up your own server using a popular cloud provider, Amazon Web Services (AWS). To do this, sign up for AWS, go to the AWS Console, and select EC2. Then, launch an instance, choosing the operating system <code>Ubuntu 22.04</code> and the instance type <code>t2.micro</code> (which is eligible for the free tier). You will also need to configure an SSH key and a Security Group. Once completed, you can find the server's IP address in the console. Use that IP to log in to the cloud server via your terminal.
+
+                                <pre style="text-align: left; white-space: pre-line;"><code>
+                                    $ ssh -i "your-aws-key" ubuntu@"your-server-ip"
+                                </code></pre>
+
+                                To run the code provided by the instructor, you will need to install a few packages, as listed below. Note that you may need to install more packages. In such cases, you can easily search the error message shown in the terminal on Google and find the answers.
+
+                                <pre style="text-align: left; white-space: pre-line;"><code>
+                                    $ sudo apt install cmake gcc g++ gdb
+                                    $ sudo apt install vim-enhanced
+                                    $ sudo apt install python3
+                                    $ sudo apt-get install binutils-dev libdwarf-dev libelf-dev
+                                </code></pre>
+
+                                N0w we are ready to run a side-channel attack. The specific attack we will explore is <code>Flush+Reload</code>, a timing side-channel technique based on the <code>L3 cache</code>. More details about this attack can be found in the original research paper. This paper is included in our reading list, and I encourage you to read it to understand the core concepts behind the attack. Don't worry—you will not need to implement the attack from scratch. Instead, we will use an existing implementation provided by the research community: <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW3" target="_blank">Mastik</a>. Please follow the instructions in the <code>README.md</code> file to install Mastik on your machine.<br/><br/>
+
+                                <b style="color: #D73F09;">[Important Note] Once you complete the homework, be sure to turn off and delete the cloud server to avoid being charged.</b>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Reconnaissance</h5>
+
+                            In this task, you will learn how to gather information about the target system. This is a crucial step in any attack, as it allows you to understand the system's architecture and identify potential vulnerabilities. You will also learn how to measure the latency of memory accesses, which is essential for cache-based timing side-channel attacks.<br/><br/>
+
+                            <b>Task I-1 (3 pts).</b>
+                            The first subtask is to understand the environment in which you will run the attack. To do this, you may find the following Unix commands helpful: <code>lscpu</code>, <code>cat /proc/cpuinfo</code>, and <code>getconf -a | grep CACHE</code>. Now, answer the following questions:<br/><br/>
+                            <ul>
+                                <li>How many cores does your CPU have?</li>
+                                <li>How many threads does your CPU have?</li>
+                                <li>What is the size of the L1, L2, and L3 caches?</li>
+                                <li>What is the size of the memory on your machine?</li>
+                                <li>What is the L3 cache line size of your CPU?</li>
+                                <li>What is the L3 cache associativity (i.e., the number of ways) of your CPU?</li>
+                            </ul>
+                            
+
+                            <b>Task I-2 (3 pts).</b>
+                            Now, let's measure the latency difference between accessing data in L3-cache vs. memory. Your task is to examine the code in <code>demo/FR-threshold.c</code> and interpret the terminal output after running the program. The code is composed of multiple blocks, starting from Line 38, 41, 45, 50, 56, 64, 66, and 76. You first need to explain the overall purpose of this program, what it is designed to measure or demonstrate. Then for each code block, describe what the block does and why it is needed to achieve the program's objective.
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Flush+Reload on Leaking Program Behaviors</h5>
+
+                            Now that you are familiar with cache behavior, which means you are ready to run the Flush+Reload attack (isn't it fun?!). The Flush+Reload attack is a powerful side-channel attack that exploits the timing differences between accessing data from the cache vs. main memory. By precisely measuring these timing differences, an attacker can infer sensitive information about a target program's behavior, such as secret keys.<br/><br/>
+
+                            <b>Prerequisites:</b> Navigate to the <code>task</code> folder prepared by the instructor (for you!). You can compile the code using the provided <code>Makefile</code>. The folder contains two programs—<code>attack</code> and <code>multiply</code>—as well as a shared library <code>libops.so</code>.<br/><br/>
+                            
+                            The <code>multiply</code> program performs a series of 2D matrix multiplication operations using the shared library. Do not worry about data input—the program automatically reads the two csv files, <code>operand1.csv</code> and <code>operand2.csv</code>, which contains the input matrices.<br/><br/>
+
+                            The <code>attack.c</code> file contains the implementation of our Flush+Reload attack. This program is designed to infer the number of 2D matrix multiplication operations performed by the <code>multiply</code> program. It uses the Flush+Reload technique to measure timing differences between accessing data from the cache and from main memory. You do not need to run the two programs manually. The instructor has prepared a <code>run.sh</code> script for you. Simply execute this script—it will automate the process and save the attack outputs in the traces folder. These steps can be done as follows:<br/>
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ make clean; make      // clean the previous build and compile the code
+                                $ ./run.sh              // run the attack
+                            </code></pre>
+
+
+                            <b>Task II-1 (4 pts).</b>
+                            Let's first understand the Flush+Reload attack. Please answer the following questions:<br/><br/>
+
+                            <ul>
+                                <li>What are these configurations and what do they do?
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        Line 25: #define CPU_FREQ      2300000000
+                                        Line 26: #define SECONDS       4
+                                        Line 27: #define IDLE_SECONDS  1.0
+                                        Line 29: #define RECORDS       CPU_FREQ / SLOT * SECONDS
+                                        Line 30: #define SLOT          2500
+                                        Line 31: #define THRESHOLD     110
+                                        Line 32: #define MINTHRESHOLD  0
+                                        Line 33: #define MAX_IDLE      CPU_FREQ / SLOT * IDLE_SECONDS
+                                    </code></pre>
+                                </li>
+                                <li>What does the following code do?</li>
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        161 uint16_t *res = (uint16_t *) malloc(RECORDS * _nmonitor * sizeof(uint16_t));
+                                        162 for (int i = 0; i < RECORDS * _nmonitor ; i+= 4096/sizeof(uint16_t))
+                                        163   res[i] = 1;
+                                        164 fr_probe(fr, res);
+                                        165
+                                        166 // Trace the function calls
+                                        167 int l = fr_trace(fr, RECORDS, res, SLOT, THRESHOLD, MAX_IDLE);
+                                    </code></pre>
+                                </li>
+                                <li>What does the following code do?</li>
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        156   for (int i = 0; i < _nmonitor; i++) {
+                                        157     fprintf(stderr, " Searching [%2d] for [%.20s]: ", i, monitor[i]);
+                                        158     uint64_t offset = sym_getsymboloffset(libfile, monitor[i]);
+                                        159     if (offset == ~0ULL) {
+                                        160       fprintf(stderr, "Error: cannot find the func. in [%s]\n", libfile);
+                                        161       exit(1);
+                                        162     }
+                                        163     fr_monitor(fr, map_offset(libfile, offset));
+                                        164     printf(": the func. offset [%10lx]\n", offset);
+                                        165   }
+                                    </code></pre>
+                                <li>Running the code will generate a <code>.csv</code> file in the <code>traces</code> folder. The file will contain lines of data in the following format, for example:
+                                    <pre style="text-align: left; white-space: pre-line;"><code>
+                                        0,0,109,hit,mul2D
+                                        1,0,197,miss
+                                        2,0,0,miss
+                                        3,0,0,miss
+                                        4,0,0,miss
+                                        ...
+                                    </code></pre>
+                                    What do these numbers mean? Please explain the meaning of each column in the output file.
+                                </li>
+                            </ul>
+
+
+                            <b>Task II-2 (5 pts).</b>
+                            
+                            Now let's infer how many 2D matrix multiplication operations were performed by the multiply program. Note that in this task, extracting the exact number of operations is not the primary objective—you can simply reverse-engineer the multiply program to determine that. What's more important is to understand (1) the steps and configurations required to make the Flush+Reload attack work, and (2) how to analyze the outputs produced by the attack.<br/><br/>
+
+                            Start by opening the output traces stored under the <code>traces</code> folder. Check how many times a cache-hit occurs. The number of cache-hits can serve as an important clue for approximating how many 2D matrix multiplication operations were performed by the <code>multiply</code> program. You may not be able to find the exact number of operations. Please feel free to run the <code>run.sh</code> multiple times until the number of observed cache-hits closely matches the number of 2D matrix multiplication operations you reverse-engineered from the <code>multiply</code> program. You may need to use different configurations for the followings when you make it work:
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                Line 25: #define CPU_FREQ      2300000000
+                                Line 26: #define SECONDS       4
+                                Line 27: #define IDLE_SECONDS  1.0
+                                Line 29: #define RECORDS       CPU_FREQ / SLOT * SECONDS
+                                Line 30: #define SLOT          2500
+                                Line 31: #define THRESHOLD     110
+                                Line 32: #define MINTHRESHOLD  0
+                                Line 33: #define MAX_IDLE      CPU_FREQ / SLOT * IDLE_SECONDS
+                            </code></pre>
+
+                            In the output <code>.csv</code> file, you may notice that most cache hits occur infrequently. However, in some cases, you may observe two (or more) cache hits occurring in close succession. In such cases, you may need to treat these multiple hits as a single hit.<br/><br/>
+
+                            <span style="color: #D73F09;">Tip: You can use the <code>grep</code> command to filter the lines containing "hit" from the output file.</span><br/><br/>
+
+                            Now your report should answer the following questions:<br/><br/>
+                            <ul>
+                                <li>How many 2D matrix multiplication operations were performed by the multiply program? What is the oracle?</li>
+                                <li>Run the attack ten times. How many cache-hits occurred in each run?</li>
+                                <li>What was the result from the most successful run and why?</li>
+                                <li>What attack configurations were used in your most successful run?</li>
+                                <li>What could be the reasons you were not able to obtain the correct number of cache-hits? Please explain your answer clearly and thoroughly—avoid vague responses, such as there are multiple programs running at the same time. If this is the reason, explain clearly how it could impact the Flush+Reload observations.</li>
+                            </ul>
+
+
+                            <b>Extra Credit Opportunity (5 pts).</b>
+                            
+                            You can earn extra credit by running the attack in a more fine-grained manner. To do so, you will need to modify the <code>attack.c</code> file accordingly. Please run the Flush+Reload attack with your modifications and answer the following questions:<br/><br/>
+                            <ul>
+                                <li>How many element-wise multiplicaion occur in each 2D matrix multiplication?</li>
+                                <li>Can you determine the <code>width</code> and <code>height</code> of the first matrix involved in the multiplication?</li>
+                                <li>Can you determine the <code>width</code> and <code>height</code> of the second matrix involved in the multiplication?</li>
+                                <li>Can you provide a detailed explanation of why it worked or did not work as expected?</li>
+                            </ul><br/>
+                            
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>. <code>.tar</code> or <code>.zip</code>) that contains your write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (6 pts)</b></li>
+                                <ul>
+                                    <li>Task I-1: Your answers to the questions.</li>
+                                    <li>Task I-2: You need to provide a screenshot of your terminal showing the FR-threshold command and its output.</li>
+                                    <li>Task I-2: You need to provide a detailed explanation of the FR-threshold program, as requested above.</li>
+                                </ul>
+
+                                <li><b>Task II (9 pts)</b></li>
+                                <ul>
+                                    <li>Task II-1: Your detailed answers to the questions.</li>
+                                    <li>Task II-2: Your detailed answers to the questions.</li>
+                                    <li>Task II-2: You should include the <code>fr_traces</code> folder containing the trace results (.csv files) from all ten runs you performed.</li>
+                                </ul>
+
+                                <li><b>Extra Credits (5 pts)</b></li>
+                                <ul>
+                                    <li>Your detailed answers to the four questions.</li>
+                                    <li>You do not need to submit the traces for this opportunity.</li>
+                                </ul><br/>
+
+                                <span style="color: #D73F09;">
+                                    [Important Note] Make sure that your .csv file contains only cache-hits. 
+                                    Including all cache-misses will substantially increase the submission size—potentially exceeding 10MB. 
+                                    If your submission exceeds 10MB, 2 pts will be deducted.</span><br/>
+                            </ul><br/>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- HW4 -->
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <button class="btn btn-link" 
+                            type="button" 
+                            style="color: black;"
+                            data-toggle="collapse" 
+                            data-target="#homework4" 
+                            aria-expanded="false" 
+                            aria-controls="homework4">
+                            <h4>Homework 4: Prompt-based Jailbreaking Attacks</h4>
+                        </button>
+                    </div>
+              
+                    <div id="homework4" 
+                         class="collapse show" 
+                         aria-labelledby="headingFour"
+                         data-parent="#homeworkExample">
+                        <div class="card-body">
+
+                            <!-- :: Deadlines -->
+                            <h5>Important Dates</h5>
+                            <ul>
+                                <li><b style="color: #D73F09;">Out: 05.26.2025 09:00 AM PT</b></li>
+                                <li><b style="color: #D73F09;">Due: 06.09.2025 11:59 PM PT</b></li>
+                            </ul>
+
+
+                            <!-- :: Introduction -->
+                            <h5 style="margin-top: 20px;">Homework Overview</h5>
+                            <p>
+                                The learning objective of this homework is for you to understand and implement a <code>prompt-based jailbreaking attack</code>. Large-language model (LLM), such as GPT-4o and Claude-3.5, developers align their LLMs with human values, with one goal being the denial of harmful requests (e.g., asking "How do I build a bomb?"" should trigger a response such as "As an ethical AI model, I cannot answer this"). Prompt-based jailbreaks circumvent this alignment by modifying the input prompt to induce an LLM to respond to a harmful query it would normally <i>refuse</i>. You will implement and evaluate the <a href="https://arxiv.org/abs/2307.15043" target="_target">Greedy Coordinate Gradient (GCG)</a> attack: the most popular algorithm for crafting adversarial prompts for jailbreaking.
+                            </p>
+
+
+                            <!-- :: Setup -->
+                            <h5 style="margin-top: 20px;">Initial Setup</h5>
+                            <p>
+                                The instructor and their PhD student (Zachary Coalson) has prepared a skeleton code for you to implement the GCG attack. The code is available on <a href="https://github.com/Secure-AI-Systems-Group/CS578-HW4" target="_blank">this GitHub repository</a>. You can download the code by cloning the repository. The code is structured to help you implement the GCG attack and evaluate its effectiveness on a set of harmful queries.<br/><br/>
+                                
+                                <span style="color: #D73F09;">[Important note]
+                                    The code was developed in Linux, so the instructor recommends using a Linux machine. But the code should work for Mac and Windows machines as well. Also, a GPU is highly recommended for this project as LLMs are quite computationally intensive to run.
+                                </span><br/><br/>
+
+                                You will be using <code>Python</code> and <code>PyTorch</code> for this project. You need to install required packages. The instructor recommends using Miniconda to create the environment (install instructions <a href="https://www.anaconda.com/docs/getting-started/miniconda/install#linux" target="_blank">here</a>), though alternatives such as <a href="https://docs.python.org/3/library/venv.html" target="_blank">venv</a> should also work. Assuming Miniconda is installed, create the developing environment by running the following commands:
+
+                                <pre style="text-align: left; white-space: pre-line;"><code>
+                                    $ cd CS578-HW4
+                                    $ conda create -n HW4 python=3.10
+                                    $ conda activate HW4
+                                    $ pip install -r requirements.txt
+                                </code></pre>
+
+                                <span style="color: #D73F09;">[Note] Whenever returning to the project, be sure to re-activate the Conda environment by running <code>$ conda activate HW4</code></span><br/>
+                            </p>
+
+
+                            <!-- :: Task I -->
+                            <h5 style="margin-top: 20px;">Task I: Implement the GCG Attack</h5>
+
+                            You first need to complete the provided skeleton code by implementing the evaluation script and the GCG attack.<br/><br/>
+
+                            <b>Task I-1.</b>
+                            Start with the evaluation script <code>evaluate.py</code>.
+                            This script is designed to load a language model, run harmful queries against it, and compute the attack success rate. Please follow the steps below:<br/><br/>
+                            
+                            <ol>
+                                <li>
+                                    <b>Load an LLM and a tokenizer.</b>
+                                    Use the HuggingFace API to load a language model and tokenizer. The LLM we will be using is <i>Qwen2.5-1.5B</i>, which is great for our purposes because it is relatively small, performant, and pretty well-aligned. The HuggingFace ID for this model is given in <code>config.py</code> and is already imported as the <code>MODEL_NAME</code> variable. You may find these guides helpful:<br/><br/>
+
+                                    <ul>
+                                        <li><a href="https://huggingface.co/docs/transformers/en/models" target="_blank">https://huggingface.co/docs/transformers/en/models</a></li>
+                                        <li><a href="https://huggingface.co/docs/transformers/en/fast_tokenizers" target="_blank">https://huggingface.co/docs/transformers/en/fast_tokenizers</a></li>
+                                    </ul><br/>
+
+                                    Make sure to include the command <code>.to(device)</code> after loading the model in the script. This ensures that the model is moved to the appropriate device (e.g., GPU) for faster and more efficient computation.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Load the harmful queries.</b>
+                                    This part is already done for you. We will use the harmful queries from <a href="https://github.com/JailbreakBench/jailbreakbench" target="_blank">JailbreakBench (published in NeurIPS 2024)</a>. Each query is a harmful request that an aligned model should refuse. You may notice the <code>ADV_SUFFIXES_PATH</code> variable is initialized to <code>None</code>. After we implement and run GCG, you will specify the path to the saved adversarial prompt-artifacts (a list of strings in a JSON object) to evaluate the GCG attack results. For now, you can leave it unmodified.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Generate responses to the harmful queries.</b>
+                                    You make sure the followings:<br/><br/>
+                                    <ul>
+                                        <li>Generate a maximum of 256 new tokens for each prompt.</li>
+                                        <li>Set sampling to <code>False</code> for deterministic responses.</li>
+                                        <li>Save the de-tokenized responses (in string format! Use the tokenizer's <code>decode</code> function) in one list, one item per prompt. 
+                                            Be sure to only save new tokens, not tokens from the input.</li>
+                                    </ul><br/>
+                                    <a href="https://huggingface.co/docs/transformers/en/llm_tutorial" target="_blank">Here</a>'s a reference for generating text with LLMs using HuggingFace.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Compute the attack success rate.</b>
+                                    Jailbreak attacks are typically evaluated using the attack success rate metric: the fraction of inputs where alignment is successfully removed. For simplicity, we adopt the simple evaluation methodology from the GCG paper, which checks if a response starts with any prefix from a curated list that usually leads to a refusal. The curated list is provided for you, so you just need to implement a function that computes whether an output is harmful by checking if it DOES NOT start with any prefixes.<br/><br/>
+                                </li>
+
+                                <li>
+                                    <b>Save the responses.</b>
+                                    This part is done for you. After generating the responses and computing the ASR, they are saved in the <code>data</code> directory so you can analyze them further.<br/><br/>
+
+                                    Upon completion of the evaluation script, you should be able to compute Qwen2.5-1.5B's direct response rate—the fraction of harmful queries it responds to before the jailbreak is applied. Feel free to play around with this. The <code>config.py</code> script specifies the number of samples to test, which you can set from 1-100.<br/><br/>
+                                </li>
+                            </ol>
+                            
+                            How aligned is Qwen2.5-1.5B before adversarial pressure?<br/><br/>
+
+
+                            <b>Task I-2.</b>
+                            You now can evaluate a model on harmful queries using the script. The next step is to implement GCG to attempt a jailbreak.<br/><br/> 
+                            
+                            Given a prompt and a target response (i.e., the harmful output we want the model to produce), GCG searches for an adversarial suffix that, when appended to the prompt, increases the likelihood that the model generates the target response. The full algorithm is provided in the <code>gcg</code> directory.<br/><br/>
+                            
+                            We will focus on implementing the loss function that GCG attempts the minimize by finding the optimal adversarial suffix. It is the standard next token prediction loss: the cross-entropy loss between logits (the model's output distribution across tokens) and labels (the target tokens we want the model to output). <code>gcg/loss_function.py</code> provides the skeleton function, which takes in the logits and labels and should return their loss. Some helpful hints:<br/><br/>
+
+                            <ul>
+                                <li>Use the <code>F.cross_entropy</code> function from PyTorch.</li>
+                                <li>The logits have initial shape <code>[batch_size, sequence_length, vocab_size]</code> and the labels <code>[batch_size, sequence length]</code>. The expected shapes are <code>[batch_size * sequence_length, vocab_size]</code> and <code>[batch_size * sequence_length]</code>, respectively.</li>
+                                <li>We want to retain the loss for each token in the sequence. This requires a specific <code>reduction</code> strategy.</li>
+                                <li>After computing the loss, do not reshape it. The GCG algorithm will manage this. You can simply return it.</li>
+                            </ul>
+
+                            The primary challenge is to correctly reshape the logits and labels for the computation; the loss itself can be computed in one line. If you are curious, the GCG algorithm is described on pages 7-8 of the original paper, and the rest of the code provides much more detail.<br/><br/>
+
+                            <b>Task I-3.</b>
+                            With GCG implemented, let's prepare the script that runs it: <code>run_gcg.py</code>. The only thing you need to implement is loading the model and tokenizer, which is equivalent to what you did in <code>evaluate.py</code>.<br/><br/>
+                            
+                            Note that this time, we load harmful queries and their corresponding target responses from JailbreakBench. These targets do not contain a complete output, but rather the initial affirmative response. The insight from the GCG paper is that if the model outputs this affirmative response, it will continue to answer the harmful query. After running GCG, the adversarial suffixes are saved in <code>data/suffixes.json</code> as a list of strings. If you run GCG multiple times, rename these files to prevent older versions from being overwritten.<br/><br/>
+
+                            
+                            <!-- :: Task II -->
+                            <h5 style="margin-top: 20px;">Task II: Jailbreak an LLM</h5>
+
+                            Now you will use your GCG implementation to jailbreak Qwen2.5-1.5B. To start, ensure that <code>NUM_SAMPLES</code> in <code>config.py</code> is set to 1. 
+                            Then run the following to craft an adversarial suffix for the first prompt in JailbreakBench:<br/>
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ python run_gcg.py
+                            </code></pre>
+
+                            The suffix will be stored in <code>data/suffixes.json</code>. Next, set this file path as the <code>ADV_SUFFIXES_PATH</code> variable in <code>evaluate.py</code>. 
+                            Now, you can see if the adversarial suffix can jailbreak the LLM by running:
+
+                            <pre style="text-align: left; white-space: pre-line;"><code>
+                                $ python evaluate.py
+                            </code></pre>
+
+                            The prompt, response, and harmfulness of the response should be saved in <code>data/gcg/results.json</code>. Include the answers to the following questions in your report:<br/><br/>
+
+                            <ul>
+                                <li>Was the LLM "jailbroken" by GCG according to the ASR metric? 
+                                    Regardless of the metric, does the response seem aligned with human values? 
+                                    (Since this is one sample, it is just a True/False rather than a proportion.)</li>
+                                <li>Does the beginning of the model's response match the target from JailbreakBench?
+                                    In other words, does the optimization appear successful?
+                                    (You can print it out from <code>run_gcg.py</code>.) </li>
+                            </ul><br/>
+
+
+                            <!-- :: Task III -->
+                            <h5 style="margin-top: 20px;">Extra Credit Opportunity: More Jailbreaking (5 pts).</h5>
+                        
+                            Now that you have hopefully carried out a successful jailbreak, let's craft adversarial suffixes for more prompts that we can analyze. Repeat the steps from Task II, but change <code>NUM_SAMPLES</code> in <code>config.py</code> to 10. Please feel free to do more (up to 100) if you have the compute, but 10 should be sufficient.<br/><br/>
+                            
+                            After, you should have a list of 10 adversarial suffixes in <code>data/suffixes.json</code>, and 10 pairs of results in <code>data/gcg/results.json</code>. For reference, you should also compute the model's direct response rate without a jailbreak. You can compute this by running <code>evaluate.py</code> after setting <code>ADV_SUFFIXES_PATH</code> to <code>None</code>—the results will be saved in <code>data/no_attack/results.json</code>.<br/><br/>
+
+                            Include the answers to the following questions in your report:<br/><br/>
+                            <ul>
+                                <li>What is the ASR? What is the direct response rate? 
+                                    Does GCG successfully increase the number of harmful responses?</li>
+                                <li>Analyze the prompts, targets, and responses. 
+                                    When and why can GCG induce a harmful completion? 
+                                    When and why does it appear to fail (if at all)?</li>
+                                <li>Do you notice a connection between the adversarial suffix 
+                                    and the harmful response?
+                                    Does the model appear to reference the content in any way? 
+                                    Using insights from this, why might the adversarial suffix bypass the model's alignment?</li>
+                            </ul><br/>
+                            
+
+                            <!-- :: Submit -->
+                            <h5 style="margin-top: 20px;">Submission Instructions</h5>
+
+                            Use Canvas to submit your homework. You need to make a single compressed file (<code>.tar.gz</code>. <code>.tar</code> or <code>.zip</code>) that contains your entire code and write-up as a PDF file. Your PDF write-up should contain the followings:<br/><br/>
+
+                            <ul>
+                                <li><b>Task I (9 pts)</b></li>
+                                <ul>
+                                    <li>Task I-1: Your <code>evaluation.py</code> and the model response(s).</li>
+                                    <li>Task I-2: Your <code>gcg/loss_function.py</code>.</li>
+                                    <li>Task I-3: Your <code>run_gcg.py</code> and the attack result(s).</li>
+                                </ul>
+
+                                <li><b>Task II (6 pts)</b></li>
+                                <ul>
+                                    <li>Your responses stored in <code>data/gcg/results.json</code>.</li>
+                                    <li>Your detailed answers to the questions.</li>
+                                </ul>
+
+                                <li><b>Extra Credits (5 pts)</b></li>
+                                <ul>
+                                    <li>Your responses stored in <code>data/gcg/results.json</code>.</li>
+                                    <li>Your detailed answers to the questions.</li>
+                                </ul>
+                            </ul>
+
+                            <span style="color: #D73F09;">[Important note] Make sure not to include any large files, such as the model file, in your submission. If your submission includes any large files, 2 pts will be deduced from your total score.</span><br/><br/>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container text-center">
+                  <span class="text-muted">© Sanghyun Hong: 2025-Present.</span>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Optional Javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

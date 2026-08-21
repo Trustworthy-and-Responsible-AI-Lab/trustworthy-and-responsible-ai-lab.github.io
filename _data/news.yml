@@ -1,35 +1,156 @@
-- date: "2026-08"
-  text: "Two papers accepted to EMNLP 2026 Findings: membership inference in fine-tuned diffusion LMs, and reasoning representations for human evaluation of LLM outputs."
+# Canonical news feed — shared by sanghyun-hong.com and true-lab.ai
+# Source of truth: this file. Personal site pulls it via scripts/sync_from_lab.py
+# date: YYYY-MM-DD   text: plain text, <a> tags allowed
 
-- date: "2026-05"
-  text: "Three papers accepted to ICML 2026: adversarial robustness of INRs, reward poisoning in RL, and T2V model resilience."
+- date: "2026-08-21"
+  text: "Two papers accepted to EMNLP 2026 Findings. Congratulations Jaewoo and Leo!"
 
-- date: "2026-04"
-  text: "AgentBreaker accepted to ISSTA 2026. Congratulations to all collaborators!"
+- date: "2026-05-01"
+  text: "I will serve as an Area Chair for NeurIPS 2026."
 
-- date: "2026-03"
-  text: "Site Isolation is Dead accepted to IEEE S&P 2026."
+- date: "2026-04-30"
+  text: "Two papers are accepted to ICML 2026. Congratulations Jose and Jayoung!"
 
-- date: "2025-12"
-  text: "IF-Guide and Demystifying LLM Inference Resilience accepted to NeurIPS 2025 and SC 2025 respectively."
+- date: "2026-04-15"
+  text: "A paper is accepted to ISSTA 2026!"
 
-- date: "2025-10"
-  text: "Harnessing Input-adaptive Inference for Efficient VLN accepted to ICCV 2025. Great work by Dongwoo, Zachary, and Aiden!"
+- date: "2026-04-01"
+  text: "A paper is accepted to IEEE S&P 2026. See you all at San Francisco!"
 
-- date: "2025-08"
-  text: "AI4Privacy featured our Privacy Backdoors work. <a href='https://www.linkedin.com/posts/ai4privacy_privacy-backdoors-enhancing-membership-inference-activity-7360535474773356546-PvK3' target='_blank'>Read the post.</a>"
+- date: "2025-12-09"
+  text: "Zach's paper on NAS poisoning is accepted to TMLR 2025. Congratulations!"
 
-- date: "2025-07"
-  text: "Private Investigator (LLM PII extraction) accepted to USENIX Security 2025."
+- date: "2025-09-23"
+  text: "Derek's paper on TOCTOU vulnerability in agentic systems is accepted to NeurIPS 2025 Workshop. Congratulations!"
 
-- date: "2025-05"
-  text: "SoK: Watermarking for AI-Generated Content accepted to IEEE S&P 2025."
+- date: "2025-09-18"
+  text: "Zachary's paper on detoxifying LLMs is accepted to NeurIPS 2025. Congratulations!"
 
-- date: "2025-04"
-  text: "Evaluating Robustness of Reference-based Phishing Detectors accepted to AsiaCCS 2025."
+- date: "2025-08-13"
+  text: "A paper with Zachary's contribution is accepted to SC 2025. Congratulations!"
 
-- date: "2025-02"
+- date: "2025-08-12"
+  text: "Leo's Privacy-Backdoor paper is on AI4Privacy Post!"
+
+- date: "2025-06-25"
+  text: "Dongwoo, Zach, and Aiden's paper is accepted to ICCV 2025. Congratulations!"
+
+- date: "2025-06-11"
+  text: "A paper is accepted to IEEE TVCG 2025 and also presented in IEEE VIS 2025!"
+
+- date: "2025-06-10"
+  text: "Two papers are accepted to ICML 2025 Workshops, Congrats Eunjin!"
+
+- date: "2025-05-28"
+  text: "Leo's contribution to PII extraction is accepted to USENIX Security 2025. Great job!"
+
+- date: "2025-05-27"
+  text: "Eunjin's paper on <a href=\"https://arxiv.org/abs/2505.18734\" target=\"_blank\">test-time adaptation for malware detection</a> is on arXiv. Good job!"
+
+- date: "2025-05-26"
+  text: "Received Samsung START. Thanks Samsung!"
+
+- date: "2025-05-19"
+  text: "One paper accepted to Interspeech 2025."
+
+- date: "2025-04-10"
+  text: "I will serve as an Area Chair for NeurIPS 2025."
+
+- date: "2025-03-10"
+  text: "One paper is accepted at Oakland 2025."
+
+- date: "2025-02-01"
   text: "Eunjin Roh joins the lab as a PhD student. Welcome!"
 
-- date: "2025-01"
+- date: "2025-01-01"
   text: "Zachary Coalson joins the lab as a PhD student. Welcome!"
+
+- date: "2024-12-17"
+  text: "Received OSU-HP Seed Grant. Thanks HP!"
+
+- date: "2024-12-13"
+  text: "Eunjin and Sungwoo's paper on evaluating the (adversarial) robustness of recent phishing detectors is accepted to ASIA CCS 2025. Great job!"
+
+- date: "2024-12-10"
+  text: "Zachary's paper on <a href=\"https://arxiv.org/abs/2412.07192\" target=\"_blank\">jailbreaking LLMs using Rowhammer attacks is on arXiv</a>. Great job!"
+
+- date: "2024-09-25"
+  text: "Our <a href=\"https://arxiv.org/abs/2404.01231\" target=\"_blank\">Privacy-Backdoor paper</a> is accepted to NeurIPS 2024. Congratulations Leo!"
+
+- date: "2024-08-19"
+  text: "One paper is accepted to ACSAC 2024"
+
+- date: "2024-07-18"
+  text: "Delivered a keynote talk at AI Summer Security Workshop 2024"
+
+- date: "2024-07-16"
+  text: "One paper is accepted to CIKM 2024"
+
+- date: "2024-05-01"
+  text: "Two papers are accepted to ICML 2024"
+
+- date: "2024-04-15"
+  text: "Derek has been awarded <a href=\"https://gradschool.oregonstate.edu/awards/arcs-foundation-awards\" target=\"_blank\">ARCS Foundation Oregon Scholar Award</a>. Congratulations!"
+
+- date: "2024-04-01"
+  text: "Leo's contribution to <a href=\"https://arxiv.org/abs/2404.01231\" target=\"_blank\">Privacy-Backdoor paper is on arXiv</a>. Great job!"
+
+- date: "2024-03-01"
+  text: "Received Samsung 2023 GRO Award. Thanks Samsung!"
+
+- date: "2024-02-20"
+  text: "My k-12 student (Ojas)'s paper will be in COLING 2024"
+
+- date: "2024-02-14"
+  text: "Jose's story about AI safety is on <a href=\"https://share.transistor.fm/s/2bf6c923\" target=\"_blank\">KBVR-FM</a>. Congrats!"
+
+- date: "2024-01-16"
+  text: "One paper is accepted at ICLR 2024"
+
+- date: "2023-12-10"
+  text: "One paper is accepted at AAAI 2024"
+
+- date: "2023-10-12"
+  text: "Received Google exploreCSR Award 2023. Thanks Google Research!"
+
+- date: "2023-09-21"
+  text: "Zachary's first paper will be in NeurIPS 2023. Congratulations!"
+
+- date: "2023-06-15"
+  text: "Our team's story of advancing AI systems is on <a href=\"https://engineering.oregonstate.edu/all-stories/advancing-hardware-software-codesign-ai-enabled-systems\" target=\"_blank\">OSU AI Newsletter</a>"
+
+- date: "2023-04-24"
+  text: "One paper is accepted at ICML 2023"
+
+- date: "2023-04-19"
+  text: "Received Google Faculty Research Award 2023. Thanks Google Research!"
+
+- date: "2023-03-04"
+  text: "One paper is accepted at ICLR Workshop on Pitfalls of Limited Data and Computation for Trustworthy ML 2023"
+
+- date: "2023-01-31"
+  text: "Received NSF SFS Award (co-PI). Thanks NSF!"
+
+- date: "2023-01-13"
+  text: "One paper is accepted at ACM CHI 2023"
+
+- date: "2022-11-15"
+  text: "One paper is accepted at IEEE SaTML 2023"
+
+- date: "2022-10-25"
+  text: "Received Samsung 2023 GRO Award. Thanks Samsung!"
+
+- date: "2022-09-14"
+  text: "One paper is accepted at NeurIPs 2022 [Oral]"
+
+- date: "2022-07-16"
+  text: "One paper is accepted at IEEE VIS 2022"
+
+- date: "2022-06-13"
+  text: "One paper is accepted at ICML Workshop on Continuous-Time Methods for ML 2022"
+
+- date: "2022-05-10"
+  text: "Selected as a DARPA Riser 2022."
+
+- date: "2022-03-31"
+  text: "<a href=\"https://arxiv.org/abs/2204.00032\" target=\"_blank\">My student (Hoang)'s first paper</a> will on ACM CCS 2022. Congratulations!"
