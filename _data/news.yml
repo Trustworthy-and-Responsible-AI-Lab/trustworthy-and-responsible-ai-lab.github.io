@@ -1,3 +1,6 @@
+- date: "2026-08"
+  text: "Two papers accepted to EMNLP 2026 Findings: membership inference in fine-tuned diffusion LMs, and reasoning representations for human evaluation of LLM outputs."
+
 - date: "2026-05"
   text: "Three papers accepted to ICML 2026: adversarial robustness of INRs, reward poisoning in RL, and T2V model resilience."
 

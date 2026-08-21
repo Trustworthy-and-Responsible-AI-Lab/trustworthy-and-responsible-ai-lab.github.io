@@ -85,6 +85,26 @@ preprints:
       code: "https://github.com/Sanghyun-Hong/Gradient-Shaping"
 
 papers:
+  - title: "Membership Inference in Fine-tuned Diffusion Language Models via Token-level Memorization Asymmetry"
+    authors: "Shengfang Zhai, Leo Marchyok, Yuling Shi, Huanran Chen, Yinpeng Dong, Jiaheng Zhang, and Sanghyun Hong"
+    lab_authors: ["Leo Marchyok", "Sanghyun Hong"]
+    venue: "Findings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+    venue_short: "EMNLP Findings"
+    year: 2026
+    type: conference
+    links:
+      pdf: ""
+
+  - title: "Do Reasoning Representations Help Humans Evaluate LLM Outputs?"
+    authors: "Jaewoo Lim, Sungbok Shin, and Sanghyun Hong"
+    lab_authors: ["Jaewoo Lim", "Sanghyun Hong"]
+    venue: "Findings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+    venue_short: "EMNLP Findings"
+    year: 2026
+    type: conference
+    links:
+      pdf: ""
+
   - title: "On the Resilience of Text-to-Video Diffusion Models to Hardware Faults"
     thumbnail: "/assets/images/papers/on-the-resilience-of-text-to-video-diffusion-models-to.jpg"
     authors: "Zachary Coalson, A M Aahad, Stella Doehring, Zane Ma, and Sanghyun Hong"
