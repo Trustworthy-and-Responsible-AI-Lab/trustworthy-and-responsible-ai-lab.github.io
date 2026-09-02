@@ -172,12 +172,14 @@ alumni_ms:
   - name: Ramya Jayaraman
     degree: "AI (MS)"
     year: 2024
+    period: "2023 – 2024"
     current: "CoCreator, Inc. (CTO)"
     current_url: "https://cocreatorai.net/"
 
   - name: Hoang Le
     degree: "CS (MS)"
     year: 2023
+    period: "2021 – 2023"
     current: "Promaxo, Inc."
     current_url: "https://promaxo.com/"
 
@@ -222,10 +224,12 @@ alumni_bs:
   - name: Brielle Choquer
     degree: "CS (BS)"
     year: 2023
+    period: "2023 Spring"
 
   - name: Peter Mora-Stevens
     degree: "CS (BS)"
     year: 2022
+    period: "2022 Winter"
     current: "Uber, Inc."
 
   - name: Ryan Little

@@ -73,6 +73,15 @@ preprints:
     links:
       pdf: "https://arxiv.org/abs/2403.11981"
 
+  - title: "On the Effectiveness of Regularization Against Membership Inference Attacks"
+    authors: "Yiǧitcan Kaya, Sanghyun Hong, and Tudor Dumitraş"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "arXiv Preprint"
+    year: 2020
+    type: preprint
+    links:
+      pdf: "https://arxiv.org/abs/2006.05336"
+
   - title: "On the Effectiveness of Mitigating Data Poisoning Attacks with Gradient Shaping"
     thumbnail: "/assets/images/papers/on-the-effectiveness-of-mitigating-data-poisoning-attac.jpg"
     authors: "Sanghyun Hong, Varun Chandrasekaran, Yiǧitcan Kaya, Tudor Dumitraș, and Nicolas Papernot"
@@ -114,7 +123,7 @@ papers:
     year: 2026
     type: workshop
     links:
-      pdf: ""
+      pdf: "https://arxiv.org/abs/2608.29598"
       code: "https://github.com/ztcoalson/T2V-Resilience"
 
   - title: "Adversarial Robustness of Implicit Neural Representation Based Classifiers"
