@@ -95,6 +95,7 @@ preprints:
 
 papers:
   - title: "Membership Inference in Fine-tuned Diffusion Language Models via Token-level Memorization Asymmetry"
+    thumbnail: "/assets/images/papers/membership-inference-in-fine-tuned-diffusion-language-m.jpg"
     authors: "Shengfang Zhai, Leo Marchyok, Yuling Shi, Huanran Chen, Yinpeng Dong, Jiaheng Zhang, and Sanghyun Hong"
     lab_authors: ["Leo Marchyok", "Sanghyun Hong"]
     venue: "Findings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)"
@@ -102,9 +103,10 @@ papers:
     year: 2026
     type: conference
     links:
-      pdf: ""
+      pdf: "https://arxiv.org/abs/2609.00873"
 
   - title: "Do Reasoning Representations Help Humans Evaluate LLM Outputs?"
+    thumbnail: "/assets/images/papers/do-reasoning-representations-help-humans-evaluate-llm-o.jpg"
     authors: "Jaewoo Lim, Sungbok Shin, and Sanghyun Hong"
     lab_authors: ["Jaewoo Lim", "Sanghyun Hong"]
     venue: "Findings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)"
