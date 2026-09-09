@@ -56,9 +56,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="critiques.html"><h5>Critique, Presentation</h5></a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="homework.html"><h5>Homework</h5></a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="project.html"><h5>Project</h5></a>
                 </li>
@@ -71,61 +68,116 @@
             <div class="container">
                 <h4 style="margin-bottom: 20px;">Term Project</h4>
                 <p>
-                    One of the course objectives is to learn how to pursue a research problem of your choice and communicate your findings with others. You will have an opportunity to develop those skills in this class by doing a term project. You will form a team of max. 4 students for the term-project. <b>(Note)</b> This term, we have a record enrollment of ~35+ students for this class, so unfortunately, the class does not have capacity to accomodate doing a term project solo.
+                    One of the course objectives is to learn how to pursue a research problem and communicate your findings with others. You will develop those skills in this class by doing a term project. This term, the project runs in <b>two tracks</b>&mdash;pick <b>one</b>:
                 </p>
-
-                <!-- :: Topics -->
-                <h5 style="margin-top: 20px;">Project Topics</h5>
-                You have two options in choosing topics:
                 <ul>
-                    <li><b>Choose your own topic:</b> You are encouraged to choose any topic relevant to security and privacy of machine learning, but your research problem yet to be explored in the literature. You're welcome to select a topic connected to your current research: for example, if your primary research area is reinforcement learning, you can do a term project on some aspects of security and privacy in reinforcement learning.<br/></li>
-
-                    <li><b>Replicate the results of prior work:</b> You may have a hard time finding a topic of your interest. In this case, you can choose this option and work on reproducing the results in prior work—teams in this track spare time and effort in searching for a topic. Note that this is your responsibility to find a topic for your team. Please start the topic search as early as possible.</li>
+                    <li><b>Track 1 (Research):</b> Pursue an open research problem of your own choice.</li>
+                    <li><b>Track 2 (Reproducing prior work):</b> Implement state-of-the-art techniques on an assigned topic and contribute them to a shared evaluation platform.</li>
                 </ul>
 
+                <!-- :: Team formation -->
+                <h5 style="margin-top: 20px;">Teams and Sign-up (both tracks)</h5>
+                <ul>
+                    <li>A team can have <b>up to 3 students</b>. Given the class size, the course cannot accommodate solo term projects.</li>
+                    <li>Please use this Google Sheet [<a href="https://docs.google.com/spreadsheets/d/1BDC47gVFCCV5jjDnfxcnb5N60Z0mtikDqJIILTDqLI0/edit?usp=sharing" target="_blank">link</a>] to form a team and sign up for a track (you need an ONID to access this sheet).</li>
+                    <li><b style="color: #D73F09;">[Deadline] 09/30.</b> If your team is not on the sheet by then, <b>your final score will decrease by 2%</b>.</li>
+                    <li>Every team presents <b>three times</b> (see <a href="#presentations">Presentations</a>), regardless of the track.</li>
+                </ul>
 
-                Please use this Google Sheet [<a href="https://docs.google.com/spreadsheets/d/1lnlUpl8wvuhbq-gHQDaFV3Lrz3TuqtHfmMEfuTQJ_DA/edit?usp=sharing" target="_blank">link</a>] to form a team (by 10.02) and sign-up for the term project.
+                
+                <!-- :: Track 1 -->
+                <h5 style="margin-top: 30px;">Track 1: Research</h5>
+                <p>
+                    You are encouraged to choose any topic relevant to computer security, but your research problem should yet to be explored in the literature. You are welcome to select a topic connected to your current research: for example, if your research area is reinforcement learning, you can do a term project on some aspects of security and privacy in reinforcement learning.
+                </p>
+                <p>
+                    Identifying a research problem is part of the work in this track. <b>Please start the topic search as early as possible</b>&mdash;teams that are still searching at Checkpoint 1 tend to run out of time.
+                </p>
+
+
+                <!-- :: Track 2 -->
+                <h5 style="margin-top: 30px;">Track 2: Reproducing Prior Work</h5>
+                <p>
+                    If you have a hard time finding a topic of your own, choose this track. You do not search for a topic; instead, you implement recent work on an assigned topic and evaluate it under a common setup.
+                </p>
+
+                <h6 style="margin-top: 20px;">Topic</h6>
+                <p>
+                    <b>Preventing and tracing the distillation of large language models (LLMs).</b> Anyone with query access to a deployed LLM can distill it into a smaller model that inherits much of its capability. This term, teams in this track implement the state-of-the-art techniques that address the two sides of this problem:
+                </p>
+                <ul>
+                    <li><b>Prevention:</b> making a deployed model hard to distill (<i>e.g.</i>, perturbing or restricting what the model exposes, detecting extraction-style query patterns).</li>
+                    <li><b>Tracing:</b> making distillation detectable after the fact (<i>e.g.</i>, watermarks and fingerprints that survive into a student model, and provenance tests on a suspect model).</li>
+                </ul>
+                <p>
+                    <b style="color: #D73F09;">[Note]</b> The specific methods to implement, and the models and datasets to run them on, are <b>assigned by the instructor</b>&mdash;you do not choose them. The authoritative list lives in the repository README; the repository and the per-team assignments are shared on Canvas after sign-up closes.
+                </p>
+
+                <h6 style="margin-top: 20px;">How this track works</h6>
+                <p>
+                    The goal of this track is a working <b>evaluation platform</b>: a single repository in which each method is implemented, run on the assigned models and datasets, and reported under a common protocol, so that the results are comparable across methods and reproducible by someone else.
+                </p>
+                <ol>
+                    <li>The instructor sets up and shares the repository with the teams that sign up for this track.</li>
+                    <li>Your team <b>branches off</b> the repository&mdash;you never commit to the main branch directly.</li>
+                    <li>You follow the <b>README instructions</b> to lay out your folder and code: directory layout, interfaces, configuration files, and how results and logs are written.</li>
+                    <li>You implement your assigned method(s) and run the evaluation on the assigned models and datasets.</li>
+                    <li>You write your report on those evaluation results, using the same report template as Track 1.</li>
+                </ol>
+                <p>
+                    <b style="color: #D73F09;">[Note] This track is managed strictly.</b> The point of a shared platform is that every contribution looks the same and runs the same way, so the conventions are not suggestions:
+                </p>
+                <ul>
+                    <li>Your code <b>MUST</b> follow the structure and interfaces specified in the README. Code that does not fit the layout will be sent back for revision.</li>
+                    <li>Your results <b>MUST</b> be reproducible from what you commit: pinned configurations, fixed random seeds, and the logs your runs produced.</li>
+                    <li>Your branch is reviewed before it is merged. Expect revision requests, and leave time for them.</li>
+                    <li>Run only the assigned models and datasets. If you believe something else is needed, ask first.</li>
+                </ul>
+                <p>
+                    In exchange, this track spares you the effort of searching for a topic, and you end the term with a concrete, reviewed implementation of a recent technique&mdash;which is a good deal more portable than a slide deck.
+                </p>
 
 
                 <!-- :: Milestones -->
-                <h5 style="margin-top: 20px;">Presentations</h5>
-                Your team should present the research progress three times; I have the following expectations:<br/><br/>
+                <h5 id="presentations" style="margin-top: 30px;">Presentations</h5>
+                Your team should present the progress <b>three times</b>; I have the following expectations:<br/><br/>
 
                 <h6>Checkpoint Presentation 1 (on 10/12)</h6>
                 <ul>
-                    <li>Identify a research problem (or your project scope).</li>
-                    <li>Do a literature review and explain the prior work relevant to your problem.</li>
-                    <li>Clearly articulate how your problem is different from the prior work.<br/>
-                        [If you choose the second option, you should explain the assigned papers in detail]</li>
+                    <li>Do a literature review and explain the prior work relevant to your project.</li>
+                    <li><b>[Track 1]</b> Identify a research problem (or your project scope), and clearly articulate how your problem is different from the prior work.</li>
+                    <li><b>[Track 2]</b> Explain the assigned papers in detail, and state how you plan to map each method onto the repository structure.</li>
                     <li>Provide your next steps.</li>
                 </ul>
 
                 <h6>Checkpoint Presentation 2 (on 11/09)</h6>
                 <ul>
-                    <li>Design a set of experiments to evaluate your idea's feasibility.</li>
-                    <li>Obtain preliminary results.</li>
-                    <ul>
-                        <li>If you choose your own topic, you must implement a minimal (key) functionality to demonstrate the feasibility of your idea.</li>
-                        <li>If you choose to reproduce the results of prior work, you must show at least the key results of one of the papers provided by me.</li>
-                    </ul>
+                    <li>Design a set of experiments and obtain preliminary results.
+                        <ul>
+                            <li><b>[Track 1]</b> You must implement a minimal (key) functionality to demonstrate the feasibility of your idea.</li>
+                            <li><b>[Track 2]</b> You must show at least the key result of one assigned method, produced by code running on your branch.</li>
+                        </ul>
+                    </li>
                     <li>Provide your next steps.</li>
                 </ul>
 
                 <h6>Final Presentations (on 12/02)</h6>
                 <ul>
                     <li>Deliver your final results (based on the goals you set in Checkpoint 1).</li>
-                    <li>In-class presentation and a report <b>[Note: you can submit your report by the 11th]</b>.</li>
+                    <li><b>[Track 2]</b> Your branch should be ready for review: code in the required layout, and results reproducible from your committed configurations.</li>
+                    <li>In-class presentation and a report <b>[Note: the report is due 12/09]</b>.</li>
                 </ul>
 
 
                 <!-- :: Evaluations -->
-                <h5 style="margin-top: 20px;">Grading Policy (Evaluations)</h5>
-                Your term project will be evaluated with the following scheme (35 in total):<br/><br/>
+                <h5 style="margin-top: 30px;">Grading Policy (Evaluations)</h5>
+                Your term project will be evaluated with the following scheme (50% in total); the scheme is the same for both tracks:<br/><br/>
 
                 <ul>
-                    <li>10 points: Checkpoint Presentation 1</li>
-                    <li>10 points: Checkpoint Presentation 2</li>
-                    <li>15 points: Final Presentation and Write-up (<a href="https://www.overleaf.com/read/rqztdrrjycsr#b16ea8" target="_blank">Report template</a>)</li>
+                    <li><b>15%:</b> Checkpoint Presentation 1</li>
+                    <li><b>15%:</b> Checkpoint Presentation 2</li>
+                    <li><b>20%:</b> Final Presentation and Write-up (<a href="https://www.overleaf.com/read/rqztdrrjycsr#b16ea8" target="_blank">Report template</a>)</li>
+                    <li><b style="color: #D73F09;">-2%:</b> No team on the Google Sheet by 09/30.</li>
                 </ul>
 
             </div>
