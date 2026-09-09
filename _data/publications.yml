@@ -114,7 +114,7 @@ papers:
     year: 2026
     type: conference
     links:
-      pdf: ""
+      pdf: "https://arxiv.org/abs/2609.09038"
 
   - title: "On the Resilience of Text-to-Video Diffusion Models to Hardware Faults"
     thumbnail: "/assets/images/papers/on-the-resilience-of-text-to-video-diffusion-models-to.jpg"
