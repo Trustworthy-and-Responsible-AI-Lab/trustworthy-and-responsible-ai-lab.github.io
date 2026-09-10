@@ -22,6 +22,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.sh"
+  - "**/canvas-*.html"   # Canvas paste-in sources; not for the public site
 
 markdown: kramdown
 plugins:
