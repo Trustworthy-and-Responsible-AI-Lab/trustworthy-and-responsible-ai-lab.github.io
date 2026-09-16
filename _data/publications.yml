@@ -94,6 +94,25 @@ preprints:
       code: "https://github.com/Sanghyun-Hong/Gradient-Shaping"
 
 papers:
+  - title: "Exposure is All You Need: Using LLMs to Identify Critical Endpoints at Internet Scale"
+    thumbnail: "/assets/images/papers/exposure-is-all-you-need-using-llms-to-identify-critica.jpg"
+    authors: "Stijn Pletinckx, Milad Nasr, Sanghyun Hong, Zakir Durumeric, and Nicholas Carlini"
+    lab_authors: ["Sanghyun Hong"]
+    venue: "ACM CCS Workshop on Artificial Intelligence and Security (AISec)"
+    venue_short: "AISec"
+    year: 2026
+    type: workshop
+    links:
+      pdf: ""
+    bibtex: |
+      @inproceedings{pletinckx2026exposure,
+        author    = {Stijn Pletinckx and Milad Nasr and Sanghyun Hong and
+                     Zakir Durumeric and Nicholas Carlini},
+        title     = {Exposure is All You Need: Using {LLMs} to Identify Critical Endpoints at Internet Scale},
+        booktitle = {Proceedings of the 19th {ACM} Workshop on Artificial Intelligence and Security ({AISec})},
+        year      = {2026}
+      }
+
   - title: "Membership Inference in Fine-tuned Diffusion Language Models via Token-level Memorization Asymmetry"
     thumbnail: "/assets/images/papers/membership-inference-in-fine-tuned-diffusion-language-m.jpg"
     authors: "Shengfang Zhai, Leo Marchyok, Yuling Shi, Huanran Chen, Yinpeng Dong, Jiaheng Zhang, and Sanghyun Hong"
