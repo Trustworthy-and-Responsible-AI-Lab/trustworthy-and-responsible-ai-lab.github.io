@@ -21,6 +21,21 @@
     - display: "Winter 2022"
       url: "/courses/MLSec/W22/index.html"
 
+- id: sais
+  title: "Secure Agentic AI Systems"
+  number: "CS599"
+  level: Graduate
+  image: "/assets/images/courses/course-sais.jpg"
+  description: >
+    Covers the security of AI agents that plan, use tools, and act on behalf
+    of users. Topics include prompt injection, excessive agency, memory
+    poisoning, multi-agent attacks, and defenses. Students read recent papers
+    and complete a research project.
+  offerings:
+    - display: "Fall 2027"
+      url: "/courses/SAIS-Grad/current/index.html"
+      current: true
+
 - id: cybersec
   title: "Cyber-Security"
   number: "CS578"

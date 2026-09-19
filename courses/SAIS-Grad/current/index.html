@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Title -->
+    <title>CS599 :: F27 :: Secure Agentic AI Systems</title>
+
+    <!-- SEO -->
+    <meta name="author" content="Sanghyun Hong" />
+    <meta name="description" content="Secure Agentic AI Systems: Attacks, Defenses, and Human Oversight. Oregon State University" />
+    <meta name="keywords" content="sanghyun hong secure agentic ai systems agent security prompt injection oregon state university" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Prevent js cache by Chrome -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Bootstrap start -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/osu-fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/osu-styles.css" />
+  </head>
+
+  <body>
+    <!-- Content -->
+    <div class="container">
+      <!-- Title -->
+      <h2 class="title">
+        <b>CS599 :: F27 :: Secure Agentic AI Systems</b>
+      </h2>
+
+      <hr noshade="" size="1" />
+
+      <!-- Top navigation bar -->
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html"><h5>Home</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="critiques.html"><h5>Critique, Discussion</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html"><h5>Project</h5></a>
+        </li>
+      </ul>
+
+      <hr noshade="" size="1" />
+
+      <!-- Overview -->
+      <div class="container">
+        <h4>Overview</h4>
+
+        <p>
+          AI systems are moving from passive language models to autonomous <i>agents</i> that plan, call tools, keep memory, read
+          content they did not author, talk to other agents, and act on their users' behalf. That shift changes the question we ask
+          of them. A model that writes a wrong sentence is a quality problem; an agent that sends the wrong email, runs the wrong
+          shell command, or wires the wrong payment is a security problem.
+        </p>
+
+        <p>
+          This course studies the security of such systems from three perspectives: <b>attacks</b>, <b>defenses</b>, and
+          <b>human oversight</b>. We start with a systems-level picture of how an agent is actually built, then ask what an adversary
+          can do to each of its parts&mdash;reasoning, tools, memory, retrieved content, inter-agent messages, and delegated
+          authority&mdash;which architectural and runtime mechanisms defend them, how to tell whether a published security claim
+          holds up, and what a human operator must be shown in order to intervene in time.
+        </p>
+
+        <p>
+          We treat this as a <b>systems and security problem</b> rather than an extension of prompt engineering or adversarial
+          machine learning. The course runs on recent research papers and a research-oriented final project. There are no labs and
+          no weekly homework; the work is reading, threat modeling, security reasoning, and open-ended research.
+        </p>
+
+        <p><b>In the end, we expect:</b></p>
+        <ul>
+          <li><b>[Systems]</b> To build a concrete mental model of how an AI agent actually works.</li>
+          <li><b>[Security]</b> To learn how to think like an adversary who controls what an agent reads.</li>
+          <li><b>[Security]</b> To learn attacks and defenses for agentic AI systems.</li>
+          <li><b>[Research]</b> To learn how to pursue a research problem of your choice and communicate your findings with others.</li>
+        </ul>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Latest announcements -->
+      <div class="container p-3" style="background-color: #FAE0D6; border: 0.5px solid #D73F09; border-radius: 6px;">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="mb-0" style="margin-top: 2px;">Latest Announcements</h4>
+        </div>
+        <ul class="mt-2 mb-0">
+          <li><b>09/23:</b> Welcome to CS599 Secure Agentic AI Systems (Fall 2027)!</li>
+        </ul>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Course info & instructor -->
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h4>Course Information</h4>
+            <ul>
+              <li><b>Lecture:</b> MW (time TBA)</li>
+              <ul>
+                <li><b>In-person:</b> Room TBA</li>
+              </ul>
+              <li><b>Credits:</b> 4</li>
+              <li><b>Level:</b> Graduate</li>
+              <li><b>Term:</b> Fall 2027, 09/23 &ndash; 12/04</li>
+              <li><b>Discussion board:</b> Canvas</li>
+              <li><b>Submissions:</b> Canvas (all components)</li>
+            </ul>
+          </div>
+
+          <div class="col-6">
+            <h4>Instructor</h4>
+            <ul>
+              <li>
+                <b>Name: </b>
+                <a href="https://www.sanghyun-hong.com" target="_blank" rel="noopener noreferrer">Sanghyun Hong</a>
+              </li>
+              <li><b>Contact: </b> sanghyun [dot] hong [at] oregonstate [dot] edu</li>
+              <li>
+                <b>Office: </b>
+                <a href="https://map.oregonstate.edu/?building=KEC" target="_blank" rel="noopener noreferrer">
+                  2029 KEC - Kelley Engineering Center
+                </a>
+              </li>
+              <li>
+                <b>Office hours:</b> TBA (Fall 2027)<br />
+                <ul>
+                  <li>No office hours in the first week</li>
+                  <li>Subject to change at the instructor's discretion</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Prerequisites -->
+      <div class="container">
+        <h4>Who Should Take This Course</h4>
+        <p>
+          This is a graduate research seminar. It <b>requires</b> a basic understanding of machine learning
+          (<i>e.g.</i>, CS 434). A prior course in security (<i>e.g.</i>, CS 578) or in trustworthy ML
+          (<i>e.g.</i>, CS 499/599 | AI539) helps, but neither is required. You should be comfortable reading conference papers, and
+          comfortable with the idea that a system's security depends on where its trust boundaries are drawn, not on how good its
+          model is.
+        </p>
+        <p>
+          <b>No programming assignments.</b> You may still implement systems or run experiments as part of your final research
+          project, and most strong projects do.
+        </p>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Course policy -->
+      <div class="container">
+        <h4>Course Policy</h4>
+
+        <p>
+          The University's
+          <a href="https://beav.es/codeofconduct" target="_blank" rel="noopener noreferrer"><u>Code of Academic Integrity</u></a>
+          applies, modified as follows:
+        </p>
+
+        <h6>[Don'ts]</h6>
+        <ul>
+          <li>Do <b>NOT</b> share your critique or write-up with others before the deadline.</li>
+          <li>Do <b>NOT</b> copy and paste someone else's text, figures, or code into yours.</li>
+          <li>Do <b>NOT</b> submit a critique that is a paraphrase of the paper's abstract, an existing public review, or a model-generated summary.</li>
+        </ul>
+
+        <h6>[Do's]</h6>
+        <ul>
+          <li><b>Brainstorm</b> your ideas with other students.</li>
+          <li><b>Discuss</b> and argue about the papers with other students&mdash;that is the point of the course.</li>
+          <li><b>Collaborate</b> with your project partner on the design, experiments, and write-up.</li>
+        </ul>
+
+        <p>
+          <b>Must:</b> Please write down the names of students who helped you. It will not affect your score. You will learn from
+          this practice how to credit others for their contributions&mdash;an essential skill when you collaborate later.
+        </p>
+
+        <h6 style="margin-top: 20px;">[Use of Generative AI]</h6>
+        <p>
+          This is a course about AI agents, so let us be precise about using them. Generative AI tools are
+          <b>permitted</b> for the final research project (code, experiment scaffolding, literature search, and copy-editing) and for
+          understanding background material. They are <b>not permitted</b> to produce the substance of your paper critiques or any
+          part of the final exam.
+        </p>
+        <p>
+          Whenever you use such a tool on a graded artifact, you <b>must disclose</b>, in the submission itself: (1) which tool,
+          (2) what kind of interaction (brainstorming, drafting, debugging, editing), and (3) which portion of the work it
+          contributed to. This follows the
+          <a href="https://engineering.oregonstate.edu/EECS/MyEECS/EECS-guidance-drafting-ai-use-policies" target="_blank" rel="noopener noreferrer">EECS guidance on AI use policies</a>.
+          Undisclosed use is an academic integrity violation. You remain fully responsible for every claim in anything you submit,
+          including claims a tool produced.
+        </p>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- DAS statement -->
+      <div class="container">
+        <h4>Statement Regarding Students with Disabilities</h4>
+
+        <p>
+          Oregon State University is committed to making learning experiences accessible to all, which includes consideration of the course design, course learning outcomes, and barriers experienced by the disabled student. Disability Access Services (DAS) staff and students work together to determine reasonable accommodations. Students connected with DAS who have questions about their accommodations should reach out to their DAS Adviser. Students who have not yet completed the process for setting up accommodations, please contact DAS at 541-737-4098, visit the <a href="https://ds.oregonstate.edu/" target="_blank">DAS website</a> or email <a href="mailto:disability.services@oregonstate.edu" target="_blank">disability.services@oregonstate.edu</a> to explore accommodations for a disability (e.g., mental health diagnoses, chronic health conditions, learning disabilities, physical conditions/injuries, etc.). Students and faculty members are encouraged to collaborate around the implementation of accommodations.
+        </p>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Reach out for success statement -->
+      <div class="container">
+        <h4>Reach Out for Success</h4>
+
+        <p>
+          University students encounter setbacks from time to time. If you encounter difficulties and need assistance, it&rsquo;s important to reach out. Consider discussing the situation with an instructor or academic advisor. Learn about resources that assist with wellness and academic success at <a href="https://counseling.oregonstate.edu/reach-out" target="_blank">oregonstate.edu/ReachOut</a>. If you are in immediate crisis, please call or text the Suicide &amp; Crisis Lifeline at 988.
+        </p>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Academic calendar and bill of rights -->
+      <div class="container">
+        <h4>Academic Calendar and Student Bill of Rights</h4>
+
+        <p>
+          All students are subject to the registration and refund deadlines as stated in <a href="https://registrar.oregonstate.edu/osu-academic-calendar" target="_blank">the Academic Calendar</a>.
+        </p>
+
+        <p>
+          OSU has twelve established student rights. They include due process in all university disciplinary processes, an equal opportunity to learn, and grading in accordance with the course syllabus: <a href="https://asosu.oregonstate.edu/advocacy/rights" target="_blank">link</a>.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <hr noshade="" size="1" />
+      <footer class="footer">
+        <div class="container text-center" style="margin-bottom: 20px;">
+          <span class="text-muted">&copy; Sanghyun Hong: 2026-Present.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Optional Javascript -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

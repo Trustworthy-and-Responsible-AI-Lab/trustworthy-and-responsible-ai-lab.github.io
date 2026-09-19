@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Title -->
+        <title>CS599 :: F27 :: Secure Agentic AI Systems</title>
+
+        <!-- SEO -->
+        <meta name="author" content="Sanghyun Hong">
+        <meta name="description" content="Secure Agentic AI Systems: Attacks, Defenses, and Human Oversight. Oregon State University">
+        <meta name="keywords" content="sanghyun hong secure agentic ai systems agent security oregon state university">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+        <!-- Prevent js cache by Chrome -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Bootstrap start -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/osu-fonts.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/osu-styles.css">
+
+    </head>
+    <body>
+
+        <!-- Content -->
+        <div class="container">
+
+            <!-- Title -->
+            <h2 class="title">
+                <b>CS599 :: F27 :: Secure Agentic AI Systems</b>
+            </h2>
+
+            <hr noshade="" size="1">
+
+            <!-- Top navigation bar -->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="syllabus.html"><h5>Syllabus</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="critiques.html"><h5>Critique, Discussion</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="project.html"><h5>Project</h5></a>
+                </li>
+            </ul>
+
+            <hr noshade="" size="1">
+
+
+            <!-- Project -->
+            <div class="container">
+                <h4 style="margin-bottom: 20px;">Term Project</h4>
+                <p>
+                    One of the course objectives is to learn how to pursue a research problem of your choice and communicate your
+                    findings with others. You will develop those skills in this class by doing a term project. There are no
+                    programming assignments in this course precisely so that this is where your implementation effort goes, and the
+                    final deliverable should read like a <b>short research paper</b> rather than a class report.
+                </p>
+                <p>
+                    Strong projects in this area almost always follow: <b>Problem &rarr; Threat model &rarr; Attack
+                    or failure &rarr; Method &rarr; Evaluation</b>. A measurement or evaluation project ("here is why this
+                    published benchmark does not measure what it claims") is equally welcome, and often more useful than yet another
+                    attack.
+                </p>
+
+                <!-- :: Topics -->
+                <h5 style="margin-top: 20px;">Project Topics</h5>
+                <p>
+                    You are encouraged to choose any topic relevant to the security of agentic AI systems, with a research problem
+                    not yet explored in the literature. You are welcome to select a topic connected to your current research: if your
+                    area is reinforcement learning, robotics, databases, or HCI, there is an agent-security question in it. 
+                    Directions that are wide open include prompt injection, secure tool use,
+                    authorization and delegated authority, memory integrity, multi-agent security, agent identity, runtime
+                    enforcement, attack propagation, security evaluation methodology, and human oversight.
+                </p>
+                <p>
+                    <b style="color: #D73F09;">[Note]</b> Identifying a research problem is part of the work.
+                    <b>Please start the topic search as early as possible</b>&mdash;teams that are still searching at
+                    Checkpoint 1 tend to run out of time. Your paper critiques are the cheapest source of ideas: the adaptive attack and
+                    the missing experiment are project proposals.
+                </p>
+
+                <!-- :: Teams -->
+                <h5 style="margin-top: 30px;">Teams and Sign-up</h5>
+                <ul>
+                    <li><b>Up to 2 students</b>. You may work alone, but the expectations are the same as for a team of two, and <b>you still have to put your name on the sheet</b>.</li>
+                    <li>Please use the course Google Sheet (link posted on Canvas; you need an ONID to access it) to form a team and sign up.</li>
+                    <li><b style="color: #D73F09;">[Deadline] 09/30.</b> If you are not on the sheet by then&mdash;alone or in a team&mdash;<b>your final score decreases by 2%</b>.</li>
+                    <li>If you do not have a partner by then, email me and I will help match you.</li>
+                </ul>
+
+                <!-- :: Presentations -->
+                <h5 id="presentations" style="margin-top: 30px;">Presentations</h5>
+                Your team should present the research progress <b>three times</b>; I have the following expectations:<br/><br/>
+
+                <h6>Checkpoint Presentation 1 &mdash; Mon. 10/19, 10 min + 5 min Q&amp;A per team</h6>
+                <ul>
+                    <li>Identify a research problem (or your project scope).</li>
+                    <li>Do a literature review and explain the prior work relevant to your problem.</li>
+                    <li>Clearly articulate how your problem is different from the prior work.</li>
+                    <li>State an <b>explicit threat model</b>: what the adversary controls, knows, and wants.</li>
+                    <li>Provide your next steps.</li>
+                </ul>
+
+                <h6>Checkpoint Presentation 2 &mdash; Mon. 11/16, 10 min + 5 min Q&amp;A per team</h6>
+                <ul>
+                    <li>Design a set of experiments to evaluate your idea's feasibility.</li>
+                    <li>Preliminary results&mdash;you must implement a minimal (key) functionality to demonstrate the feasibility of your idea. Negative results are fine.</li>
+                    <li>Provide your next steps.</li>
+                </ul>
+
+                <h6>Final Presentation &mdash; Wed. 12/02, 15 min + 5 min Q&amp;A per team</h6>
+                <ul>
+                    <li>Deliver your final results, based on the goals you set in Checkpoint 1.</li>
+                    <li>Address the limitations of your result without being asked. <b>The limitations section is graded.</b></li>
+                    <li>Present in class and submit a written report of <b>6-8 pages</b> excluding references, using this <a href="https://www.overleaf.com/read/rqztdrrjycsr#b16ea8" target="_blank">report template</a> <b>[Note: the report is due 12/11, on Canvas]</b>. If you wrote code, include a link to a repository.</li>
+                </ul>
+
+                <p>
+                    <b>Slides are due on Canvas before class on each presentation day</b> (10/19, 11/16, 12/02).<br/>
+                    <b style="color: #D73F09;">The final report deadline (12/11, 6:00 pm) is firm</b>&mdash;term grades are due right after it. If
+                    something happens, talk to me <i>before</i> 12/11.<br/>
+                    <b>The session before each presentation has no class</b> so that your team can prepare: <b>10/14</b> before
+                    Checkpoint 1, <b>11/11</b> (which is also Veterans Day) before Checkpoint 2, and <b>11/30</b> before the Final
+                    Presentation. These are marked in the <a href="syllabus.html">syllabus</a>.
+                </p>
+
+
+                <!-- :: Evaluations -->
+                <h5 style="margin-top: 30px;">Grading Policy (Evaluations)</h5>
+                Your term project will be evaluated with the following scheme (40% in total):<br/><br/>
+
+                <ul>
+                    <li><b>10%:</b> Checkpoint Presentation 1</li>
+                    <li><b>10%:</b> Checkpoint Presentation 2</li>
+                    <li><b>20%:</b> Final Presentation and Write-up</li>
+                    <li><b style="color: #D73F09;">-2%:</b> No team on the Google Sheet by 09/30.</li>
+                    <li><b style="color: #D73F09;">+5%:</b> Submitting your final report to a workshop or conference. Several projects from a course like this are genuinely publishable&mdash;talk to me before the end of the term if you are interested.</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Footer -->
+            <hr noshade="" size="1">
+            <footer class="footer" style="margin-bottom: 24px;">
+                <div class="container text-center">
+                  <span class="text-muted">&copy; Sanghyun Hong: 2026-Present.</span>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Optional Javascript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

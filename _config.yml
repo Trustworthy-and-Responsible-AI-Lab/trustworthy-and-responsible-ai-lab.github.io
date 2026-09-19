@@ -17,12 +17,17 @@ include:
   - .htaccess
 
 exclude:
-  - README.md
+  - "**/README.md"       # template/repo READMEs; not pages
   - sync.py
   - Gemfile
   - Gemfile.lock
   - "*.sh"
   - "**/canvas-*.html"   # Canvas paste-in sources; not for the public site
+  - "**/*-HANDOFF.md"    # internal handoff notes; not for the public site
+  - "**/*-PROPOSAL.md"   # course proposal / annual reading-list docs; not for the public site
+  - "courses/**/*.md"    # all working docs beside a course (syllabus/exam drafts); pages are .html
+  - "courses/**/*.py"    # scripts beside a course (e.g. the card-image generator)
+  - "courses/Sec-UGrad/current-bak"   # stale course backup; not meant to be reachable on the site
 
 markdown: kramdown
 plugins:

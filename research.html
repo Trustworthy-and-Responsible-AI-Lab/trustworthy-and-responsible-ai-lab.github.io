@@ -7,8 +7,9 @@ title: "Research"
   <div class="page-header">
     <h1>Research</h1>
     <p>
-      We study the security, privacy, and reliability of modern AI systems,
-      spanning theoretical analysis and practical attacks and defenses.
+      We build security foundations for AI systems by studying how they make decisions,
+      where they fail, and how they can be made safer &mdash; and we use those systems in
+      turn to strengthen cybersecurity. Our work spans four areas.
     </p>
   </div>
 
@@ -20,6 +21,7 @@ title: "Research"
     <ul class="research-papers">
       {% for paper_title in area.papers %}
       {% assign matched = site.data.publications.papers | where: "title", paper_title | first %}
+      {% unless matched %}{% assign matched = site.data.publications.preprints | where: "title", paper_title | first %}{% endunless %}
       {% if matched %}
       <li>
         {% if matched.links.pdf and matched.links.pdf != "" %}

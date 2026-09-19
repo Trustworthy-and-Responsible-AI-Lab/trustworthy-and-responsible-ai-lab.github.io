@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Title -->
+    <title>CS599 :: F27 :: Secure Agentic AI Systems</title>
+
+    <!-- SEO -->
+    <meta name="author" content="Sanghyun Hong" />
+    <meta name="description" content="Secure Agentic AI Systems: Attacks, Defenses, and Human Oversight. Oregon State University" />
+    <meta name="keywords" content="sanghyun hong secure agentic ai systems agent security prompt injection oregon state university" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
+
+    <!-- Prevent js cache by Chrome -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Bootstrap start -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arial:300,400,500,700" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/osu-fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/osu-styles.css" />
+  </head>
+
+  <body>
+    <!-- Content -->
+    <div class="container">
+      <!-- Title -->
+      <h2 class="title">
+        <b>CS599 :: F27 :: Secure Agentic AI Systems</b>
+      </h2>
+
+      <hr noshade="" size="1" />
+
+      <!-- Top navigation bar -->
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><h5>Home</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="syllabus.html"><h5>Syllabus</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="critiques.html"><h5>Critique, Discussion</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html"><h5>Project</h5></a>
+        </li>
+      </ul>
+
+      <hr noshade="" size="1" />
+
+      <!-- Textbook & Prerequisite -->
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h4>Readings and Resources</h4>
+            <p>
+              <b>No required textbook.</b> This field moves faster than textbooks do. Every reading is a research paper, linked
+              directly from the schedule below: <b>two required papers and one optional paper per lecture</b>.
+            </p>
+
+            <p>If you have never built or studied an AI agent before, these two will get you to the starting line:</p>
+            <ul>
+              <li>[Survey] A Survey on LLM-Based Autonomous Agents <a href="https://arxiv.org/abs/2308.11432" target="_blank" rel="noopener noreferrer">[PDF]</a></li>
+              <li>[Reference] OWASP Agentic AI &mdash; Threats and Mitigations <a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/" target="_blank" rel="noopener noreferrer">[link]</a></li>
+            </ul>
+
+            <br />
+
+            <h4>Prerequisites</h4>
+            <p>This course requires a basic understanding of machine learning:
+                <ul>
+                    <li>CS 434: Machine Learning and Data Mining (required)</li>
+                    <li>CS 499/599 | AI 539: Trustworthy ML (recommended)</li>
+                    <li>CS 578: Cyber-Security (recommended)</li>
+                </ul>
+            </p>
+          </div>
+
+          <div class="col-6">
+            <h4>Grading</h4>
+            <p>Your final grade for this course will be based on the following scheme:</p>
+            <ul>
+              <li><b>15%:</b> Paper discussions [<a href="critiques.html">Details</a>]</li>
+              <li><b>20%:</b> Paper critiques [<a href="critiques.html">Details</a>]</li>
+              <li><b>40%:</b> Final research project [<a href="project.html">Details</a>]</li>
+              <li><b>25%:</b> Online final exam [<a href="#final-exam">Details</a>]</li>
+              <li><b style="color: #D73F09">+5%:</b> Extra credit for submitting your final report to a workshop or conference [<a href="project.html">Details</a>]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Latest announcements -->
+      <div class="container" style="background-color: #FAE0D6; border: 0.5px solid #D73F09;">
+        <h4 style="margin-top: 10px;">Latest Announcements</h4>
+        <ul>
+          <li><b>09/23:</b> Welcome to CS599 Secure Agentic AI Systems (Fall 2027)!</li>
+        </ul>
+      </div>
+
+      <hr noshade="" size="1" />
+
+      <!-- Schedule -->
+      <div class="container">
+        <h4>Schedule</h4>
+        <b style="color: #D73F09">[Note]</b><br />
+        <b style="color: #D73F09">- This is a tentative schedule; subject to change depending on the progress.</b><br />
+        <b style="color: #D73F09">- No critique for the first class (09/23), for project presentation days, or for days with no class.</b>
+
+
+        <table class="table" style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+          <!-- Header -->
+          <thead>
+            <tr style="background-color: #D73F09;">
+              <th scope="col" style="text-align: center; color: white; width: 8%;"><b>Date</b></th>
+              <th scope="col" style="text-align: center; color: white; width: 10%;"><b>Mode</b></th>
+              <th scope="col" style="text-align: center; color: white; width: 20%;"><b>Topics</b></th>
+              <th scope="col" style="text-align: center; color: white; width: 12%;"><b>Due</b></th>
+              <th scope="col" style="text-align: center; color: white; width: 50%;"><b>Objectives and Materials</b></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Part I: Foundations of Agentic AI Systems</b></td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />09/23</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Introduction
+              </td>
+              <td>Sign-up opens</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">What turns an LLM into an agent? The agent loop, reasoning, planning, tool use.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener noreferrer">ReAct: Synergizing Reasoning and Acting in Language Models</a><br />
+                (Required) <a href="https://arxiv.org/abs/2302.04761" target="_blank" rel="noopener noreferrer">Toolformer: LMs Can Teach Themselves to Use Tools</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2305.10601" target="_blank" rel="noopener noreferrer">Tree of Thoughts: Deliberate Problem Solving with LLMs</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />09/28</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Agent Architectures
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Retrieval, short- and long-term memory, reflection, single- vs. multi-agent systems, delegated actions.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2304.03442" target="_blank" rel="noopener noreferrer">Generative Agents: Interactive Simulacra of Human Behavior</a><br />
+                (Required) <a href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener noreferrer">Reflexion: Language Agents with Verbal RL</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2308.03688" target="_blank" rel="noopener noreferrer">AgentBench: Evaluating LLMs as Agents</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Part II: Threat Modeling Agentic AI Systems</b></td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />09/30</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Threat Modeling I
+              </td>
+              <td>
+                <b>Team sign-up</b><br />
+                <b>Disc. sign-up</b>
+              </td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Assets, adversaries, trust boundaries, untrusted observations, agent privileges.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2410.02644" target="_blank" rel="noopener noreferrer">Agent Security Bench (ASB)</a><br />
+                (Required) <a href="https://arxiv.org/abs/2309.15817" target="_blank" rel="noopener noreferrer">Identifying the Risks of LM Agents with an LM-Emulated Sandbox (ToolEmu)</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2406.02630" target="_blank" rel="noopener noreferrer">AI Agents Under Threat: A Survey of Key Security Challenges</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />10/05</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Threat Modeling II
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Delegated authority, persistent state, security properties, unsafe actions vs. incorrect outputs.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2410.09024" target="_blank" rel="noopener noreferrer">AgentHarm: Measuring Harmfulness of LLM Agents</a><br />
+                (Required) <a href="https://arxiv.org/abs/2411.02391" target="_blank" rel="noopener noreferrer">Attacking Vision-Language Computer Agents via Pop-ups</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2401.12242" target="_blank" rel="noopener noreferrer">BadChain: Backdoor Chain-of-Thought Prompting</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Part III: Attacks on Agentic AI Systems</b></td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />10/07</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Prompt Injection I
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Instruction/data confusion, goal hijacking, direct injection.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2302.12173" target="_blank" rel="noopener noreferrer">Not What You've Signed Up For: Indirect Prompt Injection</a><br />
+                (Required) <a href="https://arxiv.org/abs/2310.12815" target="_blank" rel="noopener noreferrer">Formalizing and Benchmarking Prompt Injection Attacks and Defenses</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2403.14720" target="_blank" rel="noopener noreferrer">Defending Against Indirect Prompt Injection with Spotlighting</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />10/12</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Prompt Injection II
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Indirect and environmental attacks, retrieval attacks, data exfiltration, adaptive attacks.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2403.02691" target="_blank" rel="noopener noreferrer">InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Agents</a><br />
+                (Required) <a href="https://arxiv.org/abs/2406.13352" target="_blank" rel="noopener noreferrer">AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2409.11295" target="_blank" rel="noopener noreferrer">EIA: Environmental Injection Attack on Generalist Web Agents</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FAE0D6;">
+              <td><b>Wed.<br />10/14</b></td>
+              <td><b>No class</b></td>
+              <td>-</td>
+              <td><b>Project prep</b></td>
+              <td>No class. Use this session to prepare <b>Checkpoint Presentation 1</b>.</td>
+            </tr>
+
+            <tr style="background-color: #F7A162;">
+              <td><b>Mon.<br />10/19</b></td>
+              <td><b>In-person</b></td>
+              <td><b>Group Project</b></td>
+              <td><b>Slides</b></td>
+              <td><b>Checkpoint Presentation 1</b> &mdash; 10 min + 5 min Q&amp;A per team</td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />10/21</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Tools, Privileges, and Authorization
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Tool invocation, capabilities, excessive agency, over-privileged agents, authentication vs. authorization, confused-deputy problems, least privilege, irreversible actions, human approval.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2503.23278" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP): Landscape and Security Threats</a><br />
+                (Required) <a href="https://arxiv.org/abs/2503.18813" target="_blank" rel="noopener noreferrer">Defeating Prompt Injections by Design (CaMeL)</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2410.17401" target="_blank" rel="noopener noreferrer">AdvAgent: Controllable Blackbox Red-teaming on Web Agents</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />10/26</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Memory, State, and Persistent Attacks
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Long-term memory and retrieval corpora, memory poisoning, persistent compromise across sessions, provenance, recovery.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2407.12784" target="_blank" rel="noopener noreferrer">AgentPoison: Red-Teaming LLM Agents via Poisoning Memory or Knowledge Bases</a><br />
+                (Required) <a href="https://arxiv.org/abs/2402.11208" target="_blank" rel="noopener noreferrer">Watch Out for Your Agents! Backdoor Threats to LLM-Based Agents</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2402.07867" target="_blank" rel="noopener noreferrer">PoisonedRAG: Knowledge Corruption Attacks to RAG</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />10/28</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Multi-Agent Security
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Agent-to-agent communication, identity, delegation, transitive trust, cascading failure, containment. Unauthorized communication vs. malicious behavior by an <i>authorized</i> agent.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2402.08567" target="_blank" rel="noopener noreferrer">Agent Smith: A Single Image Can Jailbreak One Million Multimodal Agents</a><br />
+                (Required) <a href="https://arxiv.org/abs/2408.00989" target="_blank" rel="noopener noreferrer">On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2407.07791" target="_blank" rel="noopener noreferrer">Flooding Spread of Manipulated Knowledge in LLM Multi-Agent Communities</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Part IV: Defending Agentic AI Systems</b></td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />11/02</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Defenses I: Architecture
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Where should enforcement live? Isolation, sandboxing, tool mediation, information-flow restriction.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2403.04960" target="_blank" rel="noopener noreferrer">IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems</a><br />
+                (Required) <a href="https://arxiv.org/abs/2502.01822" target="_blank" rel="noopener noreferrer">Firewalls to Secure Dynamic LLM Agentic Networks</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2505.23643" target="_blank" rel="noopener noreferrer">Securing AI Agents with Information-Flow Control</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />11/04</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Defenses II: Model and Runtime
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Training-time hardening, runtime monitors, network-level mediation. Prevention vs. detection vs. containment.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2402.06363" target="_blank" rel="noopener noreferrer">StruQ: Defending Against Prompt Injection with Structured Queries</a><br />
+                (Required) <a href="https://arxiv.org/abs/2410.05451" target="_blank" rel="noopener noreferrer">SecAlign: Defending Against Prompt Injection with Preference Optimization</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2312.17673" target="_blank" rel="noopener noreferrer">Jatmo: Prompt Injection Defense by Task-Specific Finetuning</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Part V: Evaluation, Oversight, and Frontier Problems</b></td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />11/09</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Evaluating Agent Security
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Threat-model validity, attack success rate, task utility, the security&ndash;utility tradeoff, adaptive attacks, benchmark realism, reproducibility.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2410.02644" target="_blank" rel="noopener noreferrer">Agent Security Bench (ASB)</a> <i>(Revisit)</i><br />
+                (Required) <a href="https://arxiv.org/abs/2406.12814" target="_blank" rel="noopener noreferrer">Dissecting Adversarial Robustness of Multimodal LM Agents</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2406.13352" target="_blank" rel="noopener noreferrer">AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses</a> <i>(revisit: read the defense evaluation, not the attacks)</i>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFE8EA;">
+              <td><b>Wed.<br />11/11</b></td>
+              <td><b>No class</b></td>
+              <td>-</td>
+              <td>-</td>
+              <td><b>Veterans Day</b></td>
+            </tr>
+
+            <tr style="background-color: #F7A162;">
+              <td><b>Mon.<br />11/16</b></td>
+              <td><b>In-person</b></td>
+              <td><b>Group Project</b></td>
+              <td><b>Slides</b></td>
+              <td><b>Checkpoint Presentation 2</b> &mdash; 10 min + 5 min Q&amp;A per team</td>
+            </tr>
+
+            <tr>
+              <td><b>Wed.<br />11/18</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Human Oversight and Agentic-System Literacy
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Human-in-the-loop vs. on-the-loop, situational awareness, calibrated trust, automation bias, escalation, auditability.</span><br /><br />
+                (Required) <a href="https://doi.org/10.1145/3290605.3300233" target="_blank" rel="noopener noreferrer">Guidelines for Human-AI Interaction</a><br />
+                (Required) <a href="https://arxiv.org/abs/2401.13138" target="_blank" rel="noopener noreferrer">Visibility into AI Agents</a><br />
+                (Optional) <a href="https://doi.org/10.1518/hfes.46.1.50_30392" target="_blank" rel="noopener noreferrer">Trust in Automation: Designing for Appropriate Reliance</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td><b>Mon.<br />11/23</b></td>
+              <td><b>In-person</b></td>
+              <td>
+                Frontier Problems in Secure Agentic AI
+              </td>
+              <td>-</td>
+              <td>
+                <span style="font-size: 0.92em; color: #555;">Long-horizon autonomy, agent identity, self-modifying agents, machine-to-machine trust, agent ecosystems, oversight at scale, open questions.</span><br /><br />
+                (Required) <a href="https://arxiv.org/abs/2312.06942" target="_blank" rel="noopener noreferrer">AI Control: Improving Safety Despite Intentional Subversion</a><br />
+                (Required) <a href="https://arxiv.org/abs/2501.10114" target="_blank" rel="noopener noreferrer">Infrastructure for AI Agents</a><br />
+                (Optional) <a href="https://arxiv.org/abs/2502.14143" target="_blank" rel="noopener noreferrer">Multi-Agent Risks from Advanced AI</a>
+              </td>
+            </tr>
+
+            <tr style="background-color: #FFE8EA;">
+              <td><b>Wed.<br />11/25</b></td>
+              <td><b>No class</b></td>
+              <td>-</td>
+              <td>-</td>
+              <td><b>Thanksgiving Break</b></td>
+            </tr>
+
+            <tr style="background-color: #FAE0D6;">
+              <td><b>Mon.<br />11/30</b></td>
+              <td><b>No class</b></td>
+              <td><b>Project prep</b></td>
+              <td>-</td>
+              <td>No class. Use this session to prepare the <b>Final Presentation</b>.</td>
+            </tr>
+
+            <tr style="background-color: #F7A162;">
+              <td><b>Wed.<br />12/02</b></td>
+              <td><b>In-person</b></td>
+              <td><b>Group Project</b></td>
+              <td><b>Slides</b></td>
+              <td><b>Final Presentation</b> &mdash; 15 min + 5 min Q&amp;A per team.</td>
+            </tr>
+
+            <!-- Finals week -->
+            <tr style="background-color: #FFB500;">
+              <td colspan="5" style="text-align: center;"><b>Finals Week (12/07 &ndash; 12/11)</b></td>
+            </tr>
+
+            <tr style="background-color: #FFE8EA;">
+              <td><b>Mon. 12/07<br />&ndash; Wed. 12/09</b></td>
+              <td><b>Online</b></td>
+              <td><b>Final Exam</b></td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+
+            <tr style="background-color: #FFE8EA;">
+              <td><b>Fri.<br />12/11</b></td>
+              <td><b>No class</b></td>
+              <td><b>Project report due</b></td>
+              <td>-</td>
+              <td>Submit the final report on Canvas by 6:00 pm [<a href="project.html">Details</a>].</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer -->
+      <hr noshade="" size="1" />
+      <footer class="footer" style="margin-bottom: 24px;">
+        <div class="container text-center">
+          <span class="text-muted">&copy; Sanghyun Hong: 2026-Present.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Optional Javascript -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

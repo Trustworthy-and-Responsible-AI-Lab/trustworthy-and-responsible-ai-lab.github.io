@@ -123,6 +123,7 @@ papers:
     type: conference
     links:
       pdf: "https://arxiv.org/abs/2609.00873"
+      code: "https://openreview.net/attachment?id=g5hXhxXe3o&name=software"
 
   - title: "Do Reasoning Representations Help Humans Evaluate LLM Outputs?"
     thumbnail: "/assets/images/papers/do-reasoning-representations-help-humans-evaluate-llm-o.jpg"
