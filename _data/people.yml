@@ -90,12 +90,6 @@ interns:
     period: "2025–2026"
     program: "MS"
     photo: "/assets/images/people/heesung-jeong.jpg"
-  
-  - name: Ramon Macasa
-    affiliation: "UCSB CS"
-    period: "2026 Summer"
-    program: "BS"
-    photo: "/assets/images/people/ramon-photo.jpg"
 
   - name: Junhua Wei
     affiliation: "Phillips Academy Andover"
@@ -179,6 +173,12 @@ alumni_ms:
     current_url: "https://promaxo.com/"
 
 alumni_bs:
+  - name: Ramon Macasa (UCSB)
+    degree: "CS (BS)"
+    year: "2026"
+    # photo: "/assets/images/people/ramon-photo.jpg"
+    current: "AWS SE Intern"
+
   - name: Aiden Rubey
     degree: "CS (BS)"
     years: 2026

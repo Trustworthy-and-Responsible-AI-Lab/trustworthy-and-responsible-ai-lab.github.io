@@ -2,6 +2,12 @@
 # Source of truth: this file. Personal site pulls it via scripts/sync_from_lab.py
 # date: YYYY-MM-DD   text: plain text, <a> tags allowed
 
+- date: "2026-09-24"
+  text: "Zachary's paper on fail-closed alignment is accepted to NeurIPS 2026. Congratulations!"
+
+- date: "2026-09-16"
+  text: "Received the Qualcomm Faculty Award 2026. Thanks Qualcomm!"
+
 - date: "2026-09-16"
   text: "A paper on using LLMs to identify critical exposure at Internet scale is accepted to AISec 2026, co-located with ACM CCS!"
 

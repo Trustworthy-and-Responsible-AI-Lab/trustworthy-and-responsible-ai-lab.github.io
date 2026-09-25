@@ -23,16 +23,6 @@ preprints:
     links:
       pdf: "https://arxiv.org/abs/2602.16980"
 
-  - title: "Fail-Closed Alignment for Large Language Models"
-    thumbnail: "/assets/images/papers/fail-closed-alignment-for-large-language-models.jpg"
-    authors: "Zachary Coalson, Beth Sohler, Aiden Gabriel, and Sanghyun Hong"
-    lab_authors: ["Zachary Coalson", "Beth Sohler", "Aiden Gabriel", "Sanghyun Hong"]
-    venue: "arXiv Preprint"
-    year: 2026
-    type: preprint
-    links:
-      pdf: "https://arxiv.org/abs/2602.16977"
-
   - title: "Data Therapist: Eliciting Domain Knowledge from Subject Matter Experts Using Large Language Models"
     thumbnail: "/assets/images/papers/data-therapist-eliciting-domain-knowledge-from-subject.jpg"
     authors: "Sungbok Shin, Hyeon Jeon, Sanghyun Hong, and Niklas Elmqvist"
@@ -94,6 +84,25 @@ preprints:
       code: "https://github.com/Sanghyun-Hong/Gradient-Shaping"
 
 papers:
+  - title: "Fail-Closed Alignment for Large Language Models"
+    thumbnail: "/assets/images/papers/fail-closed-alignment-for-large-language-models.jpg"
+    authors: "Zachary Coalson and Sanghyun Hong"
+    lab_authors: ["Zachary Coalson", "Sanghyun Hong"]
+    venue: "Advances in Neural Information Processing Systems (NeurIPS)"
+    venue_short: "NeurIPS"
+    year: 2026
+    type: conference
+    highlight: true
+    links:
+      pdf: ""
+    bibtex: |
+      @inproceedings{coalson2026failclosed,
+        author    = {Zachary Coalson and Sanghyun Hong},
+        title     = {Fail-Closed Alignment for Large Language Models},
+        booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+        year      = {2026}
+      }
+
   - title: "Exposure is All You Need: Using LLMs to Identify Critical Endpoints at Internet Scale"
     thumbnail: "/assets/images/papers/exposure-is-all-you-need-using-llms-to-identify-critica.jpg"
     authors: "Stijn Pletinckx, Milad Nasr, Sanghyun Hong, Zakir Durumeric, and Nicholas Carlini"
