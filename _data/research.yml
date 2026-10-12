@@ -41,7 +41,7 @@
     long-standing browser isolation guarantees break down in agentic settings.
   papers:
     - "Site Isolation is Dead: How Site Isolation is Broken in Agentic Browsers and Extensions"
-    - "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
+    - "AgentBreaker: Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
     - "Mind the Gap: Time-of-Check to Time-of-Use Vulnerabilities in LLM-Enabled Agents"
 
 - id: ai-for-cybersecurity

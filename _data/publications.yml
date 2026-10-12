@@ -64,6 +64,7 @@ preprints:
       pdf: "https://arxiv.org/abs/2403.11981"
 
   - title: "On the Effectiveness of Regularization Against Membership Inference Attacks"
+    thumbnail: "/assets/images/papers/on-the-effectiveness-of-regularization-against-membersh.jpg"
     authors: "Yiǧitcan Kaya, Sanghyun Hong, and Tudor Dumitraş"
     lab_authors: ["Sanghyun Hong"]
     venue: "arXiv Preprint"
@@ -84,6 +85,17 @@ preprints:
       code: "https://github.com/Sanghyun-Hong/Gradient-Shaping"
 
 papers:
+  - title: "How Do Hardware Faults Manifest Differently in LLM Agents?"
+    thumbnail: "/assets/images/papers/how-do-hardware-faults-manifest-differently-in-llm-agen.jpg"
+    authors: "Aiden Rubey*, Zachary Coalson*, Cong Chen, Jean-Philippe Monteuuis, Jonathan Petit, and Sanghyun Hong (*equal contribution)"
+    lab_authors: ["Aiden Rubey", "Zachary Coalson", "Sanghyun Hong"]
+    venue: "NeurIPS Workshops on Machine Learning for Systems (MLforSystems) and AI for Good (AI4Good)"
+    venue_short: "NeurIPS-W"
+    year: 2026
+    type: workshop
+    links:
+      pdf: "https://arxiv.org/abs/2610.12756"
+
   - title: "Fail-Closed Alignment for Large Language Models"
     thumbnail: "/assets/images/papers/fail-closed-alignment-for-large-language-models.jpg"
     authors: "Zachary Coalson and Sanghyun Hong"
@@ -187,8 +199,9 @@ papers:
       talk: "https://icml.cc/virtual/2026/poster/63843"
       poster: "https://icml.cc/media/PosterPDFs/ICML%202026/63843.png"
 
-  - title: "AgentBreaker: A Framework for Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
-    authors: "Yongbi Son, Changoo Lee, Dongwon Shin, Byoungyoung Lee, Sanghyun Hong, and Sooel Son"
+  - title: "AgentBreaker: Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents"
+    thumbnail: "/assets/images/papers/agentbreaker-evaluating-context-aware-indirect-prompt-i.jpg"
+    authors: "Yongbi Son*, Changoo Lee*, Dongwon Shin, Byoungyoung Lee, Sanghyun Hong, and Sooel Son (*equal contribution)"
     lab_authors: ["Sanghyun Hong"]
     venue: "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)"
     venue_short: "ISSTA"
@@ -196,7 +209,20 @@ papers:
     type: conference
     highlight: true
     links:
-      pdf: ""
+      pdf: "https://godeastone.github.io/papers/son-issta26.pdf"
+      code: "https://figshare.com/articles/code/AgentBreaker_Evaluating_Context-Aware_Indirect_Prompt_Injection_Risks_in_Modern_Web_Agents_Artifact_/32835578"
+    bibtex: |
+      @article{son2026agentbreaker,
+        author    = {Yongbi Son and Changoo Lee and Dongwon Shin and Byoungyoung Lee and
+                     Sanghyun Hong and Sooel Son},
+        title     = {{AgentBreaker}: Evaluating Context-Aware Indirect Prompt Injection Risks in Modern Web Agents},
+        journal   = {Proceedings of the ACM on Software Engineering},
+        volume    = {3},
+        number    = {ISSTA},
+        pages     = {1696--1717},
+        year      = {2026},
+        doi       = {10.1145/3832165}
+      }
 
   - title: "Hessian-aware Training for Enhancing DNNs Resilience to Parameter Corruptions"
     thumbnail: "/assets/images/papers/hessian-aware-training-for-enhancing-dnns-resilience-to.jpg"
